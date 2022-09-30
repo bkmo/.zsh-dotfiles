@@ -124,7 +124,7 @@ alias orphls='pacman -Qtdq'
 alias orphrm='sudo sudo pacman -Rs $(pacman -Qqdt)'
 alias pacup='sudo pacman -Syu'
 alias aurup='yay'
-
+alias pacclean='yay -Sc --noconfirm'
 # Show all logs in /var/log
 alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
 
