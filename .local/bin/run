@@ -4,6 +4,8 @@ shopt -s expand_aliases
 ## Git and Zsh must be installed
 ## This is the curl command to run the script
 ## curl -sL https://bit.ly/3CnJXWo | bash
+## or
+## curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.local/bin/run | bash
 
 git clone --bare -b master https://github.com/bkmo/.zsh-dotfiles.git $HOME/.zsh-dotfiles &&
 
