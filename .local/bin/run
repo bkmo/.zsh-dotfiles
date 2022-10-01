@@ -17,5 +17,7 @@ echo "alias configz='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HO
 
 echo "alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
 
+configz checkout
+
 echo "Deal with conflicting files, then run (possibly with -f flag if you are OK with overwriting)"
 echo "/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME checkout -f"
