@@ -134,7 +134,6 @@ alias sha1='openssl sha1'
 toggle-prompt() p10k display '*/right'='hide,show'
 zle -N toggle-prompt
 bindkey '^Y' toggle-prompt
-
-alias gitu='git add . && git commit && git push'
 alias config="git --git-dir=$HOME/.zsh-dotfiles --work-tree=$HOME"
+alias gitu='git add . && git commit && git push'
 alias dfcp='config commit -a -m "manual scripted" && config push'
