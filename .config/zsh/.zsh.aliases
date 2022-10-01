@@ -43,7 +43,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias cdgit='cd /home/bkmo/GIT/webapp-manager-bkmo/'
+alias cdgitweb='cd /home/bkmo/GIT/webapp-manager-bkmo/'
+alias cdgitdot='cd /home/bkmo/GIT/.dotfiles/'
 
 # cd into the old directory
 alias bd='cd "$OLDPWD"'
