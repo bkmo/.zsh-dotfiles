@@ -11,13 +11,13 @@ git clone --bare -b master https://github.com/bkmo/.zsh-dotfiles.git $HOME/.zsh-
 
 alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'
 
-config --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME config --local status.showUntrackedFiles no &&
+config config --local status.showUntrackedFiles no &&
 
 echo "alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
 
 echo "alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
 
-config --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME checkout
+config checkout
 
 echo "Deal with conflicting files, then run (possibly with -f flag if you are OK with overwriting)"
 echo "/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME checkout -f"
