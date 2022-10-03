@@ -1,7 +1,7 @@
 #!/bin/bash
 shopt -s expand_aliases
 
-## Git and Zsh must be installed
+## Git, Zsh and Fastfetch(opt.) must be installed
 ## This is the curl command to run the script
 ## curl -sL https://bit.ly/3CnJXWo | bash
 ## or
@@ -11,11 +11,9 @@ git clone --bare -b master https://github.com/bkmo/.zsh-dotfiles.git $HOME/.zsh-
 
 alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'
 
-config config --local status.showUntrackedFiles no &&
+configz config --local status.showUntrackedFiles no &&
 
 echo "alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
-
-echo "alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
 
 config checkout
 
