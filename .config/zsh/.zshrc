@@ -67,12 +67,12 @@ z4h source ~/.config/zsh/.zsh.aliases
 # Use additional Git repositories pulled in with `z4h install`.
 #
 # Load additional plugins.
-source /home/bkmo/.config/zsh/plugins/aliases/aliases.plugin.zsh
-source /home/bkmo/.config/zsh/plugins/zsh-sudo/sudo.plugin.zsh
-source /home/bkmo/.config/zsh/plugins/find-the-command/ftc.zsh askfirst noupdate
-source /home/bkmo/.config/zsh/plugins/web-search/web_search.plugin.zsh
-source /home/bkmo/.config/zsh/plugins/omz-git/init.zsh
-source /home/bkmo/.config/zsh/plugins/zsh-archlinux/archlinux.plugin.zsh
+source ~/.config/zsh/plugins/aliases/aliases.plugin.zsh
+source ~/.config/zsh/plugins/zsh-sudo/sudo.plugin.zsh
+source ~/.config/zsh/plugins/find-the-command/ftc.zsh askfirst noupdate
+source ~/.config/zsh/plugins/web-search/web_search.plugin.zsh
+source ~/.config/zsh/plugins/omz-git/init.zsh
+source ~/.config/zsh/plugins/zsh-archlinux/archlinux.plugin.zsh
 # Define key bindings.
 z4h bindkey z4h-backward-kill-word  Ctrl+Backspace     Ctrl+H
 z4h bindkey z4h-backward-kill-zword Ctrl+Alt+Backspace
@@ -106,4 +106,4 @@ setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
 #fastfetch
-fastfetch --load-config paleofetch
+if [ -f "/usr/bin/fastfetch" ]; then  fastfetch --load-config paleofetch; fi
