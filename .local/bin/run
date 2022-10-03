@@ -39,3 +39,5 @@ config checkout
 test $? -eq 0 || echo "Deal with conflicting files, then run config checkout with -f flag if you are OK with overwriting"
 #echo "Deal with conflicting files, then run (possibly with -f flag if you are OK with overwriting)"
 #echo "/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME checkout -f"
+rm -f ~/.config/zsh/.zsh_history
+mv ~/.config/zsh/.zsh_history-saved .zsh_history
