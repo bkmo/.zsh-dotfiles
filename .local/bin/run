@@ -10,7 +10,7 @@ shopt -s expand_aliases
 ## curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.local/bin/run | bash
 
 packagesNeeded='git zsh '
-if [ -x "$(command -v apt-get)" ]; then sudo apt-get --yes install $packagesNeeded
+if [ -x "$(command -v apt-gety)" ]; then sudo apt-get --yes install $packagesNeeded
 elif [ -x "$(command -v dnf)" ];     then sudo dnf install $packagesNeeded
 elif [ -x "$(command -v zypper)" ];  then sudo zypper install $packagesNeeded
 elif [ -x "$(command -v pacman)" ];  then sudo pacman -S $packagesNeeded
