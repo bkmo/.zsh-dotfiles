@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# yay
+# Yet another Yogurt - An AUR Helper written in Go
+# <https://github.com/Jguer/yay>
+
+if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; then
+    echo 'Install yay.'
+    sudo pacman -S --needed base base-devel wget
+    git clone https://aur.archlinux.org/yay.git
+    rm -rf ~/yay
+     yay -S fastfetch
+fi
+
+
+
