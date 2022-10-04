@@ -1,3280 +1,1813 @@
-pacman -Sl endeavouros | grep '\[installed'
-yay -S pamac-aur
-pacman -Sl endeavouros | grep '\[installed' | cut -d' ' -f2 | xargs -o pacman -R
-sudo pacman -Sl endeavouros | grep '\[installed' | cut -d' ' -f2 | xargs -o pacman -R
-sudo pacman -Sl endeavouros | grep '\[installed' | cut -d' ' -f2 | xargs -o pacman -R
-sudo pacman -Sl endeavouros | grep '\[installed' | cut -d' ' -f2 | xargs -o sudo pacman -R
-pacman -Syy
-sudo pacman -Syy
-sudo pacman -Sl endeavouros | grep '\[installed' | cut -d' ' -f2 | xargs -o sudo pacman -R
-sudo pacman-key -r 3DEA62513C8035383A245A12E5786B42E8E5D565
-sudo pacman-key -r 3DEA62513C8035383A245A12E5786B42E8E5D565
-sudo pacman-key --lsign-key 3DEA62513C8035383A245A12E5786B42E8E5D565
-sudo pacman -Sy
-sudo rm endeavouros.db
-sudo rm multilib.db
-LANG=C pacman -Sl multilib | grep installed | cut -d ' ' -f 2
-sudo pacman -Syy
-sh -c "$(curl -sL https://nextdns.io/install)"
-sudo Zoiper_3.3_Linux_Free_64Bit.run
-sudo ./Zoiper_3.3_Linux_Free_64Bit.run
-sudo update-grub
-sudo update-grub
-sudo update-grub
-sudo update-grub
-sudo mkinitcpio -p linux
-free
-hhhh
-timeshift-autosnap
-sudo timeshift-autosnap
-reflector --list-countries
-systemctl enable reflector.timer
-systemctl start reflector.service
-systemctl enable change-machine-id.timer
-systemctl enable limit-timeshift-snapshots-update-grub.service
-systemctl enable btrfs-scrub@.timer
-systemctl enable btrfs-scrub@home.timer
-systemctl enable fstrim.timer
-swapon --show
-swapon
-swapon --show
-systemctl enable systemd.swap
-systemctl enable systemd-swap.service
-swapon -show
-systemctl enable --now systemd-swap.service
-swapon -show
-systemctl list -units
-systemctl list-units --type=service
-systemctl stop lvm2-monitor.service
-systemctl disable lvm2-monitor.service
-systemctl stop avahi-daemon.service
-systemctl disable avahi-daemon.service
-systemctl disable avahi-daemon.socket
-systemctl list-units --type=service
-sudo systemd-analyze blame
-systemctl reload reflector.timer
-systemctl daemon-reload
-sudo systemd-analyze blame
-sudo systemd-analyze critical-chain
-systemctl disable lvm2-monitor.service
-sudo systemd-analyze critical-chain
-systemctl mask lvm2-monitor.service
-systemctl mask avahi-daemon.service
-sudo update-grub
-sudo mkinitcpio -p linux
-sudo update-grub
-sudo systemctl enable --now cups.service
-sudo systemctl enable --now cups.socket
-sudo systemctl enable --now cups.path
-sudo systemctl mask systemd-fsck-root.service
-systemctl list-units --type=service
-systemctl --user status pipewire
-systemctl --user status pipewire-pulse
-dmesg | grep blue
-sudo dmesg | grep blue
-systemctl start bluetooth.service
-systemctl enable bluetooth.service
-export LIBVA_DRIVER_NAME=iHD
-sudo cp -r /home/$USER/.config/gtk-3.0/* /root/.config/gtk-3.0
-sudo cp -r /home/bkmo/.config/gtk-3.0/* /root/.config/gtk-3.0
-sudo systemsettings5
-nexport $(dbus-launch) systemsettings5
-export $(dbus-launch) systemsettings5
-sudo dbus-launch systemsettings5
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
-grub-install
-sudo grub-install
-sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch
-sudo mkinitcpio -p linux
-sudo update-grub
-./install.sh
-/usr/local/bin/change-machine-id.sh
-sudo /usr/local/bin/change-machine-id.sh
-systemctl start chang-machine-id.service
-systemctl start change-machine-id.service
-lspci
-systemctl daemon-reload
-sysctl -w fs.suid_dumpable=0
-sudo sysctl -w fs.suid_dumpable=0
-echo "fs.suid_dumpable=0" >> /etc/sysctl.conf
-sudo echo "fs.suid_dumpable=0" >> /etc/sysctl.conf
-su
-sudo sysctl -p
-btrfs filesystem show | awk '/ path /{print $NF}'
-sudo btrfs filesystem show | awk '/ path /{print $NF}'
-sudo btrfs subvolume list /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
-sudo btrfs subvolume list /
-btrfs filesystem show | awk '/ path /{print $NF}'
-sudo btrfs subvolume list /
-sudo btrfs subvolume delete @swap
-sudo btrfs subvolume list /
-sudo btrfs subvolume delete @swap
-sudo btrfs subvolume list /
-sudo btrfs subvolume delete /@swap
-sudo mount /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e -o subvolid=5 /mnt
-sudo btrfs subvolume delete /mnt/@swap
-sudo btrfs subvolume list /
-sudo umount /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e -o subvolid=5 /mnt
-sudo umount /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e  subvolid=5 /mnt
-swapon -show
-sudo cp -r /home/bkmo/.config/gtk-3.0/* /root/.config/gtk-3.0
-sudo systemd-analyze critical-chain
-sudo systemd-analyze blame
-sudo systemd-analyze critical-chain
-sudo systemd-analyze blame
-sudo systemd-analyze critical-chain
-cmake .. -DCMAKE_INSTALL_PREFIX=/usr
-cmake
-cmake . -DCMAKE_INSTALL_PREFIX=/usr
-cmake .. -DCMAKE_INSTALL_PREFIX=/usr
-cmake . -DCMAKE_INSTALL_PREFIX=/usr
-acman -S   gcc   make   cmake   extra-cmake-modules   qt5-base   qt5-graphicaleffects   qt5-svg   qt5-quickcontrols   qt5-quickcontrols2
-pacman -S   gcc   make   cmake   extra-cmake-modules   qt5-base   qt5-graphicaleffects   qt5-svg   qt5-quickcontrols   qt5-quickcontrols2
-sudo pacman -S   gcc   make   cmake   extra-cmake-modules   qt5-base   qt5-graphicaleffects   qt5-svg   qt5-quickcontrols   qt5-quickcontrols2
-sudo pacman -S  extra-cmake-modules   qt5-base   qt5-graphicaleffects   qt5-svg   qt5-quickcontrols   qt5-quickcontrols2
-sudo pacman -S  extra-cmake-modules
-cmake . -DCMAKE_INSTALL_PREFIX=/usr
-make -j$(nproc)
-./build-arch.sh
-sudo
-su
-sudo btrfs subvolume list /
-sudo pacman -S  extra-cmake-modules
-su
-sudo
-sudo pacman -S  extra-cmake-modules
-sh -c "$(curl -sL https://nextdns.io/install)"
-journlctl
-journalctl
-sudo dmesg
-systemctl --failed
-systemctl
-balooctl disable && balooctl purge
-sudo btrfs subvolume list /
-sudo update-grub
-reboot now
-sudo update-grub
-systemctl
-systemctl --failed
-journalctl
-mount
-journalctl
-sudo btrfs subvolume list /
-systemctl disable limit-timeshift-snapshots-update-grub.service
-sudo btrfs subvolume list /
-systemctl stop limit-timeshift-snapshots-update-grub.service
-tlp-stat
-sudo tlp-stat
-sudo systemd-analyze critical-chain
-sudo systemd-analyze blame
-sudo update-grub
-mount
-mount | grep timeshift
-sudo btrfs subvolume list /
-systemctl list-units --type=service
-systemctl list-units --type=mount
-mount | grep timeshift
-mount -a
-mount | grep timeshift
-mount -a
-mount | grep timeshift
-systemctl enable limit-timeshift-snapshots-update-grub.service
-systemctl start limit-timeshift-snapshots-update-grub.service
-space
-du
-diskspace
-systemctl list-units --type=service
-systemctl list-units
-systemctl enable btrfs-scrub@.timer
-systemctl list-units
-systemctl start  btrfs-scrub@.timer
-systemctl status btrfs-scrub@.timer
-systemctl list-units --type=timer
-systemctl start  btrfs-scrub@-.timer
-systemctl enable  btrfs-scrub@-.timer
-systemctl status btrfs-scrub@-.timer
-systemctl status btrfs-scrub@home.timer
-btrfs balance start /
-sudo btrfs balance start /
-sudo btrfs balance start /home
-systemctl start fstrim.service
-dmesg | grep crc32c
-sudo dmesg | grep crc32c
-systemctl list-units -t mount
-systemctl edit --full grub-btrfs.path
-sudo systemctl edit --full grub-btrfs.path
-systemctl enable grub-btrfs.path
-systemctl start  grub-btrfs.path
-systemctl disable limit-timeshift-snapshots-update-grub.service
-systemctl stop limit-timeshift-snapshots-update-grub.service
-systemctl list-units -t mount
-locate timeshift-launcher
-systemctl list-units -t mount
-sudo timeshift --check --verbose
-systemctl list-units -t mount
-systemctl start grub-btrfs.path
-sudo systemctl edit --full grub-btrfs.path
-systemctl list-units -t path
-systemctl cat grub-btrfs.path
-systemctl list-units -t mount
-systemctl stop grub-btrfs.path
-systemctl disable grub-btrfs.path
-systemctl start limit-timeshift-snapshots-update-grub.service
-systemctl enable limit-timeshift-snapshots-update-grub.service
-systemctl start limit-timeshift-snapshots-update-grub.service
-systemctl list-units -t mount
-systemctl daemon-reload
-systemctl restart limit-timeshift-snapshots-update-grub.service
-systemctl stop limit-timeshift-snapshots-update-grub.service
-systemctl disable limit-timeshift-snapshots-update-grub.service
-systemctl enable timeshift-snapshots-update-grub.service
-systemctl start timeshift-snapshots-update-grub.service
-systemctl list-units -t mount
-systemctl list-units -t path
-systemctl list-units -t service
-systemctl list-units -t timer
-systemctl list-units -t service
-find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null
-grep --extended-regexp "\.pac(new|save)" /var/log/pacman.log
-find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null
-source .bashrc
-pacnew
-find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null
-source bashrc
-source .bashrc
-pacnew
-pacman -Qtd
-pacman -Rs $(pacman -Qqdt)
-sudo pacman -Rs $(pacman -Qqdt)
-pacman -Qtd
-source .bashrc
-orphls
-orphrm
-pacnew
-locate -e --regex "\.pac(new|save|orig)$"
-updatedb
-locate -e --regex "\.pac(new|save|orig)$"
-updatedb
-sudo updatedb
-locate --existing --regex "\.pac(new|save)$"
-pacnew
-sudo mkinitcpio -P
-lsmod | grep xhci_pci
-lspci -vv -s 03:0.0
-lspci -vv
-find /home/bkmo/ -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null
-find /home/bkmo -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null
-find / -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null
-sudo pacreport --unowned-files
-sudo pacman -Qii | awk '/^MODIFIED/ {print $2}'
-sudo dbus-launch systemsettings5
-orphls
-pacnew
-cryptsetup luksDump /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
-sudo cryptsetup luksDump /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
-sudo cryptsetup luksDump /dev/luks-550ec923-9508-4279-837b-5184acd1429e
-sudo cryptsetup luksDump /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
-lsblk
-sudo cryptsetup luksDump /dev/nvme0n1p6/luks-550ec923-9508-4279-837b-5184acd1429e
-sudo cryptsetup luksDump /dev/nvme0n1p6
-cryptsetup --dump-master-key luksDump /dev/nvme0n1p6
-sudo cryptsetup --dump-master-key luksDump /dev/nvme0n1p6
-cryptsetup-reencrypt --keep-key --iter-time 1000 /dev/nvme0n1p6
-sudo cryptsetup-reencrypt --keep-key --iter-time 1000 /dev/nvme0n1p6
-sudo cryptsetup LuksConvertKey
-sudo cryptsetup luksConvertKey
-sudo cryptsetup luksDump /dev/nvme0n1p6
-cryptsetup -v luksChangeKey --iter-time 1000 /dev/nvme0n1p6
-sudo cryptsetup -v luksChangeKey --iter-time 1000 /dev/nvme0n1p6
-sudo cryptsetup luksDump /dev/nvme0n1p6
-sudo cryptsetup -v luksAddKey --iter-time 1000 /dev/nvme0n1p6 -S 0
-sudo cryptsetup luksDump /dev/nvme0n1p6
-sudo cryptsetup -v luksKillSlot /dev/nvme0n1p6 2
-sudo cryptsetup luksDump /dev/nvme0n1p6
-sudo cryptsetup -v luksChangeKey --iter-time 300 /dev/nvme0n1p6
-sudo cryptsetup luksDump /dev/nvme0n1p6
-sudo cryptsetup -v luksAddKey --iter-time 600 /dev/nvme0n1p6 -S 0
-sudo cryptsetup luksDump /dev/nvme0n1p6
-sudo cryptsetup -v luksKillSlot /dev/nvme0n1p6 2
-sudo cryptsetup -v luksChangeKey --iter-time 300 /dev/nvme0n1p6
-sudo cryptsetup luksDump /dev/nvme0n1p6
-sudo cryptsetup -v luksAddKey --iter-time 300 /dev/nvme0n1p6 -S 0
-sudo cryptsetup luksDump /dev/nvme0n1p6
-sudo cryptsetup -v luksKillSlot /dev/nvme0n1p6 2
-sudo cryptsetup luksDump /dev/nvme0n1p6
-systemctl status btrfs-scrub@home.timer
-sh -c "$(curl -sL https://nextdns.io/install)"
-pacnew
-orphls
-systemctl status reflector.timer
-systemd daemon reload
-systemctl daemon-reload
-systemctl status reflector.timer
-pacnew
-sh -c "$(curl -sL https://nextdns.io/install)"
-systemctl start reflector.service
-systemctl list-units -t mount
-pacnew
-seahorse
-sudo update-grub
-pacnew
-sh -c "$(curl -sL https://nextdns.io/install)"
-orphls
-sudo cryptsetup luksDump /dev/nvme0n1p6
-sudo timeshift --check --verbose
-systemctl status reflector.timer
-sudo dmesg | grep realtek
-sudo dmesg | grep r8168
-lspci
-lsusb
-sudo dmesg
-systemctl list-units -t lvm2
-systemctl list-units
-systemctl mask lvm2-lvmpolld.socket
-systemctl status systemd-swap.service
-systemctl start systemd-swap.service
-systemctl status systemd-swap.service
-systemctl stop systemd-swap.service
-systemctl start systemd-swap.service
-systemctl status systemd-swap.service
-noip2 -C
-sudo noip2 -C
-noip2
-sudo noip2
-ps -A
-sudo killall noip2
-noip2 -c ~/.local/no-ip2.conf
-ps -A
-find noip2
-locate noip2
-ps -A
-duckdns
-duckdns -help
-ps -A
-systemctl ststus duckdns.timer
-systemctl status duckdns.timer
-systemctl enable duckdns.timer
-systemctl start duckdns.timer
-systemctl status duckdns.timer
-systemctl start duckdns.service
-sudo killall noip2
-ps -A
-systemctl start duckdns.service
-systemctl status duckdns.timer
-systemctl status duckdns.service
-ps -A
-systemctl status duckdns.service
-systemctl status duckdns.timer
-systemctl status duckdns.service
-chromium
-pacnew
-systemctl status duckdns.service
-systemctl status duckdns.timer
-systemctl status duckdns.service
-systemctl status duckdns.timer
-systemctl status duckdns.service
-systemctl status duckdns.timer
-dig
-dig bkmo98.duckdns.org
-dig bkmo98.duckdns.org TEXT
-systemctl status duckdns.service
-systemctl status duckdns.timer
-du --human-readable --summarize .cache/* | sort --human-numeric-sort --reverse
-pacman -Syu
-sudo pacman -Syu
-pacorph
-orphls
-orphrm
-systemctl status duckdns.timer
-systemctl status duckdns.service
-orphls
-pacnew
-auto-cpufreq --log
-auto-cpufreq --stats
-systemctl enable --now auto-cpufreq
-auto-cpufreq --stats
-systemctl status auto-cpufreq
-sudo powertop
-auto-cpufreq --stats
-pacnew
-sudo powertop
-onedrive
-onedrive --help
-systemctl status --user onedriver@.service
-systemctl --user status onedriver@.service
-systemd-escape --template onedriver@.service
-systemctl list-units -t service
-systemctl --user list-units -t service
-systemctl --user status onedriver@-home-bkmo-OneDrive.service
-systemctl --user enable onedriver@-home-bkmo-OneDrive.service
-systemctl --user status onedriver@-home-bkmo-OneDrive.service
-systemctl --user start onedriver@-home-bkmo-OneDrive.service
-systemctl --user status onedriver@-home-bkmo-OneDrive.service
-/usr/bin/onedriver-launcher.sh OneDrive
-systemctl --user disable onedriver@-home-bkmo-OneDrive.service
-systemctl --user stop onedriver@-home-bkmo-OneDrive.service
-/usr/bin/onedriver-launcher.sh OneDrive
-mount
-/usr/bin/onedriver-launcher.sh OneDrive
-mount
-umount /home/bkmo/OneDrive
-/usr/bin/onedriver-launcher.sh OneDrive
-/usr/bin/onedriver-launcher-startup.sh OneDrive
-umount /home/bkmo/OneDrive
-/usr/bin/onedriver-launcher-startup.sh OneDrive
-mount --help
-umount /home/bkmo/OneDrive
-/usr/bin/onedriver-launcher-startup.sh OneDrive
-/usr/bin/onedriver-launcher.sh OneDrive
-mount --help
-umount --help
-/usr/bin/onedriver-launcher.sh OneDrive
-mountpoint
-/usr/bin/onedriver-launcher.sh OneDrive
-umount /home/bkmo/OneDrive
-/usr/bin/onedriver-launcher.sh OneDrive
-/usr/bin/onedriver-launcher-startup.sh OneDrive
-systemctl list-units -t service
-systemctl --user list-units -t service
-/usr/bin/onedriver-launcher.sh OneDrive
-mount
-/usr/bin/onedriver-launcher.sh OneDrive
-umount /home/bkmo/OneDrive
-/usr/bin/onedriver-launcher.sh OneDrive
-systemctl --user list-units -t service
-umount --help
-/usr/bin/onedriver-launcher.sh OneDrive
-sudo /usr/bin/onedriver-launcher.sh OneDrive
-/usr/bin/onedriver-launcher.sh OneDrive
-systemctl --user list-units -t service
-systemctl --daemon reload
-systemctl --user daemon-reload
-systemctl --user list-units -t service
-systemctl --user status onedriver@-home-bkmo-OneDrive.service
-systemctl --user list-units -t service
-mount
-orphls
-orphrm
-pacnew
-systemctl status duckdns.service
-systemctl status duckdns.timer
-systemctl status --user onedriver@.service
-systemctl --user status onedriver@-home-bkmo-OneDrive.service
-dolphin -q
-sudo update-grub
-systemctl --user status onedriver@-home-bkmo-OneDrive.service
-systemctl list-units -t service
-sudo update-grub
-yay
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd ...
-cd ..
-cd..
-yay
-pacman
-source .bashrc
-pacup
-aurup
-source .bashrc
-aurup
-yay -h
-pacup
-pacman -Syu
-orphls
-source .bashrc
-next
-pacman -Qkk base-devel
-pacman -Qkk base
-pacman -Qkk base-
-orphls
-aurup
-orphls
-yay
-sudo cryptsetup luksDump /dev/nvme0n1p6
-orphls
-yay
-visudo
-sudo visudo
-yay
-sudo update-grub
-yay
-EDITOR=nano visudo
-sudo EDITOR=nano visudo
-EDITOR=nano visudo
-sudo EDITOR=nano visudo
-usermod --aG wheel bkmo
-usermod -aG wheel bkmo
-sudo usermod -aG wheel bkmo
-groups bkmo
-cat /etc/group
-MOZ_LOG="PlatformDecoderModule:5" librewolf
-pacnew
-source .bashrc
-pacnewroot
-yay
-lsusb
-yay
-validity-sensors-tools
-python3 factory-reset.py
-factory-reset
-factory-reset.py
-validity-sensors-tools --help
-validity-sensors-tools -t
-sudo validity-sensors-tools.led-test
-validity-sensors-tools -t led-dance
-sudo validity-sensors-tools -t led-dance
-sudo validity-sensors-tools -t initializer
-yay
-validity-sensors-tools --help
-sudo validity-sensors-tools -t led-dance
-lsblk
-grep microcode /proc/cpuinfo
-bsdtar
-cat /etc/fstab
-pacnewroot
-exit
-orphls
-orphrm
-pacnew
-kgpg
-kgpg --help
-kgpg -k
-kgpg --help
-next
-sytemctl stop nextdns.service
-systemctl stop nextdns.service
-ping mongolo.allsync.com
-ping www.allsync.com
-ping
-ipctl
-netctl
-ipconfig
-ipview
-sudo ipview
-systemctl start nextdns.service
-systemctl stop nextdns.service
-systemctl start nextdns.service
-uname -r
-yay
-next
-orphls
-pacnew
-pacnewroot
-dmesg
-sudo dmesg
-journalctl
-uname -r
-orphls
-checkrebuild
-checkrebuild -v
-iwd
-systemctl --user list-units -t service
-systemctl list-units -t service
-systemctl list-unit-files
-iwconfig
-systemctl list-unit-files
-journalctl
-journalctl -p 3 -xb
-pacnew
-orphls
-systemctl status duckdns.service
-systemctl status duckdns.timer
-pacnew
-cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors
-pacnew
-sh -c "$(curl -sL https://nextdns.io/install)"
-source .bashrc
-makepkg
-yay
-pamac
-pacnew
-yay
-yay -h
-yay -S update-notifier
-update-notifier
-update-checker
-kwriteconfig5 --file startkderc --group General --key systemdBoot true
-systemctl --user status plasma-plasmashell.service
-ps -A
-yay
-kwriteconfig5 --file startkderc --group General --key systemdBoot false
-systemctl --user status plasma-plasmashell.service
-sh -c "$(curl -sL https://nextdns.io/install)"
-update-notifier
-yay
-makepackage
-makepkg
-pacman
-pacman -S 4kvideodownloader-4.16.2.4280-1-x86_64.pkg.tar.zst
-sudo pacman -S 4kvideodownloader-4.16.2.4280-1-x86_64.pkg.tar.zst
-sudo pacman -U 4kvideodownloader-4.16.2.4280-1-x86_64.pkg.tar.zst
-4kvideodownloader
-exit
-yay -S 4kvideodownloader
-4kvideodownloader
-yay -S octopi
-update-notifier
-yay
-update-notifier
-yay
-timeshift-autosnap
-yay
-yay -S timeshift
-pacman
-orphrm
-yay -S timeshift
-yay
-yay -S timeshift
-yay
-yay -S timeshift
-orphrm
-pacnew
-update-notifier
-parted -l
-ps -A
-ps -A | grep dd
-sudo watch -n 30 'pkill -USR1 -n -x dd'
-ps -A | grep dd
-sudo watch -n 30 'pkill -USR1 8515
-sudo watch -n 30 'pkill -USR1 8515'
-sudo pkill -USR1 8515
-sudo pkill -USR1 5396
-ps -A | grep dd
-exit
-sudo watch -n 30 'pkill -USR1 8515'
-sudo su
-sudo watch -n 30 'pkill -USR1 -n -x dd'
-parted -l
-sudo su
-update-notifier
-yay
-update-notifier
-update
-update-notifier
-yay
-makepkg
-update-notifier
-sudo pacman -S update-notifier-0.7.7-4-any.pkg.tar.zst
-sudo pacman -u update-notifier-0.7.7-4-any.pkg.tar.zst
-sudo pacman -U update-notifier-0.7.7-4-any.pkg.tar.zst
-update-notifier
-notify-send
-notify-send test
-update-notifier
-yay
-update-checker
-notify-send -h
-notify-send --help
-octopi-notifier
-yay -S octopi-notifier
-makepkg
-sudo pacman -U 4kvideodownloader-4.16.2.4280-1-x86_64.pkg.tar.zst
-sudo pacman -U 4kvideodownloader-4.16.3.4290-1-x86_64.pkg.tar.zst
-4kvideodownloader
-sudo pacman -R 4kvideodownloader
-yay -S 4kvideodownloader
-4kvideodownloader
-yay -v
-yay -h
-yay -V
-yay -S paru
-yay
-yay -S insync-dolphin
-pacnew
-orphls
-orphrm
-clear
-/bin/bash -c "yay -S --aur octopi-notifier-frameworks;echo 'Press any key to continue...'"
-ps -A
-octopi-notifier
-octopi-notifier -h
-sudo /usr/lib/octopi/octphelper -ts
-pacnew
-orphls
-MOZ_ENABLE_WAYLAND=1 librewolf
-set -x MOZ_ENABLE_WAYLAND 1
-source .bashrc
-printenv
-export MOZ_ENABLE_WAYLAND=1
-MOZ_ENABLE_WAYLAND=1 librewolf
-source .bashrc
-export MOZ_ENABLE_WAYLAND=0
-orphls
-pacnew
-yay
-pacnew
-xdpyinfo | grep resolution
-sudo update-grub
-pacnew
-sudo update-grub
-pacnew
-orphls
-sudo update-grub
-systemctl kill --kill-who=main --signal=SIGUSR2 systemd-journald.service
-orphls
-pacnew
-pacman -Qtd
-systemctl status duckdns.service
-sh -c "$(curl -sL https://nextdns.io/install)"
-sudo pacman -Rs $(pacman -Qqdt)
-sudo pacman -Qqdt
-pacman -h
-pacman -Q
-sudo paccache -ruk0
-sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
-yay
-pacnew
-pacnewroot
-yay
-pacnew
-sudo update-grub
-mount
-pacnew
-sudo paccache -ruk0
-orphls
-orphrm
-/bin/bash -c "yay -S libfprint-vfs009x-git ;echo 'Press any key to continue...'"
-clear
-/bin/bash -c "yay -S --aur downgrade;echo 'Press any key to continue...'"
-downgrade
-sudo downgrade
-sudo downgrade fprintd
-yay
-sh -c "$(curl -sL https://nextdns.io/install)"
-yay -S pamac-aur
-lsusb
-sh -c "$(curl -sL https://nextdns.io/install)"
-sudo downgrade fprintd
-yay
-pacman
-pacman -h
-pacman -S
-sudo pacman -S
-sudo pacman -Sy
-sudo pacman-key -r 3DEA62513C8035383A245A12E5786B42E8E5D565
-sudo pacman-key --lsign-key 3DEA62513C8035383A245A12E5786B42E8E5D565
-sudo pacman -Syu
-yay
-sudo pacman -Sy
-curl -s 'https://download.opensuse.org/repositories/home:/ungoogled_chromium/Arch/x86_64/home_ungoogled_chromium_Arch.key' | sudo pacman-key -a -
-echo '
-[home_ungoogled_chromium_Arch]
-SigLevel = Required TrustAll
-Server = https://download.opensuse.org/repositories/home:/ungoogled_chromium/Arch/$arch' | sudo tee --append /etc/pacman.conf
-sudo pacman -Sy
-pacnew
-orphls
-yay
-pacnewroot
-systemctl status duckdns.timer
-sh -c "$(curl -sL https://nextdns.io/install)"
-pacnewroot
-sudo pacman -Sy
-yay
-pacnewroot
-grep mkinitcpio /usr/share/libalpm/hooks/*
-cat /usr/share/libalpm/hooks/*
-yay
-sh -c "$(curl -sL https://nextdns.io/install)"
-pacnewroot
-yay
-pacnewroot
-yay
-pacnewroot
-sh -c "$(curl -sL https://nextdns.io/install)"
-systemctl status duckdns.timer
-systemctl start duckdns.service
-systemctl status duckdns.timer
-systemctl status duckdns.service
-systemctl status fstrim.service
-systemctl status fstrim.timer
-scrub
-orphls
-sudo paccache -ruk0
-killall plasmashell
-plasmashell &
-sudo blkid -o device | grep luks
-chsh -l
-killall plasmashell
-plasmashell &
-killall plasmashell
-plasmashell &
-orphls
-plasmashell &
-repo-elephant
-.bash-aliases
-chsh -l
-systemctl status fstrim.timer
-sh -c "$(curl -sL https://nextdns.io/install)"
-systemctl enable nextdns.service
-sh -c "$(curl -sL https://nextdns.io/install)"
-systemctl stop  nextdns.service
-systemctl start nextdns.service
-sh -c "$(curl -sL https://nextdns.io/install)"
-nextdns
-nextdns status
-systemctl enable nextdns.service
-systemctl start nextdns.service
-systemctl status nextdns.service
-nextdns status
-nextdns install
-nextdns
-nextdns config
-nextdns status
-systemctl status nextdns.service
-nextdns config
-systemctl status nextdns.service
-systemctl start nextdns.service
-nextdns install
-systemctl start nextdns.service
-nextdns
-nextdns uninstall
-nextdns
-nextdns install
-find nextdns
-locate nextdns
-nextdns deactivate
-sh -c "$(curl -sL https://nextdns.io/install)"
-nextdns status
-sh -c "$(curl -sL https://nextdns.io/install)"
-nextdns status
-systemctl status nextdns.service
-nextdns
-nextdns status
-systemctl status nextdns.service
-nextdns config
-nextdns status
-nextdns config
-sh -c "$(curl -sL https://nextdns.io/install)"
-nextdns status
-systemctl status nextdns.service
-nextdns status
-nextdns
-nextdns version
-pacman -Qii linux-headers
-systemctl status reflector.service
-systemctl status reflector.timer
-systemctl status powerline-daemon.service
-systemctl user
-systemctl
-systemctl --user status powerline-daemon.service
-ps -A
-ps -A | grep powerline
-orphls
-systemctl status reflector.timer
-systemctl status nextdns.service
-systemctl --user status powerline-daemon.service
-nextdns status
-systemctl status fstrim.timer
-systemctl status duckdns.timer
-killall plasmashell && plasmashell &
-sudo paccache -ruk0
-pacnew
-pacnewroot
-lscpu
-systemctl status reflector.timer
-nextdns status
-orphls
-pacnewroot
-systemctl status reflector.timer
-killall plasmashell && plasmashell &
-systemctl status reflector.timer
-orphls
-sudo paccache -ruk0
-sudo hwinfo --framebuffer
-hwinfo --framebuffer
-orphls
-orphrm
-ournalctl --disk-usage
-journalctl --disk-usage
-sudo journalctl --rotate --vacuum-size=50M
-sudo btrfs balance start -dusage=66 /
-sudo btrfs balance start -dusage=66 /home
-sudo btrfs balance start /
-sudo btrfs balance start /home
-systemctl status reflector.timer
-systemctl status reflector.service
-systemctl start reflector.service
-sudo pacman -Syu
-pacnewroot
-orphls
-sudo paccache -ruk0
-yay
-systemctl start reflector.service
-killall plasmashell && plasmashell &
-pacnewroot
-systemctl status reflector.timer
-orphls
-sudo paccache -ruk0
-orphrm
-systemctl status duckdns.timer
-nextdns status
-sh -c "$(curl -sL https://nextdns.io/install)"
-systemctl status fstrim.timer
-systemctl status reflector.timer
-systemctl status fstrim.timer
-sudo paccache -ruk0
-orphrm
-orphls
-systemctl status fstrim.timer
-systemctl status reflector.timer
-systemctl start reflector.service
-systemctl start fstrim.service
-fastfetch
-flashfetch
-neofetch
-flashfetch
-flashfetch --load-config
-flashfetch --load-config neofetch
-flashfetch --help
-fastfetch --help
-fastfetch --load-config
-fastfetch --load-config neofetch
-fastfetch --load-config paleofetch
-flashfetch
-flashfetch --load-config neofetch
-fastfetch --load-config btw
-fastfetch --load-config hardware
-fastfetch --load-config software
-fastfetch --load-config paleofetch
-killall plasmashell && plasmashell &
-orphls
-sh -c "$(curl -sL https://nextdns.io/install)"
-nextdns status
-orphls
-killall plasmashell && plasmashell &
-systemctl status reflector.timer
-sudo paccache -ruk0
-sudo btrfs balance start -dusage=66 /
-sudo btrfs balance start -dusage=66 /home
-pacnewroot
-systemctl status duckdns.timer
-sudo pacman -Rs $(pacman -Qqdt)
-gpg --list-keys 2954CC8585E27A3F
-gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 2954CC8585E27A3F
-pacnewroot
-nextdns status
-sh -c "$(curl -sL https://nextdns.io/install)"
-pacnewroot
-nextdns stop
-nextdns start
-sudo pacman -Rs $(pacman -Qqdt)
-orphls
-pacnewroot
-nextdns stop
-nextdns start
-killall plasmashell && plasmashell &
-sudo update-grub
-sudo hwinfo --framebuffer
-hwinfo --framebuffer
-sudo hwinfo --framebuffer | more
-sudo update-grub
-pacnewroot
-nextdns stop
-nextdns start
-nextdns stop
-nextdns start
-nextdns stop
-nextdns start
-nextdns stop
-nextdns start
-systemctl start reflector.service
-pacnewroot
-killall plasmashell && plasmashell &
-pacnewroot
-yay
-pacnewroot
-orphls
-orphrm
-systemctl stop tlp.service
-systemctl disable tlp.service
-systemctl statuo auto-cpufreq
-systemctl status auto-cpufreq
-systemctl stop auto-cpufreq.service
-systemctl start auto-cpufreq.service
-systemctl status auto-cpufreq
-killall plasmashell && plasmashell &
-pacman -Syy
-sudo pacman -Syy
-nextdns stop
-nextdns start
-killall plasmashell && plasmashell &
-nextdns stop
-nextdns start
-orphls
-pacnewroot
-sudo pacman -Rs $(pacman -Qqdt)
-sudo hwinfo --framebuffer
-systemctl status duckdns.timer
-systemctl status fstrim.timer
-sudo btrfs balance start -dusage=66 /
-pacnewroot
-nextdns stop
-nextdns start
-nextdns stop
-nextdns start
-nextdns stop
-nextdns start
-pacnewroot
-sudo pacman -Rs $(pacman -Qqdt)
-orphls
-yay
-pacman -Q | wc -l
-yay
-killall plasmashell && plasmashell &
-plasmashell &
-plasmashell &&
-plasmashell &
-orphls
-pacnewroot
-nextdns stop
-nextdns start
-pacnewroot
-orphls
-nextdns status
-orphls
-pacnewroot
-sudo btrfs balance start -dusage=66 /
-systemctl status fstrim.timer
-yay
-pacnewroot
-killall plasmashell && plasmashell &
-kquitapp5 plasmashell kstart5 plasmashell > /dev/null 2>&1
-kstart5 plasmashell
-source .bashrc
-restartplasma
-next
-bashrc
-source .bashrc
-restartplasma
-ebrc
-next
-$GTK_USE_PORTAL
-GTK_USE_PORTAL
-printenv
-nextdns stop
-nextdns start
-efstab
-fstab
-next
-pacnewroot
-systemctl status fstrim.timer
-sudo btrfs balance start -dusage=66 /
-systemctl status duckdns.timer
-nextdns stop
-nextdns start
-nextdns stop
-nextdns start
-nextdns stop
-restartplasma
-nextdns status
-next
-restartplasma
-source .bashrc
-source environment
-sudo ln -fs /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
-fc-cache --force
-cat "/etc/fonts/conf.d/11-lcdfilter-default.conf"
-nextdns status
-next
-pamac
-yay
-pacnewroot
-sudo btrfs balance start -dusage=66 /
-printenv
-grub
-sudo update-grub
-pacman -Qo btrfs-progs
-pactree -r btrfs-progs
-next
-yay
-sudo btrfs balance start -dusage=66 /
-sudo btrfs balance start -dusage=66 /home
-cd Documents
-ls
-ls -l
-rm -r caponord
-btrfs-check /
-btrfs check /
-btrfs check @
-cat /etc/fstab
-btrfs check /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
-btrfs check /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e --force
-btrfs check --force  /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
-sudo btrfs check --force  /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
-sudo btrfs balance start -dusage=66 /home
-sudo btrfs balance start -dusage=66 /
-btrfs scrub /
-btrfs scrub
-btrfs scrub @
-systrmctrl
-systemctl status btrfs-scrub@home
-systemctl start btrfs-scrub@home
-systemctl start btrfs-scrub@
-systemctl start btrfs-scrub@-
-ln -s ~/.mozilla/native-messaging-hosts ~/.librewolf/native-messaging-hosts
-sudo ln -s /usr/lib/mozilla/native-messaging-hosts /usr/lib/librewolf/native-messaging-hosts
-systemctl start reflector.service
-pacnewroot
-restartplasma
-sudo btrfs balance start -dusage=66 /
-sudo btrfs balance start -dusage=66 /home
-pacnewroot
-systemctl start btrfs-scrub@-
-systemctl start btrfs-scrub@home
-sudo pacman -Rs $(pacman -Qqdt)
-printenv
-intel_gpu_top
-sudo intel_gpu_top
-sudo pacman -Rs $(pacman -Qqdt)
-sh -c "$(curl -sL https://nextdns.io/install)"
-orphls
-sudo paccache -ruk0
-orphls
-nextdns stop
-nextdns start
-udevadm control --reload-rules
-sudo udevadm control --reload-rules
-nextdns stop
-micronucleus
-yay
-micronucleus
-sudo udevadm control --reload-rules
-nextdns stop
-micronucleus
-micronucleus micronucleus-1.11-entry-jumper-pb0-upgrade.hex
-sudo paccache -ruk0
-orphls
-sudo pacman -Rs $(pacman -Qqdt)
-sh -c "$(curl -sL https://nextdns.io/install)"
-nextdns stop
-nextdns start
-sh -c "$(curl -sL https://nextdns.io/install)"
-micronucleus micronucleus-1.11-entry-jumper-pb0-upgrade.hex
-sudo update-grub
-pacnewroot
-lspci
-lsusb
-sudo dmesg
-sudo dmesg | grep BTRFS
-pacnewroot
-sh -c "$(curl -sL https://nextdns.io/install)"
-orphls
-orphls\\
-orphrm
-sudo paccache -ruk0
-sudo pacman -Rs $(pacman -Qqdt)
-nextdns stop
-sudo pacman -Rs $(pacman -Qqdt)
-sudo paccache -ruk0
+: 1664307364:0;
+: 1664307364:0;pacman -Sl endeavouros | grep '\[installed'
+: 1664307364:0;pacman -Sl endeavouros | grep '\[installed' | cut -d' ' -f2 | xargs -o pacman -R
+: 1664307364:0;sudo pacman -Sl endeavouros | grep '\[installed' | cut -d' ' -f2 | xargs -o pacman -R
+: 1664307364:0;sudo pacman -Sl endeavouros | grep '\[installed' | cut -d' ' -f2 | xargs -o sudo pacman -R
+: 1664307364:0;sudo rm endeavouros.db
+: 1664307364:0;sudo rm multilib.db
+: 1664307364:0;LANG=C pacman -Sl multilib | grep installed | cut -d ' ' -f 2
+: 1664307364:0;sudo Zoiper_3.3_Linux_Free_64Bit.run
+: 1664307364:0;sudo ./Zoiper_3.3_Linux_Free_64Bit.run
+: 1664307364:0;hhhh
+: 1664307364:0;sudo timeshift-autosnap
+: 1664307364:0;reflector --list-countries
+: 1664307364:0;systemctl enable reflector.timer
+: 1664307364:0;systemctl enable change-machine-id.timer
+: 1664307364:0;systemctl enable btrfs-scrub@home.timer
+: 1664307364:0;systemctl enable fstrim.timer
+: 1664307364:0;swapon --show
+: 1664307364:0;systemctl enable systemd.swap
+: 1664307364:0;systemctl enable systemd-swap.service
+: 1664307364:0;systemctl enable --now systemd-swap.service
+: 1664307364:0;systemctl list -units
+: 1664307364:0;systemctl stop lvm2-monitor.service
+: 1664307364:0;systemctl stop avahi-daemon.service
+: 1664307364:0;systemctl disable avahi-daemon.service
+: 1664307364:0;systemctl disable avahi-daemon.socket
+: 1664307364:0;systemctl reload reflector.timer
+: 1664307364:0;systemctl disable lvm2-monitor.service
+: 1664307364:0;systemctl mask lvm2-monitor.service
+: 1664307364:0;systemctl mask avahi-daemon.service
+: 1664307364:0;sudo systemctl enable --now cups.service
+: 1664307364:0;sudo systemctl enable --now cups.socket
+: 1664307364:0;sudo systemctl enable --now cups.path
+: 1664307364:0;sudo systemctl mask systemd-fsck-root.service
+: 1664307364:0;systemctl --user status pipewire
+: 1664307364:0;systemctl --user status pipewire-pulse
+: 1664307364:0;dmesg | grep blue
+: 1664307364:0;sudo dmesg | grep blue
+: 1664307364:0;systemctl start bluetooth.service
+: 1664307364:0;systemctl enable bluetooth.service
+: 1664307364:0;export LIBVA_DRIVER_NAME=iHD
+: 1664307364:0;sudo cp -r /home/$USER/.config/gtk-3.0/* /root/.config/gtk-3.0
+: 1664307364:0;nexport $(dbus-launch) systemsettings5
+: 1664307364:0;export $(dbus-launch) systemsettings5
+: 1664307364:0;grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+: 1664307364:0;grub-install
+: 1664307364:0;sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch
+: 1664307364:0;sudo mkinitcpio -p linux
+: 1664307364:0;./install.sh
+: 1664307364:0;/usr/local/bin/change-machine-id.sh
+: 1664307364:0;sudo /usr/local/bin/change-machine-id.sh
+: 1664307364:0;systemctl start chang-machine-id.service
+: 1664307364:0;systemctl start change-machine-id.service
+: 1664307364:0;sysctl -w fs.suid_dumpable=0
+: 1664307364:0;sudo sysctl -w fs.suid_dumpable=0
+: 1664307364:0;echo "fs.suid_dumpable=0" >> /etc/sysctl.conf
+: 1664307364:0;sudo echo "fs.suid_dumpable=0" >> /etc/sysctl.conf
+: 1664307364:0;sudo sysctl -p
+: 1664307364:0;sudo btrfs filesystem show | awk '/ path /{print $NF}'
+: 1664307364:0;sudo btrfs subvolume list /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
+: 1664307364:0;btrfs filesystem show | awk '/ path /{print $NF}'
+: 1664307364:0;sudo btrfs subvolume delete @swap
+: 1664307364:0;sudo btrfs subvolume delete /@swap
+: 1664307364:0;sudo mount /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e -o subvolid=5 /mnt
+: 1664307364:0;sudo btrfs subvolume delete /mnt/@swap
+: 1664307364:0;sudo umount /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e -o subvolid=5 /mnt
+: 1664307364:0;sudo umount /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e  subvolid=5 /mnt
+: 1664307364:0;swapon -show
+: 1664307364:0;sudo cp -r /home/bkmo/.config/gtk-3.0/* /root/.config/gtk-3.0
+: 1664307364:0;cmake
+: 1664307364:0;cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+: 1664307364:0;acman -S   gcc   make   cmake   extra-cmake-modules   qt5-base   qt5-graphicaleffects   qt5-svg   qt5-quickcontrols   qt5-quickcontrols2
+: 1664307364:0;pacman -S   gcc   make   cmake   extra-cmake-modules   qt5-base   qt5-graphicaleffects   qt5-svg   qt5-quickcontrols   qt5-quickcontrols2
+: 1664307364:0;sudo pacman -S   gcc   make   cmake   extra-cmake-modules   qt5-base   qt5-graphicaleffects   qt5-svg   qt5-quickcontrols   qt5-quickcontrols2
+: 1664307364:0;sudo pacman -S  extra-cmake-modules   qt5-base   qt5-graphicaleffects   qt5-svg   qt5-quickcontrols   qt5-quickcontrols2
+: 1664307364:0;cmake . -DCMAKE_INSTALL_PREFIX=/usr
+: 1664307364:0;make -j$(nproc)
+: 1664307364:0;./build-arch.sh
+: 1664307364:0;sudo pacman -S  extra-cmake-modules
+: 1664307364:0;journlctl
+: 1664307364:0;balooctl disable && balooctl purge
+: 1664307364:0;systemctl --failed
+: 1664307364:0;tlp-stat
+: 1664307364:0;sudo tlp-stat
+: 1664307364:0;sudo systemd-analyze blame
+: 1664307364:0;systemctl list-units --type=mount
+: 1664307364:0;mount | grep timeshift
+: 1664307364:0;space
+: 1664307364:0;diskspace
+: 1664307364:0;systemctl list-units --type=service
+: 1664307364:0;systemctl enable btrfs-scrub@.timer
+: 1664307364:0;systemctl start  btrfs-scrub@.timer
+: 1664307364:0;systemctl status btrfs-scrub@.timer
+: 1664307364:0;systemctl list-units --type=timer
+: 1664307364:0;systemctl start  btrfs-scrub@-.timer
+: 1664307364:0;systemctl enable  btrfs-scrub@-.timer
+: 1664307364:0;systemctl status btrfs-scrub@-.timer
+: 1664307364:0;btrfs balance start /
+: 1664307364:0;dmesg | grep crc32c
+: 1664307364:0;sudo dmesg | grep crc32c
+: 1664307364:0;systemctl edit --full grub-btrfs.path
+: 1664307364:0;systemctl enable grub-btrfs.path
+: 1664307364:0;locate timeshift-launcher
+: 1664307364:0;systemctl start grub-btrfs.path
+: 1664307364:0;systemctl cat grub-btrfs.path
+: 1664307364:0;systemctl stop grub-btrfs.path
+: 1664307364:0;systemctl disable grub-btrfs.path
+: 1664307364:0;systemctl enable limit-timeshift-snapshots-update-grub.service
+: 1664307364:0;systemctl start limit-timeshift-snapshots-update-grub.service
+: 1664307364:0;systemctl restart limit-timeshift-snapshots-update-grub.service
+: 1664307364:0;systemctl stop limit-timeshift-snapshots-update-grub.service
+: 1664307364:0;systemctl disable limit-timeshift-snapshots-update-grub.service
+: 1664307364:0;systemctl enable timeshift-snapshots-update-grub.service
+: 1664307364:0;systemctl start timeshift-snapshots-update-grub.service
+: 1664307364:0;systemctl list-units -t path
+: 1664307364:0;systemctl list-units -t timer
+: 1664307364:0;grep --extended-regexp "\.pac(new|save)" /var/log/pacman.log
+: 1664307364:0;find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null
+: 1664307364:0;source bashrc
+: 1664307364:0;locate -e --regex "\.pac(new|save|orig)$"
+: 1664307364:0;updatedb
+: 1664307364:0;sudo updatedb
+: 1664307364:0;locate --existing --regex "\.pac(new|save)$"
+: 1664307364:0;lsmod | grep xhci_pci
+: 1664307364:0;lspci -vv -s 03:0.0
+: 1664307364:0;lspci -vv
+: 1664307364:0;find /home/bkmo/ -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null
+: 1664307364:0;find /home/bkmo -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null
+: 1664307364:0;find / -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null
+: 1664307364:0;sudo pacreport --unowned-files
+: 1664307364:0;sudo pacman -Qii | awk '/^MODIFIED/ {print $2}'
+: 1664307364:0;cryptsetup luksDump /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
+: 1664307364:0;sudo cryptsetup luksDump /dev/luks-550ec923-9508-4279-837b-5184acd1429e
+: 1664307364:0;sudo cryptsetup luksDump /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
+: 1664307364:0;sudo cryptsetup luksDump /dev/nvme0n1p6/luks-550ec923-9508-4279-837b-5184acd1429e
+: 1664307364:0;cryptsetup --dump-master-key luksDump /dev/nvme0n1p6
+: 1664307364:0;sudo cryptsetup --dump-master-key luksDump /dev/nvme0n1p6
+: 1664307364:0;cryptsetup-reencrypt --keep-key --iter-time 1000 /dev/nvme0n1p6
+: 1664307364:0;sudo cryptsetup-reencrypt --keep-key --iter-time 1000 /dev/nvme0n1p6
+: 1664307364:0;sudo cryptsetup LuksConvertKey
+: 1664307364:0;sudo cryptsetup luksConvertKey
+: 1664307364:0;cryptsetup -v luksChangeKey --iter-time 1000 /dev/nvme0n1p6
+: 1664307364:0;sudo cryptsetup -v luksChangeKey --iter-time 1000 /dev/nvme0n1p6
+: 1664307364:0;sudo cryptsetup -v luksAddKey --iter-time 1000 /dev/nvme0n1p6 -S 0
+: 1664307364:0;sudo cryptsetup -v luksAddKey --iter-time 600 /dev/nvme0n1p6 -S 0
+: 1664307364:0;sudo cryptsetup -v luksChangeKey --iter-time 300 /dev/nvme0n1p6
+: 1664307364:0;sudo cryptsetup -v luksAddKey --iter-time 300 /dev/nvme0n1p6 -S 0
+: 1664307364:0;sudo cryptsetup -v luksKillSlot /dev/nvme0n1p6 2
+: 1664307364:0;systemctl status btrfs-scrub@home.timer
+: 1664307364:0;systemd daemon reload
+: 1664307364:0;systemctl list-units -t mount
+: 1664307364:0;seahorse
+: 1664307364:0;sudo timeshift --check --verbose
+: 1664307364:0;sudo dmesg | grep realtek
+: 1664307364:0;sudo dmesg | grep r8168
+: 1664307364:0;systemctl list-units -t lvm2
+: 1664307364:0;systemctl list-units
+: 1664307364:0;systemctl mask lvm2-lvmpolld.socket
+: 1664307364:0;systemctl stop systemd-swap.service
+: 1664307364:0;systemctl start systemd-swap.service
+: 1664307364:0;systemctl status systemd-swap.service
+: 1664307364:0;noip2 -C
+: 1664307364:0;sudo noip2 -C
+: 1664307364:0;noip2
+: 1664307364:0;sudo noip2
+: 1664307364:0;noip2 -c ~/.local/no-ip2.conf
+: 1664307364:0;find noip2
+: 1664307364:0;locate noip2
+: 1664307364:0;duckdns
+: 1664307364:0;duckdns -help
+: 1664307364:0;systemctl ststus duckdns.timer
+: 1664307364:0;systemctl enable duckdns.timer
+: 1664307364:0;systemctl start duckdns.timer
+: 1664307364:0;sudo killall noip2
+: 1664307364:0;chromium
+: 1664307364:0;dig bkmo98.duckdns.org
+: 1664307364:0;dig bkmo98.duckdns.org TEXT
+: 1664307364:0;du --human-readable --summarize .cache/* | sort --human-numeric-sort --reverse
+: 1664307364:0;pacorph
+: 1664307364:0;auto-cpufreq --log
+: 1664307364:0;systemctl enable --now auto-cpufreq
+: 1664307364:0;auto-cpufreq --stats
+: 1664307364:0;onedrive
+: 1664307364:0;onedrive --help
+: 1664307364:0;systemctl --user status onedriver@.service
+: 1664307364:0;systemd-escape --template onedriver@.service
+: 1664307364:0;systemctl --user enable onedriver@-home-bkmo-OneDrive.service
+: 1664307364:0;systemctl --user start onedriver@-home-bkmo-OneDrive.service
+: 1664307364:0;systemctl --user disable onedriver@-home-bkmo-OneDrive.service
+: 1664307364:0;systemctl --user stop onedriver@-home-bkmo-OneDrive.service
+: 1664307364:0;mount --help
+: 1664307364:0;mountpoint
+: 1664307364:0;/usr/bin/onedriver-launcher-startup.sh OneDrive
+: 1664307364:0;umount /home/bkmo/OneDrive
+: 1664307364:0;umount --help
+: 1664307364:0;sudo /usr/bin/onedriver-launcher.sh OneDrive
+: 1664307364:0;/usr/bin/onedriver-launcher.sh OneDrive
+: 1664307364:0;systemctl --daemon reload
+: 1664307364:0;systemctl --user daemon-reload
+: 1664307364:0;systemctl status --user onedriver@.service
+: 1664307364:0;dolphin -q
+: 1664307364:0;systemctl --user status onedriver@-home-bkmo-OneDrive.service
+: 1664307364:0;git clone https://aur.archlinux.org/yay.git
+: 1664307364:0;cd yay
+: 1664307364:0;makepkg -si
+: 1664307364:0;cd ...
+: 1664307364:0;pacman -Qkk base-devel
+: 1664307364:0;pacman -Qkk base
+: 1664307364:0;pacman -Qkk base-
+: 1664307364:0;sudo cryptsetup luksDump /dev/nvme0n1p6
+: 1664307364:0;EDITOR=nano visudo
+: 1664307364:0;sudo EDITOR=nano visudo
+: 1664307364:0;usermod --aG wheel bkmo
+: 1664307364:0;usermod -aG wheel bkmo
+: 1664307364:0;sudo usermod -aG wheel bkmo
+: 1664307364:0;groups bkmo
+: 1664307364:0;cat /etc/group
+: 1664307364:0;MOZ_LOG="PlatformDecoderModule:5" librewolf
+: 1664307364:0;validity-sensors-tools
+: 1664307364:0;python3 factory-reset.py
+: 1664307364:0;factory-reset
+: 1664307364:0;factory-reset.py
+: 1664307364:0;validity-sensors-tools -t
+: 1664307364:0;sudo validity-sensors-tools.led-test
+: 1664307364:0;validity-sensors-tools -t led-dance
+: 1664307364:0;sudo validity-sensors-tools -t initializer
+: 1664307364:0;validity-sensors-tools --help
+: 1664307364:0;sudo validity-sensors-tools -t led-dance
+: 1664307364:0;grep microcode /proc/cpuinfo
+: 1664307364:0;bsdtar
+: 1664307364:0;kgpg
+: 1664307364:0;kgpg -k
+: 1664307364:0;kgpg --help
+: 1664307364:0;sytemctl stop nextdns.service
+: 1664307364:0;ping mongolo.allsync.com
+: 1664307364:0;ping www.allsync.com
+: 1664307364:0;ping
+: 1664307364:0;ipctl
+: 1664307364:0;ipconfig
+: 1664307364:0;uname -r
+: 1664307364:0;checkrebuild
+: 1664307364:0;checkrebuild -v
+: 1664307364:0;iwd
+: 1664307364:0;systemctl --user list-units -t service
+: 1664307364:0;systemctl list-units -t service
+: 1664307364:0;iwconfig
+: 1664307364:0;systemctl list-unit-files
+: 1664307364:0;journalctl -p 3 -xb
+: 1664307364:0;cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors
+: 1664307364:0;yay -S update-notifier
+: 1664307364:0;kwriteconfig5 --file startkderc --group General --key systemdBoot false
+: 1664307364:0;systemctl --user status plasma-plasmashell.service
+: 1664307364:0;makepackage
+: 1664307364:0;pacman -S 4kvideodownloader-4.16.2.4280-1-x86_64.pkg.tar.zst
+: 1664307364:0;sudo pacman -S 4kvideodownloader-4.16.2.4280-1-x86_64.pkg.tar.zst
+: 1664307364:0;yay -S octopi
+: 1664307364:0;timeshift-autosnap
+: 1664307364:0;yay -S timeshift
+: 1664307364:0;sudo watch -n 30 'pkill -USR1 8515
+: 1664307364:0;sudo pkill -USR1 8515
+: 1664307364:0;sudo pkill -USR1 5396
+: 1664307364:0;ps -A | grep dd
+: 1664307364:0;sudo watch -n 30 'pkill -USR1 8515'
+: 1664307364:0;sudo watch -n 30 'pkill -USR1 -n -x dd'
+: 1664307364:0;parted -l
+: 1664307364:0;update
+: 1664307364:0;sudo pacman -S update-notifier-0.7.7-4-any.pkg.tar.zst
+: 1664307364:0;sudo pacman -u update-notifier-0.7.7-4-any.pkg.tar.zst
+: 1664307364:0;sudo pacman -U update-notifier-0.7.7-4-any.pkg.tar.zst
+: 1664307364:0;notify-send
+: 1664307364:0;notify-send test
+: 1664307364:0;update-notifier
+: 1664307364:0;update-checker
+: 1664307364:0;notify-send -h
+: 1664307364:0;notify-send --help
+: 1664307364:0;yay -S octopi-notifier
+: 1664307364:0;sudo pacman -U 4kvideodownloader-4.16.2.4280-1-x86_64.pkg.tar.zst
+: 1664307364:0;sudo pacman -U 4kvideodownloader-4.16.3.4290-1-x86_64.pkg.tar.zst
+: 1664307364:0;sudo pacman -R 4kvideodownloader
+: 1664307364:0;yay -S 4kvideodownloader
+: 1664307364:0;yay -v
+: 1664307364:0;yay -h
+: 1664307364:0;yay -V
+: 1664307364:0;yay -S paru
+: 1664307364:0;yay -S insync-dolphin
+: 1664307364:0;/bin/bash -c "yay -S --aur octopi-notifier-frameworks;echo 'Press any key to continue...'"
+: 1664307364:0;octopi-notifier
+: 1664307364:0;octopi-notifier -h
+: 1664307364:0;sudo /usr/lib/octopi/octphelper -ts
+: 1664307364:0;set -x MOZ_ENABLE_WAYLAND 1
+: 1664307364:0;export MOZ_ENABLE_WAYLAND=1
+: 1664307364:0;MOZ_ENABLE_WAYLAND=1 librewolf
+: 1664307364:0;export MOZ_ENABLE_WAYLAND=0
+: 1664307364:0;xdpyinfo | grep resolution
+: 1664307364:0;systemctl kill --kill-who=main --signal=SIGUSR2 systemd-journald.service
+: 1664307364:0;pacman -Qtd
+: 1664307364:0;sudo pacman -Qqdt
+: 1664307364:0;pacman -Q
+: 1664307364:0;sudo ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
+: 1664307364:0;/bin/bash -c "yay -S libfprint-vfs009x-git ;echo 'Press any key to continue...'"
+: 1664307364:0;/bin/bash -c "yay -S --aur downgrade;echo 'Press any key to continue...'"
+: 1664307364:0;downgrade
+: 1664307364:0;sudo downgrade
+: 1664307364:0;yay -S pamac-aur
+: 1664307364:0;sudo downgrade fprintd
+: 1664307364:0;pacman -h
+: 1664307364:0;pacman -S
+: 1664307364:0;sudo pacman-key -r 3DEA62513C8035383A245A12E5786B42E8E5D565
+: 1664307364:0;sudo pacman-key --lsign-key 3DEA62513C8035383A245A12E5786B42E8E5D565
+: 1664307364:0;curl -s 'https://download.opensuse.org/repositories/home:/ungoogled_chromium/Arch/x86_64/home_ungoogled_chromium_Arch.key' | sudo pacman-key -a -
+: 1664307364:0;echo '
+: 1664307364:0;[home_ungoogled_chromium_Arch]
+: 1664307364:0;SigLevel = Required TrustAll
+: 1664307364:0;Server = https://download.opensuse.org/repositories/home:/ungoogled_chromium/Arch/$arch' | sudo tee --append /etc/pacman.conf
+: 1664307364:0;grep mkinitcpio /usr/share/libalpm/hooks/*
+: 1664307364:0;cat /usr/share/libalpm/hooks/*
+: 1664307364:0;systemctl start duckdns.service
+: 1664307364:0;systemctl status duckdns.service
+: 1664307364:0;systemctl status fstrim.service
+: 1664307364:0;scrub
+: 1664307364:0;sudo blkid -o device | grep luks
+: 1664307364:0;killall plasmashell
+: 1664307364:0;repo-elephant
+: 1664307364:0;.bash-aliases
+: 1664307364:0;systemctl stop  nextdns.service
+: 1664307364:0;systemctl enable nextdns.service
+: 1664307364:0;systemctl start nextdns.service
+: 1664307364:0;nextdns uninstall
+: 1664307364:0;nextdns install
+: 1664307364:0;find nextdns
+: 1664307364:0;locate nextdns
+: 1664307364:0;nextdns deactivate
+: 1664307364:0;nextdns config
+: 1664307364:0;nextdns version
+: 1664307364:0;pacman -Qii linux-headers
+: 1664307364:0;systemctl status powerline-daemon.service
+: 1664307364:0;systemctl user
+: 1664307364:0;ps -A | grep powerline
+: 1664307364:0;systemctl status nextdns.service
+: 1664307364:0;systemctl --user status powerline-daemon.service
+: 1664307364:0;lscpu
+: 1664307364:0;ournalctl --disk-usage
+: 1664307364:0;sudo journalctl --rotate --vacuum-size=50M
+: 1664307364:0;sudo btrfs balance start /
+: 1664307364:0;sudo btrfs balance start /home
+: 1664307364:0;fastfetch
+: 1664307364:0;flashfetch --load-config
+: 1664307364:0;flashfetch --help
+: 1664307364:0;fastfetch --load-config
+: 1664307364:0;fastfetch --load-config neofetch
+: 1664307364:0;flashfetch --load-config neofetch
+: 1664307364:0;fastfetch --load-config btw
+: 1664307364:0;fastfetch --load-config hardware
+: 1664307364:0;fastfetch --load-config software
+: 1664307364:0;fastfetch --load-config paleofetch
+: 1664307364:0;gpg --list-keys 2954CC8585E27A3F
+: 1664307364:0;gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 2954CC8585E27A3F
+: 1664307364:0;hwinfo --framebuffer
+: 1664307364:0;sudo hwinfo --framebuffer | more
+: 1664307364:0;systemctl stop tlp.service
+: 1664307364:0;systemctl disable tlp.service
+: 1664307364:0;systemctl statuo auto-cpufreq
+: 1664307364:0;systemctl stop auto-cpufreq.service
+: 1664307364:0;systemctl start auto-cpufreq.service
+: 1664307364:0;systemctl status auto-cpufreq
+: 1664307364:0;pacman -Syy
+: 1664307364:0;sudo hwinfo --framebuffer
+: 1664307364:0;pacman -Q | wc -l
+: 1664307364:0;plasmashell &&
+: 1664307364:0;plasmashell &
+: 1664307364:0;killall plasmashell && plasmashell &
+: 1664307364:0;kquitapp5 plasmashell kstart5 plasmashell > /dev/null 2>&1
+: 1664307364:0;kstart5 plasmashell
+: 1664307364:0;bashrc
+: 1664307364:0;ebrc
+: 1664307364:0;$GTK_USE_PORTAL
+: 1664307364:0;GTK_USE_PORTAL
+: 1664307364:0;efstab
+: 1664307364:0;fstab
+: 1664307364:0;systemctl status fstrim.timer
+: 1664307364:0;systemctl status duckdns.timer
+: 1664307364:0;source environment
+: 1664307364:0;sudo ln -fs /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
+: 1664307364:0;fc-cache --force
+: 1664307364:0;cat "/etc/fonts/conf.d/11-lcdfilter-default.conf"
+: 1664307364:0;nextdns status
+: 1664307364:0;grub
+: 1664307364:0;pacman -Qo btrfs-progs
+: 1664307364:0;pactree -r btrfs-progs
+: 1664307364:0;next
+: 1664307364:0;cd Documents
+: 1664307364:0;rm -r caponord
+: 1664307364:0;btrfs-check /
+: 1664307364:0;btrfs check /
+: 1664307364:0;btrfs check @
+: 1664307364:0;btrfs check /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e --force
+: 1664307364:0;btrfs check --force  /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
+: 1664307364:0;sudo btrfs check --force  /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
+: 1664307364:0;btrfs scrub /
+: 1664307364:0;btrfs scrub
+: 1664307364:0;btrfs scrub @
+: 1664307364:0;systrmctrl
+: 1664307364:0;systemctl start btrfs-scrub@
+: 1664307364:0;ln -s ~/.mozilla/native-messaging-hosts ~/.librewolf/native-messaging-hosts
+: 1664307364:0;sudo ln -s /usr/lib/mozilla/native-messaging-hosts /usr/lib/librewolf/native-messaging-hosts
+: 1664307364:0;printenv
+: 1664307364:0;udevadm control --reload-rules
+: 1664307364:0;sudo udevadm control --reload-rules
+: 1664307364:0;micronucleus
+: 1664307364:0;micronucleus micronucleus-1.11-entry-jumper-pb0-upgrade.hex
+: 1664307364:0;orphls\\
 btrfs filesystem show
-sudo btrfs filesystem show
-sudo dmesg | grep BTRFS
-sudo paccache -ruk0
-sudo pacman -Rs $(pacman -Qqdt)
-powerprofilesctl
-sudo dmesg | grep BTRFS
-nextdns stop
-flashfetch
-restartplasma
-flashfetch
-nextdns stop
-sh -c "$(curl -sL https://nextdns.io/install)"
-sudo pacman -Rs $(pacman -Qqdt)
-sudo btrfs balance start -dusage=66 /
-orphls
-sudo dmesg | grep BTRFS
-pacnewroot
-sudo dmesg | grep BTRFS
-sh -c "$(curl -sL https://nextdns.io/install)"
-sudo btrfs filesystem show
-sudo intel_gpu_top
-restartplasma
-sudo btrfs filesystem show
-fwupdmgr get-devices
-sudo update-grub
-restartplasma
-systemctl
-systemctl start reflector.service
-sh -c "$(curl -sL https://nextdns.io/install)"
-pacnewroot
-sudo pacman -Rs $(pacman -Qqdt)
-sudo paccache -ruk0
-orphls
-sudo btrfs balance start -dusage=66 /
-btrfs check /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
-sudo btrfs check /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
-sudo btrfs balance start -dusage=66 /
-sudo btrfs balance start -dusage=66 /home
-systemctl status btrfs-scrub@home
-systemctl status reflector.timer
-systemctl start  btrfs-scrub@home
-systemctl start fstrim.service
-systemctl start  btrfs-scrub@-
-systemctl start  btrfs-scrub@home
-sudo update-grub
-nextdns stop
-ps -a
-ps -A
-pacnewroot
-visudo
-sudo visudo
-pacman -Q | grep 'accountsservice'
-sudo chmod 775 /var/lib/AccountsService/
-sudo paccache -ruk0
-sudo pacman -Rs $(pacman -Qqdt)
-nextdns stop
-nextdns start
-systemctl status wpa_supplicant
-systemctl mask wpa_supplicant
-pacnewroot
-sudo paccache -ruk0
-sh -c "$(curl -sL https://nextdns.io/install)"
-sudo paccache -ruk0
-sudo pacman -Rs $(pacman -Qqdt)
-sudo systemctl daemon-reload
-sudo systemctl restart accounts-daemon.service
-sudo pacman -Rs $(pacman -Qqdt)
-sudo paccache -ruk0
-sh -c "$(curl -sL https://nextdns.io/install)"
-systemd-analyze
-systemd-analyze critical-chain
-yay
-smartctl
-sudo intel_gpu_top
-pacnewroot
-sh -c "$(curl -sL https://nextdns.io/install)"
-sudo pacman -Rs $(pacman -Qqdt)
-sudo paccache -ruk0
-systemctl start reflector service
-systemctl start reflector.service
-sudo paccache -ruk0
-sudo pacman -Rs $(pacman -Qqdt)
-sh -c "$(curl -sL https://nextdns.io/install)"
-pacnewroot
-kwriteconfig5 --file startkderc --group General --key systemdBoot true
-sudo update-grub
-sh -c "$(curl -sL https://nextdns.io/install)"
-pacnewroot
-sudo pacman -Rs $(pacman -Qqdt)
-sudo paccache -ruk0
-systemd-analyze critical-chain
-systemd-analyze
-systemctl status wpa_supplicant
-sudo btrfs balance start -dusage=66 /
-pacnewroot
-sh -c "$(curl -sL https://nextdns.io/install)"
-orphls
-exit
-yay -Qqe > pkglist.txt
-systemctl list-unit-files --state=enabled > enabled-services.txt
-systemctl list-unit-files --user --state=enabled > enabled-services.txt
-nextdns stop
-nextdns start
-sh -c "$(curl -sL https://nextdns.io/install)"
-orphls
-pacnewroot
-sudo btrfs balance start -dusage=66 /
-systemctl start reflector.service
-systemctl status reflector.service
-systemctl status wpa_supplicant
-smartctl
-nextdns stop
-sh -c "$(curl -sL https://nextdns.io/install)"
-lsusb
-lspci
-sh -c "$(curl -sL https://nextdns.io/install)"
-journalctl -p5
-restartplasma
-pacman -Qo /snap
-pacman -Qo ~/.local/share/flatpak
-yay
-orphls
-sudo pacman -Rs $(pacman -Qqdt)
-sudo paccache -ruk0
-sh -c "$(curl -sL https://nextdns.io/install)"
-pacnewroot
-sudo pacman -Rs $(pacman -Qqdt)
-sudo intel_gpu_top
-pacnewroot
-sh -c "$(curl -sL https://nextdns.io/install)"
-vulkaninfo
-dmesg | grep guc
-sudo dmesg | grep guc
-sudo dmesg | grep GuC
-sudo dmesg | grep HuC
-sudo dmesg | grep huc
-sudo dmesg | grep i915
-nextdns stop
-nextdns start
-sh -c "$(curl -sL https://nextdns.io/install)"
-pacnewroot
-sudo intel_gpu_top
-sh -c "$(curl -sL https://nextdns.io/install)"
-sudo pacman -Rs $(pacman -Qqdt)
-echo "$QT_QPA_PLATFORMTHEME"
-ps -a
-ps -A
-4kvideo
-4kvideodownload
-4kvideodownloader
-sudo intel_gpu_top
-sh -c "$(curl -sL https://nextdns.io/install)"
-busctl
-vainfo
-sudo intel_gpu_top
-sh -c "$(curl -sL https://nextdns.io/install)"
-pacnewroot
-orphls
-nextdns stop
-nextdns start
-orphls
-pacnewroot
-sh -c "$(curl -sL https://nextdns.io/install)"
-sudo btrfs balance start -dusage=66 /
-sh -c "$(curl -sL https://nextdns.io/install)"
-pacnewroot
-orphls
-sh -c "$(curl -sL https://nextdns.io/install)"
-orphls
-pacnewroot
-cat /proc/sys/kernel/random/entropy_avail
-systemd-analyze
-systemd-analyze blame
-sudo wdctl
-sudo update-grub
-systemd-analyze blame
-pacnewroot
-sudo visudo
-sudo update-grub
-systemctl
-systemctl | grep oom
-systemctl | grep oomd
-systemctl status pamac-cleancache
-systemctl start pamac-cleancache
-systemctl reload pamac-cleancache
-systemctl reload pamac-cleancache.timer
-systemctl stop pamac-cleancache.timer
-systemctl daemon-reload
-systemctl status pamac-cleancache.timer
-sh -c "$(curl -sL https://nextdns.io/install)"
-pacnewroot
-journalctl -p 3 -b
-find / -xtype l -print
-sudo find / -xtype l -print
-journalctl --disk-usage
-sudo systemctl restart systemd-journald
-journalctl --disk-usage
-journalctl -p 3 -b
-nextdns stop
-nextdns start
-nextdns stop
-nextdns start
-systemctl start reflector
-journalctl -p 3 -b
-journalctl --disk-usage
-sh -c "$(curl -sL https://nextdns.io/install)"
-systemctl status pamac-cleancache.timer
-pacnewroot
-systemd-analyze blame
-sudo intel_gpu_top
-yay
-pacnewroot
-journalctl -p 3 -b
-sh -c "$(curl -sL https://nextdns.io/install)"
-sudo btrfs balance start -dusage=66 /
-sh -c "$(curl -sL https://nextdns.io/install)"
-nextdns stop
-nextdns start
-yay
-pacman-Syu
-pacman -Syu
-sudo pacman -Syu
-yay -Syu
-sudo pacman -Syy archlinux-keyring
-sudo pacman -Su
-systemctl start reflector
-paru
-fatresize
-resize2fs
-mount
-mount -a
-sudo mount -a
-systemctl daemon-reload
-sudo update-grub
-efibootmgr
-efibootmgrhelp
-efibootmgr help
-efibootmgr -h
-fdisk -l
-sudo fdisk -l
-efibootmgr -c -d=/dev/nvme0n1p2 -L="Windows10" -l='\boot\efi\Microsoft\Boot\bootmgrfw.efi'
-efibootmgr -c -d=/dev/nvme0n1p2 -L="Windows10" -l='\EFI\Microsoft\Boot\bootmgrfw.efi'
-efibootmgr -c -d=/dev/nvme0n1p2 -L="Windows10" -l='\efi\Microsoft\Boot\bootmgrfw.efi'
-efibootmgr -c -d=/dev/nvme0n1p2 -L="Windows10" -l='\boot\efi\Microsoft\Boot\bootmgrfw.efi'
-efibootmgr -c -d=/dev/nvme0n1p2 -L="Windows10" -l=\boot\efi\Microsoft\Boot\bootmgrfw.efi'
-
-
-
-
-
-efibootmgr
-efibootmgr
-efibootmgr -c -d=/dev/nvme0n1p2 -L="Windows10" -l='\boot\efi\Microsoft\Boot\bootmgrfw.efi
-efibootmgr -c -d=/dev/nvme0n1p2 -L="Windows10" -l=\boot\efi\Microsoft\Boot\bootmgrfw.efi
-efibootmgr -c -d /dev/nvme0n1p2 -L "Windows10" -l '\boot\efi\Microsoft\Boot\bootmgrfw.efi'
-sudo efibootmgr -c -d /dev/nvme0n1p2 -L "Windows10" -l '\boot\efi\Microsoft\Boot\bootmgrfw.efi'
-efibootmgr
-efibootmgr -h
-efibootmgr -B 0002
-efibootmgr -b 0002
-efibootmgr -h
-efibootmgr -b Boot0002
-efibootmgr -b 0002
-efibootmgr -B 0002
-efibootmgr -Bb 0002
-sudo efibootmgr -Bb 0002
-sudo efibootmgr -c -d /dev/nvme0n1p2 -L "Windows10" -l '\EFI\Microsoft\Boot\bootmgrfw.efi'
-sudo efibootmgr -Bb 0002
-sudo efibootmgr -c -d /dev/nvme0n1p2 -L "Windows10" -l '\EFI\Microsoft\Boot\bootmgfw.efi'
-efibootmgr
-efibootmgr -v
-sudo efibootmgr -Bb 0002
-efibootmgr
-sudo efibootmgr -c -L "Windows10" -l '\EFI\Microsoft\Boot\bootmgfw.efi'
-sudo efibootmgr -c -d /dev/nvme0n1p2 -p 2 -L "Windows10" -l '\EFI\Microsoft\Boot\bootmgfw.efi'
-sudo efibootmgr -Bb 0002
-sudo efibootmgr -c -d /dev/nvme0n1 -p 2 -L "Windows10" -l '\EFI\Microsoft\Boot\bootmgfw.efi'
-efibootmgr
-efibootmgr -v
-sudo efibootmgr -Bb 0002
-sudo efibootmgr -c -d /dev/nvme0n1 -p 2 -L "Windows 10" -l '\EFI\Microsoft\Boot\bootmgfw.efi'
-pacman -S bash-completion
-sudo pacman -S bash-completion
-ne
-sudo update-grub
-sudo pacman -Rs $(pacman -Qqdt)
-sudo paccache -ruk0
-pacnewroot
-yay
-systemctl --user status wireplumber
-update-initramfs
-mkinitcpio
-sudo mkinitcpio
-mkinitcpio --help
-sudo mkinitcpio -P
-sudo update-grub
-sudo kate
-exit
-makepkg
-makepkg -s
-makepkg
-lspci
-lsusb
-sudo btrfs balance start -dusage=66 /
-sudo paccache -ruk0
-pacnewroot
-paru
-yay
-sudo intel_gpu_top
-sudo paccache -ruk0
-du
-duf
-yay
-yay-S duf
-yay -S duf
-yay
-yay -R python-crypto
-yay -R python-pycrypto
-yay -Rcns python-pycrypto
-yay -R python-pycrypto
-yay -S duf
-duf
-yay -S innoextract
-yay -R innoextract
-sudo paccache -ruk0
-sudo pacman -Rs $(pacman -Qqdt)
-btrfs check /dev/mapper/luks-1
-sudo pacman -Rs $(pacman -Qqdt)
-pacnewroot
-sh -c "$(curl -sL https://nextdns.io/install)"
-efibootmgr -v
-sudo efibootmgr -Bb 0001
-sudo efibootmgr -c -d /dev/nvme0n1 -p 2 -L "Arch Linux" -l '\EFI\arch\grubx64.efi'
-efibootmgr -v
-systemctl start reflector
-pacnew
-sudo pacman -Rs $(pacman -Qqdt)
-sudo paccache -ruk0
-wget https://github.com/Schneegans/Burn-My-Windows/releases/latest/download/burn_my_windows_kwin4.tar.gz
-mkdir -p ~/.local/share/kwin/effects
-tar -xf burn_my_windows_kwin4.tar.gz -C ~/.local/share/kwin/effects
-nextdns stop
-nextdns start
-cat /sys/fs/btrfs/{fsid}/features/no_holes
-sudo btrfs filesystem usage /
-pacnew
-sudo pacman -Rs $(pacman -Qqdt)
-sh -c "$(curl -sL https://nextdns.io/install)"
-exit
-qdbus org.kde.ksmserver /KSMServer logout 0 3 3
-loginctl terminate-user bkmo
-sudo intel_gpu_top
-sudo pacman -Rs $(pacman -Qqdt)
-sudo paccache -ruk0
-pacnew
-pacnewroot
-duf
-vainfo
-sudo dmesg | grep BTRFS
-sudo intel_gpu_top
-sudo libinput list-devices | grep gesture
-timeshift
-timeshift-gtk
-sudo install battop* /usr/local/bin/battop
-sudo install battop /usr/local/bin/battop
-cd ..
-battop
-sh -c "$(curl -sL https://nextdns.io/install)"
-cat /sys/block/sda/queue/scheduler
-cat /nvme0n1/block/sda/queue/scheduler
-cat /sys/block/nvme0n1/queue/scheduler
-battop
-nextdns.stop
-nextdns stop
-nextdns start
-qdbus org.kde.shutdown /Shutdown logout
-qdbus org.kde.shutdown
-reboot now
-GDK_DPI_SCALE=1.125 tutanota-desktop-linux.AppImage
-GDK_DPI_SCALE=1.125 ~/Applications/tutanota-desktop-linux.AppImage
-GDK_DPI_SCALE=1.155 ~/Applications/tutanota-desktop-linux.AppImage
-~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
-GDK_DPI_SCALE=1.155 ~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland~
-GDK_DPI_SCALE=1.155 ~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
-GDK_DPI_SCALE=1.150 ~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
-~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor
-~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=2
-~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=2.0
-~/Applications/tutanota-desktop-linux.AppImage --force-device-scale-factor=2.0
-~/Applications/tutanota-desktop-linux.AppImage --force-device-scale-factor=1.25
-firefox --force-device-scale-factor=1.25
-firefox --force-device-scale-factor=1.50
-xwininfo
-xeyes
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=2.0
-~/Applications/tutanota-desktop-linux.AppImage --force-device-scale-factor=1.25
-~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=2.0
-~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-~/Applications/tutanota-desktop-linux.AppImage
-nextdns stop
-nextdns start
-duf
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-~/Applications/GDK_SCALE=1.25 tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
-~GDK_SCALE=1.25 /Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
-GDK_SCALE=1.25 ~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
-GDK_SCALE=1.25 GDK_DPI_SCALE=1.5
-~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
-GDK_SCALE=1.25 GDK_DPI_SCALE=1.5~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
-GDK_SCALE=1.25 GDK_DPI_SCALE=1.5 ~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
-~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland &&
-~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland &
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-~/Applications/tutanota-desktop-linux.AppImage
-sudo downgrade linux
-sudo dmesg
-sudo dmesg | grep wifi
-sudo dmesg | grep intel
-sudo dmesg | grep Intel
-lsmod | grep intel_agp
-sudo mkinitcpio -P
-sudo nano /etc/modprobe.d/i915.conf
-sudo dmesg | grep guc
-sudo dmesg | grep Guc
-sudo dmesg | grep Huc
-sudo dmesg | firmware
-sudo dmesg | grep firmware
-sudo mkinitcpio -P
-sudo dmesg | grep Huc
-sudo dmesg | grep Guc
-sudo dmesg | grep firmware
-lspci -k
-sudo nano /etc/sysctl.d/disable_watchdog.conf
-sudo nano /etc/modprobe.d/modprobe.conf
-lsmod
-sudo dmesg | grep firmware
-sudo dmesg | grep taint
-exit
-sudo intel_gpu_top
-sudo powertop
-echo dev.i915.perf_stream_paranoid=0 | sudo tee -a /etc/sysctl.d/99-i915psp.conf
-sysctl -w dev.i915.perf_stream_paranoid=0
-sudo sysctl -w dev.i915.perf_stream_paranoid=0
-sudo sysctl
-sudo pacman -S
-sudo pacman -Sy
-sudo mkinitcpio -P
-sudo update-grub
-cat /sys/devices/system/cpu/cpuidle/current_driver
-cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_driver
-cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
-sudo systemctl status thermald.service
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-~/Applications/tutanota-desktop-linux.AppImage
-wdctl
-sudo wdctl
-journalctl -xe
-reboot now
-sudo reboot
-swapon
-sudo nano /etc/systemd/zram-generator.conf
-systemctl daemon-reload
-systemctl start /dev/zram0
-swapon
-restartplasma
-exit
-sudo mkinitcpio -P
-sudo update-grub
-swapon
-rm cookies.sqllite
-ls
-rm cookies.sqlite
-find /var/tmp/ -mtime +30
-sudo find /var/tmp/ -mtime +30
-man systemd-tmpfiles(8)
-man systemd-tmpfiles
-man tmpfiles.d
-journalctl --disk-usage
-duf
-sudo btrfs filesystem usage /
-sudo btrfs balance start -dusage=66 /
-sudo mkdir /mnt/btrfa
-sudo mount /dev/mapper/luks-1 /mnt/btrfs
-sudo btrfs sub create /mnt/btrfs/@log
-sudo mount /dev/mapper/luks-1 /mnt/btrfs
-btrfs sub list
-btrfs sub --help
-btrfs sub show
-btrfs sub show /
-sudo btrfs sub show /
-sudo btrfs sub show /dev/mapper/luks-1
-sudo btrfs balance start -dusage=66 /
-systemctl disable btrfs-scrub@-.timer
-systemctl disable btrfs-scrub@home.timer
-systemctl stop btrfs-scrub@home.timer
-systemctl stop btrfs-scrub@-.timer
-systemctl enable btrfs-trim.timer
-systemctl stop fstrim.timer
-systemctl disable fstrim.timer
-systemctl enable --now btrfs-trim.timer
-btrfsmaintenance-refresh
-systemctl start btrfs-trim.service
-systemctl status btrfs-trim.service
-systemctl stop btrfs-trim.timer
-systemctl disable btrfs-trim.timer
-systemctl enable --now fstrim.timer
-zramctl
-swapon
-free
-mount
-zramctl
-systemctl stop /dev/zram0
-zramctl
-systemctl start /dev/zram0
-zramctl
-free
-cat /etc/fstab
-btrfs sub show /
-sudo powertop
-echo vm.swappiness=100 | sudo tee -a /etc/sysctl.d/99-sysctl.conf
-cat /proc/sys/kernel/watchdog
-wdctl
-cat /proc/sys/vm/swappiness
-cat /proc/sys/vm/page-cluster
-cat /proc/sys/vm/dirty_background_ratio
-cat /proc/sys/vm/dirty_ratio
-cat /proc/sys/vm/vfs_cache_pressure
-lxappearance
-Lxappearance
-free
-sudo pacman -Sy
-sudo pacman -S
-sudo mkinitcpio -P
-sudo update-grub
-sudo pacman -Syy
-paccache -rk1
-paccache -ruk0
-yay -Sc --noconfirm --sudo=true || true
-paru -Sc --noconfirm --sudo=true || true
-pacnew
-timeshift --check --scripted
-sudo timeshift --check --scripted
-sudo timeshift --create --scripted --tags B
-sudo timeshift --check --scripted
-sysctl stop cronie
-sysctl stop cronie.service
-sysctl disable cronie.service
-systemctl stop cronie
-systemctl disable cronie
-systemctl enable cronie
-kcron
-systemctl start --now cronie
-systemctl enable --now timeshift.service
-systemctl enable --now timeshift.timer
-systemctl enable --now timeshift-boot.timer
-systemctl disable cronie
-systemctl mask cronie
-systemctl stop cronie
-crontab -l
-systemctl stop cronie.service
-systemctl disable cronie.service
-paccache -ruk0
-paccache -rk1
-sudo timeshift
-sudo timeshift --list
-mount -a
-mount
-sudo timeshift --list
-cd /run
-cd timeshift
-ls
-ls -l
-ls
-cd 7709
-ls
-cd backup
-ls
-sudo timeshift --list
-sudo update-grub
-cat /etc/fstab
-btrfs subvolume list
-btrfs subvolume list /
-sudo btrfs subvolume list /
-cat /etc/fstab
-sudo systemctl edit --full grub-btrfs.path
-sudo update-grub
-sudo systemctl edit --full timeshhift-snapshots-updategrub.service
-sudo systemctl edit --full timeshhift-snapshots-update=grub.service
-sudo systemctl edit --full timeshift-snapshots-update-grub.service
-/etc/grub.d/41_snapshots-btrfs
-sh /etc/grub.d/41_snapshots-btrfs
-sudo update-grub
-vainfo
-sudo intel_gpu_top
-exit
-sudo intel_gpu_top
-export GTK_USE_PORTAL=1
-export GTK_USE_PORTAL=0
-export GTK_USE_PORTAL=1
-export GTK_USE_PORTAL=0
-export GTK_USE_PORTAL=1
-export GTK_USE_PORTAL=0
-export GTK_USE_PORTAL=
-export GTK_USE_PORTAL=1
-strawberry
-systemctl start reflector
-sudo intel_gpu_top
-ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list
-pacnew
-pacnewroor
-pacnewroot
-orphls
-orphrm
-sudo systemctl edit --full timeshift-snapshots-update-grub.service
-nextdns start
-nextdns stop
-nextdns start
-nextdns stop
-nextdns start
-sudo systemsettings5
-export $(dbus-launch) sudo systemsettings5
-export $(dbus-launch)
-sudo systemsettings5
-sudo export $(dbus-launch) systemsettings5
-sudo dbus-launch systemsettings5
-find firefoxpwa
-firefoxpwa
-firefoxpwa profile
-firefoxpwa profile list
-xdotool
-xdo
-wtype
-firefox -tray
-busctl set-property org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager EnableWallMessages b false
-sudo busctl set-property org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager EnableWallMessages b false
-wtype
-wtype search --all --pid $pidno --class firefox windowactivate
-ydotool search --all --pid $pidno --class firefox windowactivate
-ydotool help
-locate firefoxpwa
-locate firefox-bin
-locate firefoxpwa
-which firefoxpwa
-kbuildsycoca5
-locate chrome-apps.directory
-locate chrome-apps
-xdg-desktop-menu
-kbuildsycoca5
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage -a
-"/home/bkmo/Applications/tutanota-desktop-linux.AppImage" -a --force-device-scale-factor=1.25
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-sudo intel_gpu_top
-QTWEBENGINE_CHROMIUM_FLAGS=--blink-settings=darkMode=4,darkModeImagePolicy=2 falkon
-QTWEBENGINE_CHROMIUM_FLAGS=--force-dark-mode  falkon
-QTWEBENGINE_CHROMIUM_FLAGS="-blink-settings=darkModeEnabled=true -enable-features=OverlayScrollbar,OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter" falkon
-export QTWEBENGINE_CHROMIUM_FLAGS=--blink-settings=darkMode=4,darkModeImagePolicy=2
-falkon
-export QTWEBENGINE_CHROMIUM_FLAGS= --blink-settings=darkModeEnabled=true
-falkon
-QTWEBENGINE_CHROMIUM_FLAGS= --blink-settings=darkModeEnabled=true falkon
-QTWEBENGINE_CHROMIUM_FLAGS=--blink-settings=darkModeEnabled=true falkon
-QTWEBENGINE_CHROMIUM_FLAGS=--blink-settings=forceDarkModeEnabled=true falkon
-sudo intel_gpu_top
-paccache -ruk1
-sudo pacman -Sy
-kbuildsycoca5
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-systemctl status systemd-sysctl.service
-sysctl -w dev.i915.perf_stream_paranoid=0
-sudo sysctl -w dev.i915.perf_stream_paranoid=0
-sudo mkinitcpio -P
-firefoxpwa profile list
-curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -
-sudo intel_gpu_top
-which whatsapp-for-linux
-locate com.github.eneshecan.WhatsAppForLinux
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-history
-1833
-history
-history 1833
-history
-paccache -ruk1
-sudo intel_gpu_top
-arkenfox-cleaner
-locate user.js
-locate arkenfox-user.js
-./updater.sh
-ls
-prefsCleaner.sh
-./prefsCleaner.sh
-./updater.sh
-arkenfox-cleaner
-arkenfox-updater
-arkenfox-cleaner
-arkenfox-updater
-arkenfox-cleaner
-nextdns stop
-nextdns start
-arkenfox-updater
-arkenfox-cleaner
-arkenfox-updater
-arkenfox-cleaner
-history
-kbuildsycoca5
-firefoxpwa
-firefox-bin
-firefoxpwa profile list
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-falkon -o -f -p earth https://earth.google.com/web
-falkon --help
-falkon -o -p earth https://earth.google.com/web
-falkon --help
-falkon --app=https://earth.google.com/web
-falkon --help
-nextdns stop
-nextdns start
-firefoxpwa profile list
-falkon --help
-falkon -
-falkon -v
-which spotify
-kbuildsycoca5
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-sudo rm lock
-sudo intel_gpu_top
-find kf5-
-locate kf5-
-locate kf5-webapps
-falkon -o -f -p hydrogen https://hydrogen.element.io/
-falkon -o -p hydrogen https://hydrogen.element.io/
-arkenfox-updater
-arkenfox-cleaner
-arkenfox-updater
-arkenfox-cleaner
-wget https://download.mozilla.org/?product=firefox-latest-ssl&os=linux
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=2
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=1
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1 --force-device-scale-factor=1
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1 --force-device-scale-factor=1
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1 --force-device-scale-factor=1.25
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1 --force-device-scale-factor=o.25
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1 --force-device-scale-factor=0.50
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=2
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=1.5
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=0.8
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=1.25 --high-dpi-support=1
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=125 --high-dpi-support=1
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=125
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-sudo intel_gpu_top
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.5
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=2
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.5
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.5 --force-device-scale-factor=1.5
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.5 --force-device-scale-factor=1
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.5 --force-device-scale-factor=.5
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.5 --force-device-scale-factor=1.25
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.75
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=2.0
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-exit
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.90
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.25
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.5
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-exit
-/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-which firefox
-firefox-bin
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-makepkg
-makepkg --help
-makepkg -s
-systemctl restart pipewire.service
-systemctl --user restart pipewire.service
-pactl
-pactl list
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-sudo systemd-analyze critical-chain
-sudo systemd-analyze
-kbuildsycoca5
-webapp-manager
-which balenaetcher
-kbuildsycoca5
-systemsettings kcm_krunner
-kbuildsycoca5
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-kbuildsycoca5
-arkenfox-updater
-arkenfox-cleaner
-arkenfox-updater
-arkenfox-cleaner
-systemctl start reflector
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-kbuildsycoca5
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-reboot now
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-which webapp-manager
-arkenfox-cleaner
-read
-read --help
-arkenfox-cleaner
-sudo reboot --help
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-sudo chattr +i common.py
-firefox --help
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-sudo chattr +i prefsCleaner.sh
-arkenfox-cleaner
-ls
-cat > userChrome.css
-cat > userChrome.css & #nav-bar, #identity-box, #tabbrowser-tabs, #TabsToolbar {
-}
-cat > userChrome.css &
-sed userChrome.css
-sed 'd'userChrome.css
-sed 'd' userChrome.css
-sed d userChrome.css
-cat /usr/share/webapp-manager/firefox/profile/chrome/userChrome.css > userChrome.css
-cat > userChrome.css
-cat > userChrome.css &
-cat /usr/share/webapp-manager/firefox/profile/chrome/userChrome.css > userChrome.css
-cat "" > userChrome.css
-> userChrome.css
-cat /usr/share/webapp-manager/firefox/profile/chrome/userChrome.css > userChrome.css
-webapp-nav
-sudo cp webapp-nav.sh /usr/local/bin
-/usr/local/bin/webapp-nav
-/usr/local/bin/webapp-nav.sh
-1
-/usr/local/bin/webapp-nav.sh
-cat /usr/share/webapp-manager/firefox/profile/chrome/userChrome.css > userChrome.css
-/usr/local/bin/webapp-nav.sh
-sed --help
-sed -i 'd' userChrome.css
-/usr/local/bin/webapp-nav.sh
-arkenfox-cleaner
-/usr/local/bin/webapp-nav.sh
-arkenfox-cleaner
-/usr/local/bin/webapp-nav.sh
-cd ~/.local/share/ice/firefox/
-webapp-nav
-webapp-nav on
-arkenfox-cleaner
-webapp-nav -on
-webapp-nav
-webapp-nav -on
-webapp-nav -off
-webapp-nav -on
-webapp-nav -off
-webapp-nav
-webapp-nav -off
-webapp-nav -on
-webapp-nav -off
-webapp-nav -on
-webapp-nav -off
-webapp-nav -on
-webapp-nav -off
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-efibootmgr --create --disk /dev/nvme0n1 --part 2 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot" --verbose
-sudo efibootmgr --create --disk /dev/nvme0n1 --part 2 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot" --verbose
-efibootmgr
-make
-./test
-webapp-nav -on
-kbuildsycoca5
-webapp-nav -off
-webapp-nav -on
-webapp-nav -off
-makepkg
-makepkg -f
-makepkg
-webapp-nav -off
-git clone https://github.com/bkmo/webapp-manager-bkmo.git
-git branch -a
-git clone --branch firefox-improvements https://github.com/bkmo/webapp-manager-bkmo.git
-git tag -d 1.2.3
-git tag -d 1.2.4
-git push --delete origin 1.2.3
-git push --delete origin 1.2.4
-git push
-git checkout
-git push
-git push origin firefox-improvements
-git commit
-git config --global user.email "you@example.com"
-git config --global user.name "Your Name"
-git commit
-git commit -a
-git push origin firefox-improvements
-git tag 1.2.6
-git tag
-git push --tags
-git commit
-git
-git pull
-git help -g
-git help -a
-git help commit
-git commit -m <some additions>
-git commit -m some additions
-git commit -a -m "added something/fixed something"
-git tag
-git help tag
-git tag
-git tag -d 1.2.5
-git push --delete origin 1.2.5
-git tag 1.2.5
-git push --tags
-git tag -d 1.2.6
-git push --delete origin 1.2.6
-cdgit
-cd /home/bkmo/Configs/GIT/webapp-manager-bkmo/
-cd ..
-cd..
-cdgit
-cd /home/bkmo/Configs/GIT/webapp-manager-bkmo
-cd.
-cd..
-cdgit
-source .bashrc
-gitcd
-source .bashrc
-cdgit
-git tag 1.2.5.1
-git push --tags
-makepkg -i
-cdgit
-git tag -d 1.2.5
-git push --delete origin 1.2.5
-git remote -v
-webapp-nav -off
-cdgit
-git commit -a -m "added something/fixed something"
-git push origin firefox-improvements
-git tag 1.2.5.2
-git push --tags
-cdgit
-git tag -d 1.2.5.2
-git push --delete origin 1.2.5.2
-git tag 1.2.5.2
-git push --tags
-makepkg -i
-cdgit
-source .bashrc
-cdgit
-git commit -a -m "removed redirect/navbar auto show"
-git push origin firefox-improvements
-git pull
-git config pull.rebase false
-git pull
-git push origin firefox-improvements
-git tag 1.2.5.3
-git push --tags
-makepkg -i
-cdgit
-git tag -d 1.2.5.1
-git push --delete origin 1.2.5.1
-cdgit
-git commit -a -m "added remove status pane and startpage"
-git push origin firefox-improvements
-git tag 1.2.5.4
-git push --tags
-cdgit
-git commit -a -m "remove redirect cruft"
-git push origin firefox-improvements
-git pull
-git tag 1.2.5.5
-git push --tags
-cdgit
-git tag -d 1.2.5.2
-git tag -d 1.2.5.3
-git push --delete origin 1.2.5.2
-git push --delete origin 1.2.5.3
-cdgit
-git config --global user.name "Bkmo"
-git config --global user.emailbkmo@example.com"
-git config --global user.email"bkmo@example.com"
-git config --global user.email "bkmo@example.com"
-makepkg -i
-cdgit
-git commit -a -m "userjs disable autoplay"
-git push origin firefox-improvements
-git tag -d 1.2.5.5
-git push --delete origin 1.2.5.5
-git tag 1.2.5.5
-git push --tags
-cdgit
-git config --global user.email "bkmo@example.com"
-git config --global user.email "crmongolo@tutanota.com"
-git config --global user.name "bkmo"
-git tag 1.2.5.6
-git push --tags
-webapp-manager
-git commit -a -m "navbar on default"
-git push origin firefox-improvements
-git config --global user.email "bkmo@example.com"
-git push origin firefox-improvements
-git commit -a -m "navbar on default"
-git add
-git add [200~        usr/share/webapp-manager/firefox/extensions_navbar.json
-git add extensions_navbar.js
-git add usr/share/webapp-manager/firefox/extensions_navbar.js
-git add usr/share/webapp-manager/firefox/extensions_navbar.json
-git add usr/share/webapp-manager/firefox/userjs_navbar.js
-git add usr/share/webapp-manager/firefox/profile/extensions/{d320c473-63c2-47ab-87f8-693b1badb5e3}.xpi
-git commit -a -m "navbar on default missed files"
-git push origin firefox-improvements
-git commit -a -m "readme edit"
-git push origin firefox-improvements
-git tag 1.2.6.1
-git push --tags
-makepkg -i
-git commit -a -m "fix about "
-git push origin firefox-improvements
-git pull
-git push origin firefox-improvements
-git tag 1.2.6.2
-git push --tags
-makepkg -i
-cdgit
-git tag -d 1.2.5.5
-git push --delete origin 1.2.5.5
-git tag -d 1.2.6.1
-git push --delete origin 1.2.6.1
-git commit -a -m "release 1.2.7.0 "
-git push origin firefox-improvements
-git tag 1.2.7.0
-git push --tags
-makepkg -i
-makepkg
-git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
-sed 's/\([^-]*-g\)/r\1/;s/-/./g'
-git describe --tags firefox-improvements | cut -d- -f1 | sed 's/^v//'
-1.4.2
-git describe --tags firefox-improvements | cut -d- -f1 | sed 's/^v//'
-git describe --tags | cut -d- -f1 | sed 's/^v//'
-git describe --tags | sed 's|-|.|g'
-cd..
-cd Webapp-git
-makepkg
-git describe --tags | sed 's|-|.|g'
-git describe --tags firefox-improvements | sed 's|-|.|g'
-makepkg
-git describe --tags
-makepkg
-git describe --tags
-git describe --tags firefox-improvements | sed 's|-|.|g'
-makepkg
-git describe --long --tags 2
-git describe --long --tags
-git describe --tags
-makepkg
-sed -i 's|common-licenses/GPL/licenses|common/GPL/license.txt|g'     "usr/lib/webapp-manager/webapp-manager.py"
-sed -i 's|common-licenses/GPL/licenses|common/GPL/license.txt|g'     "usr/lib/webapp-manager/webapp-manager.py"
-sed -i 's|common-licenses/GPL/|common/GPL/license.txt|g'     "usr/lib/$pkgrealname/$pkgrealname.py"
-sed -i 's|common-licenses/GPL/|common/GPL/license.txt|g'     "usr/lib/$pkgrealname/$pkgrealname.py"
-sed -i 's|common-licenses/GPL/|common/GPL/license.txt|g'     "usr/lib/webapp-manager/webapp-manager.py"
-sed -i 's|common-licenses/GPL | common/GPL/license.txt|g'     "usr/lib/webapp-manager/webapp-manager.py"
-sed -i 's|common-licenses/GPL|common/GPL/license.txt|g'     "usr/lib/webapp-manager/webapp-manager.py"
-webapp-manager --license
-webapp-manager license
-webapp-manager --help
-webapp-manager -l
-webapp-manager -h
-locate GPL
-locate gpl
-cdgit
-git commit -a -m "fixup LICENSE for Arch PKGBUILD "
-git add usr/share/webapp-manager/common-licenses/
-git commit -a -m "fixup LICENSE for Arch PKGBUILD "
-git push origin firefox-improvements
-git tag 1.2.7.1
-git push --tags
-makepkg
-makepkg -i
-git tag -d 1.2.7.1
-git push --delete origin 1.2.7.1
-git tag 1.2.7.1
-git push --tags
-git tag -d 1.2.7.1
-git commit -a -m "add CHANGELOG to git "
-git push origin firefox-improvements
-git tag 1.2.7.1
-git push --tags
-makepkg -i
-git add CHANGELOG.md
-git commit -a -m "add CHANGELOG to git "
-git push origin firefox-improvements
-git add README.md
-git commit -a -m "add new README to git "
-git push origin firefox-improvements
-git clone https://github.com/bkmo/webapp-manager-bkmo.git
-git branch -a
-git init
-git clone -b test-features https://github.com/bkmo/webapp-manager-bkmo.git
-git branch -a
-git commit -a -m "add bacgrount tabs to browser"
-git add webapp-manager-bkmo/
-git commit -a -m "add bacgrount tabs to browser"
-git push origin test-features
-git clone https://github.com/bkmo/webapp-manager-bkmo.git
-git branch -a
-git clone --branch test-features https://github.com/bkmo/webapp-manager-bkmo.git
-git clone https://github.com/bkmo/webapp-manager-bkmo.git
-git clone --branch test-features https://github.com/bkmo/webapp-manager-bkmo.git
-git init
-git clone --single-branch --branch test-features https://github.com/bkmo/webapp-manager-bkmo.git
-git checkout test-features
-git branch -a
-git branch
-gh repo clone bkmo/webapp-manager-bkmo
-git clone --single-branch --branch test-features https://github.com/bkmo/webapp-manager-bkmo.git
-git branch -a
-git checkout test-features
-git checkout -b test-features
-git branch -a
-git clone https://github.com/bkmo/webapp-manager-bkmo.git
-git branch -a
-git checkout test-features
-git checkout firefox improvements
-git checkout firefox-improvements
-git branch
-git checkout test-features
-git branch
-git switch test-features
-git commit -a -m "add bacgrount tabs to browser"
-git push origin test-features
-git commit -a -m "add bacgrount tabs to browser"
-git add firefox-extension/
-git add /scripts
-git add usr/share/webapp-manager/firefox/profile/extensions/{dd782f1d-0554-4ac0-b3b8-c06521e2dff8}.xpi
-git commit -a -m "add bacgrount tabs to browser"
-git push origin test-features
-git add CHANGELOG.md
-git commit -a -m "add bacgrount tabs to browser"
-git add         usr/share/webapp-manager/firefox/open-browser-without-env.sh
-git add /scripts
-git commit -a -m "add bacgrount tabs to browser"
-git push origin test-features
-git tag 1.2.7.5
-git push --tags
-makepkg -i
-git commit -a -m "try whitelisting adons.moz"
-git push origin test-features
-git tag 1.2.7.6
-git push --tags
-makepkg -i
-git commit -a -m "try whitelisting adons.moz take 2"
-git push origin test-features
-git tag 1.2.7.7
-git push --tags
-makepkg -i
-git describe --tags | sed 's|-|.|g'
-./sign-firefox-extension.sh
-/home/bkmo/Downloads/Saghen-webapp-manager-firefox-improvements/scripts/sign-firefox-extension.sh
-web-ext sign -s firefox-extension --api-key 17497112:277 --api-secret d27210efbd913e243bb0aaee8eac0ef31da54abab6c4b721c1a903f5ab147466
-web-ext
-web-ext sign -s firefox-extension --api-key 17497112:277 --api-secret d27210efbd913e243bb0aaee8eac0ef31da54abab6c4b721c1a903f5ab147466
-./sign-firefox-extension.sh
-./sign-firefox-extensions.sh
-sign-firefox-extensions.sh
-./sign-firefox-extensions.sh
-./sign-firefox-extension.sh
-web-ext sign -s firefox-extension --api-key 17497112:277 --api-secret d27210efbd913e243bb0aaee8eac0ef31da54abab6c4b721c1a903f5ab147466
-./sign-firefox-extension.sh
-git add /scripts/sign-firefox-extension.sh
-git add scripts/sign-firefox-extension.sh
-git branch
-git describe --tags | sed 's|-|.|g'
-cd src/webapp-manager-bkmo
-makepkg
-makepkg -f
-./sign-firefox-extension.sh
-nextdns stop
-./sign-firefox-extension.sh
-web-ext sign -s firefox-extension --api-key user:17497112:277 --api-secret d27210efbd913e243bb0aaee8eac0ef31da54abab6c4b721c1a903f5ab147466
-web-ext build -s firefox-extension
-./sign-firefox-extension.sh
-web-ext build -s firefox-extension
-./sign-firefox-extension.sh
-web-ext build -s firefox-extension
-./sign-firefox-extension.sh
-web-ext build -s firefox-extension
-git commit -a -m "try whitelcleanup-remove scripts and extension2"
-git tag -d 1.2.7.6
-git tag -d 1.2.7.5
-git push origin test-features
-git push --tags
-git branch -a
-git commit -a -m "try whitelcleanup-remove scripts and extension2"
-git add sign-firefox-extension.sh
-git commit -a -m "try whitelcleanup-remove scripts and extension2"
-git push origin test-features
-git push --delete origin 1.2.7.5
-git push --delete origin 1.2.7.6
-git push --delete origin 1.2.7.7
-git tag 1.2.7.2
-git tags
-git --tags
-git push origin 1.2.7.2
-makepkg
-makepkg -f
-makepkg
-cdgit
-git tag 1.2.7.3
-git push origin 1.2.7.3
-makepkg -i
-git push origin 1.2.7.3
-git commit -a -m "try whitelcleanup-remove scripts and extension2"
-makepkg
-git tag -d 1.2.7.2
-git push --delete origin 1.2.7.2
-makepkg
-cdgit
-makepkg
-makepkg -f
-cdgit
-git describe --tags | sed 's|-|.|g'
-git tag 1.2.7.4
-makepkg
-git tags
-git tag
-git tag -d 1.2.7.4
-makepkg
-git tag -d 1.2.7.3
-git commit -a -m "edit license to try pkgbild versioning"
-git tag 1.2.7.4
-makepkg
-makepkg -f
-makepkg
-./sign-firefox-extension.sh
-web-ext build -s firefox-extension
-./sign-firefox-extension.sh
-web-ext build -s firefox-extension
-web-ext build --overwrite-dest -s firefox-extension
-aafb68dbc071421cb91105da351279c5a6727129e046a35b2f316d8e9dfba1cf
-./sign-firefox-extension.sh
-git commit -a -m "extension redirect whitelist"
-git tag 1.2.7.5
-makepkg -i
-git commit -a -m "extension redirect whitelist"
-git push origin test-features
-git commit -a -m "extension redirect whitelist"
-git --tags
-git push origin 1.2.7.5
-git commit -a -m "fix wrong verson extension commited"
-git push origin test-features
-git tag 1.2.7.6
-git push origin 1.2.7.6
-git commit -a -m "fix wrong verson extension commited"
-git add         usr/share/webapp-manager/firefox/profile/extensions/{52f31d84-ac61-46ba-9599-32d7e1a4c88a}.xpi
-git commit -a -m "fix wrong verson extension commited"
-git push origin test-features
-git commit -a -m "fix wrong verson extension commited"
-git push origin test-features
-git commit -a -m "fix wrong verson extension commited"
-git push origin test-features
-git tag 1.2.7.7
-git push origin 1.2.7.7
-git tag -d 1.2.7.7
-git tag -d 1.2.7.6
-git push --delete origin 1.2.7.6
-git push --delete origin 1.2.7.7
-git commit -a -m "change default browser open in readme"
-git push origin test-features
-git tag 1.2.7.6
-git push origin 1.2.7.6
-git commit -a -m "Changelog for release 1.2.7.7"
-git push origin test-features
-makepkg -i
-git describe --tags | sed 's|-|.|g'
-makepkg -i
-git describe --tags | sed 's|-|.|g'
-makepkg
-cd..
-makepkg
-cd webapp-manager-bkmo
-git describe --tags | sed 's|-|.|g'
-git tags
-git tag
-git describe --tags | sed 's|-|.|g'
-git tag 1.2.7.7
-git push origin 1.2.7.7
-cd ..
-makepkg
-cdgit
-git log --oneline main..origin/main
-git fetch --dry-run
-git fetch
-git merge
-git commit -a -m "README.md cleanup"
-git push origin test-features
-software-installer
-pamac-installer
-locate pamac
-makepkg
-sfebk
-path
-echo "$PATH"
-source .profile
-echo "$PATH"
-sfebk
-exit
-cdgit
-git status
-git branch
-git diff firefox-improvements test-features
-git checkout firefox-improvements
-git branch
-git merge test-features
-git branch
-git push -u origin firefox-improvements
-makepkg
-git describe --tags | sed 's|-|.|g'
-}
-git tag 1.2.7.8
-git push origin 1.2.7.8
-makepkg
-orphls
-pacnew
-pacnewroot
-reflector
-sysctl
-systemctl start reflector
-makepkg
-sudo test
-makepkg
-git commit -a -m "user.js cleanup"
-git push origin test-features
-git push origin firefox-improvements
-git pull
-git pull firefox-improvements
-git pull origen firefox-improvements
-git pull
-git config pull.rebase false
-git pull
-git commit -a -m "user.js cleanup"
-git push -u origin firefox-improvements
-git commit -a -m "user.js cleanup"
-git tag 1.2.7.9
-git push origin 1.2.7.9
-makepkf -i
-makepkg -i
-kbuildsycoca5
-makepkg
-makepkg -f
-makepkg
-git commit -a -m "remove cruft from pull"
-git push -u origin firefox-improvements
-git pull
-git commit -a -m "remove cruft from pull"
-git push -u origin firefox-improvements
-git commit -a -m "changelog"
-git push -u origin firefox-improvements
-duf
-sudo intel_gpu_top
-arkenfox-updater
-arkenfox-cleaner
-sudo intel_gpu_top
-nextdns stop
-nextdns start
-sudo busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager Reboot b 0')
-sudo busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager Shutdown b 0')
-sudo busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager Reboot b 0')
-sudo busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager Shutdown b 0')
-sudo busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager Reboot b 0')
-sudo busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager Shutdown b 0'
-git commit -a -m "disable firefox crash restore via user.js"
-git push -u origin firefox-improvements
-sh -c 'sh -c "$(curl -sL https://nextdns.io/install)"'
-pacnew
-cdgit
-git commit -a -m "disable firefox crash restore via user.js take 2"
-git push -u origin firefox-improvements
-cdgit
-git tags
-git tag
-git tag 1.2.8.0
-git push origin 1.2.8.0
-makepkg -i
-cdgit
-git push --delete origin 1.2.6.2
-git tag -d 1.2.6.2
-git tag -d 1.2.7.0
-git tag -d 1.2.7.1
-git tag -d 1.2.7.3
-git tag -d 1.2.7.5
-git push --delete origin 1.2.6.2
-git push --delete origin 1.2.7.0
-git push --delete origin 1.2.7.1
-git push --delete origin 1.2.7.3
-git push --delete origin 1.2.7.5
-cdgit
-git branch -d test-features
-git push origin --delete test-features
-cdgit
-git branch -d icon-env
-git push origin --delete icon-env
-arkenfox-updater
-arkenfox-cleaner
-$ qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-strawberry --help
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-orphls
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-orphls
-orphrm
-neofetch
-sudo intel_gpu_top
-git commit -a -m "remove debian dir"
-git push -u origin firefox-improvements
-arkenfox-updater
-arkenfox-cleaner
-sudo intel_gpu_top
-gpg --recv-keys 58D0EE648A48B3BB
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-orphls
-orphrm
-paccache
-paccache -h
-paccache -ruk0
-pacnew
-sudo rm mirrorlist.pacnew
-pacnewroot
-pacnew
-pkexec
-which pkexec
-pkexec
-krename
-cat test >> test.txt
-cat test > test.txt
-rootactions-servicemenu.pl root_delete %U
-rootactions-servicemenu.pl root_delete test
-rootactions-servicemenu.pl root_delete test.txt
-kdialog
-kreadconfig
-rootactions-servicemenu.pl root_delete test.txt
-ls
-rootactions-servicemenu.pl root_delete test.txt
-kreadconfig5
-rootactions-servicemenu.pl root_delete test.txt
-cdgit
-git commit -a -m "fixup navbar css-remove addon"
-git push -u origin firefox-improvements
-git tag 1.2.8.1
-git push origin 1.2.8.1
-makepkg -i
-cdgit
-git commit -a -m "css remove status panel"
-git push -u origin firefox-improvements
-git tag 1.2.8.2
-git push origin 1.2.8.2
-makepkg -i
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-cat /sys/class/power_supply/BAT0/power_now
-cat /sys/class/power_supply/BAT1/power_now
-gpg --recv-keys  F3D322D0EC4582C3
-orphls
-orphrm
-paccache -ruk0
-cat /sys/class/power_supply/battery_BAT0/power_now
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-systemctl restart systemd-journald
-arkenfox-updater
-arkenfox-cleaner
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-git commit -a -m "bit more userjs work"
-cdgit
-git commit -a -m "bit more userjs work"
-git push -u origin firefox-improvements
-git tag 1.2.8.3
-git push origin 1.2.8.3
-sudo sh -c 'sh -c "$(curl -s https://nextdns.io/diag)"'
-sh -c 'sh -c "$(curl -s https://nextdns.io/diag)"'
-sudo nextdns config set -cache-size=10MB
-sudo nextdns restart
-nextdns cache-stats
-sudo nextdns cache-stats
-sudo nextdns stop
-sh -c "$(curl -sL https://nextdns.io/install)"
-systemctl start stubby.service
-systemctl enable stubby.service
-systemctl start dnsmasq
-systemctl enable dnsmasq
-systemctl reload NetworkManager
-systemctl restart dnsmasq
-dig +noall +stats baeldung.com
-systemctl restart dnsmasq
-dig +noall +stats baeldung.com
-dig
-dig +noall +stats baeldung.com
-systemctl restart dnsmasq
-dig +noall +stats apriliaforum.com
-dig +noall +stats omgubuntu.co.uk
-dig +noall +stats www.omgubuntu.co.uk
-dig +noall +stats www.reddit.com
-dig +noall +stats news.google.com
-sudo tail /var/log/syslog
-dig +short chaos txt hits.bind
-dig +short chaos txt misses.bind
-dig +short chaos txt cachesize.bind
-dig +short chaos txt hits.bind
-dig +short chaos txt misses.bind
-curl -v https://dns.nextdns.io/info
-dig +short chaos txt hits.bind
-dig +short chaos txt misses.bind
-dig +short chaos txt hits.bind
-dig +short chaos txt misses.bind
-dig +noall +stats www.reddit.com
-dig +short chaos txt hits.bind
-dig +short chaos txt misses.bind
-dig +short chaos txt cachesize.bind
-sudo tail /var/log/syslog
-dig +noall +stats baeldung.com
-sudo nextdns cache-stats
-sudo sh -c 'sh -c "$(curl -s https://nextdns.io/diag)"'
-dig +noall +stats www.reddit.com
-dig ui.com @1.1.1.1
-systemctl restart dnsmasq
-dig ui.com @1.1.1.1
-dig ui.com
-dig reddit.com
-systemctl restart stubby
-systemctl restart dnsmasq
-dig +short chaos txt hits.bind
-dig +short chaos txt misses.bind
-dig +noall +stats www.reddit.com
-dig +noall +stats apriliaforum.com
-dig apriliaforum.com
-sudo systemctl stop dnsmasq.service
-sudo systemctl disable dnsmasq.service
-sudo systemctl stop stubby.service
-sudo systemctl disable stubby.service
-sudo systemctl start systemd-resolved
-sudo systemctl enable systemd-resolved
-sudo systemctl restart systemd-resolved
-sudo rm /etc/resolv.conf
-sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
-sudo systemctl restart systemd-resolved
-sudo killall -USR1 systemd-resolved
-sudo journalctl -u systemd-resolved > ~/dns-cache.txt
-sudo resolvectl status
-dig +noall +stats apriliaforum.com
-dig ui.com @1.1.1.1
-dig +noall +stats apriliaforum.com
-dig +noall +stats www.reddit.com
-systemd-resolve --status
-sudo rm /etc/resolv.conf
-sudo ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-sudo systemctl restart systemd-resolved
-dig +noall +stats apriliaforum.com
-dig +noall +stats www.reddit.com
-dig ui.com @1.1.1.1
-systemd-resolve --status
-sudo systemctl restart systemd-resolved
-systemd-resolve --status
-sudo resolvectl status
-sudo resolvectl --statistics
-sudo resolvectl query
-sudo resolvectl --help
-sudo resolvectl statistics
-sudo systemctl restart systemd-resolved
-sudo resolvectl statistics
-sudo resolvectl status
-sudo resolvectl statistics
-sudo resolvectl status
-sudo resolvectl statistics
-dig +noall +stats www.reddit.com
-sudo resolvectl statistics
-sudo resolvectl status
-dig +short chaos txt misses.bind
-sudo sh -c 'sh -c "$(curl -s https://nextdns.io/diag)"'
-sudo systemctl restart systemd-resolved
-sudo resolvectl status
-sudo resolvectl statistics
-sudo resolvectl status
-resolvectl query archlinux.org
-sudo systemctl status avahi
-paccache -ruk0
-orphls
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-resolvectl query facebook.com
-arkenfox-updater
-arkenfox-cleaner
-orphls
-pacman -R ruby
-sudo pacman -R ruby
-sudo pacman -R ruby-bundlegems
-sudo pacman -R ruby-bundledgems
-sudo pacman -Rcns ruby
-orphls
-orphrm
-paccache -ruk0
-resolvectl status
-resolvectl domain
-dig +noall +stats duckdns.org
-dig ui.com @1.1.1.1
-dig ui.com @duckdns.org
-dig duckdns.org @1.1.1.1
-dig duckdns.org @45.90.30.54
-cls
-dig duckdns.org @45.90.30.54
-dig duckdns.org @45.90.28.54
-dig duckdns.org @127.0.0.1
-sudo resolvectl status
-sudo resolvectl statistics
-sudo sh -c 'sh -c "$(curl -s https://nextdns.io/diag)"'
-systemctl reload systemd-resolved
-systemctl restart systemd-resolved
-systemctl start dnsmasq
-systemctl restart systemd-resolved
-systemctl restart dnsmasq
-dig +noall +stats apriliaforum.com
-dig ui.com @1.1.1.1
-systemctl stop dnsmasq
-systemctl stop sytemd-resolved
-systemctl start sytemd-resolved
-systemctl stop sytemd-resolved
-systemctl start sytemd-resolved
-systemctl start systemd-resolved
-systemctl stop systemd-resolved
-systemctl start systemd-resolved
-sudo ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-rm etc/resolv.conf
-rm /etc/resolv.conf
-sudo rm /etc/resolv.conf
-systemctl stop systemd-resolved
-systemctl start systemd-resolved
-systemctl start dnsmasq
-dig +noall +stats apriliaforum.com
-dig ui.com @1.1.1.1
-dig +noall +stats ui.com
-systemctl restart systemd-resolved
-systemctl restart dnsmasq
-dig +noall +stats ui.com
-systemctl stop systemd-resolved
-systemctl stop dnsmasq
-systemctl start systemd-resolved
-sudo rm /etc/resolv.conf
-sudo ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-dig +noall +stats ui.com
-systemctl restart systemd-resolved
-dig +noall +stats ui.com
-dig +noall +stats apriliaforum.com
-dig ui.com @1.1.1.1
-dig ui.com @127.0.0.1
-dig ui.com @127.0.0.53
-dig apriliaforum.com @127.0.0.53
-dig reddit.com @127.0.0.53
-orphls
-paccache -ruk0
-makepkg
-qdbus org.freedesktop.portal.Desktop /org/freedesktop/portal/desktop org.freedesktop.portal.Settings.Read "org.freedesktop.appearance" "color-scheme"
-dig +noall +stats apriliaforum.com
-dig apriliaforum.com @127.0.0.53
-dig reddit.com @127.0.0.53
-dig apriliaforum.com ttl
-dig reddit.com ttl
-sudo lsof -i :53
-sudo netstat -ntulp
-systemctl stop systemd-resolved
-systemctl start dnscrypt-proxy
-sudo netstat -ntulp
-systemctl stop systemd-resolved
-systemctl status systemd-resolved
-systemctl status dnscrypt-proxy
-systemctl start dnscrypt-proxy
-systemctl status dnscrypt-proxy
-sudo netstat -ntulp
-systemctl restart NetworkManager
-systemctl start dnscrypt-proxy
-systemctl status dnscrypt-proxy
-systemctl restart NetworkManager
-systemctl start dnscrypt-proxy
-systemctl status dnscrypt-proxy
-systemctl enable now  dnscrypt-proxy
-systemctl enable --now  dnscrypt-proxy
-systemctl start dnscrypt-proxy
-systemctl status dnscrypt-proxy
-ss -lp 'sport = :domain'
-systemctl disable --now systemd-resolved
-ss -lp 'sport = :domain'
-systemctl start dnscrypt-proxy
-systemctl status dnscrypt-proxy
-ss -lp 'sport = :domain'
-systemctl start dnscrypt-proxy
-systemctl start dnscrypt-proxy.service
-systemctl status dnscrypt-proxy.service
-systemctl disable --now  dnscrypt-proxy
-systemctl enable --now  dnscrypt-proxy.socket
-systemctl status dnscrypt-proxy.socket
-systemctl status dnscrypt-proxy.service
-systemctl start dnscrypt-proxy
-systemctl status dnscrypt-proxy
-systemctl disable --now  dnscrypt-proxy.service
-systemctl start dnscrypt-proxy
-systemctl status dnscrypt-proxy
-sudo useradd -r -d /var/dnscrypt -m -s /sbin/nologin dnscrypt
-systemctl start dnscrypt-proxy
-systemctl daemon-reload
-systemctl status dnscrypt-proxy
-systemctl start dnscrypt-proxy
-systemctl status dnscrypt-proxy
-systemctl start dnscrypt-proxy
-systemctl status dnscrypt-proxy
-systemctl enable --now  dnscrypt-proxy
-dig +noall +stats apriliaforum.com
-dig apriliaforum.com ttl
-dig reddit.com @127.0.0.1
-systemctl disable --now  dnscrypt-proxy
-systemctl enable --now systemd-resolved
-systemctl status systemd-resolved
-sudo ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-dig reddit.com @127.0.0.1
-dig +noall +stats apriliaforum.com
-dig reddit.com @127.0.0.53
-sudo deluser dnscrypt
-sudo userdel dnscrypt
-systemctl restart systemd-resolved
-systemctl status systemd-resolved
-dig reddit.com @127.0.0.53
-ss -lp 'sport = :domain'
-orphls
-paccache -ruk0
-systemctl status systemd-resolved
-ss -lp 'sport = :domain'
-klassy-settings
-sudo pacman -S kdecoration qt5-declarative qt5-x11extras cmake make gcc extra-cmake-modules
-makepkg
-dig reddit.com @127.0.0.53
-dig nextdns.io @127.0.0.53
-user.js-notify
-user.js-notify.sh
-./user.js-notify.sh
-webapp-nav
-user.js-notify.sh
-user.js-notify
-sh user.js-notify
-sh userjs-notify
-userjs-notify
-user.js-notify
-./user.js-notify.sh
-arkenfox-updater
-arkenfox-cleaner
-./user.js-notify.sh
-user.js-notify
-path
-path=
-webapp-nav
-user.js-notify
-user.js-notify.sh
-echo $PATH
-source .profile
-echo $PATH
-user.js-notify
-bash user.js-notify
-echo $PATH
-user.js-notify
-/home/bkmo/.local/bin/user.js-notify
-userjs-notify
-/home/bkmo/.local/bin/userjs-notify
-/home/bkmo/.local/bin/user-js-notify
-/home/bkmo/.local/bin/userjs-notify.sh
-userjs-notify.sh
-user.js-notify
-user.js-notify.sh
-arkenfox-updater
-arkenfox-cleaner
-arkenfox-updater
-arkenfox-cleaner
-arkenfox-updater
-arkenfox-cleaner
-fc-match "Helvetica"
-fc-cache -rv
-fc-match "Helvetica"
-fc-cache -rv
-fc-match "Helvetica"
-fc-cache -rv
-fc-match "Helvetica"
-fc-cache -rv
-fc-match "Helvetica"
-GTK_USE_PORTAL=1 pamac
-GTK_USE_PORTAL=1 pamac-manager
-export GDK_BACKEND=wayland export GTK_USE_PORTAL=1 pamac-manager
-export GDK_BACKEND=wayland export GTK_USE_PORTAL=1
-pamac-manager
-qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
-fc-match "Helvetica"
-fing *.otf
-find *.otf
-locate *.otf
-locate .otf
-find .otf
-find otf
-locate otf
-sudo systemctl edit https_dns_proxy.service
-systemctl stop systemd-resolved
-ss -lp 'sport = :domain'
-systemd start http_dns_proxy
-systemctl start http_dns_proxy
-systemctl start dnsmasq
-systemctl status dnsmasq
-sudo systemctl edit https_dns_proxy.service
-systemctl restart http_dns_proxy
-sudo systemctl edit https_dns_proxy.service
-systemctl restart http_dns_proxy
-systemctl start http_dns_proxy
-systemctl daemon reload
-systemctl daemon-reload
-systemctl start http_dns_proxy
-systemctl restart munin munin-node
-systemctl start http_dns_proxy
-systemctl daemon-reload
-systemctl start http_dns_proxy
-systemctl daemon-reload
-systemctl status http_dns_proxy
-systemctl start http_dns_proxy
-systemctl daemon-reload
-systemctl start http_dns_proxy
-systemctl status http_dns_proxy
-/sbin/restorecon -v https_dns_proxy.service
-sudo systemctl start http_dns_proxy
-systemctl daemon reload
-systemctl daemon-reload
-systemctl status http_dns_proxy
-systemctl edit https_dns_proxy.service
-sudo systemctl edit https_dns_proxy.service
-sudo systemctl edit https_dns_proxy.service --full
-systemd start http_dns_proxy
-systemctl start http_dns_proxy
-sytemctl start systemctl-resolved
-systemctl start systemctl-resolved
-sudo ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-systemctl status systemctl-resolved
-systemctl status systemd-resolved
-systemctl start http_dns_proxy
-systemd-resolve --statistics
-journalctl
-sudo journalctl
-sudo journalctl -b
-systemctl restart systemd-journald.service
-sudo journalctl -b
-systemctl status systemd-journald.service
-systemctl enable systemd-journald.service
-sudo journalctl -b
-systemctl status systemd-journald.service
-journalctl
-systemd-resolve --statistics
-journalctl --verify
-sudo killall -USR1 systemd-resolved
-sudo journalctl -u systemd-resolved > ~/dns-cache.txt
-systemctl status systemd-journald.service
-journalctl
-sudo journalctl -b
-systemctl status systemd-journald.service
-systemctl restart systemd-journald.service
-sudo journalctl -b
-sudo killall -USR1 systemd-resolved
-sudo journalctl -u systemd-resolved > ~/dns-cache.txt
-sudo journalctl -b
-sudo journalctl
-sudo journalctl -b
-sudo resolvectl status
-/home/bkmo/.local/bin/userjs-notify.sh
-userjs-notify
-userjs-notify.sh
-user.js-notify.sh
-echo $PATH
-sudo journalctl -b
-echo $PATH
-source .profile
-echo $PATH
-source .bash_rc
-source .bashrc
-echo $PATH
-user.js-notify.sh
-arkenfox-updater
-arkenfox-cleaner
-ping /n 6 ipv4-anexia-mde-1.edge.nextdns.io
-sudo ping /n 6 ipv4-anexia-mde-1.edge.nextdns.io
-sudo ping /n 6 ipv4-anexia-mia-1.edge.nextdns.io
-whois
-whois 186.26.117.80
-ngrep port 53
-resolvectl query archlinux.org
-networkctl status
-resolvectl status
-systemctl disable now systemd-resolved
-systemctl disable --now systemd-resolved
-systemctl enable --now dnscrypt-proxy
-systemctl status dnscrypt-proxy
-systemctl status systemd-resolved
-dig +noall +stats apriliaforum.com
-systemctl reload  dnscrypt-proxy
-systemctl restart  dnscrypt-proxy
-systemctl status systemd-resolved
-systemctl status dnscrypt-proxy
-dnscrypt-proxy -resolve
-dnscrypt-proxy -version
-dnscrypt-proxy -check
-dnscrypt-proxy -check -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml
-dnscrypt-proxy -list
-dnscrypt-proxy -list -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml
-systemctl restart  dnscrypt-proxy
-sudo journalctl -b
-systemctl status systemd-journald
-systemctl restart  dnscrypt-proxy
-systemctl status dnscrypt-proxy
-systemctl restart  dnscrypt-proxy
-systemctl status dnscrypt-proxy
-systemctl restart  dnscrypt-proxy
-systemctl status dnscrypt-proxy
-systemctl restart  dnscrypt-proxy
-systemctl status dnscrypt-proxy
-systemctl restart  dnscrypt-proxy
-systemctl status dnscrypt-proxy
-systemctl restart  dnscrypt-proxy
-systemctl status dnscrypt-proxy
-systemctl restart  dnscrypt-proxy
-systemctl status dnscrypt-proxy
-systemctl restart  dnscrypt-proxy
-systemctl status dnscrypt-proxy
-sudo systemctl restart NetworkManager.service
-dnscrypt-proxy
-dnscrypt-proxy -h
-whois 186.15.239.82
-systemctl status dnscrypt-proxy
-systemctl status systemd-resolved
-systemctl start dnscrypt-proxy
-systemctl status dnscrypt-proxy
-systemctl start dnscrypt-proxy
-systemctl disable dnscrypt-proxy.socket
-systemctl status dnscrypt-proxy.socket
-luksDump /dev/mapper/luks-1
-cryptsetup-luksDump /dev/mapper/luks-1
-cryptsetup --luksDump /dev/mapper/luks-1
-cryptsetup -v luksDump /dev/mapper/luks-1
-sudo cryptsetup -v luksDump /dev/mapper/luks-1
-sudo cryptsetup -v luksDump /dev/nvme0n1
-sudo cryptsetup -v luksDump /dev/nvme0n1p2
-sudo cryptsetup -v luksDump /dev/nvme0n1p6
-sudo cryptsetup luksHeaderBackup /dev/nvme0n1p6
---header-backup-file luksheader.bak
-sudo cryptsetup luksHeaderBackup /dev/nvme0n1p6 --header-backup-file luksheader.bak
-sudo cryptsetup luksHeaderBackup /dev/nvme0n1p6 --header-backup-file luksheaderbak.bin
-cat /etc/crypttab
-sudo cat /etc/crypttab
-makepkg
-makepkg -h
-makepkg -s
-makepkg
-orphls
-orphrm
-paccache -ruk0
-sfebk
-sfecr
-sfebk
-sfecr
-sfebk
-git commit -a -m "browser extension add moz-extension"
-cdgit
-git commit -a -m "browser extension add moz-extension"
-git push -u origin firefox-improvements
-git add {1010cbab-92d4-4ee8-85d6-8161591f3180}.xpi
-git add /usr/share/webapp-manager/firefox/profile/extensions/{1010cbab-92d4-4ee8-85d6-8161591f3180}.xpi
-git add /webapp-manager/firefox/profile/extensions/{1010cbab-92d4-4ee8-85d6-8161591f3180}.xpi
-git commit -a -m "browser extension add moz-extension"
-git add         usr/share/webapp-manager/firefox/profile/extensions/{1010cbab-92d4-4ee8-85d6-8161591f3180}.xpi
-git commit -a -m "browser extension add moz-extension"
-git push -u origin firefox-improvements
-orphls
-paccache -ruk0
-systemctls start reflector
-systemctl start reflector
-dig +noall +stats apriliaforum.com
-dig +noall +stats www.apriliaforum.com
-dig +noall +stats archlinux.org
-dig +noall +stats www.reddit.com
-dig +noall +stats news.google.com
-git commit -a -m "cleanup extensions and navbar copies"
-cdgit
-git commit -a -m "cleanup extensions and navbar copies"
-git push -u origin firefox-improvements
-git tag 1.2.8.3
-git tag 1.2.8.4
-git push --tags 1.2.8.4
-git push --tags
-makepkg -i
-cdgit
-git tag -d 1.2.7.4
-git tag -d 1.2.7.6
-git tag -d 1.2.7.7
-git tag -d 1.2.7.8
-git tag -d 1.2.7.9
-git tag -d 1.2.8.0
-git push --delete origin 1.2.7.4
-git push --delete origin 1.2.7.6
-git push --delete origin 1.2.7.7
-git push --delete origin 1.2.7.8
-git push --delete origin 1.2.7.9
-git push --delete origin 1.2.8.0
-git tag -d 1.2.5.4
-cdgit
-git tag -d 1.2.5.4
-git tag -d 1.2.5.6
-git tag -d 1.2.1
-git tag -d 1.2.0
-git tag -d 1.1.9
-git tag -d 1.1.8
-git push --delete origin 1.2.5.4
-git push --delete origin 1.2.5.6
-git push --delete origin 1.2.1
-git push --delete origin 1.2.0
-git push --delete origin 1.1.9
-git push --delete origin 1.1.8
-cdgit
-git tag -d 1.1.7
-git tag -d 1.1.6
-git tag -d 1.1.5
-git tag -d 1.1.4
-git tag -d 1.1.3
-git tag -d 1.1.2
-git push --delete origin 1.1.7
-git push --delete origin 1.1.6
-git push --delete origin 1.1.5
-git push --delete origin 1.1.4
-git push --delete origin 1.1.3
-git push --delete origin 1.1.2
-git tag -d 1.1.1
-git tag -d 1.1.0
-git tag -d 1.0.9
-git tag -d 1.0.8
-git tag -d 1.0.7
-git push --delete origin 1.1.1
-git push --delete origin 1.1.0
-git push --delete origin 1.0.9
-git push --delete origin 1.0.8
-git push --delete origin 1.0.7
-orphls
-paccache -ruk0
-systemctl restart dnscrypt-proxy
-dig +noall +stats www.apriliaforum.com
-dig +noall +stats reddit.com
-dig +noall +stats www.reddit.com
-dig +noall +stats reddit.com
-mkinitcpio
-mkinitcpio -h
-mkinitcpio -P
-sudo mkinitcpio -P
-dmesg
-sudo dmesg | grep Guc
-sudo dmesg | grep guc
-sudo dmesg | grep HuC
-intel_gpu_top
-sudo intel_gpu_top
-echo powersupersave > /sys/module/pcie_aspm/parameters/policy
-sudo echo powersupersave > /sys/module/pcie_aspm/parameters/policy
-su
-echo "options i915 enable_guc=2 enable_dc=4 enable_fbc=1 enable_psr=1 enable_psr2_sel_fetch=1 disable_power_well=1" > /etc/modprobe.d/i915.conf
-sudo [200~echo "options i915 enable_guc=2 enable_dc=4 enable_fbc=1 enable_psr=1 enable_psr2_sel_fetch=1 disable_power_well=1" > /etc/modprobe.d/i915.conf
-sudo echo "options i915 enable_guc=2 enable_dc=4 enable_fbc=1 enable_psr=1 enable_psr2_sel_fetch=1 disable_power_well=1" > /etc/modprobe.d/i915.conf
-sudo
-echo "options i915 enable_guc=2 enable_dc=4 enable_fbc=1 enable_psr=1 enable_psr2_sel_fetch=1 disable_power_well=1" > /etc/modprobe.d/i915.conf
-sudo echo "options i915 enable_guc=2 enable_dc=4 enable_fbc=1 enable_psr=1 enable_psr2_sel_fetch=1 disable_power_well=1" > /etc/modprobe.d/i915.conf
-sudo
-sudo echo "options i915 enable_guc=2 enable_dc=4 enable_fbc=1 enable_psr=1 enable_psr2_sel_fetch=1 disable_power_well=1" > /etc/modprobe.d/i915.conf
-sudo intel_gpu_top
-echo "options i915 enable_guc=2 enable_dc=4 enable_fbc=1 enable_psr=1 enable_psr2_sel_fetch=1 disable_power_well=1" > /etc/modprobe.d/i915.conf
-sudo echo "options i915 enable_guc=2 enable_dc=4 enable_fbc=1 enable_psr=1 enable_psr2_sel_fetch=1 disable_power_well=1" > /etc/modprobe.d/i915.conf
-su
-sudo echo powersupersave > /sys/module/pcie_aspm/parameters/policy
-sudo dmesg | grep HuC
-sudo dmesg | grep GuC
-cat /sys/kernel/debug/dri/0/i915_edp_psr_status
-sudo cat /sys/kernel/debug/dri/0/i915_edp_psr_status
-arkenfox-updater
-arkenfox-cleaner
-wget https://github.com/Schneegans/Burn-My-Windows/releases/latest/download/burn_my_windows_kwin4.tar.gz
-tar -xf burn_my_windows_kwin4.tar.gz -C ~/.local/share/kwin/effects
-sudo shutdoen now
-source .bashrc
-pacman -Syyu
-sudo pacman -Syyu
-sudo pacman -
-sudo pacman --help
-sudo pacman -f
-sudo pacman -F
-chsh
-which shell
-which zsh
+: 1664307364:0;powerprofilesctl
+: 1664307364:0;flashfetch
+: 1664307364:0;sudo btrfs filesystem show
+: 1664307364:0;fwupdmgr get-devices
+: 1664307364:0;btrfs check /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
+: 1664307364:0;sudo btrfs check /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
+: 1664307364:0;sudo btrfs balance start -dusage=66 /home
+: 1664307364:0;systemctl status btrfs-scrub@home
+: 1664307364:0;systemctl status reflector.timer
+: 1664307364:0;systemctl start fstrim.service
+: 1664307364:0;systemctl start  btrfs-scrub@-
+: 1664307364:0;systemctl start  btrfs-scrub@home
+: 1664307364:0;pacman -Q | grep 'accountsservice'
+: 1664307364:0;sudo chmod 775 /var/lib/AccountsService/
+: 1664307364:0;systemctl mask wpa_supplicant
+: 1664307364:0;sudo systemctl daemon-reload
+: 1664307364:0;sudo systemctl restart accounts-daemon.service
+: 1664307364:0;systemctl start reflector service
+: 1664307364:0;kwriteconfig5 --file startkderc --group General --key systemdBoot true
+: 1664307364:0;systemd-analyze critical-chain
+: 1664307364:0;yay -Qqe > pkglist.txt
+: 1664307364:0;systemctl list-unit-files --state=enabled > enabled-services.txt
+: 1664307364:0;systemctl list-unit-files --user --state=enabled > enabled-services.txt
+: 1664307364:0;systemctl start reflector.service
+: 1664307364:0;systemctl status reflector.service
+: 1664307364:0;systemctl status wpa_supplicant
+: 1664307364:0;smartctl
+: 1664307364:0;journalctl -p5
+: 1664307364:0;pacman -Qo /snap
+: 1664307364:0;pacman -Qo ~/.local/share/flatpak
+: 1664307364:0;vulkaninfo
+: 1664307364:0;dmesg | grep guc
+: 1664307364:0;sudo dmesg | grep huc
+: 1664307364:0;sudo dmesg | grep i915
+: 1664307364:0;echo "$QT_QPA_PLATFORMTHEME"
+: 1664307364:0;ps -a
+: 1664307364:0;ps -A
+: 1664307364:0;4kvideo
+: 1664307364:0;4kvideodownload
+: 1664307364:0;4kvideodownloader
+: 1664307364:0;busctl
+: 1664307364:0;cat /proc/sys/kernel/random/entropy_avail
+: 1664307364:0;systemd-analyze
+: 1664307364:0;systemctl
+: 1664307364:0;systemctl | grep oom
+: 1664307364:0;systemctl | grep oomd
+: 1664307364:0;systemctl status pamac-cleancache
+: 1664307364:0;systemctl start pamac-cleancache
+: 1664307364:0;systemctl reload pamac-cleancache
+: 1664307364:0;systemctl reload pamac-cleancache.timer
+: 1664307364:0;systemctl stop pamac-cleancache.timer
+: 1664307364:0;find / -xtype l -print
+: 1664307364:0;sudo find / -xtype l -print
+: 1664307364:0;sudo systemctl restart systemd-journald
+: 1664307364:0;systemctl status pamac-cleancache.timer
+: 1664307364:0;systemd-analyze blame
+: 1664307364:0;journalctl -p 3 -b
+: 1664307364:0;pacman-Syu
+: 1664307364:0;yay -Syu
+: 1664307364:0;sudo pacman -Syy archlinux-keyring
+: 1664307364:0;sudo pacman -Su
+: 1664307364:0;fatresize
+: 1664307364:0;resize2fs
+: 1664307364:0;sudo mount -a
+: 1664307364:0;efibootmgrhelp
+: 1664307364:0;efibootmgr help
+: 1664307364:0;fdisk -l
+: 1664307364:0;sudo fdisk -l
+: 1664307364:0;efibootmgr -c -d=/dev/nvme0n1p2 -L="Windows10" -l='\EFI\Microsoft\Boot\bootmgrfw.efi'
+: 1664307364:0;efibootmgr -c -d=/dev/nvme0n1p2 -L="Windows10" -l='\efi\Microsoft\Boot\bootmgrfw.efi'
+: 1664307364:0;efibootmgr -c -d=/dev/nvme0n1p2 -L="Windows10" -l='\boot\efi\Microsoft\Boot\bootmgrfw.efi'
+: 1664307364:0;efibootmgr -c -d=/dev/nvme0n1p2 -L="Windows10" -l=\boot\efi\Microsoft\Boot\bootmgrfw.efi'
+: 1664307364:0;efibootmgr -c -d=/dev/nvme0n1p2 -L="Windows10" -l='\boot\efi\Microsoft\Boot\bootmgrfw.efi
+: 1664307364:0;efibootmgr -c -d=/dev/nvme0n1p2 -L="Windows10" -l=\boot\efi\Microsoft\Boot\bootmgrfw.efi
+: 1664307364:0;efibootmgr -c -d /dev/nvme0n1p2 -L "Windows10" -l '\boot\efi\Microsoft\Boot\bootmgrfw.efi'
+: 1664307364:0;sudo efibootmgr -c -d /dev/nvme0n1p2 -L "Windows10" -l '\boot\efi\Microsoft\Boot\bootmgrfw.efi'
+: 1664307364:0;efibootmgr -b Boot0002
+: 1664307364:0;efibootmgr -b 0002
+: 1664307364:0;efibootmgr -B 0002
+: 1664307364:0;efibootmgr -Bb 0002
+: 1664307364:0;sudo efibootmgr -c -d /dev/nvme0n1p2 -L "Windows10" -l '\EFI\Microsoft\Boot\bootmgrfw.efi'
+: 1664307364:0;sudo efibootmgr -c -d /dev/nvme0n1p2 -L "Windows10" -l '\EFI\Microsoft\Boot\bootmgfw.efi'
+: 1664307364:0;sudo efibootmgr -c -L "Windows10" -l '\EFI\Microsoft\Boot\bootmgfw.efi'
+: 1664307364:0;sudo efibootmgr -c -d /dev/nvme0n1p2 -p 2 -L "Windows10" -l '\EFI\Microsoft\Boot\bootmgfw.efi'
+: 1664307364:0;sudo efibootmgr -c -d /dev/nvme0n1 -p 2 -L "Windows10" -l '\EFI\Microsoft\Boot\bootmgfw.efi'
+: 1664307364:0;sudo efibootmgr -Bb 0002
+: 1664307364:0;sudo efibootmgr -c -d /dev/nvme0n1 -p 2 -L "Windows 10" -l '\EFI\Microsoft\Boot\bootmgfw.efi'
+: 1664307364:0;pacman -S bash-completion
+: 1664307364:0;sudo pacman -S bash-completion
+: 1664307364:0;ne
+: 1664307364:0;systemctl --user status wireplumber
+: 1664307364:0;update-initramfs
+: 1664307364:0;sudo mkinitcpio
+: 1664307364:0;mkinitcpio --help
+: 1664307364:0;sudo kate
+: 1664307364:0;lspci
+: 1664307364:0;lsusb
+: 1664307364:0;paru
+: 1664307364:0;yay-S duf
+: 1664307364:0;yay -R python-crypto
+: 1664307364:0;yay -Rcns python-pycrypto
+: 1664307364:0;yay -R python-pycrypto
+: 1664307364:0;yay -S duf
+: 1664307364:0;yay -S innoextract
+: 1664307364:0;yay -R innoextract
+: 1664307364:0;btrfs check /dev/mapper/luks-1
+: 1664307364:0;sudo efibootmgr -Bb 0001
+: 1664307364:0;sudo efibootmgr -c -d /dev/nvme0n1 -p 2 -L "Arch Linux" -l '\EFI\arch\grubx64.efi'
+: 1664307364:0;mkdir -p ~/.local/share/kwin/effects
+: 1664307364:0;cat /sys/fs/btrfs/{fsid}/features/no_holes
+: 1664307364:0;qdbus org.kde.ksmserver /KSMServer logout 0 3 3
+: 1664307364:0;loginctl terminate-user bkmo
+: 1664307364:0;sudo dmesg | grep BTRFS
+: 1664307364:0;sudo libinput list-devices | grep gesture
+: 1664307364:0;timeshift
+: 1664307364:0;timeshift-gtk
+: 1664307364:0;sudo install battop* /usr/local/bin/battop
+: 1664307364:0;sudo install battop /usr/local/bin/battop
+: 1664307364:0;cat /sys/block/sda/queue/scheduler
+: 1664307364:0;cat /nvme0n1/block/sda/queue/scheduler
+: 1664307364:0;cat /sys/block/nvme0n1/queue/scheduler
+: 1664307364:0;battop
+: 1664307364:0;nextdns.stop
+: 1664307364:0;qdbus org.kde.shutdown /Shutdown logout
+: 1664307364:0;qdbus org.kde.shutdown
+: 1664307364:0;GDK_DPI_SCALE=1.125 tutanota-desktop-linux.AppImage
+: 1664307364:0;GDK_DPI_SCALE=1.125 ~/Applications/tutanota-desktop-linux.AppImage
+: 1664307364:0;GDK_DPI_SCALE=1.155 ~/Applications/tutanota-desktop-linux.AppImage
+: 1664307364:0;GDK_DPI_SCALE=1.155 ~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland~
+: 1664307364:0;GDK_DPI_SCALE=1.155 ~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
+: 1664307364:0;GDK_DPI_SCALE=1.150 ~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
+: 1664307364:0;~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor
+: 1664307364:0;~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=2
+: 1664307364:0;~/Applications/tutanota-desktop-linux.AppImage --force-device-scale-factor=2.0
+: 1664307364:0;firefox --force-device-scale-factor=1.25
+: 1664307364:0;firefox --force-device-scale-factor=1.50
+: 1664307364:0;xwininfo
+: 1664307364:0;xeyes
+: 1664307364:0;~/Applications/tutanota-desktop-linux.AppImage --force-device-scale-factor=1.25
+: 1664307364:0;~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=2.0
+: 1664307364:0;~/Applications/GDK_SCALE=1.25 tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
+: 1664307364:0;~GDK_SCALE=1.25 /Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
+: 1664307364:0;GDK_SCALE=1.25 ~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
+: 1664307364:0;GDK_SCALE=1.25 GDK_DPI_SCALE=1.5
+: 1664307364:0;~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
+: 1664307364:0;GDK_SCALE=1.25 GDK_DPI_SCALE=1.5~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
+: 1664307364:0;GDK_SCALE=1.25 GDK_DPI_SCALE=1.5 ~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
+: 1664307364:0;~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland &&
+: 1664307364:0;~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland &
+: 1664307364:0;sudo downgrade linux
+: 1664307364:0;sudo dmesg
+: 1664307364:0;sudo dmesg | grep wifi
+: 1664307364:0;sudo dmesg | grep intel
+: 1664307364:0;sudo dmesg | grep Intel
+: 1664307364:0;lsmod | grep intel_agp
+: 1664307364:0;sudo nano /etc/modprobe.d/i915.conf
+: 1664307364:0;sudo dmesg | firmware
+: 1664307364:0;sudo dmesg | grep Huc
+: 1664307364:0;lspci -k
+: 1664307364:0;sudo nano /etc/sysctl.d/disable_watchdog.conf
+: 1664307364:0;sudo nano /etc/modprobe.d/modprobe.conf
+: 1664307364:0;lsmod
+: 1664307364:0;sudo dmesg | grep firmware
+: 1664307364:0;sudo dmesg | grep taint
+: 1664307364:0;echo dev.i915.perf_stream_paranoid=0 | sudo tee -a /etc/sysctl.d/99-i915psp.conf
+: 1664307364:0;sudo sysctl
+: 1664307364:0;cat /sys/devices/system/cpu/cpuidle/current_driver
+: 1664307364:0;cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_driver
+: 1664307364:0;cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+: 1664307364:0;sudo systemctl status thermald.service
+: 1664307364:0;~/Applications/tutanota-desktop-linux.AppImage
+: 1664307364:0;sudo wdctl
+: 1664307364:0;journalctl -xe
+: 1664307364:0;sudo reboot
+: 1664307364:0;sudo nano /etc/systemd/zram-generator.conf
+: 1664307364:0;restartplasma
+: 1664307364:0;rm cookies.sqllite
+: 1664307364:0;rm cookies.sqlite
+: 1664307364:0;find /var/tmp/ -mtime +30
+: 1664307364:0;sudo find /var/tmp/ -mtime +30
+: 1664307364:0;man systemd-tmpfiles(8)
+: 1664307364:0;man systemd-tmpfiles
+: 1664307364:0;man tmpfiles.d
+: 1664307364:0;journalctl --disk-usage
+: 1664307364:0;sudo btrfs filesystem usage /
+: 1664307364:0;sudo mkdir /mnt/btrfa
+: 1664307364:0;sudo btrfs sub create /mnt/btrfs/@log
+: 1664307364:0;sudo mount /dev/mapper/luks-1 /mnt/btrfs
+: 1664307364:0;btrfs sub list
+: 1664307364:0;btrfs sub --help
+: 1664307364:0;btrfs sub show
+: 1664307364:0;sudo btrfs sub show /
+: 1664307364:0;sudo btrfs sub show /dev/mapper/luks-1
+: 1664307364:0;sudo btrfs balance start -dusage=66 /
+: 1664307364:0;systemctl disable btrfs-scrub@-.timer
+: 1664307364:0;systemctl disable btrfs-scrub@home.timer
+: 1664307364:0;systemctl stop btrfs-scrub@home.timer
+: 1664307364:0;systemctl stop btrfs-scrub@-.timer
+: 1664307364:0;systemctl enable btrfs-trim.timer
+: 1664307364:0;systemctl stop fstrim.timer
+: 1664307364:0;systemctl disable fstrim.timer
+: 1664307364:0;systemctl enable --now btrfs-trim.timer
+: 1664307364:0;btrfsmaintenance-refresh
+: 1664307364:0;systemctl start btrfs-trim.service
+: 1664307364:0;systemctl status btrfs-trim.service
+: 1664307364:0;systemctl stop btrfs-trim.timer
+: 1664307364:0;systemctl disable btrfs-trim.timer
+: 1664307364:0;systemctl enable --now fstrim.timer
+: 1664307364:0;swapon
+: 1664307364:0;systemctl stop /dev/zram0
+: 1664307364:0;systemctl start /dev/zram0
+: 1664307364:0;zramctl
+: 1664307364:0;btrfs sub show /
+: 1664307364:0;sudo powertop
+: 1664307364:0;echo vm.swappiness=100 | sudo tee -a /etc/sysctl.d/99-sysctl.conf
+: 1664307364:0;cat /proc/sys/kernel/watchdog
+: 1664307364:0;wdctl
+: 1664307364:0;cat /proc/sys/vm/swappiness
+: 1664307364:0;cat /proc/sys/vm/page-cluster
+: 1664307364:0;cat /proc/sys/vm/dirty_background_ratio
+: 1664307364:0;cat /proc/sys/vm/dirty_ratio
+: 1664307364:0;cat /proc/sys/vm/vfs_cache_pressure
+: 1664307364:0;lxappearance
+: 1664307364:0;Lxappearance
+: 1664307364:0;free
+: 1664307364:0;sudo pacman -S
+: 1664307364:0;sudo pacman -Syy
+: 1664307364:0;yay -Sc --noconfirm --sudo=true || true
+: 1664307364:0;paru -Sc --noconfirm --sudo=true || true
+: 1664307364:0;timeshift --check --scripted
+: 1664307364:0;sudo timeshift --create --scripted --tags B
+: 1664307364:0;sudo timeshift --check --scripted
+: 1664307364:0;sysctl stop cronie
+: 1664307364:0;sysctl stop cronie.service
+: 1664307364:0;sysctl disable cronie.service
+: 1664307364:0;systemctl enable cronie
+: 1664307364:0;kcron
+: 1664307364:0;systemctl start --now cronie
+: 1664307364:0;systemctl enable --now timeshift.service
+: 1664307364:0;systemctl enable --now timeshift.timer
+: 1664307364:0;systemctl enable --now timeshift-boot.timer
+: 1664307364:0;systemctl disable cronie
+: 1664307364:0;systemctl mask cronie
+: 1664307364:0;systemctl stop cronie
+: 1664307364:0;crontab -l
+: 1664307364:0;systemctl stop cronie.service
+: 1664307364:0;systemctl disable cronie.service
+: 1664307364:0;sudo timeshift
+: 1664307364:0;mount -a
+: 1664307364:0;mount
+: 1664307364:0;cd /run
+: 1664307364:0;cd timeshift
+: 1664307364:0;cd 7709
+: 1664307364:0;cd backup
+: 1664307364:0;sudo timeshift --list
+: 1664307364:0;btrfs subvolume list
+: 1664307364:0;btrfs subvolume list /
+: 1664307364:0;sudo btrfs subvolume list /
+: 1664307364:0;cat /etc/fstab
+: 1664307364:0;sudo systemctl edit --full grub-btrfs.path
+: 1664307364:0;sudo systemctl edit --full timeshhift-snapshots-updategrub.service
+: 1664307364:0;sudo systemctl edit --full timeshhift-snapshots-update=grub.service
+: 1664307364:0;/etc/grub.d/41_snapshots-btrfs
+: 1664307364:0;sh /etc/grub.d/41_snapshots-btrfs
+: 1664307364:0;export GTK_USE_PORTAL=0
+: 1664307364:0;export GTK_USE_PORTAL=
+: 1664307364:0;export GTK_USE_PORTAL=1
+: 1664307364:0;strawberry
+: 1664307364:0;ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list
+: 1664307364:0;pacnewroor
+: 1664307364:0;sudo systemctl edit --full timeshift-snapshots-update-grub.service
+: 1664307364:0;export $(dbus-launch) sudo systemsettings5
+: 1664307364:0;export $(dbus-launch)
+: 1664307364:0;sudo export $(dbus-launch) systemsettings5
+: 1664307364:0;sudo dbus-launch systemsettings5
+: 1664307364:0;find firefoxpwa
+: 1664307364:0;firefoxpwa profile
+: 1664307364:0;xdotool
+: 1664307364:0;xdo
+: 1664307364:0;firefox -tray
+: 1664307364:0;busctl set-property org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager EnableWallMessages b false
+: 1664307364:0;sudo busctl set-property org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager EnableWallMessages b false
+: 1664307364:0;wtype
+: 1664307364:0;wtype search --all --pid $pidno --class firefox windowactivate
+: 1664307364:0;ydotool search --all --pid $pidno --class firefox windowactivate
+: 1664307364:0;ydotool help
+: 1664307364:0;locate firefox-bin
+: 1664307364:0;locate firefoxpwa
+: 1664307364:0;which firefoxpwa
+: 1664307364:0;locate chrome-apps.directory
+: 1664307364:0;locate chrome-apps
+: 1664307364:0;xdg-desktop-menu
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage -a
+: 1664307364:0;"/home/bkmo/Applications/tutanota-desktop-linux.AppImage" -a --force-device-scale-factor=1.25
+: 1664307364:0;QTWEBENGINE_CHROMIUM_FLAGS=--blink-settings=darkMode=4,darkModeImagePolicy=2 falkon
+: 1664307364:0;QTWEBENGINE_CHROMIUM_FLAGS=--force-dark-mode  falkon
+: 1664307364:0;QTWEBENGINE_CHROMIUM_FLAGS="-blink-settings=darkModeEnabled=true -enable-features=OverlayScrollbar,OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter" falkon
+: 1664307364:0;export QTWEBENGINE_CHROMIUM_FLAGS=--blink-settings=darkMode=4,darkModeImagePolicy=2
+: 1664307364:0;export QTWEBENGINE_CHROMIUM_FLAGS= --blink-settings=darkModeEnabled=true
+: 1664307364:0;falkon
+: 1664307364:0;QTWEBENGINE_CHROMIUM_FLAGS= --blink-settings=darkModeEnabled=true falkon
+: 1664307364:0;QTWEBENGINE_CHROMIUM_FLAGS=--blink-settings=darkModeEnabled=true falkon
+: 1664307364:0;QTWEBENGINE_CHROMIUM_FLAGS=--blink-settings=forceDarkModeEnabled=true falkon
+: 1664307364:0;sudo pacman -Sy
+: 1664307364:0;systemctl status systemd-sysctl.service
+: 1664307364:0;sysctl -w dev.i915.perf_stream_paranoid=0
+: 1664307364:0;sudo sysctl -w dev.i915.perf_stream_paranoid=0
+: 1664307364:0;curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -
+: 1664307364:0;which whatsapp-for-linux
+: 1664307364:0;locate com.github.eneshecan.WhatsAppForLinux
+: 1664307364:0;1833
+: 1664307364:0;history 1833
+: 1664307364:0;paccache -ruk1
+: 1664307364:0;locate user.js
+: 1664307364:0;locate arkenfox-user.js
+: 1664307364:0;prefsCleaner.sh
+: 1664307364:0;./prefsCleaner.sh
+: 1664307364:0;./updater.sh
+: 1664307364:0;history
+: 1664307364:0;firefoxpwa
+: 1664307364:0;falkon -o -f -p earth https://earth.google.com/web
+: 1664307364:0;falkon -o -p earth https://earth.google.com/web
+: 1664307364:0;falkon --app=https://earth.google.com/web
+: 1664307364:0;firefoxpwa profile list
+: 1664307364:0;falkon --help
+: 1664307364:0;falkon -
+: 1664307364:0;falkon -v
+: 1664307364:0;which spotify
+: 1664307364:0;sudo rm lock
+: 1664307364:0;find kf5-
+: 1664307364:0;locate kf5-
+: 1664307364:0;locate kf5-webapps
+: 1664307364:0;falkon -o -f -p hydrogen https://hydrogen.element.io/
+: 1664307364:0;falkon -o -p hydrogen https://hydrogen.element.io/
+: 1664307364:0;wget https://download.mozilla.org/?product=firefox-latest-ssl&os=linux
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=1
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1 --force-device-scale-factor=1
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1 --force-device-scale-factor=1.25
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1 --force-device-scale-factor=o.25
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1 --force-device-scale-factor=0.50
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=2
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=1.5
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=0.8
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=1.25 --high-dpi-support=1
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=125 --high-dpi-support=1
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor=125
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=2
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.5 --force-device-scale-factor=1.5
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.5 --force-device-scale-factor=1
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.5 --force-device-scale-factor=.5
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.5 --force-device-scale-factor=1.25
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.75
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=2.0
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.90
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.25
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.5
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage
+: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
+: 1664307364:0;which firefox
+: 1664307364:0;firefox-bin
+: 1664307364:0;makepkg --help
+: 1664307364:0;systemctl restart pipewire.service
+: 1664307364:0;systemctl --user restart pipewire.service
+: 1664307364:0;pactl
+: 1664307364:0;pactl list
+: 1664307364:0;sudo systemd-analyze critical-chain
+: 1664307364:0;sudo systemd-analyze
+: 1664307364:0;which balenaetcher
+: 1664307364:0;systemsettings kcm_krunner
+: 1664307364:0;reboot now
+: 1664307364:0;which webapp-manager
+: 1664307364:0;read
+: 1664307364:0;read --help
+: 1664307364:0;sudo reboot --help
+: 1664307364:0;sudo chattr +i common.py
+: 1664307364:0;firefox --help
+: 1664307364:0;sudo chattr +i prefsCleaner.sh
+: 1664307364:0;cat > userChrome.css & #nav-bar, #identity-box, #tabbrowser-tabs, #TabsToolbar {
+: 1664307364:0;sed userChrome.css
+: 1664307364:0;sed 'd'userChrome.css
+: 1664307364:0;sed 'd' userChrome.css
+: 1664307364:0;sed d userChrome.css
+: 1664307364:0;cat > userChrome.css
+: 1664307364:0;cat > userChrome.css &
+: 1664307364:0;cat "" > userChrome.css
+: 1664307364:0;> userChrome.css
+: 1664307364:0;sudo cp webapp-nav.sh /usr/local/bin
+: 1664307364:0;/usr/local/bin/webapp-nav
+: 1664307364:0;1
+: 1664307364:0;cat /usr/share/webapp-manager/firefox/profile/chrome/userChrome.css > userChrome.css
+: 1664307364:0;sed --help
+: 1664307364:0;sed -i 'd' userChrome.css
+: 1664307364:0;/usr/local/bin/webapp-nav.sh
+: 1664307364:0;cd ~/.local/share/ice/firefox/
+: 1664307364:0;webapp-nav on
+: 1664307364:0;efibootmgr --create --disk /dev/nvme0n1 --part 2 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot" --verbose
+: 1664307364:0;sudo efibootmgr --create --disk /dev/nvme0n1 --part 2 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot" --verbose
+: 1664307364:0;make
+: 1664307364:0;./test
+: 1664307364:0;webapp-nav -on
+: 1664307364:0;git clone --branch firefox-improvements https://github.com/bkmo/webapp-manager-bkmo.git
+: 1664307364:0;git tag -d 1.2.3
+: 1664307364:0;git tag -d 1.2.4
+: 1664307364:0;git push --delete origin 1.2.3
+: 1664307364:0;git push --delete origin 1.2.4
+: 1664307364:0;git checkout
+: 1664307364:0;git push
+: 1664307364:0;git config --global user.email "you@example.com"
+: 1664307364:0;git config --global user.name "Your Name"
+: 1664307364:0;git commit -a
+: 1664307364:0;git tag 1.2.6
+: 1664307364:0;git commit
+: 1664307364:0;git
+: 1664307364:0;git help -g
+: 1664307364:0;git help -a
+: 1664307364:0;git help commit
+: 1664307364:0;git commit -m <some additions>
+: 1664307364:0;git commit -m some additions
+: 1664307364:0;git help tag
+: 1664307364:0;git tag 1.2.5
+: 1664307364:0;git tag -d 1.2.6
+: 1664307364:0;git push --delete origin 1.2.6
+: 1664307364:0;cd /home/bkmo/Configs/GIT/webapp-manager-bkmo/
+: 1664307364:0;cd /home/bkmo/Configs/GIT/webapp-manager-bkmo
+: 1664307364:0;cd.
+: 1664307364:0;gitcd
+: 1664307364:0;git tag 1.2.5.1
+: 1664307364:0;git tag -d 1.2.5
+: 1664307364:0;git push --delete origin 1.2.5
+: 1664307364:0;git remote -v
+: 1664307364:0;webapp-nav -off
+: 1664307364:0;git commit -a -m "added something/fixed something"
+: 1664307364:0;git tag 1.2.5.2
+: 1664307364:0;git commit -a -m "removed redirect/navbar auto show"
+: 1664307364:0;git tag 1.2.5.3
+: 1664307364:0;git tag -d 1.2.5.1
+: 1664307364:0;git push --delete origin 1.2.5.1
+: 1664307364:0;git commit -a -m "added remove status pane and startpage"
+: 1664307364:0;git tag 1.2.5.4
+: 1664307364:0;git commit -a -m "remove redirect cruft"
+: 1664307364:0;git tag -d 1.2.5.2
+: 1664307364:0;git tag -d 1.2.5.3
+: 1664307364:0;git push --delete origin 1.2.5.2
+: 1664307364:0;git push --delete origin 1.2.5.3
+: 1664307364:0;git config --global user.name "Bkmo"
+: 1664307364:0;git config --global user.emailbkmo@example.com"
+: 1664307364:0;git config --global user.email"bkmo@example.com"
+: 1664307364:0;git commit -a -m "userjs disable autoplay"
+: 1664307364:0;git tag 1.2.5.5
+: 1664307364:0;git config --global user.email "crmongolo@tutanota.com"
+: 1664307364:0;git config --global user.name "bkmo"
+: 1664307364:0;git tag 1.2.5.6
+: 1664307364:0;webapp-manager
+: 1664307364:0;git config --global user.email "bkmo@example.com"
+: 1664307364:0;git commit -a -m "navbar on default"
+: 1664307364:0;git add
+: 1664307364:0;git add [200~        usr/share/webapp-manager/firefox/extensions_navbar.json
+: 1664307364:0;git add extensions_navbar.js
+: 1664307364:0;git add usr/share/webapp-manager/firefox/extensions_navbar.js
+: 1664307364:0;git add usr/share/webapp-manager/firefox/extensions_navbar.json
+: 1664307364:0;git add usr/share/webapp-manager/firefox/userjs_navbar.js
+: 1664307364:0;git add usr/share/webapp-manager/firefox/profile/extensions/{d320c473-63c2-47ab-87f8-693b1badb5e3}.xpi
+: 1664307364:0;git commit -a -m "navbar on default missed files"
+: 1664307364:0;git commit -a -m "readme edit"
+: 1664307364:0;git tag 1.2.6.1
+: 1664307364:0;git commit -a -m "fix about "
+: 1664307364:0;git tag 1.2.6.2
+: 1664307364:0;git tag -d 1.2.5.5
+: 1664307364:0;git push --delete origin 1.2.5.5
+: 1664307364:0;git tag -d 1.2.6.1
+: 1664307364:0;git push --delete origin 1.2.6.1
+: 1664307364:0;git commit -a -m "release 1.2.7.0 "
+: 1664307364:0;git tag 1.2.7.0
+: 1664307364:0;git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+: 1664307364:0;sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+: 1664307364:0;1.4.2
+: 1664307364:0;git describe --tags firefox-improvements | cut -d- -f1 | sed 's/^v//'
+: 1664307364:0;git describe --tags | cut -d- -f1 | sed 's/^v//'
+: 1664307364:0;cd Webapp-git
+: 1664307364:0;git describe --tags firefox-improvements | sed 's|-|.|g'
+: 1664307364:0;git describe --long --tags 2
+: 1664307364:0;git describe --long --tags
+: 1664307364:0;git describe --tags
+: 1664307364:0;sed -i 's|common-licenses/GPL/licenses|common/GPL/license.txt|g'     "usr/lib/webapp-manager/webapp-manager.py"
+: 1664307364:0;sed -i 's|common-licenses/GPL/|common/GPL/license.txt|g'     "usr/lib/$pkgrealname/$pkgrealname.py"
+: 1664307364:0;sed -i 's|common-licenses/GPL/|common/GPL/license.txt|g'     "usr/lib/webapp-manager/webapp-manager.py"
+: 1664307364:0;sed -i 's|common-licenses/GPL | common/GPL/license.txt|g'     "usr/lib/webapp-manager/webapp-manager.py"
+: 1664307364:0;sed -i 's|common-licenses/GPL|common/GPL/license.txt|g'     "usr/lib/webapp-manager/webapp-manager.py"
+: 1664307364:0;webapp-manager --license
+: 1664307364:0;webapp-manager license
+: 1664307364:0;webapp-manager --help
+: 1664307364:0;webapp-manager -l
+: 1664307364:0;webapp-manager -h
+: 1664307364:0;locate GPL
+: 1664307364:0;locate gpl
+: 1664307364:0;git add usr/share/webapp-manager/common-licenses/
+: 1664307364:0;git commit -a -m "fixup LICENSE for Arch PKGBUILD "
+: 1664307364:0;git tag 1.2.7.1
+: 1664307364:0;git commit -a -m "add CHANGELOG to git "
+: 1664307364:0;git add README.md
+: 1664307364:0;git commit -a -m "add new README to git "
+: 1664307364:0;git clone -b test-features https://github.com/bkmo/webapp-manager-bkmo.git
+: 1664307364:0;git add webapp-manager-bkmo/
+: 1664307364:0;git clone --branch test-features https://github.com/bkmo/webapp-manager-bkmo.git
+: 1664307364:0;git init
+: 1664307364:0;gh repo clone bkmo/webapp-manager-bkmo
+: 1664307364:0;git clone --single-branch --branch test-features https://github.com/bkmo/webapp-manager-bkmo.git
+: 1664307364:0;git checkout -b test-features
+: 1664307364:0;git clone https://github.com/bkmo/webapp-manager-bkmo.git
+: 1664307364:0;git checkout firefox improvements
+: 1664307364:0;git checkout test-features
+: 1664307364:0;git switch test-features
+: 1664307364:0;git add firefox-extension/
+: 1664307364:0;git add usr/share/webapp-manager/firefox/profile/extensions/{dd782f1d-0554-4ac0-b3b8-c06521e2dff8}.xpi
+: 1664307364:0;git add CHANGELOG.md
+: 1664307364:0;git add         usr/share/webapp-manager/firefox/open-browser-without-env.sh
+: 1664307364:0;git add /scripts
+: 1664307364:0;git commit -a -m "add bacgrount tabs to browser"
+: 1664307364:0;git commit -a -m "try whitelisting adons.moz"
+: 1664307364:0;git commit -a -m "try whitelisting adons.moz take 2"
+: 1664307364:0;/home/bkmo/Downloads/Saghen-webapp-manager-firefox-improvements/scripts/sign-firefox-extension.sh
+: 1664307364:0;web-ext
+: 1664307364:0;sign-firefox-extensions.sh
+: 1664307364:0;./sign-firefox-extensions.sh
+: 1664307364:0;web-ext sign -s firefox-extension --api-key 17497112:277 --api-secret d27210efbd913e243bb0aaee8eac0ef31da54abab6c4b721c1a903f5ab147466
+: 1664307364:0;git add /scripts/sign-firefox-extension.sh
+: 1664307364:0;git add scripts/sign-firefox-extension.sh
+: 1664307364:0;cd src/webapp-manager-bkmo
+: 1664307364:0;web-ext sign -s firefox-extension --api-key user:17497112:277 --api-secret d27210efbd913e243bb0aaee8eac0ef31da54abab6c4b721c1a903f5ab147466
+: 1664307364:0;git branch -a
+: 1664307364:0;git add sign-firefox-extension.sh
+: 1664307364:0;git tag 1.2.7.2
+: 1664307364:0;git push origin 1.2.7.2
+: 1664307364:0;git tag 1.2.7.3
+: 1664307364:0;git push origin 1.2.7.3
+: 1664307364:0;git commit -a -m "try whitelcleanup-remove scripts and extension2"
+: 1664307364:0;git tag -d 1.2.7.2
+: 1664307364:0;git push --delete origin 1.2.7.2
+: 1664307364:0;git commit -a -m "edit license to try pkgbild versioning"
+: 1664307364:0;git tag 1.2.7.4
+: 1664307364:0;web-ext build -s firefox-extension
+: 1664307364:0;web-ext build --overwrite-dest -s firefox-extension
+: 1664307364:0;aafb68dbc071421cb91105da351279c5a6727129e046a35b2f316d8e9dfba1cf
+: 1664307364:0;./sign-firefox-extension.sh
+: 1664307364:0;git tag 1.2.7.5
+: 1664307364:0;git commit -a -m "extension redirect whitelist"
+: 1664307364:0;git --tags
+: 1664307364:0;git push origin 1.2.7.5
+: 1664307364:0;git add         usr/share/webapp-manager/firefox/profile/extensions/{52f31d84-ac61-46ba-9599-32d7e1a4c88a}.xpi
+: 1664307364:0;git commit -a -m "fix wrong verson extension commited"
+: 1664307364:0;git commit -a -m "change default browser open in readme"
+: 1664307364:0;git tag 1.2.7.6
+: 1664307364:0;git push origin 1.2.7.6
+: 1664307364:0;git commit -a -m "Changelog for release 1.2.7.7"
+: 1664307364:0;cd..
+: 1664307364:0;cd webapp-manager-bkmo
+: 1664307364:0;git tag 1.2.7.7
+: 1664307364:0;git push origin 1.2.7.7
+: 1664307364:0;git log --oneline main..origin/main
+: 1664307364:0;git fetch --dry-run
+: 1664307364:0;git fetch
+: 1664307364:0;git merge
+: 1664307364:0;git commit -a -m "README.md cleanup"
+: 1664307364:0;software-installer
+: 1664307364:0;pamac-installer
+: 1664307364:0;locate pamac
+: 1664307364:0;echo "$PATH"
+: 1664307364:0;git diff firefox-improvements test-features
+: 1664307364:0;git checkout firefox-improvements
+: 1664307364:0;git merge test-features
+: 1664307364:0;git branch
+: 1664307364:0;git describe --tags | sed 's|-|.|g'
+: 1664307364:0;}
+: 1664307364:0;git tag 1.2.7.8
+: 1664307364:0;git push origin 1.2.7.8
+: 1664307364:0;reflector
+: 1664307364:0;sysctl
+: 1664307364:0;sudo test
+: 1664307364:0;git push origin test-features
+: 1664307364:0;git push origin firefox-improvements
+: 1664307364:0;git pull firefox-improvements
+: 1664307364:0;git pull origen firefox-improvements
+: 1664307364:0;git config pull.rebase false
+: 1664307364:0;git commit -a -m "user.js cleanup"
+: 1664307364:0;git tag 1.2.7.9
+: 1664307364:0;git push origin 1.2.7.9
+: 1664307364:0;makepkf -i
+: 1664307364:0;kbuildsycoca5
+: 1664307364:0;makepkg -f
+: 1664307364:0;git pull
+: 1664307364:0;git commit -a -m "remove cruft from pull"
+: 1664307364:0;git commit -a -m "changelog"
+: 1664307364:0;nextdns stop
+: 1664307364:0;nextdns start
+: 1664307364:0;sudo busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager Shutdown b 0')
+: 1664307364:0;sudo busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager Reboot b 0')
+: 1664307364:0;sudo busctl call org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager Shutdown b 0'
+: 1664307364:0;git commit -a -m "disable firefox crash restore via user.js"
+: 1664307364:0;sh -c 'sh -c "$(curl -sL https://nextdns.io/install)"'
+: 1664307364:0;git commit -a -m "disable firefox crash restore via user.js take 2"
+: 1664307364:0;git tags
+: 1664307364:0;git tag
+: 1664307364:0;git tag 1.2.8.0
+: 1664307364:0;git push origin 1.2.8.0
+: 1664307364:0;git tag -d 1.2.6.2
+: 1664307364:0;git tag -d 1.2.7.0
+: 1664307364:0;git tag -d 1.2.7.1
+: 1664307364:0;git tag -d 1.2.7.3
+: 1664307364:0;git tag -d 1.2.7.5
+: 1664307364:0;git push --delete origin 1.2.6.2
+: 1664307364:0;git push --delete origin 1.2.7.0
+: 1664307364:0;git push --delete origin 1.2.7.1
+: 1664307364:0;git push --delete origin 1.2.7.3
+: 1664307364:0;git push --delete origin 1.2.7.5
+: 1664307364:0;git branch -d test-features
+: 1664307364:0;git push origin --delete test-features
+: 1664307364:0;git branch -d icon-env
+: 1664307364:0;git push origin --delete icon-env
+: 1664307364:0;$ qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
+: 1664307364:0;strawberry --help
+: 1664307364:0;neofetch
+: 1664307364:0;git commit -a -m "remove debian dir"
+: 1664307364:0;gpg --recv-keys 58D0EE648A48B3BB
+: 1664307364:0;paccache -h
+: 1664307364:0;sudo rm mirrorlist.pacnew
+: 1664307364:0;which pkexec
+: 1664307364:0;pkexec
+: 1664307364:0;krename
+: 1664307364:0;cat test >> test.txt
+: 1664307364:0;cat test > test.txt
+: 1664307364:0;rootactions-servicemenu.pl root_delete %U
+: 1664307364:0;rootactions-servicemenu.pl root_delete test
+: 1664307364:0;kdialog
+: 1664307364:0;kreadconfig
+: 1664307364:0;kreadconfig5
+: 1664307364:0;rootactions-servicemenu.pl root_delete test.txt
+: 1664307364:0;git commit -a -m "fixup navbar css-remove addon"
+: 1664307364:0;git tag 1.2.8.1
+: 1664307364:0;git push origin 1.2.8.1
+: 1664307364:0;git commit -a -m "css remove status panel"
+: 1664307364:0;git tag 1.2.8.2
+: 1664307364:0;git push origin 1.2.8.2
+: 1664307364:0;cat /sys/class/power_supply/BAT0/power_now
+: 1664307364:0;cat /sys/class/power_supply/BAT1/power_now
+: 1664307364:0;gpg --recv-keys  F3D322D0EC4582C3
+: 1664307364:0;cat /sys/class/power_supply/battery_BAT0/power_now
+: 1664307364:0;systemctl restart systemd-journald
+: 1664307364:0;git commit -a -m "bit more userjs work"
+: 1664307364:0;git push origin 1.2.8.3
+: 1664307364:0;sh -c 'sh -c "$(curl -s https://nextdns.io/diag)"'
+: 1664307364:0;sudo nextdns config set -cache-size=10MB
+: 1664307364:0;sudo nextdns restart
+: 1664307364:0;nextdns cache-stats
+: 1664307364:0;sudo nextdns stop
+: 1664307364:0;sh -c "$(curl -sL https://nextdns.io/install)"
+: 1664307364:0;systemctl start stubby.service
+: 1664307364:0;systemctl enable stubby.service
+: 1664307364:0;systemctl enable dnsmasq
+: 1664307364:0;systemctl reload NetworkManager
+: 1664307364:0;dig
+: 1664307364:0;dig +noall +stats omgubuntu.co.uk
+: 1664307364:0;dig +noall +stats www.omgubuntu.co.uk
+: 1664307364:0;curl -v https://dns.nextdns.io/info
+: 1664307364:0;dig +short chaos txt cachesize.bind
+: 1664307364:0;sudo tail /var/log/syslog
+: 1664307364:0;dig +noall +stats baeldung.com
+: 1664307364:0;sudo nextdns cache-stats
+: 1664307364:0;dig ui.com
+: 1664307364:0;dig reddit.com
+: 1664307364:0;systemctl restart stubby
+: 1664307364:0;dig +short chaos txt hits.bind
+: 1664307364:0;dig apriliaforum.com
+: 1664307364:0;sudo systemctl stop dnsmasq.service
+: 1664307364:0;sudo systemctl disable dnsmasq.service
+: 1664307364:0;sudo systemctl stop stubby.service
+: 1664307364:0;sudo systemctl disable stubby.service
+: 1664307364:0;sudo systemctl start systemd-resolved
+: 1664307364:0;sudo systemctl enable systemd-resolved
+: 1664307364:0;sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+: 1664307364:0;systemd-resolve --status
+: 1664307364:0;sudo resolvectl --statistics
+: 1664307364:0;sudo resolvectl query
+: 1664307364:0;sudo resolvectl --help
+: 1664307364:0;dig +short chaos txt misses.bind
+: 1664307364:0;sudo systemctl restart systemd-resolved
+: 1664307364:0;sudo systemctl status avahi
+: 1664307364:0;resolvectl query facebook.com
+: 1664307364:0;pacman -R ruby
+: 1664307364:0;sudo pacman -R ruby
+: 1664307364:0;sudo pacman -R ruby-bundlegems
+: 1664307364:0;sudo pacman -R ruby-bundledgems
+: 1664307364:0;sudo pacman -Rcns ruby
+: 1664307364:0;resolvectl domain
+: 1664307364:0;dig +noall +stats duckdns.org
+: 1664307364:0;dig ui.com @duckdns.org
+: 1664307364:0;dig duckdns.org @1.1.1.1
+: 1664307364:0;dig duckdns.org @45.90.30.54
+: 1664307364:0;dig duckdns.org @45.90.28.54
+: 1664307364:0;dig duckdns.org @127.0.0.1
+: 1664307364:0;sudo resolvectl statistics
+: 1664307364:0;sudo sh -c 'sh -c "$(curl -s https://nextdns.io/diag)"'
+: 1664307364:0;systemctl reload systemd-resolved
+: 1664307364:0;systemctl stop sytemd-resolved
+: 1664307364:0;systemctl start sytemd-resolved
+: 1664307364:0;rm etc/resolv.conf
+: 1664307364:0;rm /etc/resolv.conf
+: 1664307364:0;systemctl restart dnsmasq
+: 1664307364:0;systemctl stop dnsmasq
+: 1664307364:0;systemctl start systemd-resolved
+: 1664307364:0;sudo rm /etc/resolv.conf
+: 1664307364:0;dig +noall +stats ui.com
+: 1664307364:0;dig ui.com @1.1.1.1
+: 1664307364:0;dig ui.com @127.0.0.1
+: 1664307364:0;dig ui.com @127.0.0.53
+: 1664307364:0;qdbus org.freedesktop.portal.Desktop /org/freedesktop/portal/desktop org.freedesktop.portal.Settings.Read "org.freedesktop.appearance" "color-scheme"
+: 1664307364:0;dig apriliaforum.com @127.0.0.53
+: 1664307364:0;dig reddit.com ttl
+: 1664307364:0;sudo netstat -ntulp
+: 1664307364:0;systemctl restart NetworkManager
+: 1664307364:0;systemctl enable now  dnscrypt-proxy
+: 1664307364:0;systemctl start dnscrypt-proxy.service
+: 1664307364:0;systemctl enable --now  dnscrypt-proxy.socket
+: 1664307364:0;systemctl status dnscrypt-proxy.service
+: 1664307364:0;systemctl disable --now  dnscrypt-proxy.service
+: 1664307364:0;sudo useradd -r -d /var/dnscrypt -m -s /sbin/nologin dnscrypt
+: 1664307364:0;dig apriliaforum.com ttl
+: 1664307364:0;systemctl disable --now  dnscrypt-proxy
+: 1664307364:0;systemctl enable --now systemd-resolved
+: 1664307364:0;dig reddit.com @127.0.0.1
+: 1664307364:0;sudo deluser dnscrypt
+: 1664307364:0;sudo userdel dnscrypt
+: 1664307364:0;systemctl restart systemd-resolved
+: 1664307364:0;klassy-settings
+: 1664307364:0;sudo pacman -S kdecoration qt5-declarative qt5-x11extras cmake make gcc extra-cmake-modules
+: 1664307364:0;dig reddit.com @127.0.0.53
+: 1664307364:0;dig nextdns.io @127.0.0.53
+: 1664307364:0;sh user.js-notify
+: 1664307364:0;sh userjs-notify
+: 1664307364:0;./user.js-notify.sh
+: 1664307364:0;path
+: 1664307364:0;path=
+: 1664307364:0;bash user.js-notify
+: 1664307364:0;/home/bkmo/.local/bin/user.js-notify
+: 1664307364:0;/home/bkmo/.local/bin/userjs-notify
+: 1664307364:0;/home/bkmo/.local/bin/user-js-notify
+: 1664307364:0;user.js-notify
+: 1664307364:0;fc-cache -rv
+: 1664307364:0;GTK_USE_PORTAL=1 pamac
+: 1664307364:0;export GDK_BACKEND=wayland export GTK_USE_PORTAL=1 pamac-manager
+: 1664307364:0;export GDK_BACKEND=wayland export GTK_USE_PORTAL=1
+: 1664307364:0;qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole
+: 1664307364:0;fc-match "Helvetica"
+: 1664307364:0;fing *.otf
+: 1664307364:0;find *.otf
+: 1664307364:0;locate *.otf
+: 1664307364:0;locate .otf
+: 1664307364:0;find .otf
+: 1664307364:0;find otf
+: 1664307364:0;locate otf
+: 1664307364:0;systemctl stop systemd-resolved
+: 1664307364:0;ss -lp 'sport = :domain'
+: 1664307364:0;systemctl start dnsmasq
+: 1664307364:0;systemctl status dnsmasq
+: 1664307364:0;systemctl restart http_dns_proxy
+: 1664307364:0;systemctl restart munin munin-node
+: 1664307364:0;/sbin/restorecon -v https_dns_proxy.service
+: 1664307364:0;sudo systemctl start http_dns_proxy
+: 1664307364:0;systemctl daemon reload
+: 1664307364:0;systemctl daemon-reload
+: 1664307364:0;systemctl status http_dns_proxy
+: 1664307364:0;systemctl edit https_dns_proxy.service
+: 1664307364:0;sudo systemctl edit https_dns_proxy.service
+: 1664307364:0;sudo systemctl edit https_dns_proxy.service --full
+: 1664307364:0;systemd start http_dns_proxy
+: 1664307364:0;sytemctl start systemctl-resolved
+: 1664307364:0;systemctl start systemctl-resolved
+: 1664307364:0;sudo ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+: 1664307364:0;systemctl status systemctl-resolved
+: 1664307364:0;systemctl start http_dns_proxy
+: 1664307364:0;systemctl enable systemd-journald.service
+: 1664307364:0;systemd-resolve --statistics
+: 1664307364:0;journalctl --verify
+: 1664307364:0;journalctl
+: 1664307364:0;systemctl status systemd-journald.service
+: 1664307364:0;systemctl restart systemd-journald.service
+: 1664307364:0;sudo killall -USR1 systemd-resolved
+: 1664307364:0;sudo journalctl -u systemd-resolved > ~/dns-cache.txt
+: 1664307364:0;sudo journalctl
+: 1664307364:0;sudo resolvectl status
+: 1664307364:0;/home/bkmo/.local/bin/userjs-notify.sh
+: 1664307364:0;userjs-notify
+: 1664307364:0;userjs-notify.sh
+: 1664307364:0;source .profile
+: 1664307364:0;source .bash_rc
+: 1664307364:0;user.js-notify.sh
+: 1664307364:0;ping /n 6 ipv4-anexia-mde-1.edge.nextdns.io
+: 1664307364:0;sudo ping /n 6 ipv4-anexia-mde-1.edge.nextdns.io
+: 1664307364:0;sudo ping /n 6 ipv4-anexia-mia-1.edge.nextdns.io
+: 1664307364:0;whois
+: 1664307364:0;whois 186.26.117.80
+: 1664307364:0;ngrep port 53
+: 1664307364:0;resolvectl query archlinux.org
+: 1664307364:0;networkctl status
+: 1664307364:0;resolvectl status
+: 1664307364:0;systemctl disable now systemd-resolved
+: 1664307364:0;systemctl disable --now systemd-resolved
+: 1664307364:0;systemctl enable --now dnscrypt-proxy
+: 1664307364:0;systemctl reload  dnscrypt-proxy
+: 1664307364:0;dnscrypt-proxy -resolve
+: 1664307364:0;dnscrypt-proxy -version
+: 1664307364:0;dnscrypt-proxy -check
+: 1664307364:0;dnscrypt-proxy -check -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml
+: 1664307364:0;dnscrypt-proxy -list
+: 1664307364:0;dnscrypt-proxy -list -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml
+: 1664307364:0;sudo journalctl -b
+: 1664307364:0;systemctl status systemd-journald
+: 1664307364:0;sudo systemctl restart NetworkManager.service
+: 1664307364:0;whois 186.15.239.82
+: 1664307364:0;systemctl status systemd-resolved
+: 1664307364:0;systemctl status dnscrypt-proxy
+: 1664307364:0;systemctl start dnscrypt-proxy
+: 1664307364:0;systemctl disable dnscrypt-proxy.socket
+: 1664307364:0;systemctl status dnscrypt-proxy.socket
+: 1664307364:0;luksDump /dev/mapper/luks-1
+: 1664307364:0;cryptsetup-luksDump /dev/mapper/luks-1
+: 1664307364:0;cryptsetup --luksDump /dev/mapper/luks-1
+: 1664307364:0;cryptsetup -v luksDump /dev/mapper/luks-1
+: 1664307364:0;sudo cryptsetup -v luksDump /dev/mapper/luks-1
+: 1664307364:0;sudo cryptsetup -v luksDump /dev/nvme0n1
+: 1664307364:0;sudo cryptsetup -v luksDump /dev/nvme0n1p2
+: 1664307364:0;sudo cryptsetup -v luksDump /dev/nvme0n1p6
+: 1664307364:0;sudo cryptsetup luksHeaderBackup /dev/nvme0n1p6
+: 1664307364:0;--header-backup-file luksheader.bak
+: 1664307364:0;sudo cryptsetup luksHeaderBackup /dev/nvme0n1p6 --header-backup-file luksheader.bak
+: 1664307364:0;sudo cryptsetup luksHeaderBackup /dev/nvme0n1p6 --header-backup-file luksheaderbak.bin
+: 1664307364:0;cat /etc/crypttab
+: 1664307364:0;sudo cat /etc/crypttab
+: 1664307364:0;makepkg -h
+: 1664307364:0;makepkg -s
+: 1664307364:0;makepkg
+: 1664307364:0;sfecr
+: 1664307364:0;sfebk
+: 1664307364:0;git add {1010cbab-92d4-4ee8-85d6-8161591f3180}.xpi
+: 1664307364:0;git add /usr/share/webapp-manager/firefox/profile/extensions/{1010cbab-92d4-4ee8-85d6-8161591f3180}.xpi
+: 1664307364:0;git add /webapp-manager/firefox/profile/extensions/{1010cbab-92d4-4ee8-85d6-8161591f3180}.xpi
+: 1664307364:0;git add         usr/share/webapp-manager/firefox/profile/extensions/{1010cbab-92d4-4ee8-85d6-8161591f3180}.xpi
+: 1664307364:0;git commit -a -m "browser extension add moz-extension"
+: 1664307364:0;systemctls start reflector
+: 1664307364:0;dig +noall +stats apriliaforum.com
+: 1664307364:0;dig +noall +stats archlinux.org
+: 1664307364:0;git commit -a -m "cleanup extensions and navbar copies"
+: 1664307364:0;git push -u origin firefox-improvements
+: 1664307364:0;git tag 1.2.8.3
+: 1664307364:0;git tag 1.2.8.4
+: 1664307364:0;git push --tags 1.2.8.4
+: 1664307364:0;git push --tags
+: 1664307364:0;makepkg -i
+: 1664307364:0;git tag -d 1.2.7.4
+: 1664307364:0;git tag -d 1.2.7.6
+: 1664307364:0;git tag -d 1.2.7.7
+: 1664307364:0;git tag -d 1.2.7.8
+: 1664307364:0;git tag -d 1.2.7.9
+: 1664307364:0;git tag -d 1.2.8.0
+: 1664307364:0;git push --delete origin 1.2.7.4
+: 1664307364:0;git push --delete origin 1.2.7.6
+: 1664307364:0;git push --delete origin 1.2.7.7
+: 1664307364:0;git push --delete origin 1.2.7.8
+: 1664307364:0;git push --delete origin 1.2.7.9
+: 1664307364:0;git push --delete origin 1.2.8.0
+: 1664307364:0;git tag -d 1.2.5.4
+: 1664307364:0;git tag -d 1.2.5.6
+: 1664307364:0;git tag -d 1.2.1
+: 1664307364:0;git tag -d 1.2.0
+: 1664307364:0;git tag -d 1.1.9
+: 1664307364:0;git tag -d 1.1.8
+: 1664307364:0;git push --delete origin 1.2.5.4
+: 1664307364:0;git push --delete origin 1.2.5.6
+: 1664307364:0;git push --delete origin 1.2.1
+: 1664307364:0;git push --delete origin 1.2.0
+: 1664307364:0;git push --delete origin 1.1.9
+: 1664307364:0;git push --delete origin 1.1.8
+: 1664307364:0;git tag -d 1.1.7
+: 1664307364:0;git tag -d 1.1.6
+: 1664307364:0;git tag -d 1.1.5
+: 1664307364:0;git tag -d 1.1.4
+: 1664307364:0;git tag -d 1.1.3
+: 1664307364:0;git tag -d 1.1.2
+: 1664307364:0;git push --delete origin 1.1.7
+: 1664307364:0;git push --delete origin 1.1.6
+: 1664307364:0;git push --delete origin 1.1.5
+: 1664307364:0;git push --delete origin 1.1.4
+: 1664307364:0;git push --delete origin 1.1.3
+: 1664307364:0;git push --delete origin 1.1.2
+: 1664307364:0;git tag -d 1.1.1
+: 1664307364:0;git tag -d 1.1.0
+: 1664307364:0;git tag -d 1.0.9
+: 1664307364:0;git tag -d 1.0.8
+: 1664307364:0;git tag -d 1.0.7
+: 1664307364:0;git push --delete origin 1.1.1
+: 1664307364:0;git push --delete origin 1.1.0
+: 1664307364:0;git push --delete origin 1.0.9
+: 1664307364:0;git push --delete origin 1.0.8
+: 1664307364:0;systemctl restart dnscrypt-proxy
+: 1664307364:0;dig +noall +stats reddit.com
+: 1664307364:0;mkinitcpio
+: 1664307364:0;mkinitcpio -h
+: 1664307364:0;mkinitcpio -P
+: 1664307364:0;sudo mkinitcpio -P
+: 1664307364:0;dmesg
+: 1664307364:0;sudo dmesg | grep Guc
+: 1664307364:0;sudo dmesg | grep guc
+: 1664307364:0;echo powersupersave > /sys/module/pcie_aspm/parameters/policy
+: 1664307364:0;sudo [200~echo "options i915 enable_guc=2 enable_dc=4 enable_fbc=1 enable_psr=1 enable_psr2_sel_fetch=1 disable_power_well=1" > /etc/modprobe.d/i915.conf
+: 1664307364:0;sudo
+: 1664307364:0;echo "options i915 enable_guc=2 enable_dc=4 enable_fbc=1 enable_psr=1 enable_psr2_sel_fetch=1 disable_power_well=1" > /etc/modprobe.d/i915.conf
+: 1664307364:0;sudo echo "options i915 enable_guc=2 enable_dc=4 enable_fbc=1 enable_psr=1 enable_psr2_sel_fetch=1 disable_power_well=1" > /etc/modprobe.d/i915.conf
+: 1664307364:0;sudo echo powersupersave > /sys/module/pcie_aspm/parameters/policy
+: 1664307364:0;sudo dmesg | grep HuC
+: 1664307364:0;sudo dmesg | grep GuC
+: 1664307364:0;cat /sys/kernel/debug/dri/0/i915_edp_psr_status
+: 1664307364:0;sudo cat /sys/kernel/debug/dri/0/i915_edp_psr_status
+: 1664307364:0;wget https://github.com/Schneegans/Burn-My-Windows/releases/latest/download/burn_my_windows_kwin4.tar.gz
+: 1664307364:0;tar -xf burn_my_windows_kwin4.tar.gz -C ~/.local/share/kwin/effects
+: 1664307364:0;sudo shutdoen now
+: 1664307364:0;source .bashrc
+: 1664307364:0;kwrite -b
+: 1664307364:0;kwrite -n
+: 1664307364:0;kwrite --help-all
+: 1664307364:0;kate
+: 1664307364:0;kwrite
+: 1664307364:0;kate -h
+: 1664307364:0;skanpage
+: 1664307364:0;skanlite
+: 1664307364:0;sytemctl start samba
+: 1664307364:0;systemctl start samba
+: 1664307364:0;systemctl status samba
+: 1664307364:0;sudo cp /etc/samba/smb.conf.default /etc/samba/smb.conf
+: 1664307364:0;systemctl start smb
+: 1664307364:0;systemctl enable smb
+: 1664307364:0;systemctl start nmb
+: 1664307364:0;systemctl enable nmb
+: 1664307364:0;systemctl status nmb
+: 1664307364:0;sudo smbpasswd -a bkmo
+: 1664307364:0;sudo groupadd -r sambauser
+: 1664307364:0;sudo gpasswd sambauser -a bkmo
+: 1664307364:0;systemctl restart nmb
+: 1664307364:0;systemctl restart smb
+: 1664307364:0;systemctl status smb
+: 1664307364:0;sudo mkdir /var/lib/samba/usershares
+: 1664307364:0;sudo groupadd -r sambashare
+: 1664307364:0;sudo chown root:sambashare /var/lib/samba/usershares
+: 1664307364:0;chmod 1770 /var/lib/samba/usershares
+: 1664307364:0;sudo chmod 1770 /var/lib/samba/usershares
+: 1664307364:0;sudo gpasswd sambashare -a bkmo
+: 1664307364:0;vainfo
+: 1664307364:0;sudo traceroute -I controld.com
+: 1664307364:0;sudo systemctl restart smb.service
+: 1664307364:0;sudo systemctl restart nmb.service
+: 1664307364:0;sudo systemctl stop nmb.service
+: 1664307364:0;sudo systemctl start nmb.service
+: 1664307364:0;sudo testparm
+: 1664307364:0;sudo systemctl status smb.service
+: 1664307364:0;sudo systemctl status nmb.service
+: 1664307364:0;grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB
+: 1664307364:0;grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
+: 1664307364:0;sudo update-grub
+: 1664307364:0;dig +noall +stats www.startpage.com
+: 1664307364:0;dig +noall +stats www.youtube.com
+: 1664307364:0;dig +noall +stats controld.com
+: 1664307364:0;sudo grub-install
+: 1664307364:0;sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
+: 1664307364:0;grub-mkconfig -o /boot/grub/grub.cfg
+: 1664307364:0;sudo mtr -w -z --show-ips --report-cycles=10 controld.com
+: 1664307364:0;nextdns
+: 1664307364:0;lsblk -o
+: 1664307364:0;lsblk -o /dev/nvme0n1p2
+: 1664307364:0;lsblk
+: 1664307364:0;efibootmgr -h
+: 1664307364:0;efibootmgr -B Boot0000
+: 1664307364:0;efibootmgr -B 0000
+: 1664307364:0;efibootmgr -B 0
+: 1664307364:0;efibootmgr -b 0000 -B
+: 1664307364:0;sudo efibootmgr -b 0000 -B
+: 1664307364:0;efibootmgr
+: 1664307364:0;efibootmgr -v
+: 1664307364:0;sudo systemctl restart NetworkManager
+: 1664307364:0;dig +noall +stats www.reddit.com
+: 1664307364:0;sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch-Grub
+: 1664307364:0;sudo grub-mkconfig -o /boot/grub/grub.cfg
+: 1664307364:0;dnscrypt-proxy
+: 1664307364:0;dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml
+: 1664307364:0;dnscrypt-proxy -h
+: 1664307364:0;dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml -check
+: 1664307364:0;yay
+: 1664307364:0;arkenfox-updater
+: 1664307364:0;arkenfox-cleaner
+: 1664307364:0;sudo systemctl status dnscrypt-proxy
+: 1664307364:0;dig +noall +stats news.google.com
+: 1664307364:0;sudo mtr -w -z --show-ips --report-cycles=10 nextdns.io
+: 1664307364:0;ping 8.8.8.8
+: 1664307364:0;ping 1.1.1.1
+: 1664307364:0;ping 9.9.9.11
+: 1664307364:0;sudo mtr -w -z --show-ips --report-cycles=10 dns1.nextdns.io
+: 1664307364:0;sudo mtr -w -z --show-ips --report-cycles=10 dns.nextdns.io
+: 1664307364:0;ping 9.9.9.9
+: 1664307364:0;dig +noall +stats www.apriliaforum.com
+: 1664307364:0;GTK_USE_PORTAL=1 pamac-manager
+: 1664307364:0;fa
+: 1664307364:0;ping dns2.nextdns.io
+: 1664307364:0;ping ipv4-edgeuno-sjo-1.edge.nextdns.io
+: 1664307364:0;chsh -l
+: 1664307364:0;chsh -s /bin/zsh
+: 1664307364:0;sudo su
+: 1664307364:0;echo $SHELL
+: 1664307364:0;ping dns1.nextdns.io
+: 1664307364:0;ping dns.nextdns.io
+: 1664307364:0;intel_gpu_top
+: 1664307364:0;_prompt -l
+: 1664307364:0;sudo intel_gpu_top
+: 1664307364:0;pa
+: 1664307364:0;webapp-nav
+: 1664307364:0;sudo systemctl restart dnscrypt-proxy
+: 1664307364:0;sudo paccache -ruk0
+: 1664307364:0;wget -O .zshrc https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
+: 1664307364:0;chsh -s /bin/bash
+: 1664307364:0;cd .
+: 1664307364:0;cd ..
+: 1664307364:0;git push --delete origin 1.0.7
+: 1664307364:0;chsh -s /usr/bin/zsh
+: 1664307364:0;sudo-i
+: 1664307364:0;cd Downloads
+: 1664307364:0;wget -O .zshrc.local  https://git.grml.org/f/grml-etc-core/etc/skel/.zshrc
+: 1664307364:0;cat
+: 1664307364:0;nl ~/.zhistory | sort -k 2 -k 1,1nr| uniq -f 1 | sort -n | cut -f 2 > unduped_history
+: 1664307364:0;sudo -i
+: 1664307364:0;sudo sytemsttings5
+: 1664307364:0;sudo sytemsetings5
+: 1664307364:0;sudo sytemsettings
+: 1664307364:0;sudo systemsettings5
+: 1664307364:0;sudo systemsettings
+: 1664307364:0;sudo -C /etc/doas.conf
+: 1664307364:0;sudo chown -c root:root /etc/doas.conf
+: 1664307364:0;sudo chmod -c 0644 /etc/doas.conf
+: 1664307364:0;doas dbus-launch systemsettings
+: 1664307364:0;doas -C /etc/doas.conf
+: 1664307364:0;doas -C /etc/doas.conf && echo "config ok" || echo "config error"
+: 1664307364:0;getent group wheel
+: 1664307364:0;doas pacman -Rs $(pacman -Qqdt)
+: 1664307364:0;sudo dbus-launch systemsettings
+: 1664307364:0;git status
+: 1664307364:0;which vim
+: 1664307364:0;which zsh
+: 1664307364:0;which sudo
+: 1664307364:0;ls -l
+: 1664307364:0;trt
+: 1664307364:0;netctl
+: 1664307364:0;df
+: 1664307364:0;du
+: 1664307364:0;vim
+: 1664307364:0;pacman -R pkgfile
+: 1664307364:0;sudo pacman -R pkgfile
+: 1664307364:0;pkgfile
+: 1664307364:0;sudo pacman -F pkgfile
+: 1664307364:0;fzf
+: 1664307364:0;sudo pacman -S pkgfile
+: 1664307364:0;source .zshrc
+: 1664307364:0;systemctl disable pacman-filesdb-refresh.timer
+: 1664307364:0;sudo pacman -D --asdeps pkgfile
+: 1664307364:0;fig
+: 1664307364:0;zle
+: 1664307364:0;zle -help
+: 1664307364:0;sudo pacman -Rs $(pacman -Qqdt)
+: 1664307364:0;logs
+: 1664307364:0;openports
+: 1664307364:0;sudo ipview
+: 1664307364:0;ipview
+: 1664307364:0;folders
+: 1664307364:0;mountedinfo
+: 1664307364:0;vi
+: 1664307364:0;gvim
+: 1664307364:0;rnano
+: 1664307364:0;source /etc/profile
+: 1664307364:0;rnano --view
+: 1664307364:0;sudo EDITOR=rnano visudo
+: 1664307364:0;sudo visudo
+: 1664307364:0;visudo
+: 1664307364:0;type help
+: 1664307364:0;type
+: 1664307364:0;type -t
+: 1664307364:0;type -h
+: 1664307364:0;type --help
+: 1664307364:0;type visudo
+: 1664307364:0;checkcommand .zshrc
+: 1664307364:0;checkcommand visudo
+: 1664307364:0;checkcommand rnano
+: 1664307364:0;type -t visudo
+: 1664307364:0;type -w visudo
+: 1664307364:0;pamac
+: 1664307364:0;sudo p10k configure
+: 1664307364:0;sudo p10k
+: 1664307364:0;12h time,
+: 1664307364:0;type -w rnano
+: 1664307364:0;type -w sudo
+: 1664307364:0;fastfetch --print-default-config
+: 1664307364:0;fastfetch -help
+: 1664307364:0;fastfetch --list-presets
+: 1664307364:0;fastfetch --help
+: 1664307364:0;fastfetch --list-logos
+: 1664307364:0;c
+: 1664307364:0;kitty
+: 1664307364:0;lf
+: 1664307364:0;rm -f ~/.zcompdump; compinit
+: 1664307364:0;rm -f ~/.zcompdump
+: 1664307364:0;compinit
+: 1664307364:0;compinit -h
+: 1664307364:0;pamac-manager
+: 1664307364:0;home
+: 1664307364:0;Pictures
+: 1664307364:0;cd -a
+: 1664307364:0;ls /usr/share
+: 1664307364:0;cd GIT
+: 1664307364:0;cd /boot
+: 1664307364:0;paccheck
+: 1664307364:0;orphrm
+: 1664307364:0;cd /home/bkmo/Desktop
+: 1664307364:0;pacc
+: 1664307364:0;checkcommand lf
+: 1664307364:0;\ls
+: 1664307364:0;da
+: 1664307364:0;\vi
+: 1664307364:0;p
+: 1664307364:0;f
+: 1664307364:0;sudo grep -C
+: 1664307364:0;p firefox
+: 1664307364:0;h next
+: 1664307364:0;h nextdns
+: 1664307364:0;h nextd
+: 1664307364:0;h NE
+: 1664307364:0;h pacman
+: 1664307364:0;h pacc
+: 1664307364:0;p10k help display
+: 1664307364:0;cd ~/Configs/
+: 1664307364:0;cd ~/Configs/fingerprint
+: 1664307364:0;topcpu
+: 1664307364:0;cd Arduino
+: 1664307364:0;lolcat
+: 1664307364:0;upgrade
+: 1664307364:0;yaconf
+: 1664307364:0;..
+: 1664307364:0;...
+: 1664307364:0;kwrite -h
+: 1664307364:0;kwrite enabled-services.txt
+: 1664307364:0;paccache
+: 1664307364:0;paclean
+: 1664307364:0;sudo systemctl edit paccache.service
+: 1664307364:0;sudo systemctl start paccache.service
+: 1664307364:0;sudo systemctl status paccache.service
+: 1664307364:0;pacman -Rs $(pacman -Qqdt)
+: 1664307364:0;pkgfile --update
+: 1664307364:0;sudo pkgfile --update
+: 1664307364:0;sudo lsof -i :53
+: 1664307364:0;or
+: 1664307364:0;systemctl enable pkgfile-update.timer
+: 1664307364:0;sudo pacman -Rdd pkgfile
+: 1664307364:0;systemctl disable pkgfile-update.timer
+: 1664307364:0;systemctl enable pacman-filesdb-refresh.timer
+: 1664307364:0;systemctl status pacman-filesdb-refresh.timer
+: 1664307364:0;pacman -Qqm
+: 1664307364:0;findpkg
+: 1664304173:0;pacnew
+: 1664304304:0;paccache -Ruk0
+: 1664304812:0;pacman
+: 1664304824:0;sudo pacman
+: 1664307213:0;su
+: 1664307324:0;tmux
+: 1664308161:0;for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+: 1664309349:0;pacnewroot
+: 1664309676:0;sudo -Es
+: 1664309710:0;xit
+: 1664312538:0;systemctl start reflector
+: 1664313178:0;mirrors
+: 1664313732:0;duf
+: 1664313745:0;ps
+: 1664317357:0;l
+: 1664319892:0;sp
+: 1664320935:0;sp web search zsh plugin
+: 1664321639:0;nohup
+: 1664321653:0;nohup --help
+: 1664322129:0;gitu
+: 1664326138:0;zcompile
+: 1664326234:0;zcompile web-search.zsh
+: 1664326821:0;strace zsh
+: 1664327252:0;ddg web search zsh plugin
+: 1664329402:0;zcompile fast-syntax-highlighting.plugin.zsh
+: 1664330227:0;zcompile zsh-syntax-highlighting.plugin.zsh
+: 1664330248:0;zcompile main.zsh
+: 1664330334:0;zcompile zsh-syntax-highlighting.zsh
+: 1664333212:0;p10k configure
+: 1664333629:0;/srv/ftp/
+: 1664333670:0;tgz
+: 1664333690:0;zsh
+: 1664333768:0;clear
+: 1664345663:0;orphls
+: 1664345673:0;paccache -ruk0
+: 1664345732:0;paccache -rk2
+: 1664345740:0;paccache -rk1
+: 1664347999:0;cd -5 ls
+: 1664348036:0;cd -7
+: 1664348061:0;cd -5
+: 1664348221:0;for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done  #colors
+: 1664350344:0;gs
+: 1664350370:0;gsh
+: 1664350779:0;z4h update
+: 1664352973:0;zcompile web_search.plugin.zsh
+: 1664353000:0;zcompile sudo.plugin.zsh
+: 1664353043:0;zcompile ftc.zsh
+: 1664353051:0;zcompile ftc.bash
+: 1664353307:0;zcompile aliases.plugin.zsh
+: 1664353727:0;zcompile init.zsh
+: 1664353864:0;zcompile archlinux.plugin.zsh
+: 1664353936:0;gpd
+: 1664353950:0;cls
+: 1664382900:0;pacup
+: 1664383009:0;acs git
+: 1664383357:0;acs root
+: 1664383411:0;root
+: 1664383415:0;exit
+: 1664383569:0;acs pacman
+: 1664383619:0;acs pacnew
+: 1664383646:0;acs pac
+: 1664384458:0;pactree -r python2
+: 1664384484:0;pacman -Qi python2
+: 1664392344:0;kwrite --
+: 1664393325:0;echo $PATH
+: 1664394992:0;git init --bare $HOME/.dotfiles
+: 1664395068:0;config add ~/.zshrc
+: 1664395078:0;config add ~/.zshenv
+: 1664395150:0;config add .config/zsh
+: 1664395319:0;config remote add bkmo/.dotfiles
+: 1664395463:0;git remote add
+: 1664395473:0;git remote add bkmo/.dotfiles
+: 1664395481:0;git remote add .dotfiles
+: 1664395497:0;config commit -m "Add .config/zsh dotfiles"
+: 1664395717:0;config push .dotfiles
+: 1664395751:0;config push --set-upstream .dotfiles master
+: 1664395968:0;config commit
+: 1664396033:0;config push --set-upstream .dotfiles bkmo/master
+: 1664396126:0;config remote add .dotfiles
+: 1664396392:0;config push
+: 1664396438:0;config config --local status.showUntrackedFiles no
+: 1664396717:0;config remote -v
+: 1664396882:0;config remote add origin https://github.com/bkmo/.dotfiles.git
+: 1664396895:0;config push .dotfiles master
+: 1664396899:0;config checkout
+: 1664396949:0;config push -u origin main
+: 1664397202:0;jj
+: 1664397206:0;acs sh
+: 1664397878:0;ls
+: 1664398159:0;config config pull.rebase true
+: 1664398195:0;config push -u origin
+: 1664398252:0;config config pull.rebase false
+: 1664398411:0;config commit -a
+: 1664398495:0;config pull
+: 1664398989:0;config add .config/4kdownload.com
+: 1664399043:0;config commit -m "Add .config/4kdownload dotfiles"
+: 1664399531:0;cdgit
+: 1664399545:0;config push -ucd
+: 1664399564:0;cd .dotfiles
+: 1664399581:0;cd
+: 1664405745:0;pacman -Syu
+: 1664405749:0;sudo pacman -Syu
+: 1664405770:0;doas
+: 1664407365:0;sudo yay -
+: 1664407401:0;acs
+: 1664407535:0;yay -Scc
+: 1664407582:0;yay -Sc
+: 1664407644:0;yay -Yc
+: 1664407778:0;yay --aur -Sc
+: 1664408664:0;sp zsh4humans
+: 1664409783:0;curl -fsSLo ~/.zshrc https://raw.githubusercontent.com/romkatv/zsh4humans/2361c7c63309108e35cfbea1acf2cf8e3a3af6a8/.zshrc.mac
+: 1664409966:0;sudo killall tmux
+: 1664409975:0;ps | grep tmux
+: 1664410459:0;config commit -m "tmux settings zshrc"
+: 1664410488:0;config add -m "tmux settings zshrc"
+: 1664410513:0;config commit -a -m "tmux settings zshrc"
+: 1664410540:0;config push -u
+: 1664422372:0;aurup
+: 1664424544:0;config commit -a -m "update ask"
+: 1664424561:0;config push -u
+: 1664425484:0;config commit -a -m "tmux settings zshrc"
+: 1664488155:0;arkenfox-updater
+: 1664488203:0;arkenfox-cleaner
+: 1664489394:0;git init --bare $HOME/.dotfiles
+: 1664489472:0;config add .config/zsh
+: 1664489507:0;config add ~/.zshenv
+: 1664489530:0;config config --local status.showUntrackedFiles no
+: 1664489623:0;config commit -m "test of repo"
+: 1664489685:0;config add .config/4kdownload.com
+: 1664489692:0;config commit -m "test of repo"
+: 1664489699:0;config push -u
+: 1664489731:0;config remote add origin https://github.com/bkmo/.dotfile
+: 1664489733:0;config push -u
+: 1664489758:0;config push --set-upstream .dotfiles master
+: 1664489783:0;config pull
+: 1664489816:0;config remote add origin https://github.com/bkmo/.dotfiles
+: 1664489830:0;config pull
+: 1664489872:0;config remote remove  origin https://github.com/bkmo/.dotfile
+: 1664489926:0;config config pull.rebase false
+: 1664489957:0;config remote https://github.com/bkmo/.dotfiles.git
+: 1664489999:0;config remote remove https://github.com/bkmo/.dotfile
+: 1664490017:0;config pull
+: 1664490150:0;config remote set-url https://github.com/bkmo/.dotfiles
+: 1664490184:0;config remote set-url origin https://github.com/bkmo/.dotfiles
+: 1664490187:0;config pull
+: 1664490230:0;config config --local status.showUntrackedFiles no
+: 1664490237:0;config push -u
+: 1664490279:0;config push --set-upstream origin master
+: 1664490307:0;config pull
+: 1664490341:0;config pull .dotfiles master
+: 1664490364:0;config push -u
+: 1664490429:0;config push --set-upstream origin master
+: 1664490465:0;git push --help
+: 1664490710:0;config pull rebase
+: 1664490716:0;config pull --rebase
+: 1664490737:0;config commit -m "test of repo"
+: 1664490755:0;config commit -a -m "test of repo"
+: 1664490766:0;config pull rebase
+: 1664490771:0;config pull --rebase
+: 1664490783:0;config push -u
+: 1664490822:0;config push --set-upstream origin master
+: 1664490878:0;config pull
+: 1664490894:0;config pull origin
+: 1664490908:0;config pull master
+: 1664490917:0;config pull .dotfiles
+: 1664491223:0;git init --bare $HOME/.zsh-dotfiles
+: 1664491365:0;config add ~/.zshenv
+: 1664491377:0;config add .config/4kdownload.com
+: 1664491388:0;config add .config/zsh
+: 1664491492:0;config add .config/4kdownload.com
+: 1664491498:0;config add ~/.zshenv
+: 1664491515:0;config commit -a -m "test of repo"
+: 1664491557:0;config config --local status.showUntrackedFiles no
+: 1664491564:0;config commit -a -m "test of repo"
+: 1664491606:0;config push -u
+: 1664491643:0;config remote add origin https://github.com/bkmo/.zsh-dotfiles
+: 1664491646:0;config push -u
+: 1664491663:0;config push --set-upstream origin master
+: 1664491812:0;config push --set-upstream origin main
+: 1664492154:0;cdgit
+: 1664492165:0;git remote add origin https://github.com/bkmo/webapp_manager.git
+: 1664492180:0;git push
+: 1664492558:0;git remote add origin https://github.com/bkmo/webapp-manager-bkmo.git
+: 1664492577:0;git push origin
+: 1664492612:0;git fetch
+: 1664492632:0;git push
+: 1664492660:0;git pull
+: 1664492697:0;git commit -a -m "cleanup extensions and navbar copies"
+: 1664492701:0;git pull
+: 1664492744:0;git push
+: 1664492989:0;config push --delete main
+: 1664493005:0;config push origin --delete main
+: 1664494157:0;config commit -a -m "manjaro backup"
+: 1664494173:0;config push -u
+: 1664494320:0;pacman -Syu
+: 1664494324:0;sudo pacman -Syu
+: 1664494336:0;aurup
+: 1664494805:0;grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch-Grub
+: 1664494816:0;sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch-Grub
+: 1664494836:0;grub-update
+: 1664494858:0;sudo update-grub
+: 1664494877:0;sudo mkinitcpio -P
+: 1664494999:0;efibootmgr -v
+: 1664495235:0;aurup
+: 1664495244:0;doas
+: 1664495513:0;btrfs subvolume list
+: 1664495551:0;btrfs subvolume list /
+: 1664495557:0;sudo btrfs subvolume list /
+: 1664495585:0;cls
+: 1664495658:0;yay --aur -Sc
+: 1664495697:0;yay -Sc
+: 1664496142:0;pacman -Sc
+: 1664496145:0;sudo pacman -Sc
+: 1664496277:0;yay -Sc --noconfirm
+: 1664496410:0;pacclean
+: 1664496866:0;yay -S insync-dolphin
+: 1664497316:0;mirrors
+: 1664497496:0;cacheclean
+: 1664497508:0;pacclean
+: 1664497519:0;paccache -rk1
+: 1664497534:0;orphls
+: 1664497542:0;orphrm
+: 1664497690:0;efibootmgr -v
+: 1664497864:0;sudo efibootmgr --create --disk /dev/nvme0n1 --part 2 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot" --verbose
+: 1664499514:0;ls
+: 1664499634:0;chmod 750 grubx64.efi
+: 1664499642:0;sudo chmod 750 grubx64.efi
+: 1664499797:0;chown bkmo grub64x.efi
+: 1664499803:0;sudo chown bkmo grub64x.efi
+: 1664499821:0;ls
+: 1664499834:0;sudo chown bkmo grubx64.efi
+: 1664499868:0;sudo chmod 750 grubx64.efi
