@@ -1,6 +1,6 @@
 #!/bin/bash
 #shopt -s expand_aliases
-
+##
 ## Git, Zsh and Fastfetch(opt. Arch) must be installed
 ## The script will attempt to install these packages along with the required fonts
 ## Select the MesloLGS font as your terminal font
