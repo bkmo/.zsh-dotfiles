@@ -72,6 +72,7 @@ config checkout -f
 config config --local status.showUntrackedFiles no
 
 cp -n ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
+
 if [ -x "$(command -v fastfetch)" ]; then sudo cp -n ~/.config/zsh/fastfetch/paleofetch /usr/share/fastfetch/presets/paleofetch
 fi
 
