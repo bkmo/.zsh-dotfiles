@@ -21,7 +21,7 @@ else echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manual
 
 if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; then
     echo 'Install yay.'
-    sudo pacman -S --needed wget
+    sudo pacman --noconfirm -S --needed wget
     tmpdir="$(command mktemp -d)"
     command cd "${tmpdir}" || return 1
     dl_url="$(
@@ -33,8 +33,9 @@ if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; the
     command wget "${dl_url}"
     command tar xzvf yay_*_x86_64.tar.gz
     command cd yay_*_x86_64 || return 1
-    ./yay -Sy yay-bin
+    ./yay --noconfirm -Sy yay-bin
     rm -rf "${tmpdir}"
+    yay --noconfirm -S fastfetch
 fi
 echo
 echo
