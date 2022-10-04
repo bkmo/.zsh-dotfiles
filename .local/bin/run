@@ -18,9 +18,11 @@ elif [ -x "$(command -v pacman)" ];  then sudo pacman -S $packagesNeeded
 else echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install: $packagesNeeded">&2; fi
 echo
 echo
+echo "Pausing to see if there are any Package Manager errors"
 echo
+
 sleep 5s
-echo "Installing fonts......"
+echo "Installing fonts......Select the MesloLGS font as your terminal font"
 echo
 echo
 mkdir -p ~/.fonts
@@ -37,9 +39,10 @@ config config --local status.showUntrackedFiles no
 
 echo "alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
 
+echo "alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
+
 config checkout
 test $? -eq 0 || echo "Deal with conflicting files, then run config checkout with -f flag if you are OK with overwriting"
-#echo "Deal with conflicting files, then run (possibly with -f flag if you are OK with overwriting)"
-#echo "/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME checkout -f"
+
 rm -f ~/.config/zsh/.zsh_history
 mv ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
