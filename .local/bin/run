@@ -24,7 +24,7 @@ else echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manual
   #  rm -rf ~/yay
    #  yay -S fastfetch
 
- fi
+ #fi
 echo
 echo
 echo "Pausing to see if there are any Package Manager errors"
