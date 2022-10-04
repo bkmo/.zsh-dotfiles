@@ -23,6 +23,7 @@ if [ -x "$(command -v pacman)" ] && builtin type -p 'git' >/dev/null 2>&1; then
     git clone https://aur.archlinux.org/yay.git
     rm -rf ~/yay
      yay -S fastfetch
+
  fi
 echo
 echo
@@ -33,11 +34,11 @@ sleep 5s
 echo "Installing fonts......Select the MesloLGS font as your terminal font"
 echo
 echo
-mkdir -p ~/.fonts
-curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf --output ~/.fonts/'MesloLGS NF Regular.ttf'
-curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf --output ~/.fonts/'MesloLGS NF Bold.ttf'
-curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf --output ~/.fonts/'MesloLGS NF Italic.ttf'
-curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf --output ~/.fonts/'MesloLGS NF Bold Italic.ttf'
+sudo mkdir -p /usr/share/fonts/MesloLGS
+sudo curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf --output /usr/share/fonts/MesloLGS/'MesloLGS NF Regular.ttf'
+sudo curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf --output /usr/share/fonts/MesloLGS/'MesloLGS NF Bold.ttf'
+sudo curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf --output /usr/share/fonts/MesloLGS/'MesloLGS NF Italic.ttf'
+sudo curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf --output /usr/share/fonts/MesloLGS/'MesloLGS NF Bold Italic.ttf'
 
 git clone --bare -b master https://github.com/bkmo/.zsh-dotfiles.git $HOME/.zsh-dotfiles
 
@@ -54,3 +55,5 @@ test $? -eq 0 || echo "Deal with conflicting files, then run config checkout wit
 
 rm -f ~/.config/zsh/.zsh_history
 mv ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
+if [ -x "$(command -v fastfetch)" ]; then sudo cp ~/.config/zsh/fastfetch/paleofetch /usr/share/fastfetch/presets/paleofetch
+fi
