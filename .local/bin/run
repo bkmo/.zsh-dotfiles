@@ -23,6 +23,8 @@ if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; the
     echo 'Install yay.'
     sudo pacman --noconfirm -S --needed base base-devel wget
     git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
     rm -rf ~/yay
      yay --noconfirm -S fastfetch
 fi
