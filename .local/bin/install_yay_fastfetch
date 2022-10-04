@@ -4,7 +4,7 @@
 # Yet another Yogurt - An AUR Helper written in Go
 # <https://github.com/Jguer/yay>
 
-if ! builtin type -p 'yay' >/dev/null 2>&1; then
+if [ -x "$(command -v pacman)" ] &&  builtin type -p 'yay' >/dev/null 2>&1; then
     echo 'Install yay.'
     sudo pacman -S --needed base base-devel wget
     tmpdir="$(command mktemp -d)"
@@ -20,4 +20,8 @@ if ! builtin type -p 'yay' >/dev/null 2>&1; then
     command cd yay_*_x86_64 || return 1
     ./yay -Sy yay-bin
     rm -rf "${tmpdir}"
+     yay -S fastfetch
 fi
+
+
+
