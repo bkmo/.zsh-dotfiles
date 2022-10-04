@@ -9,13 +9,30 @@ shopt -s expand_aliases
 # OR
 # curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.local/bin/run | bash
 
-command sudo pacman --noconfirm -Syu
-command sudo pacman --noconfirm -S git zsh
+#command sudo pacman --noconfirm -Syu
+#command sudo pacman --noconfirm -S git zsh
+
+packagesNeeded='git zsh'
+if [ -x "$(command -v pacman)" ]; then sudo pacman --noconfirm -S $packagesNeeded
+elif [ -x "$(command -v apt-get)" ]; then sudo apt-get install $packagesNeeded
+elif [ -x "$(command -v dnf)" ];     then sudo dnf install $packagesNeeded
+elif [ -x "$(command -v zypper)" ];  then sudo zypper install $packagesNeeded
+else echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install: $packagesNeeded">&2; fi
+
+if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; then
+    echo 'Install yay.'
+    sudo pacman --noconfirm -S --needed base base-devel wget
+    git clone https://aur.archlinux.org/yay.git
+    rm -rf ~/yay
+     yay --noconfirm -S fastfetch
+fi
 
 echo
 echo
 echo "Pausing to see if there are any Package Manager errors"
 echo
+
+
 
 sleep 5s
 echo "Installing fonts......Select the MesloLGS font as your terminal font"
