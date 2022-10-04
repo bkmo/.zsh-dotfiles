@@ -2,20 +2,47 @@
 shopt -s expand_aliases
 
 ## Git, Zsh and Fastfetch(opt.) must be installed
+## The script will attempt to install these packages along with the required fonts
+## Select the MesloLGS font as your terminal font
 ## This is the curl command to run the script
 ## curl -sL https://bit.ly/3CnJXWo | bash
 ## or
 ## curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.local/bin/run | bash
 
-git clone --bare -b master https://github.com/bkmo/.zsh-dotfiles.git $HOME/.zsh-dotfiles &&
+packagesNeeded='git zsh '
+if [ -x "$(command -v apt-get)" ]; then sudo apt-get --yes install $packagesNeeded
+elif [ -x "$(command -v dnf)" ];     then sudo dnf install $packagesNeeded
+elif [ -x "$(command -v zypper)" ];  then sudo zypper install $packagesNeeded
+elif [ -x "$(command -v pacman)" ];  then sudo pacman -S $packagesNeeded
+
+else echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install: $packagesNeeded">&2; fi
+echo
+echo
+echo "Pausing to see if there are any Package Manager errors"
+echo
+
+sleep 5s
+echo "Installing fonts......Select the MesloLGS font as your terminal font"
+echo
+echo
+mkdir -p ~/.fonts
+curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf --output ~/.fonts/'MesloLGS NF Regular.ttf'
+curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf --output ~/.fonts/'MesloLGS NF Bold.ttf'
+curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf --output ~/.fonts/'MesloLGS NF Italic.ttf'
+curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf --output ~/.fonts/'MesloLGS NF Bold Italic.ttf'
+
+git clone --bare -b master https://github.com/bkmo/.zsh-dotfiles.git $HOME/.zsh-dotfiles
 
 alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'
 
-configz config --local status.showUntrackedFiles no &&
+config config --local status.showUntrackedFiles no
 
 echo "alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
 
-config checkout
+echo "alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
 
-echo "Deal with conflicting files, then run (possibly with -f flag if you are OK with overwriting)"
-echo "/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME checkout -f"
+config checkout
+test $? -eq 0 || echo "Deal with conflicting files, then run config checkout with -f flag if you are OK with overwriting"
+
+rm -f ~/.config/zsh/.zsh_history
+mv ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
