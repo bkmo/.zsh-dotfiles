@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#shopt -s expand_aliases
+shopt -s expand_aliases
 #
 # Git, Zsh and Fastfetch(opt. Arch) must be installed
 # The script will attempt to install these packages along with the required fonts
@@ -8,8 +8,9 @@
 # curl -sL https://bit.ly/3CnJXWo | bash
 # OR
 # curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.local/bin/run | bash
-sudo pacman -Syu
-sudo pacman -S git zsh
+
+command sudo pacman -Syu
+command sudo pacman -S git zsh
 
 echo
 echo
