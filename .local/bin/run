@@ -6,7 +6,7 @@ shopt -s expand_aliases
 ## Select the MesloLGS font as your terminal font
 ## This is the curl command to run the script
 ## curl -sL https://bit.ly/3CnJXWo | bash
-## or
+##   or
 ## curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.local/bin/run | bash
 
 packagesNeeded='git zsh '
