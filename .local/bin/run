@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 #shopt -s expand_aliases
 #
 # Git, Zsh and Fastfetch(opt. Arch) must be installed
