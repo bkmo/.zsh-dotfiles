@@ -1,7 +1,7 @@
 #!/bin/bash
 shopt -s expand_aliases
 
-## Git, Zsh and Fastfetch(opt.) must be installed
+## Git, Zsh and Fastfetch(opt. Arch) must be installed
 ## The script will attempt to install these packages along with the required fonts
 ## Select the MesloLGS font as your terminal font
 ## This is the curl command to run the script
@@ -16,6 +16,14 @@ elif [ -x "$(command -v zypper)" ];  then sudo zypper install $packagesNeeded
 elif [ -x "$(command -v pacman)" ];  then sudo pacman -S $packagesNeeded
 
 else echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install: $packagesNeeded">&2; fi
+
+if [ -x "$(command -v pacman)" ] && builtin type -p 'git' >/dev/null 2>&1; then
+    echo 'Installing yay and Fastfetch.'
+    sudo pacman -S --needed base base-devel wget
+    git clone https://aur.archlinux.org/yay.git
+    rm -rf ~/yay
+     yay -S fastfetch
+ fi
 echo
 echo
 echo "Pausing to see if there are any Package Manager errors"
