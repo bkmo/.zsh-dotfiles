@@ -17,12 +17,12 @@ elif [ -x "$(command -v pacman)" ];  then sudo pacman -S $packagesNeeded
 
 else echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install: $packagesNeeded">&2; fi
 
-if [ -x "$(command -v pacman)" ] && builtin type -p 'git' >/dev/null 2>&1; then
-    echo 'Installing yay and Fastfetch.'
-    sudo pacman -S --needed base base-devel wget
-    git clone https://aur.archlinux.org/yay.git
-    rm -rf ~/yay
-     yay -S fastfetch
+#if [ -x "$(command -v pacman)" ] && builtin type -p 'git' >/dev/null 2>&1; then
+ #   echo 'Installing yay and Fastfetch.'
+ #   sudo pacman -S --needed base base-devel wget
+ #   git clone https://aur.archlinux.org/yay.git
+  #  rm -rf ~/yay
+   #  yay -S fastfetch
 
  fi
 echo
