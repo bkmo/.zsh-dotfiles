@@ -16,9 +16,9 @@ elif [ -x "$(command -v zypper)" ];  then sudo zypper install $packagesNeeded
 elif [ -x "$(command -v pacman)" ];  then sudo pacman -S $packagesNeeded &&
 
     echo 'Installing yay and Fastfetch.'
-    sudo pacman -S --needed base base-devel wget
-    git clone https://aur.archlinux.org/yay.git
-    rm -rf ~/yay
+    sudo pacman -S --needed base base-devel wget &
+    git clone https://aur.archlinux.org/yay.git &
+    rm -rf ~/yay &
      yay -S fastfetch
 
 else echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install: $packagesNeeded">&2; 
