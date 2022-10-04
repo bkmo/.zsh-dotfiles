@@ -14,7 +14,7 @@ if [ -x "$(command -v apt-get)" ]; then sudo apt-get --yes install $packagesNeed
 elif [ -x "$(command -v dnf)" ];     then sudo dnf install $packagesNeeded
 elif [ -x "$(command -v zypper)" ];  then sudo zypper install $packagesNeeded
 elif [ -x "$(command -v pacman)" ];  then sudo pacman -S $packagesNeeded &&
-elif [ -x "$(command -v pacman)" ] && builtin type -p 'git' >/dev/null 2>&1; then
+
     echo 'Installing yay and Fastfetch.'
     sudo pacman -S --needed base base-devel wget
     git clone https://aur.archlinux.org/yay.git
