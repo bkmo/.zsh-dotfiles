@@ -1,5 +1,5 @@
 #!/bin/bash
-shopt -s expand_aliases
+#shopt -s expand_aliases
 
 ## Git, Zsh and Fastfetch(opt. Arch) must be installed
 ## The script will attempt to install these packages along with the required fonts
@@ -42,18 +42,22 @@ sudo curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%
 
 git clone --bare -b master https://github.com/bkmo/.zsh-dotfiles.git $HOME/.zsh-dotfiles
 
-alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'
-
 config config --local status.showUntrackedFiles no
 
 echo "alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
 
 echo "alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
+# define config alias locally since the dotfiles
+# aren't installed on the system yet
+function config {
+   git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME $@
+}
 
-config checkout
-test $? -eq 0 || echo "Deal with conflicting files, then run config checkout with -f flag if you are OK with overwriting"
+config checkout -f
+config config --local status.showUntrackedFiles no
 
-rm -f ~/.config/zsh/.zsh_history
+
+#rm -f ~/.config/zsh/.zsh_history
 mv ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
 if [ -x "$(command -v fastfetch)" ]; then sudo cp ~/.config/zsh/fastfetch/paleofetch /usr/share/fastfetch/presets/paleofetch
 fi
