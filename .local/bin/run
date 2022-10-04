@@ -8,7 +8,7 @@
 # curl -sL https://bit.ly/3CnJXWo | bash
 # OR
 # curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.local/bin/run | bash
-
+sudo pacman -Syu
 sudo pacman -S git zsh
 
 echo
