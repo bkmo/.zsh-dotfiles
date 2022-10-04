@@ -9,8 +9,8 @@ shopt -s expand_aliases
 # OR
 # curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.local/bin/run | bash
 
-command sudo pacman -Syu
-command sudo pacman -S git zsh
+command sudo pacman --noconfirm -Syu
+command sudo pacman --noconfirm -S git zsh
 
 echo
 echo
