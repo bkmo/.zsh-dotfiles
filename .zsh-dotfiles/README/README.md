@@ -7,10 +7,7 @@ shopt -s expand_aliases
 # This is the curl command to run the script
 # curl -sL https://bit.ly/3CnJXWo | bash
 # OR
-# bash -c "$(curl -sL https://bit.ly/3CnJXWo)"
-# OR
 # curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.local/bin/run | bash
-
 
 packagesNeeded='git zsh'
 if [ -x "$(command -v pacman)" ]; then sudo pacman --noconfirm -S $packagesNeeded
@@ -75,5 +72,9 @@ config checkout -f
 config config --local status.showUntrackedFiles no
 
 cp -n ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
-if [ -x "$(command -v fastfetch)" ]; then sudo cp ~/.config/zsh/fastfetch/paleofetch /usr/share/fastfetch/presets/paleofetch
+if [ -x "$(command -v fastfetch)" ]; then sudo cp -n ~/.config/zsh/fastfetch/paleofetch /usr/share/fastfetch/presets/paleofetch
 fi
+
+if [ -x "$(command -v konsole)" ]; then sudo cp -n ~/.config/zsh/konsole/Profile\ 1.profile ~/.local/share/konsole/Profile\ 1.profile
+fi
+
