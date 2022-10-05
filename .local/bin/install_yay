@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; then
+    sudo pacman --noconfirm -U ~/.config/zsh/pkg/yay-bin-11.3.0-1-x86_64.pkg.tar.zst
+fi
+
+
+
