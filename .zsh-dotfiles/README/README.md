@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-shopt -s expand_aliases
-#
+#shopt -s expand_aliases
 # The script will attempt to install Git and Zsh as these packages along with the required fonts are required.
 # Select the MesloLGS font as your terminal font
 # Fastfetch and yay will be installed on Arch derivatives.
-
+# Neofetch will be installed on Debian derivatives.
+#
 # This is the curl command to run the script
 #
 # curl -sL https://bit.ly/3CnJXWo | bash
@@ -15,14 +15,15 @@ shopt -s expand_aliases
 #
 # OR
 #
-#
 # curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.local/bin/run | bash
 #
 packagesNeeded='git zsh'
+packagesNeededDeb='git zsh neofetch'
+
 if [ -x "$(command -v pacman)" ]; then sudo pacman --noconfirm -S $packagesNeeded
-elif [ -x "$(command -v apt-get)" ]; then sudo apt-get install $packagesNeeded
-elif [ -x "$(command -v dnf)" ];     then sudo dnf install $packagesNeeded
-elif [ -x "$(command -v zypper)" ];  then sudo zypper install $packagesNeeded
+elif [ -x "$(command -v apt)" ]; then sudo apt -y install $packagesNeededDeb
+elif [ -x "$(command -v dnf)" ]; then sudo dnf install $packagesNeeded
+elif [ -x "$(command -v zypper)" ]; then sudo zypper install $packagesNeeded
 else echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install: $packagesNeeded">&2; fi
 
 echo
@@ -66,7 +67,7 @@ if [ -x "$(command -v pacman)" ] && ! builtin type -p 'fastfetch' >/dev/null 2>&
     sudo pacman --noconfirm -U ~/.config/zsh/pkg/fastfetch-1.7.2-1-x86_64.pkg.tar.zst
   fi
 
-if [ -f "/usr/bin/fastfetch" ]; then sudo cp ~/.config/zsh/fastfetch/paleofetch /usr/share/fastfetch/presets/paleofetch
+if [ -x "$(command -v fastfetch)" ]; then sudo cp ~/.config/zsh/fastfetch/paleofetch /usr/share/fastfetch/presets/paleofetch
 fi
 
 if [ -x "$(command -v konsole)" ]; then sudo cp ~/.config/zsh/konsole/Profile\ 1.profile ~/.local/share/konsole/Profile\ 1.profile
