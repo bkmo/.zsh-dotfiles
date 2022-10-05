@@ -1,14 +1,21 @@
 #!/usr/bin/env bash
 shopt -s expand_aliases
-#
-# Git, Zsh and Fastfetch(opt. Arch) must be installed
-# The script will attempt to install these packages along with the required fonts
+# The script will attempt to install Git and Zsh as these packages along with the required fonts are required.
 # Select the MesloLGS font as your terminal font
-# This is the curl command to run the script
-# curl -sL https://bit.ly/3CnJXWo | bash
-# OR
-# curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.local/bin/run | bash
+# Fastfetch and yay will be installed on Arch derivatives.
 
+# This is the curl command to run the script
+#
+# curl -sL https://bit.ly/3CnJXWo | bash
+#
+# OR
+#
+# sh -c "$(curl -sL https://bit.ly/3CnJXWo)"
+#
+# OR
+#
+# curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.local/bin/run | bash
+#
 packagesNeeded='git zsh'
 if [ -x "$(command -v pacman)" ]; then sudo pacman --noconfirm -S $packagesNeeded
 elif [ -x "$(command -v apt-get)" ]; then sudo apt-get install $packagesNeeded
@@ -48,6 +55,10 @@ config checkout -f
 config config --local status.showUntrackedFiles no
 
 cp -n ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
+
+if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; then
+    sudo pacman --noconfirm -U ~/.config/zsh/pkg/yay-bin-11.3.0-1-x86_64.pkg.tar.zst
+fi
 
 if [ -x "$(command -v pacman)" ] && ! builtin type -p 'fastfetch' >/dev/null 2>&1; then
     sudo pacman --noconfirm -U ~/.config/zsh/pkg/fastfetch-1.7.2-1-x86_64.pkg.tar.zst
