@@ -72,3 +72,4 @@ fi
 if [ -x "$(command -v konsole)" ]; then sudo cp ~/.config/zsh/konsole/Profile\ 1.profile ~/.local/share/konsole/Profile\ 1.profile
 fi
 
+source ~/.zshenv
