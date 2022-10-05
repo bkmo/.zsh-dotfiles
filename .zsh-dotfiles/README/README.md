@@ -61,9 +61,6 @@ if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; the
     sudo pacman --noconfirm -U ~/.config/zsh/pkg/yay-bin-11.3.0-1-x86_64.pkg.tar.zst
 fi
 
-#if [ -x "$(command -v pacman)" ] && ! builtin type -p 'pfetch' >/dev/null 2>&1; then
-#    sudo pacman --noconfirm -U ~/.config/zsh/pkg/pfetch-0.6.0-3-any.pkg.tar.zst
-#  fi
 sudo cp ~/.config/zsh/fastfetch/pfetch /usr/bin/pfetch
 
 if [ -x "$(command -v fastfetch)" ]; then sudo cp ~/.config/zsh/fastfetch/paleofetch /usr/share/fastfetch/presets/paleofetch
@@ -76,7 +73,7 @@ clear
 echo
 echo
 echo
-echo Answer yes "y" when asked to change shell to zsh
+echo Answer yes/y  when asked to change shell to zsh
 echo
 echo
 echo Make sure to change your terminal font to MesloLGS and logout/login
