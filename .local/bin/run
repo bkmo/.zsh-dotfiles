@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 #shopt -s expand_aliases
-# The script will attempt to install Git and Zsh as these packages along with the required fonts are required.
+# The script will attempt to install Git, Zsh and Pfetch as these packages along with the required fonts are required.
 # Select the MesloLGS font as your terminal font
-# Pfetch and yay will be installed on Arch derivatives.
-# Neofetch will be installed on Debian derivatives.
+# yay will be installed on Arch derivatives.
 #
 # This is the curl command to run the script
 #
@@ -18,10 +17,9 @@
 # curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.local/bin/run | bash
 #
 packagesNeeded='git zsh'
-packagesNeededDeb='git zsh neofetch'
 
 if [ -x "$(command -v pacman)" ]; then sudo pacman --noconfirm -S $packagesNeeded
-elif [ -x "$(command -v apt)" ]; then sudo apt -y install $packagesNeededDeb
+elif [ -x "$(command -v apt)" ]; then sudo apt -y install $packagesNeeded
 elif [ -x "$(command -v dnf)" ]; then sudo dnf install $packagesNeeded
 elif [ -x "$(command -v zypper)" ]; then sudo zypper install $packagesNeeded
 else echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install: $packagesNeeded">&2; fi
@@ -63,9 +61,10 @@ if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; the
     sudo pacman --noconfirm -U ~/.config/zsh/pkg/yay-bin-11.3.0-1-x86_64.pkg.tar.zst
 fi
 
-if [ -x "$(command -v pacman)" ] && ! builtin type -p 'pfetch' >/dev/null 2>&1; then
-    sudo pacman --noconfirm -U ~/.config/zsh/pkg/pfetch-0.6.0-3-any.pkg.tar.zst
-  fi
+#if [ -x "$(command -v pacman)" ] && ! builtin type -p 'pfetch' >/dev/null 2>&1; then
+#    sudo pacman --noconfirm -U ~/.config/zsh/pkg/pfetch-0.6.0-3-any.pkg.tar.zst
+#  fi
+sudo cp ~/.config/zsh/fastfetch/pfetch /usr/bin/pfetch
 
 if [ -x "$(command -v fastfetch)" ]; then sudo cp ~/.config/zsh/fastfetch/paleofetch /usr/share/fastfetch/presets/paleofetch
 fi
