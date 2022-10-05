@@ -72,3 +72,21 @@ fi
 if [ -x "$(command -v konsole)" ]; then sudo cp ~/.config/zsh/konsole/Profile\ 1.profile ~/.local/share/konsole/Profile\ 1.profile
 fi
 
+clear
+echo
+echo
+echo
+echo Answer yes "y" when asked to change shell to zsh
+echo
+echo
+echo Make sure to change your terminal font to MesloLGS and logout/login
+echo
+echo
+sleep 5s
+source ~/.zshenv
+
+clear
+echo
+echo
+echo Make sure to change your terminal font to MesloLGS and logout/login
+echo
