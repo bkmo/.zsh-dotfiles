@@ -2,7 +2,7 @@
 #shopt -s expand_aliases
 # The script will attempt to install Git and Zsh as these packages along with the required fonts are required.
 # Select the MesloLGS font as your terminal font
-# Fastfetch and yay will be installed on Arch derivatives.
+# Pfetch and yay will be installed on Arch derivatives.
 # Neofetch will be installed on Debian derivatives.
 #
 # This is the curl command to run the script
@@ -63,8 +63,8 @@ if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; the
     sudo pacman --noconfirm -U ~/.config/zsh/pkg/yay-bin-11.3.0-1-x86_64.pkg.tar.zst
 fi
 
-if [ -x "$(command -v pacman)" ] && ! builtin type -p 'fastfetch' >/dev/null 2>&1; then
-    sudo pacman --noconfirm -U ~/.config/zsh/pkg/fastfetch-1.7.2-1-x86_64.pkg.tar.zst
+if [ -x "$(command -v pacman)" ] && ! builtin type -p 'pfetch' >/dev/null 2>&1; then
+    sudo pacman --noconfirm -U ~/.config/zsh/pkg/pfetch-0.6.0-3-any.pkg.tar.zst
   fi
 
 if [ -x "$(command -v fastfetch)" ]; then sudo cp ~/.config/zsh/fastfetch/paleofetch /usr/share/fastfetch/presets/paleofetch

@@ -107,6 +107,6 @@ setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
 #fastfetch On Arch or where available
-if [ -x "$(command -v fastfetch)" ]; then  fastfetch --load-config paleofetch;
+if [ -x "$(command -v pfetch)" ]; then  pfetch;
 #neofetch for Debian
 elif [ -x "$(command -v neofetch)" ]; then  neofetch; fi
