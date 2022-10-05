@@ -54,10 +54,9 @@ if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; the
 fi
 if [ -x "$(command -v pacman)" ] && ! builtin type -p 'fastfetch' >/dev/null 2>&1; then
     sudo pacman --noconfirm -U ~/.config/zsh/pkg/fastfetch-1.7.2-1-x86_64.pkg.tar.zst
-    wait
-    fi
+  fi
 
-    if [ -x "$(command -v fastfetch)" ]; then sudo cp -n ~/.config/zsh/fastfetch/paleofetch /usr/share/fastfetch/presets/paleofetch
+    if [ -f "/usr/bin/fastfetch" ]; then sudo cp -n ~/.config/zsh/fastfetch/paleofetch /usr/share/fastfetch/presets/paleofetch
 fi
 
 if [ -x "$(command -v konsole)" ]; then sudo cp -n ~/.config/zsh/konsole/Profile\ 1.profile ~/.local/share/konsole/Profile\ 1.profile
