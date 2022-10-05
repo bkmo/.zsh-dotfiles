@@ -11,7 +11,7 @@ shopt -s expand_aliases
 #
 # OR
 #
-# sh -c "$(curl -sL https://bit.ly/3CnJXWo)"
+# bash -c "$(curl -sL https://bit.ly/3CnJXWo)"
 #
 # OR
 #
