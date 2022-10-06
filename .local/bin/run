@@ -17,7 +17,7 @@
 #
 packagesNeeded='git zsh'
 
-if [ -x "$(command -v pacman)" ]; then sudo pacman --noconfirm -S $packagesNeeded
+if [ -x "$(command -v pacman)" ]; then sudo pacman --noconfirm -Sy $packagesNeeded
 elif [ -x "$(command -v apt)" ]; then sudo apt -y install $packagesNeeded
 elif [ -x "$(command -v dnf)" ]; then sudo dnf install $packagesNeeded
 elif [ -x "$(command -v zypper)" ]; then sudo zypper install $packagesNeeded
