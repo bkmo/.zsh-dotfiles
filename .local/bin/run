@@ -80,6 +80,7 @@ echo Make sure to change your terminal font to MesloLGS and logout/login
 echo
 echo
 sleep 5s
+rm -rf ~/.zsh-dotfiles
 source ~/.zshenv
 
 clear
