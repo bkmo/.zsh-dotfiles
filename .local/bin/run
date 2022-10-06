@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#shopt -s expand_aliases
 # The script will attempt to install Git, Zsh and Pfetch as these packages along with the required fonts are required.
 # Select the MesloLGS NF font as your terminal font
 # yay will be installed on Arch derivatives.
