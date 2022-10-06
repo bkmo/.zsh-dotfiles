@@ -76,16 +76,9 @@ echo
 echo Answer yes/y  when asked to change shell to zsh
 echo
 echo
-echo Make sure to change your terminal font to MesloLGS and logout/login
+echo Make sure to change your terminal font to MesloLGS NF and logout/login
 echo
 echo
 sleep 5s
 rm -rf ~/.zsh-dotfiles
 source ~/.zshenv
-
-clear
-echo
-echo
-echo Make sure to change your terminal font to MesloLGS and logout/login
-echo
-rm -rf ~/.zsh-dotfiles
