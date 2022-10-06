@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #shopt -s expand_aliases
 # The script will attempt to install Git, Zsh and Pfetch as these packages along with the required fonts are required.
-# Select the MesloLGS font as your terminal font
+# Select the MesloLGS NF font as your terminal font
 # yay will be installed on Arch derivatives.
 #
 # This is the curl command to run the script
@@ -32,7 +32,7 @@ sleep 5s
 clear
 echo
 echo
-echo "Installing fonts......Select the MesloLGS font as your terminal font"
+echo "Installing fonts......Select the MesloLGS  NFfont as your terminal font"
 echo
 echo
 sudo mkdir -p /usr/share/fonts/MesloLGS
