@@ -87,4 +87,4 @@ echo
 echo
 echo Make sure to change your terminal font to MesloLGS and logout/login
 echo
-rm -r ~/.zsh-dotfiles
+rm -rf ~/.zsh-dotfiles
