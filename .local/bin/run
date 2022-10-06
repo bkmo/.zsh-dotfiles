@@ -73,7 +73,7 @@ clear
 echo
 echo
 echo
-echo Answer yes/y  when asked to change shell to zsh
+echo Answer yes '"y"' when asked to change your login shell to zsh
 echo
 echo
 echo Make sure to change your terminal font to MesloLGS NF and logout/login
