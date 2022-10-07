@@ -57,6 +57,7 @@ config config --local status.showUntrackedFiles no
 cp -f ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
 
 sudo cp ~/.config/zsh/pkg/duf /usr/bin/duf
+sudo cp ~/.config/zsh/pkg/battop /usr/bin/battop
 
 
 if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; then
