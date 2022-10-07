@@ -54,7 +54,10 @@ function config {
 config checkout -f
 config config --local status.showUntrackedFiles no
 
-cp -n ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
+cp -f ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
+
+sudo cp ~/.config/zsh/pkg/duf /usr/bin/duf
+
 
 if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; then
     sudo pacman --noconfirm -U ~/.config/zsh/pkg/yay-bin-11.3.0-1-x86_64.pkg.tar.zst
