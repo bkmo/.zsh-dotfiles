@@ -1,87 +1,113 @@
-#!/usr/bin/env bash
-# The script will attempt to install Git, Zsh and Pfetch as these packages along with the required fonts are required.
-# Select the MesloLGS NF font as your terminal font
-# yay will be installed on Arch derivatives.
+# Personal Zsh configuration file. It is strongly recommended to keep all
+# shell customization and configuration (including exported environment
+# variables such as PATH) in this file or in files sourced from it.
 #
-# This is the curl command to run the script
+# Documentation: https://github.com/romkatv/zsh4humans/blob/v5/README.md.
+# Don't start tmux.
+zstyle ':z4h:' start-tmux no
+# Periodic auto-update on Zsh startup: 'ask' or 'no'.
+# You can manually run `z4h update` to update everything.
+zstyle ':z4h:' auto-update      'no'
+# Ask whether to auto-update this often; has no effect if auto-update is 'no'.
+zstyle ':z4h:' auto-update-days '28'
+
+# Keyboard type: 'mac' or 'pc'.
+zstyle ':z4h:bindkey' keyboard  'pc'
+
+# Mark up shell's output with semantic information.
+zstyle ':z4h:' term-shell-integration 'yes'
+
+# Right-arrow key accepts one character ('partial-accept') from
+# command autosuggestions or the whole thing ('accept')?
+zstyle ':z4h:autosuggestions' forward-char 'accept'
+
+# Recursively traverse directories when TAB-completing files.
+zstyle ':z4h:fzf-complete' recurse-dirs 'yes'
+zstyle ':z4h:*' fzf-flags --color=hl:4,hl+:4
+# Enable direnv to automatically source .envrc files.
+zstyle ':z4h:direnv'         enable 'no'
+# Show "loading" and "unloading" notifications from direnv.
+zstyle ':z4h:direnv:success' notify 'yes'
+
+# Enable ('yes') or disable ('no') automatic teleportation of z4h over
+# SSH when connecting to these hosts.
+zstyle ':z4h:ssh:example-hostname1'   enable 'no'
+zstyle ':z4h:ssh:*.example-hostname2' enable 'no'
+# The default value if none of the overrides above match the hostname.
+zstyle ':z4h:ssh:*'                   enable 'no'
+
+# Send these files over to the remote host when connecting over SSH to the
+# enabled hosts.
+#zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
+#zstyle ':z4h:' prompt-at-bottom 'yes'
+#alias clear=z4h-clear-screen-soft-bottom
+# Clone additional Git repositories from GitHub.
 #
-# curl -sL https://bit.ly/3CnJXWo | bash
+# This doesn't do anything apart from cloning the repository and keeping it
+# up-to-date. Cloned files can be used after `z4h init`. This is just an
+# example. If you don't plan to use Oh My Zsh, delete this line.
+#z4h install ohmyzsh/ohmyzsh || return
+#z4h install pkasemir/find-the-command || return
+# Install or update core components (fzf, zsh-autosuggestions, etc.) and
+# initialize Zsh. After this point console I/O is unavailable until Zsh
+# is fully initialized. Everything that requires user interaction or can
+# perform network I/O must be done above. Everything else is best done below.
+z4h init || return
+
+# Extend PATH.
+#path=(~/bin $path)
+#typeset -U path PATH
+#path=(~/.local/bin $path)
+#export PATH
+# Export environment variables.
+export GPG_TTY=$TTY
+
+# Source additional local files if they exist.
+#z4h source ~/.env.zsh
+z4h source ~/.config/zsh/.zsh.aliases
+# Use additional Git repositories pulled in with `z4h install`.
 #
-# OR
-#
-# bash -c "$(curl -sL https://bit.ly/3CnJXWo)"
-#
-# OR
-#
-# curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.local/bin/run | bash
-#
-packagesNeeded='git zsh'
+# Load additional plugins.
+source ~/.config/zsh/plugins/aliases/aliases.plugin.zsh
+source ~/.config/zsh/plugins/zsh-sudo/sudo.plugin.zsh
+source ~/.config/zsh/plugins/find-the-command/ftc.zsh askfirst noupdate
+source ~/.config/zsh/plugins/web-search/web_search.plugin.zsh
+source ~/.config/zsh/plugins/omz-git/init.zsh
+source ~/.config/zsh/plugins/zsh-archlinux/archlinux.plugin.zsh
+# Define key bindings.
+z4h bindkey z4h-backward-kill-word  Ctrl+Backspace     Ctrl+H
+z4h bindkey z4h-backward-kill-zword Ctrl+Alt+Backspace
 
-if [ -x "$(command -v pacman)" ]; then sudo pacman --noconfirm -Sy $packagesNeeded
-elif [ -x "$(command -v apt)" ]; then sudo apt -y install $packagesNeeded
-elif [ -x "$(command -v dnf)" ]; then sudo dnf install $packagesNeeded
-elif [ -x "$(command -v zypper)" ]; then sudo zypper install $packagesNeeded
-else echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install: $packagesNeeded">&2; fi
+z4h bindkey undo Ctrl+/ Shift+Tab  # undo the last command line change
+z4h bindkey redo Alt+/             # redo the last undone command line change
 
-echo
-echo
-echo "Pausing to see if there are any Package Manager errors"
-echo
-sleep 5s
-clear
-echo
-echo
-echo "Installing fonts......Select the MesloLGS  NFfont as your terminal font"
-echo
-echo
-mkdir -p ~/.fonts
-curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf --output ~/.fonts/'MesloLGS NF Regular.ttf'
-curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf --output ~/.fonts/'MesloLGS NF Bold.ttf'
-curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf --output ~/.fonts/'MesloLGS NF Italic.ttf'
-curl -L https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf --output ~/.fonts/'MesloLGS NF Bold Italic.ttf'
+z4h bindkey z4h-cd-back    Alt+Left   # cd into the previous directory
+z4h bindkey z4h-cd-forward Alt+Right  # cd into the next directory
+z4h bindkey z4h-cd-up      Alt+Up     # cd into the parent directory
+z4h bindkey z4h-cd-down    Alt+Down   # cd into a child directory
 
-git clone --bare -b master https://github.com/bkmo/.zsh-dotfiles.git $HOME/.zsh-dotfiles
+# Autoload functions.
+autoload -Uz zmv
 
-echo "alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
+# Define functions and completions.
+function md() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
+compdef _directories md
 
-echo "alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
-# define config alias locally since the dotfiles
-# aren't installed on the system yet
-function config {
-   git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME $@
-}
+# Define named directories: ~w <=> Windows home directory on WSL.
+[[ -z $z4h_win_home ]] || hash -d w=$z4h_win_home
 
-config checkout -f
-config config --local status.showUntrackedFiles no
+# Define aliases.
+alias tree='tree -a -I .git'
 
-cp -f ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
+# Add flags to existing aliases.
+alias ls="${aliases[ls]:-ls} -A"
 
-sudo cp ~/.config/zsh/pkg/duf /usr/bin/duf
-sudo cp ~/.config/zsh/pkg/battop /usr/bin/battop
+# Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
+setopt glob_dots     # no special treatment for file names with a leading dot
+setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
-
-if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; then
-    sudo pacman --noconfirm -U ~/.config/zsh/pkg/yay-bin-11.3.0-1-x86_64.pkg.tar.zst
-fi
-
-sudo cp ~/.config/zsh/pfetch/pfetch /usr/bin/pfetch
-
-mkdir ~/.local/share/konsole
-cp ~/.config/zsh/konsole/Profile\ 1.profile ~/.local/share/konsole/Profile\ 1.profile
-
-if [ -x "$(command -v fastfetch)" ]; then sudo cp ~/.config/zsh/fastfetch/paleofetch /usr/share/fastfetch/presets/paleofetch
-fi
-
-clear
-echo
-echo
-echo
-echo Answer yes '"y"' when asked to change your login shell to zsh
-echo
-echo
-echo Make sure to change your terminal font to MesloLGS NF and logout/login
-echo
-echo
-sleep 5s
-rm -rf ~/.zsh-dotfiles
-source ~/.zshenv
+#ufetch or pfetch On Arch or where available
+if [ -x "$(command -v ufetch-arch)" ] && [ -x "$(command -v pfetch)" ]; then  ufetch-arch;
+elif [ -x "$(command -v pfetch)" ] && ! builtin type -p 'ufetch-arch' >/dev/null 2>&1; then  pfetch;
+#neofetch for Debian
+elif [ -x "$(command -v neofetch)" ]; then  neofetch; fi
