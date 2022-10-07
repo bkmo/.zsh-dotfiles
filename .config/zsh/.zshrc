@@ -106,8 +106,8 @@ alias ls="${aliases[ls]:-ls} -A"
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
-#ufetch or pfetch On Arch or where available
-if [ -x "$(command -v ufetch-arch)" ] && [ -x "$(command -v pfetch)" ]; then  ufetch-arch;
-elif [ -x "$(command -v pfetch)" ] && ! builtin type -p 'ufetch-arch' >/dev/null 2>&1; then  pfetch;
-#neofetch for Debian
-elif [ -x "$(command -v neofetch)" ]; then  neofetch; fi
+#Ufetch on Arch or Pfetch if not available, pfetch elsewhere.
+if [ -x "$(command -v pacman)" ] && [ -x "$(command -v ufetch-arch)" ]; then  ufetch-arch;
+elif [ -x "$(command -v pacman)" ] && ! builtin type -p 'ufetch-arch' >/dev/null 2>&1; then  pfetch;
+elif [ -x "$(command -v pfetch)" ] && ! builtin type -p 'pacman' >/dev/null 2>&1; then  pfetch;
+fi
