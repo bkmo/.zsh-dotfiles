@@ -4,7 +4,7 @@
 #
 # Documentation: https://github.com/romkatv/zsh4humans/blob/v5/README.md.
 # Don't start tmux.
-zstyle ':z4h:' start-tmux no
+#zstyle ':z4h:' start-tmux no
 # Periodic auto-update on Zsh startup: 'ask' or 'no'.
 # You can manually run `z4h update` to update everything.
 zstyle ':z4h:' auto-update      'no'
@@ -39,8 +39,8 @@ zstyle ':z4h:ssh:*'                   enable 'no'
 # Send these files over to the remote host when connecting over SSH to the
 # enabled hosts.
 #zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
-#zstyle ':z4h:' prompt-at-bottom 'yes'
-#alias clear=z4h-clear-screen-soft-bottom
+zstyle ':z4h:' prompt-at-bottom 'yes'
+alias clear=z4h-clear-screen-soft-bottom
 # Clone additional Git repositories from GitHub.
 #
 # This doesn't do anything apart from cloning the repository and keeping it
