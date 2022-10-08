@@ -58,13 +58,14 @@ cp -f ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
 
 sudo cp ~/.config/zsh/pkg/duf /usr/bin/duf
 sudo cp ~/.config/zsh/pkg/battop /usr/bin/battop
-
+sudo cp ~/.config/zsh/pfetch/pfetch /usr/bin/pfetch
+if [ -x "$(command -v pacman)" ]; then sudo cp ~/.config/zsh/pkg/ufetch-arch /usr/bin/ufetch-arch
+fi
 
 if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; then
     sudo pacman --noconfirm -U ~/.config/zsh/pkg/yay-bin-11.3.0-1-x86_64.pkg.tar.zst
 fi
 
-sudo cp ~/.config/zsh/pfetch/pfetch /usr/bin/pfetch
 
 mkdir ~/.local/share/konsole
 cp ~/.config/zsh/konsole/Profile\ 1.profile ~/.local/share/konsole/Profile\ 1.profile
