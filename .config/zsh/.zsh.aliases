@@ -129,6 +129,8 @@ alias aurup='yay'
 alias pacclean='yay -Sc --noconfirm'
 # Show all logs in /var/log
 alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
+alias pks='pkgsearch'
+alias pksy='pkgsearch-y'
 
 # SHA1
 alias sha1='openssl sha1'
