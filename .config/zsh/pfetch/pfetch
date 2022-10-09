@@ -980,14 +980,14 @@ get_ascii() {
 
         [Aa]rch*)
             read_ascii 4 <<-EOF
-				${c6}       /\\
-				${c6}      /  \\
-				${c6}     /\\   \\
-				${c4}    /${c5} Arch ${c4}\\
-				${c4}   /  (  )  \\
-				${c4}  / __|  |__\\\\
-				${c4} /./        \`.\\
-			EOF
+				${c4}       //\\
+				${c4}      //  \\
+				${c4}     //\\   \\
+				${c4}    // ${c6}Arch ${c4}\\
+				${c4}   //  (  ) \\\\
+				${c4}  //  _/  \\_  \\
+				${c4} //_.\`      \`._\\
+				EOF
         ;;
 
         [Aa]rco*)
@@ -1471,7 +1471,8 @@ main() {
     # Ensure that the 'TMPDIR' is writable as heredocs use it and
     # fail without the write permission. This was found to be the
     # case on Android where the temporary directory requires root.
-    [ -w "${TMPDIR:-/tmp}" ] || export TMPDIR=~
+    [ -w "${TMPDIR:-/tmp}" ] || export TMPDIR=~				${c6}       //\\
+
 
     # Generic color list.
     # Disable warning about unused variables.
