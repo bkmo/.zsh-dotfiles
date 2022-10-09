@@ -73,8 +73,6 @@ source ~/.config/zsh/plugins/find-the-command/ftc.zsh askfirst noupdate
 source ~/.config/zsh/plugins/web-search/web_search.plugin.zsh
 source ~/.config/zsh/plugins/omz-git/init.zsh
 source ~/.config/zsh/plugins/zsh-archlinux/archlinux.plugin.zsh
-[[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
-
 
 # Define key bindings.
 z4h bindkey z4h-backward-kill-word  Ctrl+Backspace     Ctrl+H
@@ -123,4 +121,4 @@ setopt HIST_SAVE_NO_DUPS
 #Run Pfetch in terminal.
 if [ -x "$(command -v pfetch)" ]; then  export PF_COL3=6 && export PF_INFO="ascii title os de kernel uptime pkgs memory"; fi
 if [ -x "$(command -v pfetch)" ]; then  pfetch; fi
-
+source /etc/grc.zsh
