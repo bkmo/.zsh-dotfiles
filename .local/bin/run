@@ -56,6 +56,7 @@ config config --local status.showUntrackedFiles no
 
 cp -f ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
 
+sudo cp ~/.config/zsh/grc/grcat /usr/bin/grcat
 sudo cp ~/.config/zsh/grc/grc /usr/bin/grc
 sudo cp ~/.config/zsh/grc/grc.zsh /etc/grc.zsh
 sudo cp ~/.config/zsh/grc/grc.conf /etc/grc.conf
