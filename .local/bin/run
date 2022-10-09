@@ -57,7 +57,7 @@ config config --local status.showUntrackedFiles no
 cp -f ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
 
 # Install 1.11.3 version of grc
-sudo mkdir /usr/share/grc
+#sudo mkdir /usr/share/grc
 sudo cp -r ~/.config/zsh/grc/usrshare/grc /usr/share
 sudo cp ~/.config/zsh/grc/grcat /usr/bin/grcat
 sudo cp ~/.config/zsh/grc/grc /usr/bin/grc
