@@ -111,7 +111,14 @@ setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
 #Mod ctrl-l binding for clear plus ufetch
 bindkey -s '^l' 'clear\n'
+#setopt HIST_IGNORE_ALL_DUPS
+
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
 
 #Ufetch on Arch or Pfetch if not available, pfetch other Distros.
 if [ -x "$(command -v pacman)" ] && [ -x "$(command -v ufetch-arch)" ]; then  ufetch-arch;
