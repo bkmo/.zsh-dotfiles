@@ -74,7 +74,8 @@ source ~/.config/zsh/plugins/find-the-command/ftc.zsh askfirst noupdate
 source ~/.config/zsh/plugins/web-search/web_search.plugin.zsh
 source ~/.config/zsh/plugins/omz-git/init.zsh
 source ~/.config/zsh/plugins/zsh-archlinux/archlinux.plugin.zsh
-source /etc/grc.zsh
+[[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
+
 
 # Define key bindings.
 z4h bindkey z4h-backward-kill-word  Ctrl+Backspace     Ctrl+H
