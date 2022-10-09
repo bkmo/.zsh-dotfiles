@@ -31,7 +31,7 @@ sleep 5s
 clear
 echo
 echo
-echo "Installing fonts......Select the MesloLGS  NFfont as your terminal font"
+echo "Installing fonts......Select the MesloLGS  NF font as your terminal font"
 echo
 echo
 mkdir -p ~/.fonts
