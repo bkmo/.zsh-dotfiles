@@ -110,7 +110,7 @@ setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
 bindkey -s '^l' 'clear\n'
-HISTORY_IGNORE='clear\n'
+set -g HISTORY_IGNORE='clear\n'
 #Ufetch on Arch or Pfetch if not available, pfetch elsewhere.
 if [ -x "$(command -v pacman)" ] && [ -x "$(command -v ufetch-arch)" ]; then  ufetch-arch;
 elif [ -x "$(command -v pacman)" ] && ! builtin type -p 'ufetch-arch' >/dev/null 2>&1; then  pfetch;
