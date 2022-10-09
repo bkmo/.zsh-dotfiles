@@ -40,7 +40,7 @@ zstyle ':z4h:ssh:*'                   enable 'no'
 # enabled hosts.
 #zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
 zstyle ':z4h:' prompt-at-bottom 'yes'
-alias clear=z4h-clear-screen-soft-bottom
+alias clear='z4h-clear-screen-soft-bottom && ufetch-arch'
 # Clone additional Git repositories from GitHub.
 #
 # This doesn't do anything apart from cloning the repository and keeping it
@@ -64,7 +64,6 @@ export GPG_TTY=$TTY
 
 # Source additional local files if they exist.
 #z4h source ~/.env.zsh
-z4h source ~/.config/zsh/.zsh.aliases
 # Use additional Git repositories pulled in with `z4h install`.
 #
 # Load additional plugins.
@@ -101,6 +100,7 @@ compdef _directories md
 
 # Define aliases.
 alias tree='tree -a -I .git'
+z4h source ~/.config/zsh/.zsh.aliases
 
 # Add flags to existing aliases.
 alias ls="${aliases[ls]:-ls} -A"
