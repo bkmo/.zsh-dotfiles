@@ -56,13 +56,19 @@ config config --local status.showUntrackedFiles no
 
 cp -f ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
 
+# Install 1.11.3 version of grc
+sudo mkdir /usr/share/grc
+sudo cp -r ~/.config/zsh/grc/usrshare/grc /usr/share
 sudo cp ~/.config/zsh/grc/grcat /usr/bin/grcat
 sudo cp ~/.config/zsh/grc/grc /usr/bin/grc
 sudo cp ~/.config/zsh/grc/grc.zsh /etc/grc.zsh
 sudo cp ~/.config/zsh/grc/grc.conf /etc/grc.conf
 
+#install extra utils
 sudo cp ~/.config/zsh/pkg/duf /usr/bin/duf
 sudo cp ~/.config/zsh/pkg/battop /usr/bin/battop
+
+#setup ufetch and pfetch
 sudo cp ~/.config/zsh/pfetch/pfetch /usr/bin/pfetch
 if [ -x "$(command -v pacman)" ]; then sudo cp ~/.config/zsh/pkg/ufetch-arch /usr/bin/ufetch-arch
 fi
@@ -71,13 +77,10 @@ if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; the
     sudo pacman --noconfirm -U ~/.config/zsh/pkg/yay-bin-11.3.0-1-x86_64.pkg.tar.zst
 fi
 
-
+#Konsole config
 mkdir ~/.local/share/konsole
 cp ~/.config/zsh/konsole/Profile\ 1.profile ~/.local/share/konsole/Profile\ 1.profile
 cp ~/.config/zsh/konsole/Breeze.colorscheme ~/.local/share/konsole/Breeze.colorscheme
-
-if [ -x "$(command -v fastfetch)" ]; then sudo cp ~/.config/zsh/fastfetch/paleofetch /usr/share/fastfetch/presets/paleofetch
-fi
 
 clear
 echo
