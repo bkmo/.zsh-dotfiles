@@ -17,5 +17,8 @@ user_pref("pref.privacy.disable_button.cookie_exceptions", false);
 user_pref("identity.fxaccounts.enabled", false);
 user_pref("signon.rememberSignons", false);
 user_pref("browser.zoom.siteSpecific", true);
+user_pref("extensions.formautofill.addresses.enabled", false); // [FF55+]
+user_pref("extensions.formautofill.creditCards.enabled", false); // [FF56+]
+user_pref("extensions.formautofill.heuristics.enabled", false); // [FF55+]
 
 user_pref("_user.js.parrot", "SUCCESS! USER-OVERRIDES LOADED ***The Parrot Has Landed***");

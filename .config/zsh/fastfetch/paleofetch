@@ -1,5 +1,0 @@
---structure Title:Date:Separator:OS:Host:Kernel:Uptime:Battery:Break:Packages:Shell:Resolution:Terminal:TerminalFont:Break:CPU:GPU:Memory:Break
---host-format "{/2}{-}{/}{2}{?3} {3}{?}"
---battery-format "{/4}{-}{/}{4}%{?5} [{5}]{?}"
---resolution-key "Resolution"
---gpu-key "GPU"
