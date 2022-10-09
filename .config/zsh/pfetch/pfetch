@@ -123,7 +123,7 @@ get_os() {
     # On first run, this function displays _nothing_, only on the second
     # invocation is 'log()' called.
     [ "$distro" ] && {
-        log os "$distro" >&6
+        log Os "$distro" >&6
         return
     }
 
@@ -292,7 +292,7 @@ get_kernel() {
     esac
 
     # '$kernel' is the cached output of 'uname -r'.
-    log kernel "$kernel" >&6
+    log Kernel "$kernel" >&6
 }
 
 get_host() {
@@ -361,7 +361,7 @@ get_host() {
     done
 
     # '$arch' is the cached output from 'uname -m'.
-    log host "${host:-$arch}" >&6
+    log Host "${host:-$arch}" >&6
 }
 
 get_uptime() {
@@ -435,7 +435,7 @@ get_uptime() {
     [ "$h" = 0 ] || uptime="${uptime}${h}h "
     [ "$m" = 0 ] || uptime="${uptime}${m}m "
 
-    log uptime "${uptime:-0m}" >&6
+    log Uptime "${uptime:-0m}" >&6
 }
 
 get_pkgs() {
@@ -547,7 +547,7 @@ get_pkgs() {
         IRIX) packages=$((packages - 3)) ;;
     esac
 
-    [ "$packages" -gt 1 ] && log pkgs "$packages" >&6
+    [ "$packages" -gt 1 ] && log Pkgs "$packages" >&6
 }
 
 get_memory() {
@@ -750,7 +750,7 @@ get_memory() {
         ;;
     esac
 
-    log memory "${mem_used:-?}M / ${mem_full:-?}M" >&6
+    log Memory "${mem_used:-?}M / ${mem_full:-?}M" >&6
 }
 
 get_wm() {
@@ -879,7 +879,7 @@ get_wm() {
         ;;
     esac
 
-    log wm "$wm" >&6
+    log Wm "$wm" >&6
 }
 
 
@@ -890,18 +890,18 @@ get_de() {
     #
     # Display the value of '$XDG_CURRENT_DESKTOP', if it's empty,
     # display the value of '$DESKTOP_SESSION'.
-    log de "${XDG_CURRENT_DESKTOP:-$DESKTOP_SESSION}" >&6
+    log De "${XDG_CURRENT_DESKTOP:-$DESKTOP_SESSION}" >&6
 }
 
 get_shell() {
     # Display the basename of the '$SHELL' environment variable.
-    log shell "${SHELL##*/}" >&6
+    log Shell "${SHELL##*/}" >&6
 }
 
 get_editor() {
     # Display the value of '$VISUAL', if it's empty, display the
     # value of '$EDITOR'.
-    log editor "${VISUAL:-$EDITOR}" >&6
+    log Editor "${VISUAL:-$EDITOR}" >&6
 }
 
 get_palette() {
