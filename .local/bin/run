@@ -80,6 +80,7 @@ fi
 mkdir ~/.local/share/konsole
 cp ~/.config/zsh/konsole/Profile\ 1.profile ~/.local/share/konsole/Profile\ 1.profile
 cp ~/.config/zsh/konsole/Breeze.colorscheme ~/.local/share/konsole/Breeze.colorscheme
+cp ~/.config/zsh/konsole/konsolerc ~/.config/konsolerc
 
 clear
 echo
