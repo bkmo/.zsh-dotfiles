@@ -112,7 +112,8 @@ setopt no_auto_menu  # require an extra TAB press to open the completion menu
 #Mod ctrl-l binding for clear plus ufetch
 bindkey -s '^l' 'clear\n'
 setopt HIST_IGNORE_ALL_DUPS
-#Ufetch on Arch or Pfetch if not available, pfetch elsewhere.
+
+#Ufetch on Arch or Pfetch if not available, pfetch other Distros.
 if [ -x "$(command -v pacman)" ] && [ -x "$(command -v ufetch-arch)" ]; then  ufetch-arch;
 elif [ -x "$(command -v pacman)" ] && ! builtin type -p 'ufetch-arch' >/dev/null 2>&1; then  pfetch;
 elif [ -x "$(command -v pfetch)" ] && ! builtin type -p 'pacman' >/dev/null 2>&1; then  pfetch;
