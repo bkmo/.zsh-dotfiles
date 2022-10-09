@@ -1,4 +1,4 @@
-# Personal Zsh configuration file. It is strongly recommended to keep all
+ # Personal Zsh configuration file. It is strongly recommended to keep all
 # shell customization and configuration (including exported environment
 # variables such as PATH) in this file or in files sourced from it.
 #
@@ -121,6 +121,6 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 
 #Run Pfetch in terminal.
-if [ -x "$(command -v pfetch)" ]; then  export PF_COL3=6; fi
+if [ -x "$(command -v pfetch)" ]; then  export PF_COL3=6 && export PF_INFO="ascii title os de kernel uptime pkgs memory"; fi
 if [ -x "$(command -v pfetch)" ]; then  pfetch; fi
 
