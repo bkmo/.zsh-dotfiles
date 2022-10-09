@@ -120,12 +120,7 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 
-#Ufetch on Arch or Pfetch if not available, pfetch other Distros.
-#if [ -x "$(command -v pacman)" ] && [ -x "$(command -v ufetch-arch)" ]; then  ufetch-arch;
-#elif [ -x "$(command -v pacman)" ] && ! builtin type -p 'pfetch' >/dev/null 2>&1; then  pfetch;
-#elif [ -x "$(command -v pfetch)" ] && ! builtin type -p 'pacman' >/dev/null 2>&1; then  pfetch;
-#fi
+#Run Pfetch in terminal.
 if [ -x "$(command -v pfetch)" ]; then  export PF_COL3=6; fi
-
 if [ -x "$(command -v pfetch)" ]; then  pfetch; fi
-#fi
+

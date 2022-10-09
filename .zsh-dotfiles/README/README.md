@@ -31,7 +31,7 @@ sleep 5s
 clear
 echo
 echo
-echo "Installing fonts......Select the MesloLGS NF font as your terminal font"
+echo "Installing fonts......Select the MesloLGS  NF font as your terminal font"
 echo
 echo
 mkdir -p ~/.fonts
@@ -67,10 +67,8 @@ sudo cp ~/.config/zsh/grc/grc.conf /etc/grc.conf
 sudo cp ~/.config/zsh/pkg/duf /usr/bin/duf
 sudo cp ~/.config/zsh/pkg/battop /usr/bin/battop
 
-#setup ufetch and pfetch
+#setup pfetch install yay
 sudo cp ~/.config/zsh/pfetch/pfetch /usr/bin/pfetch
-if [ -x "$(command -v pacman)" ]; then sudo cp ~/.config/zsh/pkg/ufetch-arch /usr/bin/ufetch-arch
-fi
 
 if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; then
     sudo pacman --noconfirm -U ~/.config/zsh/pkg/yay-bin-11.3.0-1-x86_64.pkg.tar.zst
