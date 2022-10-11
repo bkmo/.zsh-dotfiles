@@ -431,9 +431,9 @@ get_uptime() {
     m=$((s / 60 % 60))
 
     # Only append days, hours and minutes if they're non-zero.
-    [ "$d" = 0 ] || uptime="${uptime}${d}d "
-    [ "$h" = 0 ] || uptime="${uptime}${h}h "
-    [ "$m" = 0 ] || uptime="${uptime}${m}m "
+    [ "$d" = 0 ] || uptime="${uptime}${d}d,"
+    [ "$h" = 0 ] || uptime="${uptime}${h}h,"
+    [ "$m" = 0 ] || uptime="${uptime}${m}m"
 
     log Uptime: "${uptime:-0m}" >&6
 }
