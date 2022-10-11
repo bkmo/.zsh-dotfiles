@@ -1,6 +1,5 @@
 #!/bin/sh
 #
-#
 # pfetch - Simple POSIX sh fetch script.
 
 log() {
@@ -984,8 +983,8 @@ get_ascii() {
 				${c6}        _
 				${c6}       //\\
 				${c6}      //  \\
-				${c6}     //\\   \\
-				${c4}    //${c6} Arch${c4} \\
+				${c6}     //\\${c4}   \\
+				${c4}    // Arch \\
 				${c4}   //  (  ) \\\\
 				${c4}  //  /    \\  \\
 				${c4} //_-'      '-_\\
