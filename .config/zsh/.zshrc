@@ -107,16 +107,15 @@ alias ls="${aliases[ls]:-ls} -A"
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
-#Mod ctrl-l binding for clear plus ufetch
-bindkey -s '^l' 'clear\n'
-#setopt HIST_IGNORE_ALL_DUPS
-
-setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_EXPIRE_DUPS_FIRST # shell options for history
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
+
+#Mod ctrl-l binding for clear plus ufetch
+bindkey -s '^l' 'clear\n'
 
 #Run Pfetch in terminal.
 if [ -x "$(command -v pfetch)" ]; then  export PF_COL3=6 && export PF_INFO="ascii title os de kernel shell uptime pkgs memory"; fi
