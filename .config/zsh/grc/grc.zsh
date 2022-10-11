@@ -1,40 +1,94 @@
+#!/usr/bin/env zsh
+
 if [[ "$TERM" != dumb ]] && (( $+commands[grc] )) ; then
 
-  # Supported commands
-  cmds=(
-    cc \
-    configure \
-    cvs \
-    df \
-    diff \
-    dig \
-    gcc \
-    gmake \
-    ifconfig \
-    last \
-    ldap \
-    ls \
-    make \
-    mount \
-    mtr \
-    netstat \
-    ping \
-    ping6 \
-    ps \
-    traceroute \
-    traceroute6 \
-    wdiff \
-    whois \
-    iwconfig \
-  );
 
-  # Set alias for available commands.
-  for cmd in $cmds ; do
-    if (( $+commands[$cmd] )) ; then
-      alias $cmd="grc --colour=auto $(whence $cmd)"
-    fi
-  done
+# Supported commands
+cmds=(
+  as
+  ant
+  blkid
+  cc
+  configure
+  curl
+  cvs
+  df
+  diff
+  dig
+  dnf
+  docker
+  docker-compose
+  docker-machine
+  du
+  env
+  fdisk
+  findmnt
+  free
+  g++
+  gas
+  gcc
+  getfacl
+  getsebool
+  gmake
+  id
+  ifconfig
+  iostat
+  ip
+  iptables
+  iwconfig
+  journalctl
+  kubectl
+  last
+  ldap
+  lolcat
+  ld
+  ls
+  lsattr
+  lsblk
+  lsmod
+  lsof
+  lspci
+  make
+  mount
+  mtr
+  mvn
+  netstat
+  nmap
+  ntpdate
+  php
+  ping
+  ping6
+  proftpd
+  ps
+  sar
+  semanage
+  sensors
+  showmount
+  sockstat
+  ss
+  stat
+  sysctl
+  systemctl
+  tcpdump
+  traceroute
+  traceroute6
+  tune2fs
+  ulimit
+  uptime
+  vmstat
+  wdiff
+  whois
+)
 
-  # Clean up variables
+# Set alias for available commands.
+for cmd in $cmds ; do
+  if (( $+commands[$cmd] )) ; then
+    $cmd() {
+      grc --colour=auto ${commands[$0]} "$@"
+    }
+  fi
+done
+
+# Clean up variables
   unset cmds cmd
 fi
