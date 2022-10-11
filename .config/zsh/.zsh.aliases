@@ -5,7 +5,7 @@
 # EG: the ls command is aliased, but to use the normal ls command you would type \ls
 #restart plasma shell
 alias restartplasma='kquitapp5 plasmashell && kstart5 plasmashell > /dev/null 2>&1'
-
+alias kdebug='qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole'
 #root shell
 alias root='sudo -Es'
 
