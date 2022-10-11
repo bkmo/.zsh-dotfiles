@@ -120,4 +120,5 @@ bindkey -s '^l' 'clear\n'
 #Run Pfetch in terminal.
 if [ -x "$(command -v pfetch)" ]; then  export PF_COL3=6 && export PF_INFO="ascii title os de kernel shell uptime pkgs memory"; fi
 if [ -x "$(command -v pfetch)" ]; then  pfetch; fi
+#enable grc colorizer
 source /etc/grc.zsh
