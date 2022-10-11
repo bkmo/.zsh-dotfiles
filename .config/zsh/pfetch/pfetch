@@ -123,7 +123,7 @@ get_os() {
     # On first run, this function displays _nothing_, only on the second
     # invocation is 'log()' called.
     [ "$distro" ] && {
-        log Os: "$distro" >&6
+        log OS: "$distro" >&6
         return
     }
 
@@ -879,7 +879,7 @@ get_wm() {
         ;;
     esac
 
-    log Wm: "$wm" >&6
+    log WM: "$wm" >&6
 }
 
 
@@ -890,12 +890,12 @@ get_de() {
     #
     # Display the value of '$XDG_CURRENT_DESKTOP', if it's empty,
     # display the value of '$DESKTOP_SESSION'.
-    log De: "${XDG_CURRENT_DESKTOP:-$DESKTOP_SESSION}" >&6
+    log DE: "${XDG_CURRENT_DESKTOP:-$DESKTOP_SESSION}" >&6
 }
 
 get_shell() {
     # Display the basename of the '$SHELL' environment variable.
-    log Shell "${SHELL##*/}" >&6
+    log Shell: "${SHELL##*/}" >&6
 }
 
 get_editor() {
@@ -984,8 +984,8 @@ get_ascii() {
 				${c6}      //  \\
 				${c6}     //\\   \\
 				${c4}    //${c6} Arch${c4} \\
-				${c4}   //  (  )  \\
-				${c4}  //  /    \\ -\\
+				${c4}   //  (  ) \\\\
+				${c4}  //  /    \\  \\
 				${c4} //_-'      '-_\\
 			EOF
         ;;
