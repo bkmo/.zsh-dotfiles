@@ -121,4 +121,4 @@ bindkey -s '^l' 'clear\n'
 if [ -x "$(command -v pfetch)" ]; then  export PF_COL3=6 && export PF_INFO="ascii title os de kernel shell uptime pkgs memory"; fi
 if [ -x "$(command -v pfetch)" ]; then  pfetch; fi
 #enable grc colorizer
-source /etc/grc.zsh
+[[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
