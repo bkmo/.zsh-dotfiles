@@ -84,5 +84,5 @@ echo Make sure to change your terminal font to MesloLGS NF and logout/login
 echo
 echo
 sleep 5s
-rm -rdf ~/.zsh-dotfiles
+rm -rf ~/.zsh-dotfiles
 source ~/.zshenv
