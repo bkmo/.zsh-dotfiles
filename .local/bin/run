@@ -56,9 +56,6 @@ config config --local status.showUntrackedFiles no
 
 cp -f ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
 
-# fix grc with modded grc.zsh
-sudo cp ~/.config/zsh/grc/grc.zsh /etc/grc.zsh
-
 #install extra utils
 sudo cp ~/.config/zsh/pkg/duf /usr/bin/duf
 sudo cp ~/.config/zsh/pkg/battop /usr/bin/battop

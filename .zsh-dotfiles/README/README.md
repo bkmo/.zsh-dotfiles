@@ -15,7 +15,6 @@
 #
 # curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.local/bin/run | bash
 #
-#
 packagesNeeded='git zsh grc'
 
 if [ -x "$(command -v pacman)" ]; then sudo pacman --noconfirm -Sy $packagesNeeded
@@ -56,9 +55,6 @@ config checkout -f
 config config --local status.showUntrackedFiles no
 
 cp -f ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
-
-# fix grc with modded grc.zsh
-sudo cp ~/.config/zsh/grc/grc.zsh /etc/grc.zsh
 
 #install extra utils
 sudo cp ~/.config/zsh/pkg/duf /usr/bin/duf
