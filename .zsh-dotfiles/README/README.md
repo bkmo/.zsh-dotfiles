@@ -69,9 +69,9 @@ if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; the
     sudo pacman --noconfirm -U ~/.config/zsh/pkg/yay-bin-11.3.0-1-x86_64.pkg.tar.zst
 fi
 
-#clean_package_cache.hook arch/pacman
+#install clean_package_cache.hook arch/pacman
 if [ -x "$(command -v pacman)" ] ; then
-    sudo cp -fv ~/.local/bin/clean_package_cache.hook /etc/pacman.d/hooks/clean_package_cache.hook
+    sudo install -D ~/.local/bin/clean_package_cache.hook /etc/pacman.d/hooks/clean_package_cache.hook
 fi
 
 #Konsole config
