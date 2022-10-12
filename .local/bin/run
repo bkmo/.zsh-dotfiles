@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # The script will attempt to install Git, Zsh and Pfetch as these packages along with the required fonts are required.
 # Select the MesloLGS NF font as your terminal font
-# yay will be installed on Arch derivatives.
+# additionally yay and pacman-contrib will be installed on Arch derivatives.
 #
-# This is the curl command to run the script
+# Execute one of these commands in your terminal to run the script.
 #
 # curl -sL https://bit.ly/3CnJXWo | bash
 #
@@ -15,13 +15,15 @@
 #
 # curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.local/bin/run | bash
 #
+# install needed packages based on distro package manager
 packagesNeeded='git zsh grc'
+pkgsarch='git zsh grc pacman-contrib'
 
-if [ -x "$(command -v pacman)" ]; then sudo pacman --noconfirm -Sy $packagesNeeded
+if [ -x "$(command -v pacman)" ]; then sudo pacman --noconfirm -Sy $pkgsarch
 elif [ -x "$(command -v apt)" ]; then sudo apt -y install $packagesNeeded
 elif [ -x "$(command -v dnf)" ]; then sudo dnf install $packagesNeeded
 elif [ -x "$(command -v zypper)" ]; then sudo zypper install $packagesNeeded
-else echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install: $packagesNeeded">&2; fi
+else echo "FAILED TO INSTALL PACKAGES: Package manager not found. You must manually install: $packagesNeeded">&2; fi
 
 echo
 echo
@@ -44,9 +46,8 @@ git clone --bare -b master https://github.com/bkmo/.zsh-dotfiles.git $HOME/.zsh-
 
 echo "alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
 
-echo "alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
 # define config alias locally since the dotfiles
-# aren't installed on the system yet
+# aren't installed on the system yet, then clone .zsh-dotfiles repo
 function config {
    git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME $@
 }
@@ -60,11 +61,17 @@ cp -fv ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
 sudo cp -fv ~/.config/zsh/pkg/duf /usr/bin/duf
 sudo cp -fv ~/.config/zsh/pkg/battop /usr/bin/battop
 
-#setup pfetch install yay
+#setup pfetch
 sudo cp -fv ~/.config/zsh/pfetch/pfetch /usr/bin/pfetch
 
+#install yay from binary package
 if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; then
     sudo pacman --noconfirm -U ~/.config/zsh/pkg/yay-bin-11.3.0-1-x86_64.pkg.tar.zst
+fi
+
+#clean_package_cache.hook arch/pacman
+if [ -x "$(command -v pacman)" ] ; then
+    sudo cp -fv ~/.local/bin/clean_package_cache.hook /etc/pacman.d/hooks/clean_package_cache.hook
 fi
 
 #Konsole config
