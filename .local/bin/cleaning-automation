@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Clean cache upgrade/uninstall at PostTransaction
+# /home/mijazz/.local/bin/cleaning-automation
+# Hook starts here
+
+# Suppose you run yay with your user account id 1000
+yay_running_on_behalf=$(id -nu 1000)
+yay_cache_dir="/home/$yay_running_on_behalf/.cache/yay/"
+
+pkg_cache_dir="$(find $yay_cache_dir -mindepth 1 -maxdepth 1 -type d | xargs -r printf "-c %s ")"
+
+echo "Removing cached packages, keeping latest version of each one."
+/usr/bin/paccache -rk1
+/usr/bin/paccache -rk1 $pkg_cache_dir
+
+echo "Removing all cached uninstalled packages."
+/usr/bin/paccache -ruk0
+/usr/bin/paccache -ruk0 $pkg_cache_dir
