@@ -67,12 +67,9 @@ export GPG_TTY=$TTY
 # Use additional Git repositories pulled in with `z4h install`.
 #
 # Load additional plugins.
-source ~/.config/zsh/plugins/aliases/aliases.plugin.zsh
 source ~/.config/zsh/plugins/zsh-sudo/sudo.plugin.zsh
 source ~/.config/zsh/plugins/find-the-command/ftc.zsh askfirst noupdate
 source ~/.config/zsh/plugins/web-search/web_search.plugin.zsh
-source ~/.config/zsh/plugins/omz-git/init.zsh
-source ~/.config/zsh/plugins/zsh-archlinux/archlinux.plugin.zsh
 
 # Define key bindings.
 z4h bindkey z4h-backward-kill-word  Ctrl+Backspace     Ctrl+H
