@@ -51,9 +51,6 @@ cp -fv ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
 sudo cp -fv ~/.config/zsh/pkg/duf /usr/bin/duf
 sudo cp -fv ~/.config/zsh/pkg/battop /usr/bin/battop
 
-#setup pfetch
-sudo cp -fv ~/.config/zsh/pfetch/pfetch /usr/bin/pfetch
-
 #install yay from binary package
 if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; then
     sudo pacman --noconfirm -U ~/.config/zsh/pkg/yay-bin-11.3.0-1-x86_64.pkg.tar.zst
