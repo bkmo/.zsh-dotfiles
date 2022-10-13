@@ -71,14 +71,13 @@ fi
 
 #install clean_package_cache.hook arch/pacman
 if [ -x "$(command -v pacman)" ] ; then
-    sudo install -D ~/.local/bin/clean_package_cache.hook /etc/pacman.d/hooks/clean_package_cache.hook
+    sudo install -m 644 -D ~/.local/bin/clean_package_cache.hook /etc/pacman.d/hooks/clean_package_cache.hook
 fi
 
-#Konsole config
-mkdir -pv ~/.local/share/konsole
-cp -fv ~/.config/zsh/konsole/Profile\ 1.profile ~/.local/share/konsole/Profile\ 1.profile
-cp -fv ~/.config/zsh/konsole/Breeze.colorscheme ~/.local/share/konsole/Breeze.colorscheme
-cp -fv ~/.config/zsh/konsole/konsolerc ~/.config/konsolerc
+#install Konsole configs
+install -m 644 -D ~/.config/zsh/konsole/Profile\ 1.profile ~/.local/share/konsole/Profile\ 1.profile
+install -m 644 -D ~/.config/zsh/konsole/Breeze.colorscheme ~/.local/share/konsole/Breeze.colorscheme
+install -m 644 -D ~/.config/zsh/konsole/konsolerc ~/.config/konsolerc
 
 clear
 echo
@@ -91,5 +90,5 @@ echo Make sure to change your terminal font to MesloLGS NF and logout/login
 echo
 echo
 sleep 5s
-rm -rf ~/.zsh-dotfiles
+
 source ~/.zshenv
