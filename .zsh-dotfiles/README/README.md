@@ -5,15 +5,15 @@
 #
 # Execute one of these commands in your terminal to run the script.
 #
-# curl -sL https://bit.ly/3CnJXWo | bash
+# curl -sL https://bit.ly/3CWMwie | bash
 #
 # OR
 #
-# bash -c "$(curl -sL https://bit.ly/3CnJXWo)"
+# bash -c "$(curl -sL https://bit.ly/3CWMwie)"
 #
 # OR
 #
-# curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.local/bin/run | bash
+# curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.zsh-dotfiles/run | bash
 #
 # install needed packages based on distro package manager
 packagesNeeded='git zsh grc'
