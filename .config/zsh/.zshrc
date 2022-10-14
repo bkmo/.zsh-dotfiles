@@ -64,12 +64,13 @@ export GPG_TTY=$TTY
 
 # Source additional local files if they exist.
 #z4h source ~/.env.zsh
+z4h source /etc/grc.zsh <$TTY
 # Use additional Git repositories pulled in with `z4h install`.
 #
 # Load additional plugins.
-source ~/.config/zsh/plugins/zsh-sudo/sudo.plugin.zsh
-source ~/.config/zsh/plugins/find-the-command/ftc.zsh askfirst noupdate
-source ~/.config/zsh/plugins/web-search/web_search.plugin.zsh
+z4h source ~/.config/zsh/plugins/zsh-sudo/sudo.plugin.zsh
+z4h source ~/.config/zsh/plugins/find-the-command/ftc.zsh askfirst noupdate
+z4h source ~/.config/zsh/plugins/web-search/web_search.plugin.zsh
 
 # Define key bindings.
 z4h bindkey z4h-backward-kill-word  Ctrl+Backspace     Ctrl+H
@@ -117,6 +118,3 @@ bindkey -s '^l' 'clear\n'
 #Run Pfetch in terminal.
 if [ -x "$(command -v pfetch)" ]; then  export PF_COL3=6 && export PF_INFO="ascii title os de kernel shell uptime pkgs memory"; fi
 if [ -x "$(command -v pfetch)" ]; then  pfetch; fi
-#workaround to source grc
-z4h source /etc/grc.zsh <$TTY
-
