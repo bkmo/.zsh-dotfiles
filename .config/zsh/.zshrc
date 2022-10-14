@@ -69,7 +69,7 @@ z4h source /etc/grc.zsh <$TTY
 #
 # Load additional plugins.
 z4h source ~/.config/zsh/plugins/zsh-sudo/sudo.plugin.zsh
-z4h source ~/.config/zsh/plugins/find-the-command/ftc.zsh askfirst noupdate
+source ~/.config/zsh/plugins/find-the-command/ftc.zsh askfirst noupdate
 z4h source ~/.config/zsh/plugins/web-search/web_search.plugin.zsh
 
 # Define key bindings.
