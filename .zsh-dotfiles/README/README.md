@@ -1,19 +1,18 @@
-#!/usr/bin/env bash
 # The script will attempt to install Git, Zsh and Pfetch as these packages along with the required fonts are required.
 # Select the MesloLGS NF font as your terminal font
 # additionally yay and pacman-contrib will be installed on Arch derivatives.
 #
 # Execute one of these commands in your terminal to run the script.
 #
-# curl -sL https://bit.ly/3CWMwie | bash
+ curl -sL https://bit.ly/3CWMwie | bash
 #
 # OR
 #
-# bash -c "$(curl -sL https://bit.ly/3CWMwie)"
+ bash -c "$(curl -sL https://bit.ly/3CWMwie)"
 #
 # OR
 #
-# curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.zsh-dotfiles/run | bash
+ curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.zsh-dotfiles/run | bash
 #
 # install needed packages based on distro package manager
 packagesNeeded='git zsh grc'
@@ -65,6 +64,9 @@ fi
 install -m 644 -D ~/.config/zsh/konsole/Profile\ 1.profile ~/.local/share/konsole/Profile\ 1.profile
 install -m 644 -D ~/.config/zsh/konsole/Breeze.colorscheme ~/.local/share/konsole/Breeze.colorscheme
 install -m 644 -D ~/.config/zsh/konsole/konsolerc ~/.config/konsolerc
+
+#delete, we are done with them
+rm -rf ~/.zsh-dotfiles
 
 clear
 echo

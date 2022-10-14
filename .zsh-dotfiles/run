@@ -66,6 +66,9 @@ install -m 644 -D ~/.config/zsh/konsole/Profile\ 1.profile ~/.local/share/konsol
 install -m 644 -D ~/.config/zsh/konsole/Breeze.colorscheme ~/.local/share/konsole/Breeze.colorscheme
 install -m 644 -D ~/.config/zsh/konsole/konsolerc ~/.config/konsolerc
 
+#delete, we are done with them
+rm -rf ~/.zsh-dotfiles
+
 clear
 echo
 echo
