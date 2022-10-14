@@ -47,10 +47,6 @@ config config --local status.showUntrackedFiles no
 
 cp -fv ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history
 
-#install extra utils
-sudo cp -fv ~/.config/zsh/pkg/duf /usr/bin/duf
-sudo cp -fv ~/.config/zsh/pkg/battop /usr/bin/battop
-
 #install yay from binary package
 if [ -x "$(command -v pacman)" ] && ! builtin type -p 'yay' >/dev/null 2>&1; then
     sudo pacman --noconfirm -U ~/.config/zsh/pkg/yay-bin-11.3.0-1-x86_64.pkg.tar.zst
