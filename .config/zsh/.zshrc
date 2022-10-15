@@ -69,7 +69,7 @@ z4h source /etc/grc.zsh <$TTY
 #
 # Load additional plugins.
 z4h source ~/.config/zsh/plugins/zsh-sudo/sudo.plugin.zsh
-source ~/.config/zsh/plugins/find-the-command/ftc.zsh askfirst noupdate
+z4h source ~/.config/zsh/plugins/find-the-command/ftc.zsh askfirst noupdate
 z4h source ~/.config/zsh/plugins/web-search/web_search.plugin.zsh
 
 # Define key bindings.
@@ -112,7 +112,7 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 
-#Mod ctrl-l binding for clear plus ufetch
+#Mod ctrl-l binding for clear plus pfetch
 bindkey -s '^l' 'clear\n'
 
 #Run Pfetch in terminal.

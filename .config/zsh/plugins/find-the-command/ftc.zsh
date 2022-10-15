@@ -1,1 +1,1 @@
-source "$(dirname $0)/ftc.bash" variant=zsh "$@"
+source "$(dirname $0)/ftc.bash" variant=zsh askfirst "$@"
