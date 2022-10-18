@@ -41,17 +41,7 @@ zstyle ':z4h:ssh:*'                   enable 'no'
 #zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
 zstyle ':z4h:' prompt-at-bottom 'yes'
 alias clear='z4h-clear-screen-soft-bottom && pfetch'
-# Clone additional Git repositories from GitHub.
-#
-# This doesn't do anything apart from cloning the repository and keeping it
-# up-to-date. Cloned files can be used after `z4h init`. This is just an
-# example. If you don't plan to use Oh My Zsh, delete this line.
-#z4h install ohmyzsh/ohmyzsh || return
-#z4h install pkasemir/find-the-command || return
-# Install or update core components (fzf, zsh-autosuggestions, etc.) and
-# initialize Zsh. After this point console I/O is unavailable until Zsh
-# is fully initialized. Everything that requires user interaction or can
-# perform network I/O must be done above. Everything else is best done below.
+
 z4h init || return
 
 # Extend PATH.
@@ -64,7 +54,6 @@ export GPG_TTY=$TTY
 
 # Source additional local files if they exist.
 #z4h source ~/.env.zsh
-z4h source /etc/grc.zsh <$TTY
 # Use additional Git repositories pulled in with `z4h install`.
 #
 # Load additional plugins.
@@ -83,6 +72,8 @@ z4h bindkey z4h-cd-back    Alt+Left   # cd into the previous directory
 z4h bindkey z4h-cd-forward Alt+Right  # cd into the next directory
 z4h bindkey z4h-cd-up      Alt+Up     # cd into the parent directory
 z4h bindkey z4h-cd-down    Alt+Down   # cd into a child directory
+#Mod ctrl-l binding for clear plus pfetch
+bindkey -s '^l' 'clear\n'
 
 # Autoload functions.
 autoload -Uz zmv
@@ -112,9 +103,7 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 
-#Mod ctrl-l binding for clear plus pfetch
-bindkey -s '^l' 'clear\n'
-
 #Run Pfetch in terminal.
 if [ -x "$(command -v pfetch)" ]; then  export PF_COL3=6 && export PF_INFO="ascii title os de kernel shell uptime pkgs memory"; fi
 if [ -x "$(command -v pfetch)" ]; then  pfetch; fi
+z4h source /etc/grc.zsh <$TTY
