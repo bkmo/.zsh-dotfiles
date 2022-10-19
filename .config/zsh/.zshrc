@@ -39,6 +39,7 @@ zstyle ':z4h:ssh:*'                   enable 'no'
 # Send these files over to the remote host when connecting over SSH to the
 # enabled hosts.
 #zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
+zstyle ':z4h:' term-vresize top
 zstyle ':z4h:' prompt-at-bottom 'yes'
 alias clear='z4h-clear-screen-soft-bottom && pfetch'
 
