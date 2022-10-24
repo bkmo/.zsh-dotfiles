@@ -6,8 +6,6 @@
 
 git clone --bare -b master https://github.com/bkmo/.zsh-dotfiles.git $HOME/.zsh-dotfiles
 
-echo "alias config='/usr/bin/git --git-dir=$HOME/.zsh-dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
-
 # define config alias locally since the dotfiles
 # aren't installed on the system yet, then clone .zsh-dotfiles repo
 function config {
