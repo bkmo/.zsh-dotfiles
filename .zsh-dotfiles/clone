@@ -3,7 +3,7 @@
 #
 # curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.zsh-dotfiles/clone | bash
 #
-##
+############
 git clone --bare -b master https://github.com/bkmo/.zsh-dotfiles.git $HOME/.zsh-dotfiles
 
 # define config alias locally since the dotfiles
