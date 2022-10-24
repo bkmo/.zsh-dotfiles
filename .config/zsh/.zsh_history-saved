@@ -10,8 +10,6 @@
 : 1664307364:0;sudo ./Zoiper_3.3_Linux_Free_64Bit.run
 : 1664307364:0;hhhh
 : 1664307364:0;sudo timeshift-autosnap
-: 1664307364:0;reflector --list-countries
-: 1664307364:0;systemctl enable reflector.timer
 : 1664307364:0;systemctl enable change-machine-id.timer
 : 1664307364:0;systemctl enable btrfs-scrub@home.timer
 : 1664307364:0;systemctl enable fstrim.timer
@@ -46,7 +44,6 @@
 : 1664307364:0;grub-install
 : 1664307364:0;sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch
 : 1664307364:0;sudo mkinitcpio -p linux
-: 1664307364:0;./install.sh
 : 1664307364:0;/usr/local/bin/change-machine-id.sh
 : 1664307364:0;sudo /usr/local/bin/change-machine-id.sh
 : 1664307364:0;systemctl start chang-machine-id.service
@@ -282,7 +279,6 @@
 : 1664307364:0;yay -h
 : 1664307364:0;yay -V
 : 1664307364:0;yay -S paru
-: 1664307364:0;yay -S insync-dolphin
 : 1664307364:0;/bin/bash -c "yay -S --aur octopi-notifier-frameworks;echo 'Press any key to continue...'"
 : 1664307364:0;octopi-notifier
 : 1664307364:0;octopi-notifier -h
@@ -301,7 +297,6 @@
 : 1664307364:0;/bin/bash -c "yay -S --aur downgrade;echo 'Press any key to continue...'"
 : 1664307364:0;downgrade
 : 1664307364:0;sudo downgrade
-: 1664307364:0;yay -S pamac-aur
 : 1664307364:0;sudo downgrade fprintd
 : 1664307364:0;pacman -h
 : 1664307364:0;pacman -S
@@ -427,7 +422,6 @@ btrfs filesystem show
 : 1664307364:0;systemctl mask wpa_supplicant
 : 1664307364:0;sudo systemctl daemon-reload
 : 1664307364:0;sudo systemctl restart accounts-daemon.service
-: 1664307364:0;systemctl start reflector service
 : 1664307364:0;kwriteconfig5 --file startkderc --group General --key systemdBoot true
 : 1664307364:0;systemd-analyze critical-chain
 : 1664307364:0;yay -Qqe > pkglist.txt
@@ -468,7 +462,6 @@ btrfs filesystem show
 : 1664307364:0;systemd-analyze blame
 : 1664307364:0;journalctl -p 3 -b
 : 1664307364:0;pacman-Syu
-: 1664307364:0;yay -Syu
 : 1664307364:0;sudo pacman -Syy archlinux-keyring
 : 1664307364:0;sudo pacman -Su
 : 1664307364:0;fatresize
@@ -618,9 +611,7 @@ btrfs filesystem show
 : 1664307364:0;systemctl stop btrfs-trim.timer
 : 1664307364:0;systemctl disable btrfs-trim.timer
 : 1664307364:0;systemctl enable --now fstrim.timer
-: 1664307364:0;swapon
 : 1664307364:0;systemctl stop /dev/zram0
-: 1664307364:0;systemctl start /dev/zram0
 : 1664307364:0;zramctl
 : 1664307364:0;btrfs sub show /
 : 1664307364:0;sudo powertop
@@ -650,7 +641,6 @@ btrfs filesystem show
 : 1664307364:0;systemctl start --now cronie
 : 1664307364:0;systemctl enable --now timeshift.service
 : 1664307364:0;systemctl enable --now timeshift.timer
-: 1664307364:0;systemctl enable --now timeshift-boot.timer
 : 1664307364:0;systemctl disable cronie
 : 1664307364:0;systemctl mask cronie
 : 1664307364:0;systemctl stop cronie
@@ -665,9 +655,6 @@ btrfs filesystem show
 : 1664307364:0;cd 7709
 : 1664307364:0;cd backup
 : 1664307364:0;sudo timeshift --list
-: 1664307364:0;btrfs subvolume list
-: 1664307364:0;btrfs subvolume list /
-: 1664307364:0;sudo btrfs subvolume list /
 : 1664307364:0;cat /etc/fstab
 : 1664307364:0;sudo systemctl edit --full grub-btrfs.path
 : 1664307364:0;sudo systemctl edit --full timeshhift-snapshots-updategrub.service
@@ -806,7 +793,6 @@ btrfs filesystem show
 : 1664307364:0;cd ~/.local/share/ice/firefox/
 : 1664307364:0;webapp-nav on
 : 1664307364:0;efibootmgr --create --disk /dev/nvme0n1 --part 2 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot" --verbose
-: 1664307364:0;sudo efibootmgr --create --disk /dev/nvme0n1 --part 2 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot" --verbose
 : 1664307364:0;make
 : 1664307364:0;./test
 : 1664307364:0;webapp-nav -on
@@ -816,7 +802,6 @@ btrfs filesystem show
 : 1664307364:0;git push --delete origin 1.2.3
 : 1664307364:0;git push --delete origin 1.2.4
 : 1664307364:0;git checkout
-: 1664307364:0;git push
 : 1664307364:0;git config --global user.email "you@example.com"
 : 1664307364:0;git config --global user.name "Your Name"
 : 1664307364:0;git commit -a
@@ -862,7 +847,6 @@ btrfs filesystem show
 : 1664307364:0;git config --global user.email "crmongolo@tutanota.com"
 : 1664307364:0;git config --global user.name "bkmo"
 : 1664307364:0;git tag 1.2.5.6
-: 1664307364:0;webapp-manager
 : 1664307364:0;git config --global user.email "bkmo@example.com"
 : 1664307364:0;git commit -a -m "navbar on default"
 : 1664307364:0;git add
@@ -970,7 +954,6 @@ btrfs filesystem show
 : 1664307364:0;git push origin 1.2.7.7
 : 1664307364:0;git log --oneline main..origin/main
 : 1664307364:0;git fetch --dry-run
-: 1664307364:0;git fetch
 : 1664307364:0;git merge
 : 1664307364:0;git commit -a -m "README.md cleanup"
 : 1664307364:0;software-installer
@@ -985,7 +968,6 @@ btrfs filesystem show
 : 1664307364:0;}
 : 1664307364:0;git tag 1.2.7.8
 : 1664307364:0;git push origin 1.2.7.8
-: 1664307364:0;reflector
 : 1664307364:0;sysctl
 : 1664307364:0;sudo test
 : 1664307364:0;git push origin test-features
@@ -997,9 +979,7 @@ btrfs filesystem show
 : 1664307364:0;git tag 1.2.7.9
 : 1664307364:0;git push origin 1.2.7.9
 : 1664307364:0;makepkf -i
-: 1664307364:0;kbuildsycoca5
 : 1664307364:0;makepkg -f
-: 1664307364:0;git pull
 : 1664307364:0;git commit -a -m "remove cruft from pull"
 : 1664307364:0;git commit -a -m "changelog"
 : 1664307364:0;nextdns stop
@@ -1128,7 +1108,6 @@ btrfs filesystem show
 : 1664307364:0;dig apriliaforum.com @127.0.0.53
 : 1664307364:0;dig reddit.com ttl
 : 1664307364:0;sudo netstat -ntulp
-: 1664307364:0;systemctl restart NetworkManager
 : 1664307364:0;systemctl enable now  dnscrypt-proxy
 : 1664307364:0;systemctl start dnscrypt-proxy.service
 : 1664307364:0;systemctl enable --now  dnscrypt-proxy.socket
@@ -1178,7 +1157,6 @@ btrfs filesystem show
 : 1664307364:0;/sbin/restorecon -v https_dns_proxy.service
 : 1664307364:0;sudo systemctl start http_dns_proxy
 : 1664307364:0;systemctl daemon reload
-: 1664307364:0;systemctl daemon-reload
 : 1664307364:0;systemctl status http_dns_proxy
 : 1664307364:0;systemctl edit https_dns_proxy.service
 : 1664307364:0;sudo systemctl edit https_dns_proxy.service
@@ -1216,7 +1194,6 @@ btrfs filesystem show
 : 1664307364:0;resolvectl status
 : 1664307364:0;systemctl disable now systemd-resolved
 : 1664307364:0;systemctl disable --now systemd-resolved
-: 1664307364:0;systemctl enable --now dnscrypt-proxy
 : 1664307364:0;systemctl reload  dnscrypt-proxy
 : 1664307364:0;dnscrypt-proxy -resolve
 : 1664307364:0;dnscrypt-proxy -version
@@ -1260,7 +1237,6 @@ btrfs filesystem show
 : 1664307364:0;systemctls start reflector
 : 1664307364:0;dig +noall +stats apriliaforum.com
 : 1664307364:0;dig +noall +stats archlinux.org
-: 1664307364:0;git commit -a -m "cleanup extensions and navbar copies"
 : 1664307364:0;git push -u origin firefox-improvements
 : 1664307364:0;git tag 1.2.8.3
 : 1664307364:0;git tag 1.2.8.4
@@ -1316,8 +1292,6 @@ btrfs filesystem show
 : 1664307364:0;dig +noall +stats reddit.com
 : 1664307364:0;mkinitcpio
 : 1664307364:0;mkinitcpio -h
-: 1664307364:0;mkinitcpio -P
-: 1664307364:0;sudo mkinitcpio -P
 : 1664307364:0;dmesg
 : 1664307364:0;sudo dmesg | grep Guc
 : 1664307364:0;sudo dmesg | grep guc
@@ -1375,7 +1349,6 @@ btrfs filesystem show
 : 1664307364:0;sudo systemctl status nmb.service
 : 1664307364:0;grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB
 : 1664307364:0;grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
-: 1664307364:0;sudo update-grub
 : 1664307364:0;dig +noall +stats www.startpage.com
 : 1664307364:0;dig +noall +stats www.youtube.com
 : 1664307364:0;dig +noall +stats controld.com
@@ -1392,20 +1365,14 @@ btrfs filesystem show
 : 1664307364:0;efibootmgr -B 0000
 : 1664307364:0;efibootmgr -B 0
 : 1664307364:0;efibootmgr -b 0000 -B
-: 1664307364:0;sudo efibootmgr -b 0000 -B
-: 1664307364:0;efibootmgr
-: 1664307364:0;efibootmgr -v
 : 1664307364:0;sudo systemctl restart NetworkManager
 : 1664307364:0;dig +noall +stats www.reddit.com
-: 1664307364:0;sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch-Grub
 : 1664307364:0;sudo grub-mkconfig -o /boot/grub/grub.cfg
 : 1664307364:0;dnscrypt-proxy
 : 1664307364:0;dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 : 1664307364:0;dnscrypt-proxy -h
 : 1664307364:0;dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml -check
 : 1664307364:0;yay
-: 1664307364:0;arkenfox-updater
-: 1664307364:0;arkenfox-cleaner
 : 1664307364:0;sudo systemctl status dnscrypt-proxy
 : 1664307364:0;dig +noall +stats news.google.com
 : 1664307364:0;sudo mtr -w -z --show-ips --report-cycles=10 nextdns.io
@@ -1533,7 +1500,6 @@ btrfs filesystem show
 : 1664307364:0;cd GIT
 : 1664307364:0;cd /boot
 : 1664307364:0;paccheck
-: 1664307364:0;orphrm
 : 1664307364:0;cd /home/bkmo/Desktop
 : 1664307364:0;pacc
 : 1664307364:0;checkcommand lf
@@ -1589,8 +1555,6 @@ btrfs filesystem show
 : 1664309349:0;pacnewroot
 : 1664309676:0;sudo -Es
 : 1664309710:0;xit
-: 1664312538:0;systemctl start reflector
-: 1664313178:0;mirrors
 : 1664313732:0;duf
 : 1664313745:0;ps
 : 1664317357:0;l
@@ -1611,11 +1575,8 @@ btrfs filesystem show
 : 1664333629:0;/srv/ftp/
 : 1664333670:0;tgz
 : 1664333690:0;zsh
-: 1664333768:0;clear
-: 1664345663:0;orphls
 : 1664345673:0;paccache -ruk0
 : 1664345732:0;paccache -rk2
-: 1664345740:0;paccache -rk1
 : 1664347999:0;cd -5 ls
 : 1664348036:0;cd -7
 : 1664348061:0;cd -5
@@ -1631,7 +1592,6 @@ btrfs filesystem show
 : 1664353727:0;zcompile init.zsh
 : 1664353864:0;zcompile archlinux.plugin.zsh
 : 1664353936:0;gpd
-: 1664353950:0;cls
 : 1664382900:0;pacup
 : 1664383009:0;acs git
 : 1664383357:0;acs root
@@ -1644,22 +1604,17 @@ btrfs filesystem show
 : 1664384484:0;pacman -Qi python2
 : 1664392344:0;kwrite --
 : 1664393325:0;echo $PATH
-: 1664394992:0;git init --bare $HOME/.dotfiles
 : 1664395068:0;config add ~/.zshrc
-: 1664395078:0;config add ~/.zshenv
-: 1664395150:0;config add .config/zsh
 : 1664395319:0;config remote add bkmo/.dotfiles
 : 1664395463:0;git remote add
 : 1664395473:0;git remote add bkmo/.dotfiles
 : 1664395481:0;git remote add .dotfiles
 : 1664395497:0;config commit -m "Add .config/zsh dotfiles"
 : 1664395717:0;config push .dotfiles
-: 1664395751:0;config push --set-upstream .dotfiles master
 : 1664395968:0;config commit
 : 1664396033:0;config push --set-upstream .dotfiles bkmo/master
 : 1664396126:0;config remote add .dotfiles
 : 1664396392:0;config push
-: 1664396438:0;config config --local status.showUntrackedFiles no
 : 1664396717:0;config remote -v
 : 1664396882:0;config remote add origin https://github.com/bkmo/.dotfiles.git
 : 1664396895:0;config push .dotfiles master
@@ -1667,105 +1622,56 @@ btrfs filesystem show
 : 1664396949:0;config push -u origin main
 : 1664397202:0;jj
 : 1664397206:0;acs sh
-: 1664397878:0;ls
 : 1664398159:0;config config pull.rebase true
 : 1664398195:0;config push -u origin
-: 1664398252:0;config config pull.rebase false
 : 1664398411:0;config commit -a
-: 1664398495:0;config pull
-: 1664398989:0;config add .config/4kdownload.com
 : 1664399043:0;config commit -m "Add .config/4kdownload dotfiles"
-: 1664399531:0;cdgit
 : 1664399545:0;config push -ucd
 : 1664399564:0;cd .dotfiles
 : 1664399581:0;cd
-: 1664405745:0;pacman -Syu
-: 1664405749:0;sudo pacman -Syu
-: 1664405770:0;doas
 : 1664407365:0;sudo yay -
 : 1664407401:0;acs
 : 1664407535:0;yay -Scc
-: 1664407582:0;yay -Sc
 : 1664407644:0;yay -Yc
-: 1664407778:0;yay --aur -Sc
 : 1664408664:0;sp zsh4humans
 : 1664409783:0;curl -fsSLo ~/.zshrc https://raw.githubusercontent.com/romkatv/zsh4humans/2361c7c63309108e35cfbea1acf2cf8e3a3af6a8/.zshrc.mac
 : 1664409966:0;sudo killall tmux
 : 1664409975:0;ps | grep tmux
 : 1664410459:0;config commit -m "tmux settings zshrc"
 : 1664410488:0;config add -m "tmux settings zshrc"
-: 1664410513:0;config commit -a -m "tmux settings zshrc"
-: 1664410540:0;config push -u
-: 1664422372:0;aurup
 : 1664424544:0;config commit -a -m "update ask"
-: 1664424561:0;config push -u
 : 1664425484:0;config commit -a -m "tmux settings zshrc"
-: 1664488155:0;arkenfox-updater
-: 1664488203:0;arkenfox-cleaner
 : 1664489394:0;git init --bare $HOME/.dotfiles
-: 1664489472:0;config add .config/zsh
-: 1664489507:0;config add ~/.zshenv
-: 1664489530:0;config config --local status.showUntrackedFiles no
-: 1664489623:0;config commit -m "test of repo"
-: 1664489685:0;config add .config/4kdownload.com
-: 1664489692:0;config commit -m "test of repo"
-: 1664489699:0;config push -u
 : 1664489731:0;config remote add origin https://github.com/bkmo/.dotfile
-: 1664489733:0;config push -u
 : 1664489758:0;config push --set-upstream .dotfiles master
-: 1664489783:0;config pull
 : 1664489816:0;config remote add origin https://github.com/bkmo/.dotfiles
-: 1664489830:0;config pull
 : 1664489872:0;config remote remove  origin https://github.com/bkmo/.dotfile
 : 1664489926:0;config config pull.rebase false
 : 1664489957:0;config remote https://github.com/bkmo/.dotfiles.git
 : 1664489999:0;config remote remove https://github.com/bkmo/.dotfile
-: 1664490017:0;config pull
 : 1664490150:0;config remote set-url https://github.com/bkmo/.dotfiles
 : 1664490184:0;config remote set-url origin https://github.com/bkmo/.dotfiles
-: 1664490187:0;config pull
-: 1664490230:0;config config --local status.showUntrackedFiles no
-: 1664490237:0;config push -u
-: 1664490279:0;config push --set-upstream origin master
-: 1664490307:0;config pull
 : 1664490341:0;config pull .dotfiles master
-: 1664490364:0;config push -u
-: 1664490429:0;config push --set-upstream origin master
 : 1664490465:0;git push --help
-: 1664490710:0;config pull rebase
-: 1664490716:0;config pull --rebase
 : 1664490737:0;config commit -m "test of repo"
-: 1664490755:0;config commit -a -m "test of repo"
 : 1664490766:0;config pull rebase
 : 1664490771:0;config pull --rebase
-: 1664490783:0;config push -u
-: 1664490822:0;config push --set-upstream origin master
-: 1664490878:0;config pull
 : 1664490894:0;config pull origin
 : 1664490908:0;config pull master
 : 1664490917:0;config pull .dotfiles
 : 1664491223:0;git init --bare $HOME/.zsh-dotfiles
-: 1664491365:0;config add ~/.zshenv
-: 1664491377:0;config add .config/4kdownload.com
 : 1664491388:0;config add .config/zsh
 : 1664491492:0;config add .config/4kdownload.com
 : 1664491498:0;config add ~/.zshenv
-: 1664491515:0;config commit -a -m "test of repo"
 : 1664491557:0;config config --local status.showUntrackedFiles no
 : 1664491564:0;config commit -a -m "test of repo"
-: 1664491606:0;config push -u
 : 1664491643:0;config remote add origin https://github.com/bkmo/.zsh-dotfiles
-: 1664491646:0;config push -u
-: 1664491663:0;config push --set-upstream origin master
 : 1664491812:0;config push --set-upstream origin main
 : 1664492154:0;cdgit
 : 1664492165:0;git remote add origin https://github.com/bkmo/webapp_manager.git
-: 1664492180:0;git push
 : 1664492558:0;git remote add origin https://github.com/bkmo/webapp-manager-bkmo.git
 : 1664492577:0;git push origin
 : 1664492612:0;git fetch
-: 1664492632:0;git push
-: 1664492660:0;git pull
 : 1664492697:0;git commit -a -m "cleanup extensions and navbar copies"
 : 1664492701:0;git pull
 : 1664492744:0;git push
@@ -1773,17 +1679,9 @@ btrfs filesystem show
 : 1664493005:0;config push origin --delete main
 : 1664494157:0;config commit -a -m "manjaro backup"
 : 1664494173:0;config push -u
-: 1664494320:0;pacman -Syu
-: 1664494324:0;sudo pacman -Syu
-: 1664494336:0;aurup
 : 1664494805:0;grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch-Grub
-: 1664494816:0;sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch-Grub
 : 1664494836:0;grub-update
-: 1664494858:0;sudo update-grub
-: 1664494877:0;sudo mkinitcpio -P
-: 1664494999:0;efibootmgr -v
 : 1664495235:0;aurup
-: 1664495244:0;doas
 : 1664495513:0;btrfs subvolume list
 : 1664495551:0;btrfs subvolume list /
 : 1664495557:0;sudo btrfs subvolume list /
@@ -1793,7 +1691,6 @@ btrfs filesystem show
 : 1664496142:0;pacman -Sc
 : 1664496145:0;sudo pacman -Sc
 : 1664496277:0;yay -Sc --noconfirm
-: 1664496410:0;pacclean
 : 1664496866:0;yay -S insync-dolphin
 : 1664497316:0;mirrors
 : 1664497496:0;cacheclean
@@ -1803,17 +1700,358 @@ btrfs filesystem show
 : 1664497542:0;orphrm
 : 1664497690:0;efibootmgr -v
 : 1664497864:0;sudo efibootmgr --create --disk /dev/nvme0n1 --part 2 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot" --verbose
-: 1664499514:0;ls
 : 1664499634:0;chmod 750 grubx64.efi
-: 1664499642:0;sudo chmod 750 grubx64.efi
 : 1664499797:0;chown bkmo grub64x.efi
 : 1664499803:0;sudo chown bkmo grub64x.efi
 : 1664499821:0;ls
 : 1664499834:0;sudo chown bkmo grubx64.efi
 : 1664499868:0;sudo chmod 750 grubx64.efi
-: 1664878358:0;dfcp
 : 1664878373:0;config pull
 : 1664906302:0;dfcp
 : 1664906336:0;config push --set-upstream origin master
 : 1664906461:0;cp ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history\
 
+: 1666319515:0;clear
+: 1666319533:0;yay -S pamac-aur
+: 1666319700:0;pacman -Syu
+: 1666319710:0;sudo pacman -Syu
+: 1666319747:0;yay -Syu
+: 1666319752:0;doas
+: 1666321117:0;arkenfox-updater
+: 1666321143:0;arkenfox-cleaner
+: 1666322423:0;pacman -Rf kde-network-meta
+: 1666322428:0;pacman -R kde-network-meta
+: 1666322431:0;sudo pacman -R kde-network-meta
+: 1666322503:0;sudo pacman -R kde-utilities-meta
+: 1666322627:0;sudo pacman -R kde-graphice-meta
+: 1666322635:0;sudo pacman -R kde-graphics-meta
+: 1666323241:0;tutanota-desktop-linux.AppImage
+: 1666323462:0;sudo chmod u+s "$(which fusermount)"
+: 1666323500:0;which fusermount
+: 1666323638:0;sudo pacman -S fuse2
+: 1666323647:0;./tutanota-desktop-linux.AppImage
+: 1666323964:0;git clone https://github.com/bkmo/.dotfiles.git
+: 1666324812:0;sudo cp rootactions-servicemenu.pl /usr/local/bin
+: 1666325230:0;install.sh
+: 1666325238:0;./install.sh
+: 1666326226:0;kdebug
+: 1666328614:0;reflector
+: 1666328648:0;systemctl start reflector service
+: 1666328664:0;systemctl enable reflector service
+: 1666328706:0;systemctl enable reflector.timer
+: 1666328719:0;systemctl start reflector.timer
+: 1666328816:0;systemctl status reflector
+: 1666328873:0;reflector --list-countries
+: 1666328901:0;systemctl start reflector
+: 1666329242:0;systemctl enable --now bluetooth
+: 1666331068:0;kbuildsycoca5
+: 1666331344:0;webapp-manager
+: 1666331988:0;systemctl enable --now dnscrypt-proxy
+: 1666332115:0;systemctl restart NetworkManager
+: 1666333114:0;sudo efibootmgr -b 0001 -B
+: 1666333148:0;sudo efibootmgr -b 0003 -B
+: 1666333191:0;sudo efibootmgr -b 0002 -B
+: 1666333202:0;sudo efibootmgr -b 0004 -B
+: 1666333439:0;refind-install
+: 1666334151:0;gpg --recv-keys D6E95F20305701A1
+: 1666334715:0;systemctl enable --now timeshift-boot.timer
+: 1666334731:0;systemctl enable --now timeshift-hourly.timer
+: 1666334871:0;systemctl status cronie
+: 1666335115:0;systemctl enable --now refind-btrfs
+: 1666335122:0;systemctl status refind-btrfs
+: 1666335845:0;systemctl restart refind-btrfs
+: 1666336078:0;refind-btrfs
+: 1666337806:0;blkid /dev/nvme0n1p2 | cut -d " " -f2 | cut -d '=' -f2 | sed 's/\"//g')=crypt
+: 1666337856:0;blkid /dev/nvme0n1p2 | cut -d " " -f2 | cut -d '=' -f2 | sed 's/\"//g')=crypt root=/dev/mapper/crypt rootflags=subvol=@ resume=/dev/mapper/crypt resume_offset=$( echo "$(btrfs_map_physical /.swapvol/swapfile | head -n2 | tail -n1 | awk '{print $6}') / $(getconf PAGESIZE) " | bc) rw quiet nmi_watchdog=0 add_efi_memmap initrd=/amd-ucode.img
+: 1666338351:0;sudo refind-btrfs
+: 1666338663:0;sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch-Grub
+: 1666339144:0;systemctl daemon-reload
+: 1666339167:0;systemctl start /dev/zram0
+: 1666339184:0;swapon
+: 1666340292:0;dd bs=512 count=4 if=/dev/urandom of=/crypto_keyfile.bin
+: 1666340300:0;sudo dd bs=512 count=4 if=/dev/urandom of=/crypto_keyfile.bin
+: 1666340355:0;sudo cryptsetup luksAddKey /dev/mapper/luksdev /crypto_keyfile.bin
+: 1666340411:0;sudo cryptsetup luksAddKey /dev/nvme0n1p2 /crypto_keyfile.bin
+: 1666342143:0;sudo cryptsetup convert --type luks1  /dev/nvme0n1p2
+: 1666342377:0;sudo cryptsetup luksconvertkey --pbkdf pbkdf2 /dev/nvme0n1p2
+: 1666342411:0;sudo cryptsetup luksConvertKey --pbkdf pbkdf2 /dev/nvme0n1p2
+: 1666342531:0;sudo cryptsetup luksConvertKey --key-slot 1  --pbkdf pbkdf2 /dev/nvme0n1p2
+: 1666342802:0;sudo chmod 000 /crypto_keyfile.bin
+: 1666343251:0;sudo cryptsetup luksDump /dev/mapper/luksdev
+: 1666343465:0;sudo cryptsetup -v luksKillSlot /dev/nvme0n1p2 2
+: 1666343574:0;sudo cryptsetup luksAddKey --pbkdf pbkdf2 /dev/nvme0n1p2 /crypto_keyfile.bin
+: 1666344228:0;sudo cryptsetup -v luksKillSlot /dev/nvme0n1p2 1
+: 1666344333:0;sudo cryptsetup luksDump /dev/nvme0n1p2
+: 1666345080:0;blkid
+: 1666345129:0;mkinitcpio -P
+: 1666345782:0;sudo update-grub
+: 1666346598:0;systemctl enable now duckdns.timer
+: 1666346611:0;systemctl enable --now duckdns.timer
+: 1666350868:0;btrfs filesystem show mount-point
+: 1666350891:0;btrfs filesystem show /
+: 1666350950:0;btrfs filesystem show /dev/mapper/luksdev
+: 1666350973:0;btrfs filesystem show /dev/nvme0n1p2
+: 1666350993:0;sudo btrfs filesystem show /dev/nvme0n1p2
+: 1666351007:0;sudo btrfs filesystem show /dev/mapper/luksdev
+: 1666353378:0;sudo grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch-Grub
+: 1666353402:0;sudo mkinitcpio -P
+: 1666353477:0;sudo efibootmgr -b 0000 -B
+: 1666353482:0;efibootmgr
+: 1666354095:0;sudo reboot now
+: 1666354509:0;sudo btrfs filesystem show /dev/mapper/luksdev
+: 1666354589:0;sudo btrfs filesystem defrag -czstd /dev/mapper/luksdev
+: 1666354602:0;sudo btrfs filesystem defrag -czstd /
+: 1666354620:0;sudo btrfs filesystem defrag -r -czstd /
+: 1666354728:0;sudo btrfs filesystem defrag -r -czstd /home
+: 1666355260:0;sudo btrfs filesystem defrag -r -czstd /var/logs
+: 1666355271:0;sudo btrfs filesystem defrag -r -czstd /var/log
+: 1666355290:0;sudo btrfs filesystem defrag -r -czstd /var/cache/pacman/package
+: 1666355295:0;sudo btrfs filesystem defrag -r -czstd /var/cache/pacman/pkg
+: 1666355448:0;btrfs balance /
+: 1666355456:0;sudo btrfs balance /
+: 1666357483:0;sudo systemctl edit --full grub-btrfsd
+: 1666358197:0;systemctl enable --now timeshift-snapshots-update-grub
+: 1666358218:0;systemctl status timeshift-snapshots-update-grub
+: 1666358387:0;cleaning-automation
+: 1666358415:0;du
+: 1666362174:0;orphrm
+: 1666364120:0;kbuildsycoca5
+: 1666365647:0;auto-cpufreq --stats
+: 1666365663:0;auto-cpufreq --install
+: 1666365671:0;sudo auto-cpufreq --install
+: 1666365774:0;systemctl start auto-cpufreq
+: 1666365789:0;auto-cpufreq --stats
+: 1666365805:0;systemctl enable auto-cpufreq
+: 1666365811:0;auto-cpufreq --stats
+: 1666367982:0;useradd guest -s /bin/nologin
+: 1666367985:0;sudo useradd guest -s /bin/nologin
+: 1666368687:0;systemctl status smb
+: 1666368977:0;systemctl enable --now smb
+: 1666368985:0;systemctl status smb
+: 1666369023:0;systemctl enable --now nmb
+: 1666369138:0;sudo gpasswd sambashare -a bkmo
+: 1666369176:0;sudo groupadd -r sambashare
+: 1666369180:0;sudo gpasswd sambashare -a bkmo
+: 1666369204:0;systemctl restart smb
+: 1666369212:0;systemctl restart nmb
+: 1666369270:0;sudo mkdir /var/lib/samba/usershares
+: 1666369292:0;sudo chown root:sambashare /var/lib/samba/usershares
+: 1666369307:0;chmod 1770 /var/lib/samba/usershares
+: 1666369315:0;sudo chmod 1770 /var/lib/samba/usershares
+: 1666369392:0;systemctl restart smb
+: 1666369403:0;systemctl restart nmb
+: 1666371881:0;balooctl stop
+: 1666371909:0;balooctl disable && balooctl purge
+: 1666373512:0;downgrade fprintd
+: 1666373518:0;sudo downgrade fprintd
+: 1666373794:0;systemctl enable auto-cpufreq
+: 1666374233:0;pacman -Q fprintd
+: 1666374251:0;sudo downgrade fprintd
+: 1666374743:0;git add fprintd-1.90.1-1-x86_64.pkg.tar.zst
+: 1666374771:0;git commit -a -m "fprintd 190"
+: 1666374811:0;git config --global user.name
+: 1666374829:0;git config --global user.name "bkmo"
+: 1666375025:0;git config --global user.email "777373+bkmo@users.noreply.github.com"
+: 1666375030:0;git commit -a -m "fprintd 190"
+: 1666375091:0;git push
+: 1666375179:0;git config --global credential.helper store
+: 1666375183:0;git push
+: 1666375209:0;sudo visudo
+: 1666375227:0;vi
+: 1666375290:0;visudo
+: 1666375302:0;which vi
+: 1666375412:0;export EDITOR=vim
+: 1666375416:0;visudo
+: 1666375444:0;sudo EDITOR=vim visudo
+: 1666375685:0;sudo usermod -aG wheel bkmo
+: 1666375719:0;pacman -Q fprintd
+: 1666375774:0;sudo btrfs filesystem show /dev/nvme0n1p2
+: 1666375808:0;groups bkmo
+: 1666375848:0;sudo echo hello
+: 1666375912:0;config status
+: 1666376027:0;git clone https://github.com/bkmo/.zsh-dotfiles.git
+: 1666376205:0;config checkout -f
+: 1666376259:0;git clone --bare -b master https://github.com/bkmo/.zsh-dotfiles.git $HOME/.zsh-dotfiles
+: 1666376335:0;config checkout -f
+: 1666376354:0;config config --local status.showUntrackedFiles no
+: 1666376362:0;config checkout -f\\
+
+: 1666376370:0;config status
+: 1666376845:0;orphls
+: 1666377587:0;orphrm
+: 1666377610:0;pacclean
+: 1666378121:0;expac -l '\n' -S '%D' kde-network-meta | while read -r submeta; do\
+    expac -l '\n' -S '%D' "$submeta"\
+done | sort -u
+: 1666378687:0;expac -l '\n' -S '%D' kde-network-meta | while read -r submeta; do\
+    expac -l '\n' -S '%D' "$submeta"\
+done | sort -u > pkgs.txt
+: 1666378786:0;pacman -D --asexplicit < pkgs.txt
+: 1666378791:0;sudo pacman -D --asexplicit < pkgs.txt
+: 1666378827:0;sudo pacman -D --asexplicit - < pkgs.txt
+: 1666378877:0;orphls
+: 1666378905:0;sudo pacman -Rns kde-networks-meta
+: 1666378930:0;sudo pacman -Rns kde-network-meta
+: 1666379491:0;expac -l '\n' -S '%D' kde-utilities-meta | while read -r submeta; do\
+    expac -l '\n' -S '%D' "$submeta"\
+done | sort -u > pkgs.txt
+: 1666379526:0;sudo pacman -D --asexplicit - < pkgs.txt
+: 1666379558:0;sudo pacman -Rns kde-utilities-meta
+: 1666380139:0;expac -l '\n' -S '%D' kde-graphics-meta | while read -r submeta; do\
+    expac -l '\n' -S '%D' "$submeta"\
+done | sort -u > pkgs.txt
+: 1666380155:0;sudo pacman -D --asexplicit - < pkgs.txt
+: 1666380194:0;sudo pacman -Rns kde-graphics-meta
+: 1666380529:0;orphls
+: 1666380536:0;pacclean
+: 1666381179:0;phononsettings
+: 1666381221:0;/usr/lib/vlc/vlc-cache-gen /usr/lib/vlc/plugins
+: 1666381663:0;systemctl status cronie
+: 1666383068:0;efibootmgr -v
+: 1666385241:0;intel_gpu_top
+: 1666385244:0;sudo intel_gpu_top
+: 1666394454:0;./tutanota-desktop-linux.AppImage GDK_DPI_SCALE=0.5
+: 1666394474:0;./tutanota-desktop-linux.AppImage GDK_DPI_SCALE=1.5
+: 1666394795:0;./tutanota-desktop-linux.AppImage  --force-device-scale-factor=2
+: 1666394814:0;./tutanota-desktop-linux.AppImage  --force-device-scale-factor=1.5
+: 1666394856:0;./tutanota-desktop-linux.AppImage  --force-device-scale-factor=1.15
+: 1666394882:0;./tutanota-desktop-linux.AppImage  --force-device-scale-factor=1.25
+: 1666395851:0;orphls
+: 1666395866:0;cleaning-automation
+: 1666395951:0;systemctl status cronie
+: 1666452802:0;fstrim
+: 1666452903:0;fstrim -A
+: 1666452935:0;fstrim -A --fstab
+: 1666460999:0;mkinitcpio -P
+: 1666461008:0;sudo mkinitcpio -P
+: 1666461927:0;mkinitcpio -P
+: 1666461929:0;sudo mkinitcpio -P
+: 1666463106:0;userdel guest
+: 1666463112:0;sudo userdel guest
+: 1666463335:0;systemctl status sddm
+: 1666465046:0;sudo btrfs balance start -dusage=66 /
+: 1666465058:0;sudo btrfs balance start -dusage=66 /home
+: 1666465177:0;htop
+: 1666465248:0;powertop
+: 1666465276:0;sudo powertop
+: 1666473723:0;genfstab -U -p /  >> ~/fstab
+: 1666475512:0;cat /sys/block/sda/queue/scheduler
+: 1666475530:0;cat /sys/block/nvme0n1/queue/scheduler
+: 1666475712:0;swapon
+: 1666476131:0;cat /proc/sys/kernel/watchdog
+: 1666476181:0;wdctl
+: 1666476296:0;cat /proc/sys/kernel/nmi_watchdog
+: 1666476317:0;cat /proc/sys/kernel/watchdog
+: 1666476706:0;cat /proc/sys/kernel/nmi_watchdog
+: 1666477152:0;sysctl -a | grep watchdog:
+: 1666477158:0;sudo sysctl -a | grep watchdog:
+: 1666477168:0;sudo sysctl -a | grep watchdog
+: 1666477488:0;cat /proc/sys/kernel/nmi_watchdog
+: 1666477497:0;cat /proc/sys/kernel/watchdog
+: 1666490029:0;journalctl --vacuum-size=100M
+: 1666490050:0;journalctl --vacuum-time=2weeks
+: 1666490068:0;sudo journalctl --vacuum-size=100M
+: 1666490095:0;sudo journalctl --vacuum-time=2weeks
+: 1666490298:0;pacman -Rnsc discover oxygen plasma-vault
+: 1666490302:0;sudo pacman -Rnsc discover oxygen plasma-vault
+: 1666491903:0;sudo pacman-optimize
+: 1666491975:0;sudo journalctl -p 3 -xb
+: 1666494984:0;pacup
+: 1666495082:0;aurup
+: 1666495191:0;whois 186.15.239.82
+: 1666496606:0;systemctl restart smb
+: 1666496615:0;sudo journalctl -p 3 -xb
+: 1666496750:0;testparm
+: 1666499070:0;clear
+: 1666501942:0;sudo update-grub
+: 1666502794:0;pacnew
+: 1666503221:0;ps -a
+: 1666503232:0;ps -A | grep cronie
+: 1666503254:0;ps -A
+: 1666503435:0;systemctl status cronie
+: 1666503511:0;ps -A | grep cronie
+: 1666503618:0;htop
+: 1666503834:0;systemctl disable cronie
+: 1666503846:0;systemctl mask cronie
+: 1666503874:0;systemctl status avahi
+: 1666503911:0;systemctl status avahi-daemon
+: 1666503938:0;systemctl status avahi-daemon.socket
+: 1666504648:0;bootctl
+: 1666505256:0;cat /proc/cmdline
+: 1666505371:0;systemctl status systemd-boot-update.service
+: 1666505385:0;systemctl enable --now systemd-boot-update.service
+: 1666505990:0;sudo cryptsetup luksConvertKey --key-slot 0  --pbkdf argon2 /dev/nvme0n1p2
+: 1666506002:0;sudo cryptsetup luksConvertKey --key-slot 0  --pbkdf argon2i /dev/nvme0n1p2
+: 1666506041:0;cryptsetup -v luksDump /dev/mapper/luksdev
+: 1666506051:0;sudo cryptsetup luksDump /dev/nvme0n1p2
+: 1666506381:0;sdboot-manage
+: 1666506385:0;sudo sdboot-manage
+: 1666506402:0;sudo sdboot-manage gen
+: 1666506452:0;sudo sdboot-manage gen -e /boot
+: 1666506470:0;sudo sdboot-manage gen -e=/boot
+: 1666508125:0;cat /proc/cmdline
+: 1666508769:0;systemctl disable --now systemd-boot-update.service
+: 1666547977:0;bootctl
+: 1666549241:0;pacup
+: 1666549267:0;bootctl
+: 1666549996:0;systemctl --user status plasma-plasmashell.service
+: 1666550073:0;kwriteconfig5 --file startkderc --group General --key systemdBoot true
+: 1666550143:0;kwriteconfig5 --file startkderc --group General --key systemdBoot false
+: 1666550205:0;systemctl --user status plasma-plasmashell.service
+: 1666550211:0;kwriteconfig5 --file startkderc --group General --key systemdBoot true
+: 1666550288:0;systemctl --user status plasma-plasmashell.service
+: 1666553557:0;pacman -S --needed plasma
+: 1666553560:0;sudo pacman -S --needed plasma
+: 1666553614:0;sudo pacman -S --needed plasma-desktop
+: 1666553822:0;sudo pacman -S --needed plasma-meta
+: 1666554293:0;sudo pacman -S --needed kde-applications
+: 1666554619:0;phononsettings
+: 1666556136:0;sudo pacman -S --needed xorg
+: 1666556337:0;sudo pacman -S sddm
+: 1666557128:0;sudo vim /etc/X11/xorg.conf.d/20-touchpad.conf
+: 1666557208:0;sudo touch /etc/X11/xorg.conf.d/20-touchpad.conf
+: 1666560870:0;yay -S plymouth-git
+: 1666561078:0;mkinitcpio -P
+: 1666561081:0;sudo mkinitcpio -P
+: 1666561256:0;sudo pamac -S linux-lts
+: 1666561271:0;sudo pacman -S linux-lts
+: 1666561297:0;sudo mkinitcpio -P
+: 1666561456:0;plymouth-set-default-theme -l
+: 1666561465:0;plymouth-set-default-theme bgrt
+: 1666561472:0;sudo plymouth-set-default-theme bgrt
+: 1666561858:0;systemctl status sddm-plymouth.service
+: 1666561890:0;systemctl disable sddm.service
+: 1666561910:0;systemctl enable sddm-plymouth.service
+: 1666562062:0;sudo plymouth-set-default-theme spinner
+: 1666562144:0;plymouth-set-default-theme -l
+: 1666562254:0;sudo plymouth-set-default-theme script
+: 1666562785:0;sudo plymouth-set-default-theme spinfinity
+: 1666562841:0;sudo mkinitcpio -P
+: 1666562950:0;sudo plymouth-set-default-theme script
+: 1666562993:0;sudo mkinitcpio -P
+: 1666566776:0;pacup
+: 1666566807:0;cleaning-automation
+: 1666566817:0;orphls
+: 1666566830:0;orphrm
+: 1666566836:0;clear
+: 1666567035:0;systemctl status iwd
+: 1666567048:0;systemctl status wpa-supplicant
+: 1666567069:0;systemctl status wpa_supplicant
+: 1666567190:0;systemctl restart NetworkManager
+: 1666567218:0;systemctl enable now iwd
+: 1666567227:0;systemctl restart NetworkManager
+: 1666567692:0;systemctl status wpa_supplicant
+: 1666567697:0;systemctl status iwd
+: 1666571434:0;bootctl -h
+: 1666571932:0;efivar --list
+: 1666575380:0;efibootmgr --create --disk /dev/sdd1 --part 1 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot" --unicode
+: 1666575387:0;sudo efibootmgr --create --disk /dev/sdd1 --part 1 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot" --unicode
+: 1666575463:0;blkid
+: 1666575482:0;sudo efibootmgr --create --disk /dev/nvme0n1p1 --part 1 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot" --unicode
+: 1666584028:0;systemctl reload  dnscrypt-proxy
+: 1666584045:0;systemctl restart dnscrypt-proxy
+: 1666584061:0;systemctl restart NetworkManager
+: 1666584304:0;git add /etc
+: 1666584315:0;git add etc/
+: 1666584348:0;git commit -a -m "add etc new install"
+: 1666584429:0;git push
