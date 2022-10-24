@@ -14,3 +14,5 @@
 #
  curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.zsh-dotfiles/run | bash
 #
+# Only clone command if needed
+curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.zsh-dotfiles/run | bash
