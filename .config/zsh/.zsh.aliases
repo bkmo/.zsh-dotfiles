@@ -10,7 +10,7 @@ alias kdebug='qdbus org.kde.KWin /KWin org.kde.KWin.showDebugConsole'
 alias root='sudo -Es'
 
 #get 10 fastest US mirrors with reflector
-alias mirrors='sudo reflector --verbose --country US --latest 10 --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist'
+alias mirrors='sudo reflector --verbose --country US --latest 15 --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
