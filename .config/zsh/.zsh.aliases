@@ -143,3 +143,5 @@ bindkey '^Y' toggle-prompt
 alias config="git --git-dir=$HOME/.zsh-dotfiles --work-tree=$HOME"
 alias gitu='git add . && git commit && git push'
 alias dfcp='config commit -a -m "manual scripted" && config push'
+
+alias wifi='watch  "nmcli -f "CHAN,BARS,SIGNAL,SSID,FREQ,RATE,SECURITY" d wifi list ifname wlan0  | sort -n"'
