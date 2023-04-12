@@ -132,6 +132,7 @@ alias pacclean='yay -Sc --noconfirm'
 alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
 alias pks='pkgsearch'
 alias pksy='pkgsearch-y'
+alias updates='checkupdates && yay -Qua'
 
 # SHA1
 alias sha1='openssl sha1'
