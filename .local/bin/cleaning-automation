@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Remove everything for uninstalled native and foreign packages, keep latest versions of installed packages, check for orphans
 
-yay_running_on_behalf=$(id -nu 1000)
-yay_cache_dir="/home/$yay_running_on_behalf/.cache/yay/"
+running_on_behalf=$(id -nu 1000)
+yay_cache_dir="/home/$running_on_behalf/.cache/yay/"
 
 pkg_cache_dir="$(find $yay_cache_dir -mindepth 1 -maxdepth 1 -type d | xargs -r printf "-c %s ")"
 
@@ -15,10 +15,10 @@ echo "Removing cached uninstalled packages."
 /usr/bin/paccache -ruk1 $pkg_cache_dir
 
 echo "Created current list of installed Aur packages."
-/usr/bin/pacman -Qm | cat > /home/bkmo/Documents/backups/aurpkgs.txt
+/usr/bin/pacman -Qm | cat > /home/$running_on_behalf/Documents/backups/aurpkgs.txt
 
 echo "Created current list of Native packages."
-/usr/bin/pacman -Qn | cat > /home/bkmo/Documents/backups/nativepkgs.txt
+/usr/bin/pacman -Qn | cat > /home/$running_on_behalf/Documents/backups/nativepkgs.txt
 
 echo "Check for orphaned packages."
 /usr/bin/bash -c "/usr/bin/pacman -Qtd || /usr/bin/echo '==> no orphans found'"
