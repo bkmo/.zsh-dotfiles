@@ -5,7 +5,7 @@ Type = Package
 Target = *
 
 [Action]
-Description = Cleaning pacman and yay caches...
+Description = Cleaning pacman and yay caches...check/remove orphans...
 When = PostTransaction
 Exec = /home/bkmo/.local/bin/cleaning-automation
 Depends = pacman-contrib
