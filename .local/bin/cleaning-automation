@@ -4,3 +4,4 @@
 /usr/bin/paccache -ruk0
 /usr/bin/paccache -rk1
 /usr/bin/paccache -rk1 $pkgcache
+/usr/bin/bash -c "[[ if $(/usr/bin/pacman -Qtdq) = 0 ]] && /usr/bin/pacman -Rns $(/usr/bin/pacman -Qtdq) || /usr/bin/echo '==> No orphaned packages found.'"
