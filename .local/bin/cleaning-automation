@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Remove everything for uninstalled native and foreign packages, keep latest versions of installed packages
+# Remove everything for uninstalled native and foreign packages, keep latest versions of installed packages, check for orphans
 /usr/bin/paccache -ruk0 $pkgcache
 /usr/bin/paccache -ruk0
 /usr/bin/paccache -rk1
 /usr/bin/paccache -rk1 $pkgcache
-/usr/bin/bash -c "[[ if $(/usr/bin/pacman -Qtdq) = 0 ]] && /usr/bin/pacman -Rns $(/usr/bin/pacman -Qtdq) || /usr/bin/echo '==> No orphaned packages found.'"
+/usr/bin/bash -c "/usr/bin/pacman -Qtd || /usr/bin/echo '==> No orphan packages found.'"
