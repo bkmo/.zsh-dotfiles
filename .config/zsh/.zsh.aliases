@@ -133,6 +133,7 @@ alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' 
 alias pks='pkgsearch'
 alias pksy='pkgsearch-y'
 alias updates='checkupdates && yay -Qua'
+alias aurpkgs='pacman -Qm | cat > ~/Documents/backups/aurpkgs.txt && cat ~/Documents/backups/aurpkgs.txt'
 
 # SHA1
 alias sha1='openssl sha1'

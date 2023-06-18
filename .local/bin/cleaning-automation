@@ -13,3 +13,6 @@ echo "Removing cached packages, keeping latest version of each one."
 echo "Removing cached uninstalled packages."
 /usr/bin/paccache -ruk1
 /usr/bin/paccache -ruk1 $pkg_cache_dir
+
+echo "Created current list of installed Aur packages."
+/usr/bin/pacman -Qm | cat > ~/Documents/backups/aurpkgs.txt
