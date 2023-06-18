@@ -19,3 +19,6 @@ echo "Created current list of installed Aur packages."
 
 echo "Created current list of Native packages."
 /usr/bin/pacman -Qn | cat > /home/bkmo/Documents/backups/nativepkgs.txt
+
+echo "Check for orphaned packages."
+/usr/bin/bash -c "/usr/bin/pacman -Qtd || /usr/bin/echo '==> no orphans found'"
