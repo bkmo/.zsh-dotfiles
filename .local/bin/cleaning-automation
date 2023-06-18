@@ -15,4 +15,7 @@ echo "Removing cached uninstalled packages."
 /usr/bin/paccache -ruk1 $pkg_cache_dir
 
 echo "Created current list of installed Aur packages."
-/usr/bin/pacman -Qm | cat > ~/Documents/backups/aurpkgs.txt
+/usr/bin/pacman -Qm | cat > /home/bkmo/Documents/backups/aurpkgs.txt
+
+echo "Created current list of Native packages."
+/usr/bin/pacman -Qn | cat > /home/bkmo/Documents/backups/nativepkgs.txt
