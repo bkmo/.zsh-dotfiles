@@ -14,11 +14,17 @@ echo "Removing cached uninstalled packages."
 /usr/bin/paccache -ruk0
 /usr/bin/paccache -ruk0 $pkg_cache_dir
 
-echo "Created current list of installed Aur packages."
-/usr/bin/pacman -Qm | cat > /home/$running_on_behalf/Documents/backups/aurpkgs.txt
+echo "Creating current list of installed Aur packages."
+/usr/bin/pacman -Qm | cat > /home/$running_on_behalf/Documents/backups/pacman/aurpkgs.txt
 
-echo "Created current list of Native packages."
-/usr/bin/pacman -Qn | cat > /home/$running_on_behalf/Documents/backups/nativepkgs.txt
+echo "Creating current list of Native packages."
+/usr/bin/pacman -Qn | cat > /home/$running_on_behalf/Documents/backups/pacman/nativepkgs.txt
 
-echo "Check for orphaned packages."
-/usr/bin/bash -c "/usr/bin/pacman -Qtd || /usr/bin/echo '==> no orphans found'"
+echo "Creating current list of Explicitly Installed packages."
+/usr/bin/pacman -Qqe | cat > /home/$running_on_behalf/Documents/backups/pacman/explicitpkgs.txt
+
+echo "Checking for orphaned packages."
+/usr/bin/pacman -Qtd || /usr/bin/echo '==> no orphans found'
+
+echo "Backing up Pacman Database."
+tar -C / -cjf /home/$running_on_behalf/Documents/backups/pacman/pacman_database.tar.bz2 var/lib/pacman/local
