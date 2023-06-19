@@ -27,4 +27,4 @@ echo "Checking for orphaned packages."
 /usr/bin/pacman -Qtd || /usr/bin/echo '==> no orphans found'
 
 echo "Backing up Pacman Database."
-tar -C / -czf /home/$running_on_behalf/Documents/backups/pacman/pacman_database.tar.gz var/lib/pacman/local
+tar -I zstd -C / -cf /home/$running_on_behalf/Documents/backups/pacman/pacman_database.tar.zst var/lib/pacman/local
