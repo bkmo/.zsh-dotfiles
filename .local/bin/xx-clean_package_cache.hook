@@ -1,11 +1,12 @@
 [Trigger]
 Operation = Upgrade
 Operation = Remove
+Operation = Install
 Type = Package
 Target = *
 
 [Action]
-Description = Cleaning pacman and yay caches...update pkg lists
+Description = Cleaning pacman and yay caches...update pkg lists...check orphans...
 When = PostTransaction
 Exec = /home/bkmo/.local/bin/cleaning-automation
 Depends = pacman-contrib
