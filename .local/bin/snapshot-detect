@@ -1,5 +1,9 @@
 #!/bin/bash
 if grep -q timeshift /proc/cmdline; then
-notify-send -u critical -i timeshift --app-name Timeshift 'Snapshot Detected!' 'Booted into Timeshift Snapshot, please run "timeshift-launcher" to restore the snapshot.'
+notify-send -u critical -i timeshift --app-name Timeshift 'Snapshot Detected!' 'Booted into a Timeshift Snapshot. Please run "timeshift-launcher" to restore the snapshot.'
+#timeshift-launcher
+fi
+if grep -q @snapshots-root /proc/cmdline; then
+notify-send -u critical -i btrfs-assistant-launcher --app-name Btrfs-Snapshot 'Btrfs-Snapshot Detected!' 'Booted into a Btrfs-Snapshot. Please do a manual snapshot restore, or run "timeshift-launcher" to restore a Timeshift snapshot.'
 #timeshift-launcher
 fi

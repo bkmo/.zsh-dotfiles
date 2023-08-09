@@ -6,19 +6,19 @@ yay_cache_dir="/home/$running_on_behalf/.cache/yay/"
 
 pkg_cache_dir="$(find $yay_cache_dir -mindepth 1 -maxdepth 1 -type d | xargs -r printf "-c %s ")"
 
-echo "Removing cached packages, keeping latest version of each one."
-/usr/bin/paccache -rk1
-/usr/bin/paccache -rk1 $pkg_cache_dir
+echo "Removing cached packages, keeping the latest version of each one."
+/usr/bin/paccache -rk2
+/usr/bin/paccache -rk2 $pkg_cache_dir
 
 echo "Removing cached uninstalled packages."
-/usr/bin/paccache -ruk0
-/usr/bin/paccache -ruk0 $pkg_cache_dir
+/usr/bin/paccache -ruk1
+/usr/bin/paccache -ruk1 $pkg_cache_dir
 
 echo "Creating current list of installed Aur packages."
-/usr/bin/pacman -Qm | cat > /home/$running_on_behalf/Pacman-bkups/aurpkgs.txt
+/usr/bin/pacman -Qqem | cat > /home/$running_on_behalf/Pacman-bkups/aurpkgs.txt
 
 echo "Creating current list of Native packages."
-/usr/bin/pacman -Qn | cat > /home/$running_on_behalf/Pacman-bkups/nativepkgs.txt
+/usr/bin/pacman -Qqen | cat > /home/$running_on_behalf/Pacman-bkups/nativepkgs.txt
 
 echo "Creating current list of Explicitly Installed packages."
 /usr/bin/pacman -Qqe | cat > /home/$running_on_behalf/Pacman-bkups/explicitpkgs.txt
@@ -29,31 +29,3 @@ echo "Checking for orphaned packages."
 echo "Backing up Pacman Database."
 tar --zstd -C / -cf /home/$running_on_behalf/Pacman-bkups/pacman_database.tar.zst var/lib/pacman/local
 
-echo "Remove yay cache for foreign packages that are not installed anymore."
-# Assuming yay is run by user with UID 1000
-admin="$(id -nu 1000)"
-cachedir="/home/$admin/.cache/yay"
-removed="$(comm -23 <(basename -a $(find $cachedir -mindepth 1 -maxdepth 1 -type d) | sort) <(pacman -Qqm) | xargs -r printf "$cachedir/%s\n")"
-
-# Remove yay cache for foreign packages that are not installed anymore
-rm -rf $removed
-
-pkgcache="$(find $cachedir -mindepth 1 -maxdepth 1 -type d | xargs -r printf "-c %s\n")"
-
-for pkgdir in "$cachedir"/*/; do
-
-    pkgname=$(basename "$pkgdir")
-
-    # Remove untracked files (e. g. source/build files) excepting package files and main source files for installed version if non-git package
-    if [[ ! "$pkgname" =~ ^.*-git$ ]]; then
-
-        pkgver="$(pacman -Q $pkgname | cut -d ' ' -f2 | cut -d '-' -f1 | cut -d ':' -f2)"
-
-        cd "$pkgdir"
-        rm -f $(git ls-files --others | grep -v -e '^.*\.pkg\.tar.*$' -e '^.*/$' -e "^.*$pkgver.*$" | xargs -r printf "$pkgdir/%s\n")
-
-    fi
-
-    rm -rf "$pkgdir"/src/
-
-done
