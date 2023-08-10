@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#Set variables
+KEEPLOGS=15
+LOGDIR="/var/log/btrfs-snapshots/"
+LOGFILE="/var/log/btrfs-snapshots/daily_snapshots.log"
+TODAY=$(date)
+
+# Create the log file -- backup old logs, keep number of KEEPLOGS
+if [[ -e "$LOGFILE" ]]; then
+cd "$LOGDIR"
+mv -f "$LOGFILE" $(date -r "$LOGFILE" +%F-%T).log
+ls -r1 "$LOGDIR" | tail -n +$((KEEPLOGS+1)) | xargs rm
+fi
+if [[ ! -e "$LOGFILE" ]]; then
+    mkdir -p "$LOGDIR"
+    touch "$LOGFILE"
+fi
+
+# Copy/Sync files to the cloud
+echo "<<<===== Btrfs-Snapshots Daily Job Started on $TODAY =====>>>" | tee -a $LOGFILE
+/usr/bin/btrfs-snapshot -C >> /var/log/btrfs-snapshots/daily_snapshots.log
+if [ -s /boot/grub/grub-btrfs.cfg ]; then /etc/grub.d/41_snapshots-btrfs; else grub-mkconfig -o /boot/grub/grub.cfg; fi
+echo "=====> Btrfs-Snapshots Daily Job Ended on $TODAY <=====" | tee -a $LOGFILE

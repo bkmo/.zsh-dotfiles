@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Remove everything for uninstalled native and foreign packages, keep latest versions of installed packages, check for orphans
+echo "==> Remove All unistalled versions Pacman"
+/usr/bin/paccache -ruk0
+echo "==> Keep last installed version Pacman"
+/usr/bin/paccache -rk1
+yaycache="$(find "$HOME"/.cache/yay -maxdepth 1 -type d | awk '{ print "-c " $1 }' | tail -n +2)"
+echo "==> Keep last installed version Yay"
+/usr/bin/paccache -rvk1 -c /var/cache/pacman/pkg $yaycache

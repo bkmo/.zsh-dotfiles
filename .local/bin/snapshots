@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+now=$(date +"%FT%T")
+btrfs subvolume snapshot /home/bkmo/Videos /.snapshots/videos/videos_$now
+btrfs subvolume snapshot /home/bkmo/Torrents /.snapshots/torrents/torrents_$now
+btrfs subvolume snapshot /home/bkmo/Documents /.snapshots/documents/documents_$now
+btrfs subvolume snapshot /home/bkmo/PDF /.snapshots/PDF/PDF_$now

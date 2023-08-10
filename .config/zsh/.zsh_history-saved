@@ -1,4 +1,3 @@
-: 1664307364:0;
 : 1664307364:0;pacman -Sl endeavouros | grep '\[installed'
 : 1664307364:0;pacman -Sl endeavouros | grep '\[installed' | cut -d' ' -f2 | xargs -o pacman -R
 : 1664307364:0;sudo pacman -Sl endeavouros | grep '\[installed' | cut -d' ' -f2 | xargs -o pacman -R
@@ -12,7 +11,6 @@
 : 1664307364:0;sudo timeshift-autosnap
 : 1664307364:0;systemctl enable change-machine-id.timer
 : 1664307364:0;systemctl enable btrfs-scrub@home.timer
-: 1664307364:0;systemctl enable fstrim.timer
 : 1664307364:0;swapon --show
 : 1664307364:0;systemctl enable systemd.swap
 : 1664307364:0;systemctl enable systemd-swap.service
@@ -43,7 +41,6 @@
 : 1664307364:0;grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 : 1664307364:0;grub-install
 : 1664307364:0;sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch
-: 1664307364:0;sudo mkinitcpio -p linux
 : 1664307364:0;/usr/local/bin/change-machine-id.sh
 : 1664307364:0;sudo /usr/local/bin/change-machine-id.sh
 : 1664307364:0;systemctl start chang-machine-id.service
@@ -75,7 +72,6 @@
 : 1664307364:0;./build-arch.sh
 : 1664307364:0;sudo pacman -S  extra-cmake-modules
 : 1664307364:0;journlctl
-: 1664307364:0;balooctl disable && balooctl purge
 : 1664307364:0;systemctl --failed
 : 1664307364:0;tlp-stat
 : 1664307364:0;sudo tlp-stat
@@ -93,8 +89,6 @@
 : 1664307364:0;systemctl enable  btrfs-scrub@-.timer
 : 1664307364:0;systemctl status btrfs-scrub@-.timer
 : 1664307364:0;btrfs balance start /
-: 1664307364:0;dmesg | grep crc32c
-: 1664307364:0;sudo dmesg | grep crc32c
 : 1664307364:0;systemctl edit --full grub-btrfs.path
 : 1664307364:0;systemctl enable grub-btrfs.path
 : 1664307364:0;locate timeshift-launcher
@@ -124,8 +118,6 @@
 : 1664307364:0;find /home/bkmo/ -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null
 : 1664307364:0;find /home/bkmo -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null
 : 1664307364:0;find / -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null
-: 1664307364:0;sudo pacreport --unowned-files
-: 1664307364:0;sudo pacman -Qii | awk '/^MODIFIED/ {print $2}'
 : 1664307364:0;cryptsetup luksDump /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
 : 1664307364:0;sudo cryptsetup luksDump /dev/luks-550ec923-9508-4279-837b-5184acd1429e
 : 1664307364:0;sudo cryptsetup luksDump /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
@@ -175,8 +167,6 @@
 : 1664307364:0;du --human-readable --summarize .cache/* | sort --human-numeric-sort --reverse
 : 1664307364:0;pacorph
 : 1664307364:0;auto-cpufreq --log
-: 1664307364:0;systemctl enable --now auto-cpufreq
-: 1664307364:0;auto-cpufreq --stats
 : 1664307364:0;onedrive
 : 1664307364:0;onedrive --help
 : 1664307364:0;systemctl --user status onedriver@.service
@@ -193,24 +183,19 @@
 : 1664307364:0;sudo /usr/bin/onedriver-launcher.sh OneDrive
 : 1664307364:0;/usr/bin/onedriver-launcher.sh OneDrive
 : 1664307364:0;systemctl --daemon reload
-: 1664307364:0;systemctl --user daemon-reload
 : 1664307364:0;systemctl status --user onedriver@.service
 : 1664307364:0;dolphin -q
 : 1664307364:0;systemctl --user status onedriver@-home-bkmo-OneDrive.service
 : 1664307364:0;git clone https://aur.archlinux.org/yay.git
 : 1664307364:0;cd yay
-: 1664307364:0;makepkg -si
 : 1664307364:0;cd ...
 : 1664307364:0;pacman -Qkk base-devel
 : 1664307364:0;pacman -Qkk base
 : 1664307364:0;pacman -Qkk base-
 : 1664307364:0;sudo cryptsetup luksDump /dev/nvme0n1p6
 : 1664307364:0;EDITOR=nano visudo
-: 1664307364:0;sudo EDITOR=nano visudo
 : 1664307364:0;usermod --aG wheel bkmo
 : 1664307364:0;usermod -aG wheel bkmo
-: 1664307364:0;sudo usermod -aG wheel bkmo
-: 1664307364:0;groups bkmo
 : 1664307364:0;cat /etc/group
 : 1664307364:0;MOZ_LOG="PlatformDecoderModule:5" librewolf
 : 1664307364:0;validity-sensors-tools
@@ -234,9 +219,7 @@
 : 1664307364:0;ping
 : 1664307364:0;ipctl
 : 1664307364:0;ipconfig
-: 1664307364:0;uname -r
 : 1664307364:0;checkrebuild
-: 1664307364:0;checkrebuild -v
 : 1664307364:0;iwd
 : 1664307364:0;systemctl --user list-units -t service
 : 1664307364:0;systemctl list-units -t service
@@ -245,8 +228,6 @@
 : 1664307364:0;journalctl -p 3 -xb
 : 1664307364:0;cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors
 : 1664307364:0;yay -S update-notifier
-: 1664307364:0;kwriteconfig5 --file startkderc --group General --key systemdBoot false
-: 1664307364:0;systemctl --user status plasma-plasmashell.service
 : 1664307364:0;makepackage
 : 1664307364:0;pacman -S 4kvideodownloader-4.16.2.4280-1-x86_64.pkg.tar.zst
 : 1664307364:0;sudo pacman -S 4kvideodownloader-4.16.2.4280-1-x86_64.pkg.tar.zst
@@ -259,7 +240,6 @@
 : 1664307364:0;ps -A | grep dd
 : 1664307364:0;sudo watch -n 30 'pkill -USR1 8515'
 : 1664307364:0;sudo watch -n 30 'pkill -USR1 -n -x dd'
-: 1664307364:0;parted -l
 : 1664307364:0;update
 : 1664307364:0;sudo pacman -S update-notifier-0.7.7-4-any.pkg.tar.zst
 : 1664307364:0;sudo pacman -u update-notifier-0.7.7-4-any.pkg.tar.zst
@@ -269,15 +249,11 @@
 : 1664307364:0;update-notifier
 : 1664307364:0;update-checker
 : 1664307364:0;notify-send -h
-: 1664307364:0;notify-send --help
 : 1664307364:0;yay -S octopi-notifier
 : 1664307364:0;sudo pacman -U 4kvideodownloader-4.16.2.4280-1-x86_64.pkg.tar.zst
 : 1664307364:0;sudo pacman -U 4kvideodownloader-4.16.3.4290-1-x86_64.pkg.tar.zst
 : 1664307364:0;sudo pacman -R 4kvideodownloader
 : 1664307364:0;yay -S 4kvideodownloader
-: 1664307364:0;yay -v
-: 1664307364:0;yay -h
-: 1664307364:0;yay -V
 : 1664307364:0;yay -S paru
 : 1664307364:0;/bin/bash -c "yay -S --aur octopi-notifier-frameworks;echo 'Press any key to continue...'"
 : 1664307364:0;octopi-notifier
@@ -288,7 +264,6 @@
 : 1664307364:0;MOZ_ENABLE_WAYLAND=1 librewolf
 : 1664307364:0;export MOZ_ENABLE_WAYLAND=0
 : 1664307364:0;xdpyinfo | grep resolution
-: 1664307364:0;systemctl kill --kill-who=main --signal=SIGUSR2 systemd-journald.service
 : 1664307364:0;pacman -Qtd
 : 1664307364:0;sudo pacman -Qqdt
 : 1664307364:0;pacman -Q
@@ -297,7 +272,6 @@
 : 1664307364:0;/bin/bash -c "yay -S --aur downgrade;echo 'Press any key to continue...'"
 : 1664307364:0;downgrade
 : 1664307364:0;sudo downgrade
-: 1664307364:0;sudo downgrade fprintd
 : 1664307364:0;pacman -h
 : 1664307364:0;pacman -S
 : 1664307364:0;sudo pacman-key -r 3DEA62513C8035383A245A12E5786B42E8E5D565
@@ -335,9 +309,7 @@
 : 1664307364:0;systemctl --user status powerline-daemon.service
 : 1664307364:0;lscpu
 : 1664307364:0;ournalctl --disk-usage
-: 1664307364:0;sudo journalctl --rotate --vacuum-size=50M
 : 1664307364:0;sudo btrfs balance start /
-: 1664307364:0;sudo btrfs balance start /home
 : 1664307364:0;fastfetch
 : 1664307364:0;flashfetch --load-config
 : 1664307364:0;flashfetch --help
@@ -358,13 +330,10 @@
 : 1664307364:0;systemctl stop auto-cpufreq.service
 : 1664307364:0;systemctl start auto-cpufreq.service
 : 1664307364:0;systemctl status auto-cpufreq
-: 1664307364:0;pacman -Syy
 : 1664307364:0;sudo hwinfo --framebuffer
 : 1664307364:0;pacman -Q | wc -l
 : 1664307364:0;plasmashell &&
-: 1664307364:0;plasmashell &
 : 1664307364:0;killall plasmashell && plasmashell &
-: 1664307364:0;kquitapp5 plasmashell kstart5 plasmashell > /dev/null 2>&1
 : 1664307364:0;kstart5 plasmashell
 : 1664307364:0;bashrc
 : 1664307364:0;ebrc
@@ -372,7 +341,6 @@
 : 1664307364:0;GTK_USE_PORTAL
 : 1664307364:0;efstab
 : 1664307364:0;fstab
-: 1664307364:0;systemctl status fstrim.timer
 : 1664307364:0;systemctl status duckdns.timer
 : 1664307364:0;source environment
 : 1664307364:0;sudo ln -fs /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
@@ -400,7 +368,6 @@
 : 1664307364:0;sudo ln -s /usr/lib/mozilla/native-messaging-hosts /usr/lib/librewolf/native-messaging-hosts
 : 1664307364:0;printenv
 : 1664307364:0;udevadm control --reload-rules
-: 1664307364:0;sudo udevadm control --reload-rules
 : 1664307364:0;micronucleus
 : 1664307364:0;micronucleus micronucleus-1.11-entry-jumper-pb0-upgrade.hex
 : 1664307364:0;orphls\\
@@ -408,10 +375,8 @@ btrfs filesystem show
 : 1664307364:0;powerprofilesctl
 : 1664307364:0;flashfetch
 : 1664307364:0;sudo btrfs filesystem show
-: 1664307364:0;fwupdmgr get-devices
 : 1664307364:0;btrfs check /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
 : 1664307364:0;sudo btrfs check /dev/mapper/luks-550ec923-9508-4279-837b-5184acd1429e
-: 1664307364:0;sudo btrfs balance start -dusage=66 /home
 : 1664307364:0;systemctl status btrfs-scrub@home
 : 1664307364:0;systemctl status reflector.timer
 : 1664307364:0;systemctl start fstrim.service
@@ -420,16 +385,13 @@ btrfs filesystem show
 : 1664307364:0;pacman -Q | grep 'accountsservice'
 : 1664307364:0;sudo chmod 775 /var/lib/AccountsService/
 : 1664307364:0;systemctl mask wpa_supplicant
-: 1664307364:0;sudo systemctl daemon-reload
 : 1664307364:0;sudo systemctl restart accounts-daemon.service
-: 1664307364:0;kwriteconfig5 --file startkderc --group General --key systemdBoot true
 : 1664307364:0;systemd-analyze critical-chain
 : 1664307364:0;yay -Qqe > pkglist.txt
 : 1664307364:0;systemctl list-unit-files --state=enabled > enabled-services.txt
 : 1664307364:0;systemctl list-unit-files --user --state=enabled > enabled-services.txt
 : 1664307364:0;systemctl start reflector.service
 : 1664307364:0;systemctl status reflector.service
-: 1664307364:0;systemctl status wpa_supplicant
 : 1664307364:0;smartctl
 : 1664307364:0;journalctl -p5
 : 1664307364:0;pacman -Qo /snap
@@ -439,14 +401,11 @@ btrfs filesystem show
 : 1664307364:0;sudo dmesg | grep huc
 : 1664307364:0;sudo dmesg | grep i915
 : 1664307364:0;echo "$QT_QPA_PLATFORMTHEME"
-: 1664307364:0;ps -a
-: 1664307364:0;ps -A
 : 1664307364:0;4kvideo
 : 1664307364:0;4kvideodownload
 : 1664307364:0;4kvideodownloader
 : 1664307364:0;busctl
 : 1664307364:0;cat /proc/sys/kernel/random/entropy_avail
-: 1664307364:0;systemd-analyze
 : 1664307364:0;systemctl
 : 1664307364:0;systemctl | grep oom
 : 1664307364:0;systemctl | grep oomd
@@ -455,22 +414,17 @@ btrfs filesystem show
 : 1664307364:0;systemctl reload pamac-cleancache
 : 1664307364:0;systemctl reload pamac-cleancache.timer
 : 1664307364:0;systemctl stop pamac-cleancache.timer
-: 1664307364:0;find / -xtype l -print
-: 1664307364:0;sudo find / -xtype l -print
 : 1664307364:0;sudo systemctl restart systemd-journald
 : 1664307364:0;systemctl status pamac-cleancache.timer
-: 1664307364:0;systemd-analyze blame
 : 1664307364:0;journalctl -p 3 -b
 : 1664307364:0;pacman-Syu
 : 1664307364:0;sudo pacman -Syy archlinux-keyring
 : 1664307364:0;sudo pacman -Su
 : 1664307364:0;fatresize
 : 1664307364:0;resize2fs
-: 1664307364:0;sudo mount -a
 : 1664307364:0;efibootmgrhelp
 : 1664307364:0;efibootmgr help
 : 1664307364:0;fdisk -l
-: 1664307364:0;sudo fdisk -l
 : 1664307364:0;efibootmgr -c -d=/dev/nvme0n1p2 -L="Windows10" -l='\EFI\Microsoft\Boot\bootmgrfw.efi'
 : 1664307364:0;efibootmgr -c -d=/dev/nvme0n1p2 -L="Windows10" -l='\efi\Microsoft\Boot\bootmgrfw.efi'
 : 1664307364:0;efibootmgr -c -d=/dev/nvme0n1p2 -L="Windows10" -l='\boot\efi\Microsoft\Boot\bootmgrfw.efi'
@@ -489,7 +443,6 @@ btrfs filesystem show
 : 1664307364:0;sudo efibootmgr -c -d /dev/nvme0n1p2 -p 2 -L "Windows10" -l '\EFI\Microsoft\Boot\bootmgfw.efi'
 : 1664307364:0;sudo efibootmgr -c -d /dev/nvme0n1 -p 2 -L "Windows10" -l '\EFI\Microsoft\Boot\bootmgfw.efi'
 : 1664307364:0;sudo efibootmgr -Bb 0002
-: 1664307364:0;sudo efibootmgr -c -d /dev/nvme0n1 -p 2 -L "Windows 10" -l '\EFI\Microsoft\Boot\bootmgfw.efi'
 : 1664307364:0;pacman -S bash-completion
 : 1664307364:0;sudo pacman -S bash-completion
 : 1664307364:0;ne
@@ -498,8 +451,6 @@ btrfs filesystem show
 : 1664307364:0;sudo mkinitcpio
 : 1664307364:0;mkinitcpio --help
 : 1664307364:0;sudo kate
-: 1664307364:0;lspci
-: 1664307364:0;lsusb
 : 1664307364:0;paru
 : 1664307364:0;yay-S duf
 : 1664307364:0;yay -R python-crypto
@@ -521,9 +472,7 @@ btrfs filesystem show
 : 1664307364:0;timeshift-gtk
 : 1664307364:0;sudo install battop* /usr/local/bin/battop
 : 1664307364:0;sudo install battop /usr/local/bin/battop
-: 1664307364:0;cat /sys/block/sda/queue/scheduler
 : 1664307364:0;cat /nvme0n1/block/sda/queue/scheduler
-: 1664307364:0;cat /sys/block/nvme0n1/queue/scheduler
 : 1664307364:0;battop
 : 1664307364:0;nextdns.stop
 : 1664307364:0;qdbus org.kde.shutdown /Shutdown logout
@@ -553,7 +502,6 @@ btrfs filesystem show
 : 1664307364:0;~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland &&
 : 1664307364:0;~/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland &
 : 1664307364:0;sudo downgrade linux
-: 1664307364:0;sudo dmesg
 : 1664307364:0;sudo dmesg | grep wifi
 : 1664307364:0;sudo dmesg | grep intel
 : 1664307364:0;sudo dmesg | grep Intel
@@ -578,7 +526,6 @@ btrfs filesystem show
 : 1664307364:0;journalctl -xe
 : 1664307364:0;sudo reboot
 : 1664307364:0;sudo nano /etc/systemd/zram-generator.conf
-: 1664307364:0;restartplasma
 : 1664307364:0;rm cookies.sqllite
 : 1664307364:0;rm cookies.sqlite
 : 1664307364:0;find /var/tmp/ -mtime +30
@@ -586,7 +533,6 @@ btrfs filesystem show
 : 1664307364:0;man systemd-tmpfiles(8)
 : 1664307364:0;man systemd-tmpfiles
 : 1664307364:0;man tmpfiles.d
-: 1664307364:0;journalctl --disk-usage
 : 1664307364:0;sudo btrfs filesystem usage /
 : 1664307364:0;sudo mkdir /mnt/btrfa
 : 1664307364:0;sudo btrfs sub create /mnt/btrfs/@log
@@ -596,16 +542,11 @@ btrfs filesystem show
 : 1664307364:0;btrfs sub show
 : 1664307364:0;sudo btrfs sub show /
 : 1664307364:0;sudo btrfs sub show /dev/mapper/luks-1
-: 1664307364:0;sudo btrfs balance start -dusage=66 /
 : 1664307364:0;systemctl disable btrfs-scrub@-.timer
 : 1664307364:0;systemctl disable btrfs-scrub@home.timer
 : 1664307364:0;systemctl stop btrfs-scrub@home.timer
 : 1664307364:0;systemctl stop btrfs-scrub@-.timer
 : 1664307364:0;systemctl enable btrfs-trim.timer
-: 1664307364:0;systemctl stop fstrim.timer
-: 1664307364:0;systemctl disable fstrim.timer
-: 1664307364:0;systemctl enable --now btrfs-trim.timer
-: 1664307364:0;btrfsmaintenance-refresh
 : 1664307364:0;systemctl start btrfs-trim.service
 : 1664307364:0;systemctl status btrfs-trim.service
 : 1664307364:0;systemctl stop btrfs-trim.timer
@@ -614,10 +555,7 @@ btrfs filesystem show
 : 1664307364:0;systemctl stop /dev/zram0
 : 1664307364:0;zramctl
 : 1664307364:0;btrfs sub show /
-: 1664307364:0;sudo powertop
 : 1664307364:0;echo vm.swappiness=100 | sudo tee -a /etc/sysctl.d/99-sysctl.conf
-: 1664307364:0;cat /proc/sys/kernel/watchdog
-: 1664307364:0;wdctl
 : 1664307364:0;cat /proc/sys/vm/swappiness
 : 1664307364:0;cat /proc/sys/vm/page-cluster
 : 1664307364:0;cat /proc/sys/vm/dirty_background_ratio
@@ -627,12 +565,9 @@ btrfs filesystem show
 : 1664307364:0;Lxappearance
 : 1664307364:0;free
 : 1664307364:0;sudo pacman -S
-: 1664307364:0;sudo pacman -Syy
 : 1664307364:0;yay -Sc --noconfirm --sudo=true || true
 : 1664307364:0;paru -Sc --noconfirm --sudo=true || true
-: 1664307364:0;timeshift --check --scripted
 : 1664307364:0;sudo timeshift --create --scripted --tags B
-: 1664307364:0;sudo timeshift --check --scripted
 : 1664307364:0;sysctl stop cronie
 : 1664307364:0;sysctl stop cronie.service
 : 1664307364:0;sysctl disable cronie.service
@@ -641,21 +576,14 @@ btrfs filesystem show
 : 1664307364:0;systemctl start --now cronie
 : 1664307364:0;systemctl enable --now timeshift.service
 : 1664307364:0;systemctl enable --now timeshift.timer
-: 1664307364:0;systemctl disable cronie
-: 1664307364:0;systemctl mask cronie
 : 1664307364:0;systemctl stop cronie
-: 1664307364:0;crontab -l
 : 1664307364:0;systemctl stop cronie.service
 : 1664307364:0;systemctl disable cronie.service
 : 1664307364:0;sudo timeshift
-: 1664307364:0;mount -a
-: 1664307364:0;mount
 : 1664307364:0;cd /run
 : 1664307364:0;cd timeshift
 : 1664307364:0;cd 7709
 : 1664307364:0;cd backup
-: 1664307364:0;sudo timeshift --list
-: 1664307364:0;cat /etc/fstab
 : 1664307364:0;sudo systemctl edit --full grub-btrfs.path
 : 1664307364:0;sudo systemctl edit --full timeshhift-snapshots-updategrub.service
 : 1664307364:0;sudo systemctl edit --full timeshhift-snapshots-update=grub.service
@@ -700,7 +628,6 @@ btrfs filesystem show
 : 1664307364:0;QTWEBENGINE_CHROMIUM_FLAGS= --blink-settings=darkModeEnabled=true falkon
 : 1664307364:0;QTWEBENGINE_CHROMIUM_FLAGS=--blink-settings=darkModeEnabled=true falkon
 : 1664307364:0;QTWEBENGINE_CHROMIUM_FLAGS=--blink-settings=forceDarkModeEnabled=true falkon
-: 1664307364:0;sudo pacman -Sy
 : 1664307364:0;systemctl status systemd-sysctl.service
 : 1664307364:0;sysctl -w dev.i915.perf_stream_paranoid=0
 : 1664307364:0;sudo sysctl -w dev.i915.perf_stream_paranoid=0
@@ -709,7 +636,6 @@ btrfs filesystem show
 : 1664307364:0;locate com.github.eneshecan.WhatsAppForLinux
 : 1664307364:0;1833
 : 1664307364:0;history 1833
-: 1664307364:0;paccache -ruk1
 : 1664307364:0;locate user.js
 : 1664307364:0;locate arkenfox-user.js
 : 1664307364:0;prefsCleaner.sh
@@ -753,7 +679,6 @@ btrfs filesystem show
 : 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.90
 : 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.25
 : 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --high-dpi-support=1.5
-: 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage
 : 1664307364:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
 : 1664307364:0;which firefox
 : 1664307364:0;firefox-bin
@@ -845,7 +770,6 @@ btrfs filesystem show
 : 1664307364:0;git commit -a -m "userjs disable autoplay"
 : 1664307364:0;git tag 1.2.5.5
 : 1664307364:0;git config --global user.email "crmongolo@tutanota.com"
-: 1664307364:0;git config --global user.name "bkmo"
 : 1664307364:0;git tag 1.2.5.6
 : 1664307364:0;git config --global user.email "bkmo@example.com"
 : 1664307364:0;git commit -a -m "navbar on default"
@@ -948,7 +872,6 @@ btrfs filesystem show
 : 1664307364:0;git tag 1.2.7.6
 : 1664307364:0;git push origin 1.2.7.6
 : 1664307364:0;git commit -a -m "Changelog for release 1.2.7.7"
-: 1664307364:0;cd..
 : 1664307364:0;cd webapp-manager-bkmo
 : 1664307364:0;git tag 1.2.7.7
 : 1664307364:0;git push origin 1.2.7.7
@@ -974,7 +897,6 @@ btrfs filesystem show
 : 1664307364:0;git push origin firefox-improvements
 : 1664307364:0;git pull firefox-improvements
 : 1664307364:0;git pull origen firefox-improvements
-: 1664307364:0;git config pull.rebase false
 : 1664307364:0;git commit -a -m "user.js cleanup"
 : 1664307364:0;git tag 1.2.7.9
 : 1664307364:0;git push origin 1.2.7.9
@@ -1171,7 +1093,6 @@ btrfs filesystem show
 : 1664307364:0;systemd-resolve --statistics
 : 1664307364:0;journalctl --verify
 : 1664307364:0;journalctl
-: 1664307364:0;systemctl status systemd-journald.service
 : 1664307364:0;systemctl restart systemd-journald.service
 : 1664307364:0;sudo killall -USR1 systemd-resolved
 : 1664307364:0;sudo journalctl -u systemd-resolved > ~/dns-cache.txt
@@ -1194,7 +1115,6 @@ btrfs filesystem show
 : 1664307364:0;resolvectl status
 : 1664307364:0;systemctl disable now systemd-resolved
 : 1664307364:0;systemctl disable --now systemd-resolved
-: 1664307364:0;systemctl reload  dnscrypt-proxy
 : 1664307364:0;dnscrypt-proxy -resolve
 : 1664307364:0;dnscrypt-proxy -version
 : 1664307364:0;dnscrypt-proxy -check
@@ -1204,7 +1124,6 @@ btrfs filesystem show
 : 1664307364:0;sudo journalctl -b
 : 1664307364:0;systemctl status systemd-journald
 : 1664307364:0;sudo systemctl restart NetworkManager.service
-: 1664307364:0;whois 186.15.239.82
 : 1664307364:0;systemctl status systemd-resolved
 : 1664307364:0;systemctl status dnscrypt-proxy
 : 1664307364:0;systemctl start dnscrypt-proxy
@@ -1223,10 +1142,7 @@ btrfs filesystem show
 : 1664307364:0;sudo cryptsetup luksHeaderBackup /dev/nvme0n1p6 --header-backup-file luksheader.bak
 : 1664307364:0;sudo cryptsetup luksHeaderBackup /dev/nvme0n1p6 --header-backup-file luksheaderbak.bin
 : 1664307364:0;cat /etc/crypttab
-: 1664307364:0;sudo cat /etc/crypttab
 : 1664307364:0;makepkg -h
-: 1664307364:0;makepkg -s
-: 1664307364:0;makepkg
 : 1664307364:0;sfecr
 : 1664307364:0;sfebk
 : 1664307364:0;git add {1010cbab-92d4-4ee8-85d6-8161591f3180}.xpi
@@ -1242,7 +1158,6 @@ btrfs filesystem show
 : 1664307364:0;git tag 1.2.8.4
 : 1664307364:0;git push --tags 1.2.8.4
 : 1664307364:0;git push --tags
-: 1664307364:0;makepkg -i
 : 1664307364:0;git tag -d 1.2.7.4
 : 1664307364:0;git tag -d 1.2.7.6
 : 1664307364:0;git tag -d 1.2.7.7
@@ -1288,11 +1203,9 @@ btrfs filesystem show
 : 1664307364:0;git push --delete origin 1.1.0
 : 1664307364:0;git push --delete origin 1.0.9
 : 1664307364:0;git push --delete origin 1.0.8
-: 1664307364:0;systemctl restart dnscrypt-proxy
 : 1664307364:0;dig +noall +stats reddit.com
 : 1664307364:0;mkinitcpio
 : 1664307364:0;mkinitcpio -h
-: 1664307364:0;dmesg
 : 1664307364:0;sudo dmesg | grep Guc
 : 1664307364:0;sudo dmesg | grep guc
 : 1664307364:0;echo powersupersave > /sys/module/pcie_aspm/parameters/policy
@@ -1311,40 +1224,20 @@ btrfs filesystem show
 : 1664307364:0;source .bashrc
 : 1664307364:0;kwrite -b
 : 1664307364:0;kwrite -n
-: 1664307364:0;kwrite --help-all
-: 1664307364:0;kate
-: 1664307364:0;kwrite
-: 1664307364:0;kate -h
 : 1664307364:0;skanpage
 : 1664307364:0;skanlite
 : 1664307364:0;sytemctl start samba
 : 1664307364:0;systemctl start samba
 : 1664307364:0;systemctl status samba
 : 1664307364:0;sudo cp /etc/samba/smb.conf.default /etc/samba/smb.conf
-: 1664307364:0;systemctl start smb
 : 1664307364:0;systemctl enable smb
-: 1664307364:0;systemctl start nmb
 : 1664307364:0;systemctl enable nmb
 : 1664307364:0;systemctl status nmb
-: 1664307364:0;sudo smbpasswd -a bkmo
-: 1664307364:0;sudo groupadd -r sambauser
-: 1664307364:0;sudo gpasswd sambauser -a bkmo
-: 1664307364:0;systemctl restart nmb
-: 1664307364:0;systemctl restart smb
-: 1664307364:0;systemctl status smb
-: 1664307364:0;sudo mkdir /var/lib/samba/usershares
-: 1664307364:0;sudo groupadd -r sambashare
-: 1664307364:0;sudo chown root:sambashare /var/lib/samba/usershares
-: 1664307364:0;chmod 1770 /var/lib/samba/usershares
-: 1664307364:0;sudo chmod 1770 /var/lib/samba/usershares
-: 1664307364:0;sudo gpasswd sambashare -a bkmo
 : 1664307364:0;vainfo
 : 1664307364:0;sudo traceroute -I controld.com
-: 1664307364:0;sudo systemctl restart smb.service
 : 1664307364:0;sudo systemctl restart nmb.service
 : 1664307364:0;sudo systemctl stop nmb.service
 : 1664307364:0;sudo systemctl start nmb.service
-: 1664307364:0;sudo testparm
 : 1664307364:0;sudo systemctl status smb.service
 : 1664307364:0;sudo systemctl status nmb.service
 : 1664307364:0;grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB
@@ -1354,29 +1247,23 @@ btrfs filesystem show
 : 1664307364:0;dig +noall +stats controld.com
 : 1664307364:0;sudo grub-install
 : 1664307364:0;sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
-: 1664307364:0;grub-mkconfig -o /boot/grub/grub.cfg
 : 1664307364:0;sudo mtr -w -z --show-ips --report-cycles=10 controld.com
 : 1664307364:0;nextdns
 : 1664307364:0;lsblk -o
 : 1664307364:0;lsblk -o /dev/nvme0n1p2
-: 1664307364:0;lsblk
 : 1664307364:0;efibootmgr -h
 : 1664307364:0;efibootmgr -B Boot0000
 : 1664307364:0;efibootmgr -B 0000
 : 1664307364:0;efibootmgr -B 0
 : 1664307364:0;efibootmgr -b 0000 -B
-: 1664307364:0;sudo systemctl restart NetworkManager
 : 1664307364:0;dig +noall +stats www.reddit.com
-: 1664307364:0;sudo grub-mkconfig -o /boot/grub/grub.cfg
 : 1664307364:0;dnscrypt-proxy
 : 1664307364:0;dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 : 1664307364:0;dnscrypt-proxy -h
 : 1664307364:0;dnscrypt-proxy -config /etc/dnscrypt-proxy/dnscrypt-proxy.toml -check
-: 1664307364:0;yay
 : 1664307364:0;sudo systemctl status dnscrypt-proxy
 : 1664307364:0;dig +noall +stats news.google.com
 : 1664307364:0;sudo mtr -w -z --show-ips --report-cycles=10 nextdns.io
-: 1664307364:0;ping 8.8.8.8
 : 1664307364:0;ping 1.1.1.1
 : 1664307364:0;ping 9.9.9.11
 : 1664307364:0;sudo mtr -w -z --show-ips --report-cycles=10 dns1.nextdns.io
@@ -1390,24 +1277,18 @@ btrfs filesystem show
 : 1664307364:0;chsh -l
 : 1664307364:0;chsh -s /bin/zsh
 : 1664307364:0;sudo su
-: 1664307364:0;echo $SHELL
 : 1664307364:0;ping dns1.nextdns.io
 : 1664307364:0;ping dns.nextdns.io
-: 1664307364:0;intel_gpu_top
 : 1664307364:0;_prompt -l
-: 1664307364:0;sudo intel_gpu_top
 : 1664307364:0;pa
 : 1664307364:0;webapp-nav
-: 1664307364:0;sudo systemctl restart dnscrypt-proxy
 : 1664307364:0;sudo paccache -ruk0
 : 1664307364:0;wget -O .zshrc https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 : 1664307364:0;chsh -s /bin/bash
 : 1664307364:0;cd .
-: 1664307364:0;cd ..
 : 1664307364:0;git push --delete origin 1.0.7
 : 1664307364:0;chsh -s /usr/bin/zsh
 : 1664307364:0;sudo-i
-: 1664307364:0;cd Downloads
 : 1664307364:0;wget -O .zshrc.local  https://git.grml.org/f/grml-etc-core/etc/skel/.zshrc
 : 1664307364:0;cat
 : 1664307364:0;nl ~/.zhistory | sort -k 2 -k 1,1nr| uniq -f 1 | sort -n | cut -f 2 > unduped_history
@@ -1425,16 +1306,11 @@ btrfs filesystem show
 : 1664307364:0;doas -C /etc/doas.conf && echo "config ok" || echo "config error"
 : 1664307364:0;getent group wheel
 : 1664307364:0;doas pacman -Rs $(pacman -Qqdt)
-: 1664307364:0;sudo dbus-launch systemsettings
-: 1664307364:0;git status
 : 1664307364:0;which vim
-: 1664307364:0;which zsh
 : 1664307364:0;which sudo
-: 1664307364:0;ls -l
 : 1664307364:0;trt
 : 1664307364:0;netctl
 : 1664307364:0;df
-: 1664307364:0;du
 : 1664307364:0;vim
 : 1664307364:0;pacman -R pkgfile
 : 1664307364:0;sudo pacman -R pkgfile
@@ -1448,21 +1324,14 @@ btrfs filesystem show
 : 1664307364:0;fig
 : 1664307364:0;zle
 : 1664307364:0;zle -help
-: 1664307364:0;sudo pacman -Rs $(pacman -Qqdt)
-: 1664307364:0;logs
-: 1664307364:0;openports
 : 1664307364:0;sudo ipview
-: 1664307364:0;ipview
 : 1664307364:0;folders
 : 1664307364:0;mountedinfo
-: 1664307364:0;vi
 : 1664307364:0;gvim
 : 1664307364:0;rnano
 : 1664307364:0;source /etc/profile
 : 1664307364:0;rnano --view
 : 1664307364:0;sudo EDITOR=rnano visudo
-: 1664307364:0;sudo visudo
-: 1664307364:0;visudo
 : 1664307364:0;type help
 : 1664307364:0;type
 : 1664307364:0;type -t
@@ -1498,12 +1367,10 @@ btrfs filesystem show
 : 1664307364:0;cd -a
 : 1664307364:0;ls /usr/share
 : 1664307364:0;cd GIT
-: 1664307364:0;cd /boot
 : 1664307364:0;paccheck
 : 1664307364:0;cd /home/bkmo/Desktop
 : 1664307364:0;pacc
 : 1664307364:0;checkcommand lf
-: 1664307364:0;\ls
 : 1664307364:0;da
 : 1664307364:0;\vi
 : 1664307364:0;p
@@ -1526,14 +1393,12 @@ btrfs filesystem show
 : 1664307364:0;yaconf
 : 1664307364:0;..
 : 1664307364:0;...
-: 1664307364:0;kwrite -h
 : 1664307364:0;kwrite enabled-services.txt
 : 1664307364:0;paccache
 : 1664307364:0;paclean
 : 1664307364:0;sudo systemctl edit paccache.service
 : 1664307364:0;sudo systemctl start paccache.service
 : 1664307364:0;sudo systemctl status paccache.service
-: 1664307364:0;pacman -Rs $(pacman -Qqdt)
 : 1664307364:0;pkgfile --update
 : 1664307364:0;sudo pkgfile --update
 : 1664307364:0;sudo lsof -i :53
@@ -1543,26 +1408,18 @@ btrfs filesystem show
 : 1664307364:0;systemctl disable pkgfile-update.timer
 : 1664307364:0;systemctl enable pacman-filesdb-refresh.timer
 : 1664307364:0;systemctl status pacman-filesdb-refresh.timer
-: 1664307364:0;pacman -Qqm
 : 1664307364:0;findpkg
-: 1664304173:0;pacnew
 : 1664304304:0;paccache -Ruk0
-: 1664304812:0;pacman
 : 1664304824:0;sudo pacman
-: 1664307213:0;su
 : 1664307324:0;tmux
 : 1664308161:0;for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
-: 1664309349:0;pacnewroot
 : 1664309676:0;sudo -Es
 : 1664309710:0;xit
-: 1664313732:0;duf
-: 1664313745:0;ps
 : 1664317357:0;l
 : 1664319892:0;sp
 : 1664320935:0;sp web search zsh plugin
 : 1664321639:0;nohup
 : 1664321653:0;nohup --help
-: 1664322129:0;gitu
 : 1664326138:0;zcompile
 : 1664326234:0;zcompile web-search.zsh
 : 1664326821:0;strace zsh
@@ -1574,7 +1431,6 @@ btrfs filesystem show
 : 1664333212:0;p10k configure
 : 1664333629:0;/srv/ftp/
 : 1664333670:0;tgz
-: 1664333690:0;zsh
 : 1664345673:0;paccache -ruk0
 : 1664345732:0;paccache -rk2
 : 1664347999:0;cd -5 ls
@@ -1592,11 +1448,9 @@ btrfs filesystem show
 : 1664353727:0;zcompile init.zsh
 : 1664353864:0;zcompile archlinux.plugin.zsh
 : 1664353936:0;gpd
-: 1664382900:0;pacup
 : 1664383009:0;acs git
 : 1664383357:0;acs root
 : 1664383411:0;root
-: 1664383415:0;exit
 : 1664383569:0;acs pacman
 : 1664383619:0;acs pacnew
 : 1664383646:0;acs pac
@@ -1628,11 +1482,8 @@ btrfs filesystem show
 : 1664399043:0;config commit -m "Add .config/4kdownload dotfiles"
 : 1664399545:0;config push -ucd
 : 1664399564:0;cd .dotfiles
-: 1664399581:0;cd
 : 1664407365:0;sudo yay -
 : 1664407401:0;acs
-: 1664407535:0;yay -Scc
-: 1664407644:0;yay -Yc
 : 1664408664:0;sp zsh4humans
 : 1664409783:0;curl -fsSLo ~/.zshrc https://raw.githubusercontent.com/romkatv/zsh4humans/2361c7c63309108e35cfbea1acf2cf8e3a3af6a8/.zshrc.mac
 : 1664409966:0;sudo killall tmux
@@ -1663,62 +1514,35 @@ btrfs filesystem show
 : 1664491388:0;config add .config/zsh
 : 1664491492:0;config add .config/4kdownload.com
 : 1664491498:0;config add ~/.zshenv
-: 1664491557:0;config config --local status.showUntrackedFiles no
 : 1664491564:0;config commit -a -m "test of repo"
 : 1664491643:0;config remote add origin https://github.com/bkmo/.zsh-dotfiles
 : 1664491812:0;config push --set-upstream origin main
-: 1664492154:0;cdgit
 : 1664492165:0;git remote add origin https://github.com/bkmo/webapp_manager.git
 : 1664492558:0;git remote add origin https://github.com/bkmo/webapp-manager-bkmo.git
-: 1664492577:0;git push origin
 : 1664492612:0;git fetch
 : 1664492697:0;git commit -a -m "cleanup extensions and navbar copies"
-: 1664492701:0;git pull
-: 1664492744:0;git push
 : 1664492989:0;config push --delete main
 : 1664493005:0;config push origin --delete main
 : 1664494157:0;config commit -a -m "manjaro backup"
-: 1664494173:0;config push -u
 : 1664494805:0;grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch-Grub
 : 1664494836:0;grub-update
-: 1664495235:0;aurup
 : 1664495513:0;btrfs subvolume list
-: 1664495551:0;btrfs subvolume list /
-: 1664495557:0;sudo btrfs subvolume list /
 : 1664495585:0;cls
 : 1664495658:0;yay --aur -Sc
-: 1664495697:0;yay -Sc
 : 1664496142:0;pacman -Sc
 : 1664496145:0;sudo pacman -Sc
-: 1664496277:0;yay -Sc --noconfirm
 : 1664496866:0;yay -S insync-dolphin
-: 1664497316:0;mirrors
 : 1664497496:0;cacheclean
-: 1664497508:0;pacclean
-: 1664497519:0;paccache -rk1
-: 1664497534:0;orphls
-: 1664497542:0;orphrm
-: 1664497690:0;efibootmgr -v
 : 1664497864:0;sudo efibootmgr --create --disk /dev/nvme0n1 --part 2 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot" --verbose
 : 1664499634:0;chmod 750 grubx64.efi
 : 1664499797:0;chown bkmo grub64x.efi
 : 1664499803:0;sudo chown bkmo grub64x.efi
-: 1664499821:0;ls
 : 1664499834:0;sudo chown bkmo grubx64.efi
 : 1664499868:0;sudo chmod 750 grubx64.efi
 : 1664878373:0;config pull
-: 1664906302:0;dfcp
-: 1664906336:0;config push --set-upstream origin master
 : 1664906461:0;cp ~/.config/zsh/.zsh_history-saved ~/.config/zsh/.zsh_history\
 
-: 1666319515:0;clear
-: 1666319533:0;yay -S pamac-aur
-: 1666319700:0;pacman -Syu
-: 1666319710:0;sudo pacman -Syu
 : 1666319747:0;yay -Syu
-: 1666319752:0;doas
-: 1666321117:0;arkenfox-updater
-: 1666321143:0;arkenfox-cleaner
 : 1666322423:0;pacman -Rf kde-network-meta
 : 1666322428:0;pacman -R kde-network-meta
 : 1666322431:0;sudo pacman -R kde-network-meta
@@ -1729,12 +1553,9 @@ btrfs filesystem show
 : 1666323462:0;sudo chmod u+s "$(which fusermount)"
 : 1666323500:0;which fusermount
 : 1666323638:0;sudo pacman -S fuse2
-: 1666323647:0;./tutanota-desktop-linux.AppImage
 : 1666323964:0;git clone https://github.com/bkmo/.dotfiles.git
 : 1666324812:0;sudo cp rootactions-servicemenu.pl /usr/local/bin
 : 1666325230:0;install.sh
-: 1666325238:0;./install.sh
-: 1666326226:0;kdebug
 : 1666328614:0;reflector
 : 1666328648:0;systemctl start reflector service
 : 1666328664:0;systemctl enable reflector service
@@ -1744,19 +1565,11 @@ btrfs filesystem show
 : 1666328873:0;reflector --list-countries
 : 1666328901:0;systemctl start reflector
 : 1666329242:0;systemctl enable --now bluetooth
-: 1666331068:0;kbuildsycoca5
 : 1666331344:0;webapp-manager
 : 1666331988:0;systemctl enable --now dnscrypt-proxy
-: 1666332115:0;systemctl restart NetworkManager
 : 1666333114:0;sudo efibootmgr -b 0001 -B
-: 1666333148:0;sudo efibootmgr -b 0003 -B
-: 1666333191:0;sudo efibootmgr -b 0002 -B
-: 1666333202:0;sudo efibootmgr -b 0004 -B
 : 1666333439:0;refind-install
 : 1666334151:0;gpg --recv-keys D6E95F20305701A1
-: 1666334715:0;systemctl enable --now timeshift-boot.timer
-: 1666334731:0;systemctl enable --now timeshift-hourly.timer
-: 1666334871:0;systemctl status cronie
 : 1666335115:0;systemctl enable --now refind-btrfs
 : 1666335122:0;systemctl status refind-btrfs
 : 1666335845:0;systemctl restart refind-btrfs
@@ -1764,10 +1577,7 @@ btrfs filesystem show
 : 1666337806:0;blkid /dev/nvme0n1p2 | cut -d " " -f2 | cut -d '=' -f2 | sed 's/\"//g')=crypt
 : 1666337856:0;blkid /dev/nvme0n1p2 | cut -d " " -f2 | cut -d '=' -f2 | sed 's/\"//g')=crypt root=/dev/mapper/crypt rootflags=subvol=@ resume=/dev/mapper/crypt resume_offset=$( echo "$(btrfs_map_physical /.swapvol/swapfile | head -n2 | tail -n1 | awk '{print $6}') / $(getconf PAGESIZE) " | bc) rw quiet nmi_watchdog=0 add_efi_memmap initrd=/amd-ucode.img
 : 1666338351:0;sudo refind-btrfs
-: 1666338663:0;sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch-Grub
-: 1666339144:0;systemctl daemon-reload
 : 1666339167:0;systemctl start /dev/zram0
-: 1666339184:0;swapon
 : 1666340292:0;dd bs=512 count=4 if=/dev/urandom of=/crypto_keyfile.bin
 : 1666340300:0;sudo dd bs=512 count=4 if=/dev/urandom of=/crypto_keyfile.bin
 : 1666340355:0;sudo cryptsetup luksAddKey /dev/mapper/luksdev /crypto_keyfile.bin
@@ -1781,22 +1591,11 @@ btrfs filesystem show
 : 1666343465:0;sudo cryptsetup -v luksKillSlot /dev/nvme0n1p2 2
 : 1666343574:0;sudo cryptsetup luksAddKey --pbkdf pbkdf2 /dev/nvme0n1p2 /crypto_keyfile.bin
 : 1666344228:0;sudo cryptsetup -v luksKillSlot /dev/nvme0n1p2 1
-: 1666344333:0;sudo cryptsetup luksDump /dev/nvme0n1p2
-: 1666345080:0;blkid
-: 1666345129:0;mkinitcpio -P
-: 1666345782:0;sudo update-grub
 : 1666346598:0;systemctl enable now duckdns.timer
-: 1666346611:0;systemctl enable --now duckdns.timer
 : 1666350868:0;btrfs filesystem show mount-point
 : 1666350891:0;btrfs filesystem show /
 : 1666350950:0;btrfs filesystem show /dev/mapper/luksdev
 : 1666350973:0;btrfs filesystem show /dev/nvme0n1p2
-: 1666350993:0;sudo btrfs filesystem show /dev/nvme0n1p2
-: 1666351007:0;sudo btrfs filesystem show /dev/mapper/luksdev
-: 1666353378:0;sudo grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch-Grub
-: 1666353402:0;sudo mkinitcpio -P
-: 1666353477:0;sudo efibootmgr -b 0000 -B
-: 1666353482:0;efibootmgr
 : 1666354095:0;sudo reboot now
 : 1666354509:0;sudo btrfs filesystem show /dev/mapper/luksdev
 : 1666354589:0;sudo btrfs filesystem defrag -czstd /dev/mapper/luksdev
@@ -1809,77 +1608,32 @@ btrfs filesystem show
 : 1666355295:0;sudo btrfs filesystem defrag -r -czstd /var/cache/pacman/pkg
 : 1666355448:0;btrfs balance /
 : 1666355456:0;sudo btrfs balance /
-: 1666357483:0;sudo systemctl edit --full grub-btrfsd
-: 1666358197:0;systemctl enable --now timeshift-snapshots-update-grub
-: 1666358218:0;systemctl status timeshift-snapshots-update-grub
-: 1666358387:0;cleaning-automation
-: 1666358415:0;du
-: 1666362174:0;orphrm
-: 1666364120:0;kbuildsycoca5
-: 1666365647:0;auto-cpufreq --stats
 : 1666365663:0;auto-cpufreq --install
 : 1666365671:0;sudo auto-cpufreq --install
 : 1666365774:0;systemctl start auto-cpufreq
-: 1666365789:0;auto-cpufreq --stats
-: 1666365805:0;systemctl enable auto-cpufreq
-: 1666365811:0;auto-cpufreq --stats
-: 1666367982:0;useradd guest -s /bin/nologin
-: 1666367985:0;sudo useradd guest -s /bin/nologin
-: 1666368687:0;systemctl status smb
-: 1666368977:0;systemctl enable --now smb
-: 1666368985:0;systemctl status smb
-: 1666369023:0;systemctl enable --now nmb
-: 1666369138:0;sudo gpasswd sambashare -a bkmo
-: 1666369176:0;sudo groupadd -r sambashare
-: 1666369180:0;sudo gpasswd sambashare -a bkmo
-: 1666369204:0;systemctl restart smb
-: 1666369212:0;systemctl restart nmb
-: 1666369270:0;sudo mkdir /var/lib/samba/usershares
-: 1666369292:0;sudo chown root:sambashare /var/lib/samba/usershares
-: 1666369307:0;chmod 1770 /var/lib/samba/usershares
-: 1666369315:0;sudo chmod 1770 /var/lib/samba/usershares
-: 1666369392:0;systemctl restart smb
-: 1666369403:0;systemctl restart nmb
 : 1666371881:0;balooctl stop
-: 1666371909:0;balooctl disable && balooctl purge
 : 1666373512:0;downgrade fprintd
-: 1666373518:0;sudo downgrade fprintd
 : 1666373794:0;systemctl enable auto-cpufreq
-: 1666374233:0;pacman -Q fprintd
 : 1666374251:0;sudo downgrade fprintd
 : 1666374743:0;git add fprintd-1.90.1-1-x86_64.pkg.tar.zst
-: 1666374771:0;git commit -a -m "fprintd 190"
 : 1666374811:0;git config --global user.name
 : 1666374829:0;git config --global user.name "bkmo"
 : 1666375025:0;git config --global user.email "777373+bkmo@users.noreply.github.com"
 : 1666375030:0;git commit -a -m "fprintd 190"
-: 1666375091:0;git push
 : 1666375179:0;git config --global credential.helper store
-: 1666375183:0;git push
-: 1666375209:0;sudo visudo
 : 1666375227:0;vi
-: 1666375290:0;visudo
 : 1666375302:0;which vi
 : 1666375412:0;export EDITOR=vim
 : 1666375416:0;visudo
 : 1666375444:0;sudo EDITOR=vim visudo
-: 1666375685:0;sudo usermod -aG wheel bkmo
 : 1666375719:0;pacman -Q fprintd
 : 1666375774:0;sudo btrfs filesystem show /dev/nvme0n1p2
-: 1666375808:0;groups bkmo
 : 1666375848:0;sudo echo hello
-: 1666375912:0;config status
 : 1666376027:0;git clone https://github.com/bkmo/.zsh-dotfiles.git
-: 1666376205:0;config checkout -f
 : 1666376259:0;git clone --bare -b master https://github.com/bkmo/.zsh-dotfiles.git $HOME/.zsh-dotfiles
 : 1666376335:0;config checkout -f
-: 1666376354:0;config config --local status.showUntrackedFiles no
 : 1666376362:0;config checkout -f\\
 
-: 1666376370:0;config status
-: 1666376845:0;orphls
-: 1666377587:0;orphrm
-: 1666377610:0;pacclean
 : 1666378121:0;expac -l '\n' -S '%D' kde-network-meta | while read -r submeta; do\
     expac -l '\n' -S '%D' "$submeta"\
 done | sort -u
@@ -1888,116 +1642,55 @@ done | sort -u
 done | sort -u > pkgs.txt
 : 1666378786:0;pacman -D --asexplicit < pkgs.txt
 : 1666378791:0;sudo pacman -D --asexplicit < pkgs.txt
-: 1666378827:0;sudo pacman -D --asexplicit - < pkgs.txt
-: 1666378877:0;orphls
 : 1666378905:0;sudo pacman -Rns kde-networks-meta
 : 1666378930:0;sudo pacman -Rns kde-network-meta
 : 1666379491:0;expac -l '\n' -S '%D' kde-utilities-meta | while read -r submeta; do\
     expac -l '\n' -S '%D' "$submeta"\
 done | sort -u > pkgs.txt
-: 1666379526:0;sudo pacman -D --asexplicit - < pkgs.txt
 : 1666379558:0;sudo pacman -Rns kde-utilities-meta
 : 1666380139:0;expac -l '\n' -S '%D' kde-graphics-meta | while read -r submeta; do\
     expac -l '\n' -S '%D' "$submeta"\
 done | sort -u > pkgs.txt
 : 1666380155:0;sudo pacman -D --asexplicit - < pkgs.txt
 : 1666380194:0;sudo pacman -Rns kde-graphics-meta
-: 1666380529:0;orphls
-: 1666380536:0;pacclean
-: 1666381179:0;phononsettings
-: 1666381221:0;/usr/lib/vlc/vlc-cache-gen /usr/lib/vlc/plugins
-: 1666381663:0;systemctl status cronie
-: 1666383068:0;efibootmgr -v
-: 1666385241:0;intel_gpu_top
-: 1666385244:0;sudo intel_gpu_top
 : 1666394454:0;./tutanota-desktop-linux.AppImage GDK_DPI_SCALE=0.5
 : 1666394474:0;./tutanota-desktop-linux.AppImage GDK_DPI_SCALE=1.5
 : 1666394795:0;./tutanota-desktop-linux.AppImage  --force-device-scale-factor=2
 : 1666394814:0;./tutanota-desktop-linux.AppImage  --force-device-scale-factor=1.5
 : 1666394856:0;./tutanota-desktop-linux.AppImage  --force-device-scale-factor=1.15
 : 1666394882:0;./tutanota-desktop-linux.AppImage  --force-device-scale-factor=1.25
-: 1666395851:0;orphls
-: 1666395866:0;cleaning-automation
-: 1666395951:0;systemctl status cronie
 : 1666452802:0;fstrim
 : 1666452903:0;fstrim -A
 : 1666452935:0;fstrim -A --fstab
-: 1666460999:0;mkinitcpio -P
-: 1666461008:0;sudo mkinitcpio -P
-: 1666461927:0;mkinitcpio -P
-: 1666461929:0;sudo mkinitcpio -P
 : 1666463106:0;userdel guest
-: 1666463112:0;sudo userdel guest
-: 1666463335:0;systemctl status sddm
 : 1666465046:0;sudo btrfs balance start -dusage=66 /
 : 1666465058:0;sudo btrfs balance start -dusage=66 /home
-: 1666465177:0;htop
 : 1666465248:0;powertop
 : 1666465276:0;sudo powertop
 : 1666473723:0;genfstab -U -p /  >> ~/fstab
 : 1666475512:0;cat /sys/block/sda/queue/scheduler
-: 1666475530:0;cat /sys/block/nvme0n1/queue/scheduler
-: 1666475712:0;swapon
-: 1666476131:0;cat /proc/sys/kernel/watchdog
 : 1666476181:0;wdctl
-: 1666476296:0;cat /proc/sys/kernel/nmi_watchdog
-: 1666476317:0;cat /proc/sys/kernel/watchdog
-: 1666476706:0;cat /proc/sys/kernel/nmi_watchdog
 : 1666477152:0;sysctl -a | grep watchdog:
 : 1666477158:0;sudo sysctl -a | grep watchdog:
 : 1666477168:0;sudo sysctl -a | grep watchdog
-: 1666477488:0;cat /proc/sys/kernel/nmi_watchdog
-: 1666477497:0;cat /proc/sys/kernel/watchdog
-: 1666490029:0;journalctl --vacuum-size=100M
-: 1666490050:0;journalctl --vacuum-time=2weeks
-: 1666490068:0;sudo journalctl --vacuum-size=100M
-: 1666490095:0;sudo journalctl --vacuum-time=2weeks
 : 1666490298:0;pacman -Rnsc discover oxygen plasma-vault
 : 1666490302:0;sudo pacman -Rnsc discover oxygen plasma-vault
 : 1666491903:0;sudo pacman-optimize
-: 1666491975:0;sudo journalctl -p 3 -xb
-: 1666494984:0;pacup
-: 1666495082:0;aurup
 : 1666495191:0;whois 186.15.239.82
-: 1666496606:0;systemctl restart smb
-: 1666496615:0;sudo journalctl -p 3 -xb
 : 1666496750:0;testparm
-: 1666499070:0;clear
-: 1666501942:0;sudo update-grub
-: 1666502794:0;pacnew
 : 1666503221:0;ps -a
-: 1666503232:0;ps -A | grep cronie
-: 1666503254:0;ps -A
-: 1666503435:0;systemctl status cronie
 : 1666503511:0;ps -A | grep cronie
-: 1666503618:0;htop
 : 1666503834:0;systemctl disable cronie
-: 1666503846:0;systemctl mask cronie
-: 1666503874:0;systemctl status avahi
-: 1666503911:0;systemctl status avahi-daemon
-: 1666503938:0;systemctl status avahi-daemon.socket
-: 1666504648:0;bootctl
-: 1666505256:0;cat /proc/cmdline
-: 1666505371:0;systemctl status systemd-boot-update.service
-: 1666505385:0;systemctl enable --now systemd-boot-update.service
 : 1666505990:0;sudo cryptsetup luksConvertKey --key-slot 0  --pbkdf argon2 /dev/nvme0n1p2
 : 1666506002:0;sudo cryptsetup luksConvertKey --key-slot 0  --pbkdf argon2i /dev/nvme0n1p2
 : 1666506041:0;cryptsetup -v luksDump /dev/mapper/luksdev
-: 1666506051:0;sudo cryptsetup luksDump /dev/nvme0n1p2
 : 1666506381:0;sdboot-manage
 : 1666506385:0;sudo sdboot-manage
 : 1666506402:0;sudo sdboot-manage gen
 : 1666506452:0;sudo sdboot-manage gen -e /boot
 : 1666506470:0;sudo sdboot-manage gen -e=/boot
-: 1666508125:0;cat /proc/cmdline
 : 1666508769:0;systemctl disable --now systemd-boot-update.service
-: 1666547977:0;bootctl
-: 1666549241:0;pacup
-: 1666549267:0;bootctl
-: 1666549996:0;systemctl --user status plasma-plasmashell.service
-: 1666550073:0;kwriteconfig5 --file startkderc --group General --key systemdBoot true
 : 1666550143:0;kwriteconfig5 --file startkderc --group General --key systemdBoot false
-: 1666550205:0;systemctl --user status plasma-plasmashell.service
 : 1666550211:0;kwriteconfig5 --file startkderc --group General --key systemdBoot true
 : 1666550288:0;systemctl --user status plasma-plasmashell.service
 : 1666553557:0;pacman -S --needed plasma
@@ -2005,53 +1698,1989 @@ done | sort -u > pkgs.txt
 : 1666553614:0;sudo pacman -S --needed plasma-desktop
 : 1666553822:0;sudo pacman -S --needed plasma-meta
 : 1666554293:0;sudo pacman -S --needed kde-applications
-: 1666554619:0;phononsettings
 : 1666556136:0;sudo pacman -S --needed xorg
 : 1666556337:0;sudo pacman -S sddm
 : 1666557128:0;sudo vim /etc/X11/xorg.conf.d/20-touchpad.conf
 : 1666557208:0;sudo touch /etc/X11/xorg.conf.d/20-touchpad.conf
 : 1666560870:0;yay -S plymouth-git
-: 1666561078:0;mkinitcpio -P
-: 1666561081:0;sudo mkinitcpio -P
 : 1666561256:0;sudo pamac -S linux-lts
 : 1666561271:0;sudo pacman -S linux-lts
-: 1666561297:0;sudo mkinitcpio -P
-: 1666561456:0;plymouth-set-default-theme -l
 : 1666561465:0;plymouth-set-default-theme bgrt
 : 1666561472:0;sudo plymouth-set-default-theme bgrt
-: 1666561858:0;systemctl status sddm-plymouth.service
-: 1666561890:0;systemctl disable sddm.service
-: 1666561910:0;systemctl enable sddm-plymouth.service
 : 1666562062:0;sudo plymouth-set-default-theme spinner
-: 1666562144:0;plymouth-set-default-theme -l
-: 1666562254:0;sudo plymouth-set-default-theme script
-: 1666562785:0;sudo plymouth-set-default-theme spinfinity
-: 1666562841:0;sudo mkinitcpio -P
-: 1666562950:0;sudo plymouth-set-default-theme script
-: 1666562993:0;sudo mkinitcpio -P
-: 1666566776:0;pacup
-: 1666566807:0;cleaning-automation
-: 1666566817:0;orphls
-: 1666566830:0;orphrm
-: 1666566836:0;clear
-: 1666567035:0;systemctl status iwd
 : 1666567048:0;systemctl status wpa-supplicant
-: 1666567069:0;systemctl status wpa_supplicant
-: 1666567190:0;systemctl restart NetworkManager
 : 1666567218:0;systemctl enable now iwd
-: 1666567227:0;systemctl restart NetworkManager
-: 1666567692:0;systemctl status wpa_supplicant
-: 1666567697:0;systemctl status iwd
 : 1666571434:0;bootctl -h
 : 1666571932:0;efivar --list
 : 1666575380:0;efibootmgr --create --disk /dev/sdd1 --part 1 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot" --unicode
 : 1666575387:0;sudo efibootmgr --create --disk /dev/sdd1 --part 1 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot" --unicode
-: 1666575463:0;blkid
-: 1666575482:0;sudo efibootmgr --create --disk /dev/nvme0n1p1 --part 1 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot" --unicode
 : 1666584028:0;systemctl reload  dnscrypt-proxy
-: 1666584045:0;systemctl restart dnscrypt-proxy
 : 1666584061:0;systemctl restart NetworkManager
 : 1666584304:0;git add /etc
-: 1666584315:0;git add etc/
 : 1666584348:0;git commit -a -m "add etc new install"
-: 1666584429:0;git push
+: 1666628397:0;yay -S pamac-aur
+: 1666628530:0;yay -S btrfs-assistant
+: 1666632986:0;pacman -S dnscrypt-proxy
+: 1666632990:0;sudo pacman -S dnscrypt-proxy
+: 1666633176:0;sudo systemctl enable --now dnscrypt-proxy
+: 1666633937:0;btrfs fi defrag
+: 1666633945:0;btrfs fi defrag /
+: 1666633951:0;sudo btrfs fi defrag /
+: 1666634004:0;sudo btrfs filesystem defrag -r /
+: 1666634026:0;sudo btrfs filesystem defrag -r /home
+: 1666634056:0;sudo btrfs filesystem defrag -r /var/cache/pacman/package
+: 1666634064:0;sudo btrfs filesystem defrag -r /var/cache/pacman/pkg
+: 1666634150:0;sudo btrfs filesystem defrag -rvf /
+: 1666634187:0;sudo btrfs filesystem defrag -rvf /home
+: 1666635467:0;masterpdfeditor4
+: 1666635477:0;./masterpdfeditor4
+: 1666635527:0;./tutanota-desktop-linux.AppImage
+: 1666636985:0;systemctl enable --now cups.socket
+: 1666638357:0;./install.sh
+: 1666638405:0;sudo cp src/kim_*.desktop /usr/share/kservices5/ServiceMenus/\
+
+: 1666638533:0;sudo cp src/bin/kim_* /usr/bin/\
+
+: 1666638538:0;sudo chmod a+rx /usr/bin/kim_*\
+
+: 1666638552:0;sudo chmod a+r /usr/share/kservices5/ServiceMenus/kim_*.desktop\
+
+: 1666638569:0;sudo mkdir /usr/share/kim\
+
+: 1666638585:0;sudo cp COPYING /usr/share/kim/kim_about.txt\
+
+: 1666638599:0;sudo mkdir /usr/share/kim/slideshow/\
+
+: 1666638623:0;sudo cp src/slideshow/* /usr/share/kim/slideshow/\
+
+: 1666638639:0;sudo mkdir /usr/share/kim/gallery\
+
+: 1666638653:0;sudo cp src/gallery/* /usr/share/kim/gallery \
+
+: 1666638725:0;sudo visudo
+: 1666638895:0;sudo usermod -aG wheel bkmo
+: 1666639177:0;sudo btrfs filesystem defrag -r /var/log
+: 1666640313:0;pacman -S skanlite
+: 1666640315:0;sudo pacman -S skanlite
+: 1666640346:0;sudo pacman -S vi
+: 1666640373:0;sudo pacman -S --needed ark
+: 1666642221:0;systemctl enable --now timeshift-hourly.timer
+: 1666642238:0;systemctl enable --now timeshift-boot.timer
+: 1666642411:0;systemctl enable --now duckdns.timer
+: 1666642435:0;systemctl enable --now auto-cpufreq
+: 1666642529:0;sudo systemctl reboot
+: 1666643139:0;sudo efibootmgr -b 0005 -B
+: 1666643195:0;sudo bootctl install
+: 1666643807:0;sudo pacman -S --needed skanpage
+: 1666649562:0;journalctl --vacuum-time=2weeks
+: 1666649793:0;export MOZ_ENABLE_WAYLAND=1\
+export LIBVA_DRIVER_NAME=iHD
+: 1666650337:0;sudo systemctl restart NetworkManager
+: 1666650397:0;ping 8.8.8.8
+: 1666650700:0;ping nextdns.io
+: 1666651172:0;systemctl kill --kill-who=main --signal=SIGUSR2 systemd-journald.service
+: 1666651297:0;journalctl --vacuum-size=200M
+: 1666651320:0;journalctl --vacuum-size=100M
+: 1666651358:0;systemctl status systemd-journald.service
+: 1666651821:0;cat /proc/sys/kernel/watchdog
+: 1666651832:0;cat /proc/sys/kernel/nmi_watchdog
+: 1666652370:0;systemctl enable --now zram
+: 1666654897:0;curl -sL https://raw.githubusercontent.com/bkmo/.zsh-dotfiles/master/.zsh-dotfiles/clone | bash
+: 1666654938:0;config status
+: 1666655169:0;config config --global user.email "777373+bkmo@users.noreply.github.com"
+: 1666655199:0;config config --global user.name "BkMo"\
+
+: 1666655322:0;git config credential.helper store
+: 1666655333:0;config config credential.helper store
+: 1666655396:0;config config --local status.showUntrackedFiles no
+: 1666655414:0;config push --set-upstream origin master
+: 1666661802:0;sudo systemctl enable --now bluetooth.service
+: 1666662601:0;balooctl disable && balooctl purge
+: 1666663232:0;pacman -Sy reflector
+: 1666663235:0;sudo pacman -Sy reflector
+: 1666663299:0;systemctl enable --now reflector.timer
+: 1666675303:0;systemctl enable --now smb
+: 1666675315:0;systemctl enable --now nmb
+: 1666675728:0;samba
+: 1666675947:0;useradd guest -s /bin/nologin
+: 1666675951:0;sudo useradd guest -s /bin/nologin
+: 1666676005:0;groupadd -r sambashare
+: 1666676084:0;gpasswd sambashare -a bkmo
+: 1666676627:0;sudo userdel guest
+: 1666715411:0;/usr/bin/systemctl restart systemd-boot-update.service
+: 1666716168:0;sudo efibootmgr -b 0000 -B
+: 1666716486:0;systemctl enable --now timeshift-snapshots-update-grub
+: 1666716624:0;pacman -Q gnome-firmware
+: 1666716668:0;sudo pacman -Sy firmware
+: 1666716729:0;sudo pacman -Sy gnome-firmware-updater
+: 1666716761:0;sudo pacman -Sy gnome-firmware
+: 1666717675:0;sudo pacman -Rns plasma-vault
+: 1666717695:0;sudo pacman -Rdd plasma-vault
+: 1666719082:0;sudo dbus-launch systemsettings
+: 1666731607:0;systemctl sttus iwd
+: 1666736738:0;sudo pacman -S kcalc
+: 1666738411:0;sudo pacman -Sy
+: 1666738451:0;sudo pacman -S epiphany
+: 1666738629:0;comm -12 <(pacman -Qq | sort) <(pacman -Sql testing | sort)
+: 1666741723:0;downgrade grc
+: 1666741766:0;sudo downgrade grc
+: 1666741830:0;sudo pacman -Syuu
+: 1666804938:0;sudo cryptsetup luksHeaderBackup /dev/nvme0n1p2 \\
+--header-backup-file luks_header_backup
+: 1666824000:0;sudo cryptsetup luksHeaderBackup /dev/nvme0n1p2 \\
+--header-backup-file luks_header_backup.bin
+: 1666824860:0;uname
+: 1666879606:0;btrfs subvolume delete .snapshots
+: 1666879638:0;btrfs subvolume delete @.snapshots
+: 1666879929:0;btrfs subvolume delete -i 260 /
+: 1666879934:0;sudo btrfs subvolume delete -i 260 /
+: 1666915207:0;comm -12 <(pacman -Qq | sort) <(pacman -Sql gnome-unstable | sort)
+: 1666916362:0;ls -l /dev/disk/by-uuid/
+: 1666916427:0;ls -l /dev/disk/by-partuuid/
+: 1666916549:0;sudo cat /etc/crypttab
+: 1667335508:0;epiphany
+: 1667363085:0;sudo downgrade epiphany
+: 1667432998:0;pacman -Syy
+: 1667506054:0;systemctl disable sddm.service
+: 1667506092:0;systemctl enable sddm-plymouth.service
+: 1667506121:0;systemctl disable --now sddm.service
+: 1667506142:0;systemctl enable --now sddm-plymouth.service
+: 1667839373:0;rebuild-detector
+: 1667839739:0;pacman -Sy meson gtk-doc lsusb
+: 1667840260:0;libpcre
+: 1667840271:0;pcre
+: 1667842352:0;insync start --no-daemon
+: 1667843257:0;pacman -Rnsc plasma-thunderbolt plasma-vault
+: 1667843260:0;sudo pacman -Rnsc plasma-thunderbolt plasma-vault
+: 1667843268:0;sudo pacman -Rnsc plasma-thunderbolt
+: 1667843290:0;sudo pacman -R plasma-thunderbolt
+: 1667843304:0;sudo pacman -Rn plasma-thunderbolt
+: 1667945511:0;sudo pacman -Syy
+: 1668117050:0;yaycache
+: 1668118381:0;bootctl update
+: 1668125871:0;bootctl
+: 1668126665:0;drm_info
+: 1668369945:0;git add etc/
+: 1668369950:0;git commit -a -m "new etc"
+: 1668370187:0;git add fingerprint/arch/libfprint-vfs009x-bkmo-1:1.90.1.bkmo-2-x86_64.pkg.tar.zst\
+
+: 1668370192:0;git commit -a -m "fingerprint"
+: 1668370260:0;git commit -a -m "arkenstuff"
+: 1668391947:0;dfcu
+: 1668438840:0;systemctl start duckdns
+: 1668547091:0;sudo plymouth-set-default-theme fade-in
+: 1668547155:0;sudo plymouth-set-default-theme spinfinity
+: 1668547610:0;sudo mkinitcpio -L
+: 1668548229:0;lsusb
+: 1668548658:0;lspci
+: 1668614146:0;yay -v
+: 1668614154:0;yay -h
+: 1668614175:0;yay -V
+: 1668627056:0;git ls-files --others
+: 1668793828:0;strings /proc/cmdline
+: 1668814949:0;plymouth-set-default-theme -l
+: 1668815266:0;sudo plymouth-set-default-theme dark-arch
+: 1668815760:0;sudo plymouth-set-default-theme script
+: 1668876474:0;pamac update --force-refresh
+: 1668876542:0;pacman -Syu phonon-qt5-vlc
+: 1668876546:0;sudo pacman -Syu phonon-qt5-vlc
+: 1668876628:0;phononsettings
+: 1668877078:0;/usr/lib/vlc/vlc-cache-gen /usr/lib/vlc/plugins
+: 1668877278:0;sudo pacman -Syu sonnet
+: 1668877370:0;sudo pacman -Syu hunspell
+: 1668918654:0;sudo pacman -Syu ufw
+: 1668918873:0;sudo ufw status -v
+: 1668965012:0;sudo pacman -Syu ksysguard
+: 1668984167:0;pacman -Ql udisks2 | sed -n 's/.*_\(.*\)\.so$/\1/p'
+: 1668984355:0;sudo pacman -Rdd lvm2
+: 1669004827:0;sudo ss -tunlp
+: 1669099336:0;ps
+: 1669147429:0;sudo pacman -Syu kompare
+: 1669147511:0;ll
+: 1669147676:0;git commit -a -m "dns pacnew"
+: 1669233929:0;journalctl -b -u systemd-journald\
+
+: 1669233990:0;sudo journalctl -p 3 -xb
+: 1669234037:0;sudo journalctl -p 3
+: 1669234098:0;journalctl -b -1
+: 1669234215:0;journalctl -b 0
+: 1669400716:0;pacman -Rdd cronie
+: 1669577014:0;egrep -c '(vmx|svm)' /proc/cpuinfo\
+
+: 1669577044:0;grep -E -c '(vmx|svm)' /proc/cpuinfo\
+
+: 1669577112:0;echo $USER
+: 1669757342:0;shutdown now
+: 1669782924:0;scp
+: 1669782930:0;ssh
+: 1670358736:0;nmcli d wifi
+: 1670358865:0;watch  "nmcli -f "CHAN,BARS,SIGNAL,SSID" d wifi list ifname wlx10feed21ae1d  | sort -n"
+: 1670358898:0;watch  "nmcli -f "CHAN,BARS,SIGNAL,SSID" d wifi list ifname wlan0  | sort -n"
+: 1670358964:0;nmcli wifi ==help
+: 1670358975:0;nmcli wifi --help
+: 1670358985:0;nmcli --help
+: 1670359028:0;nmcli d wifi --help
+: 1670359169:0;watch  "nmcli -f "CHAN,BARS,SIGNAL,SSID,SECURITY" d wifi list ifname wlan0  | sort -n"
+: 1670359246:0;watch  "nmcli -f "CHAN,BARS,SIGNAL,SSID,FREQ,SECURITY" d wifi list ifname wlan0  | sort -n"
+: 1670359315:0;watch  "nmcli -f "CHAN,BARS,MODE,SIGNAL,SSID,FREQ,SECURITY" d wifi list ifname wlan0  | sort -n"
+: 1670359373:0;watch  "nmcli -f "CHAN,BARS,SIGNAL,SSID,FREQ,RATE,SECURITY" d wifi list ifname wlan0  | sort -n"
+: 1670359411:0;watch  "nmcli -f "CHAN,BARS,SIGNAL,SSID,BAND" d wifi list ifname wlan0  | sort -n"
+: 1670798999:0;sudo journalctl --vacuum-time=2weeks
+: 1670799006:0;journalctl --disk-usage
+: 1670890707:0;yay -S debtap
+: 1670890757:0;cd Downloads
+: 1670890809:0;sudo debtap -u
+: 1670890866:0;debtap kio-admin_1.0.0-1+b1_amd64.deb\
+
+: 1670891252:0;dolphin admin:///
+: 1670891308:0;pacman -Rns kio-admin
+: 1670891317:0;sudo pacman -Rns kio-admin
+: 1670891342:0;yay -R debtap
+: 1670891368:0;pacman -Rns kio-adminclear
+: 1670916274:0;doas
+: 1670951446:0;cryptsetup --perf-no_read_workqueue --perf-no_write_workqueue --persistent refresh root
+: 1670951452:0;sudo cryptsetup --perf-no_read_workqueue --perf-no_write_workqueue --persistent refresh root
+: 1670951503:0;sudo cryptsetup --perf-no_read_workqueue --perf-no_write_workqueue --persistent refresh luksdev
+: 1670975649:0;dmsetup table | grep workqueue
+: 1670975761:0;wpctl status
+: 1670999340:0;sudo dmsetup table | grep workqueue
+: 1671038267:0;drill rs.dns-oarc.net TXT
+: 1671048260:0;sudo btrfs quota disable /
+: 1671066885:0;print -P '\uE0B0\uE0B0\uE0B0'
+: 1671120695:0;systemctl status wpa_supplicant
+: 1671483141:0;find *.face.icon
+: 1671483149:0;find .face.icon
+: 1671483979:0;echo $POWERLEVEL9K_CONFIG_FILE
+: 1671740189:0;find bkmo.face.icon
+: 1671999312:0;kate
+: 1672153564:0;kwrite
+: 1672266990:0;htop
+: 1672267640:0;plymouth quit
+: 1672267649:0;plymouth deactivate
+: 1672267855:0;plymouth
+: 1672753696:0;systemd-analyze blame
+: 1673016428:0;echo $FacesDir
+: 1673016446:0;echo $MOZ_ENABLE_WAYLAND
+: 1673112338:0;cat /sys/block/nvme0n1/queue/scheduler
+: 1673113579:0;/lib/ld-linux-x86-64.so.2 --help
+: 1673113639:0;/lib/ld-linux-x86-64.so.2 --help | grep "x86-64 (supported, searched)"
+: 1673113670:0;/lib/ld-linux-x86-64.so.2 --help | grep "x86-64-v3 (supported, searched)"
+: 1673118612:0;grep . /sys/devices/system/cpu/vulnerabilities/*
+: 1673244636:0;systemd-resolved
+: 1673448469:0;sudo findmnt --real
+: 1673451708:0;cmake -DCMAKE_INSTALL_PREFIX=/usr
+: 1674411776:0;kscreen-doctor -o
+: 1674485493:0;sudo cryptsetup -v luksChangeKey --iter-time 300 /dev/nvme0n1p2
+: 1674582618:0;cat etc/fstab
+: 1676056415:0;cdgit
+: 1676219808:0;pacman -Qg base-devel
+: 1676219948:0;sudo pacman -Syu base-devel
+: 1676219973:0;which zsh
+: 1676926775:0;pacman -Rdd plasma-thunderbolt
+: 1676926779:0;sudo pacman -Rdd plasma-thunderbolt
+: 1676926796:0;sudo pacman -R bolt
+: 1677042547:0;sudo pacman -Rdd discover
+: 1677042977:0;sudo pacman -R plasma-meta
+: 1678812646:0;kquitapp5 plasmashell kstart5 plasmashell > /dev/null 2>&1
+: 1678812660:0;plasmashell &
+: 1679416341:0;pacman -Syu falkon
+: 1679416344:0;sudo pacman -Syu falkon
+: 1679854506:0;rehash
+: 1679959333:0;pacman -Rs $(pacman -Qqdt)
+: 1680060376:0;yay -S sddm-git
+: 1680062548:0;pacman -D --asexplicit kemoticons kinfocenter kmenuedit kunitconversion kwallet-pam polkit-kde-agent kwrited khotkeys plasma-disks plasma-firewall sddm-kcm qt5-webview kgamma5 powerdevil mesa-utils libdecor oxygen libvisual plasma-pa
+: 1680062553:0;sudo pacman -D --asexplicit kemoticons kinfocenter kmenuedit kunitconversion kwallet-pam polkit-kde-agent kwrited khotkeys plasma-disks plasma-firewall sddm-kcm qt5-webview kgamma5 powerdevil mesa-utils libdecor oxygen libvisual plasma-pa
+: 1680062683:0;sudo pacman -D --asexplicit plasma-desktop plasma-systemmonitor plasma-browser-integration libibus kdeplasma-addons kde-gtk-config xdg-user-dirs
+: 1680062713:0;pacman -Qqd | pacman -Rsu --print -
+: 1680062862:0;pacman -Qtdq | pacman -Rns -\
+
+: 1680062865:0;sudo pacman -Qtdq | pacman -Rns -\
+
+: 1680062884:0;sudo pacman -Qtdq | pacman -Rns -
+: 1680062904:0;sudo pacman -Qtdq | sudo pacman -Rns -
+: 1680121621:0;downgrade plymouth
+: 1680121624:0;sudo downgrade plymouth
+: 1680135312:0;cat /sys/power/state
+: 1680135543:0;systemctl status avahi
+: 1680135583:0;systemctl status avahi-daemon.socket
+: 1680135613:0;systemctl status avahi-daemon
+: 1680278510:0;pacman -Syu plymouth
+: 1680279086:0;systemctl stop sddm-plymouth.service
+: 1680279105:0;systemctl disable sddm-plymouth.service
+: 1680279149:0;systemctl enable --now sddm.service
+: 1680279319:0;sudo pacman -Syu plymouth
+: 1680331863:0;sddm-greeter --test-mode --theme /usr/share/sddm/themes/breeze
+: 1680332123:0;getfacl ~/.face.icon
+: 1680332141:0;getfacl ~/
+: 1680393088:0;mount -A
+: 1680395722:0;sudo mount /dev/nvme0n1p1 /boot
+: 1680401638:0;rm -r /.snapshots
+: 1680506099:0;paclist
+: 1680536523:0;yay -H
+: 1680543000:0;yay -Pc
+: 1680555224:0;checkupdates & yay -Quac
+: 1680555430:0;zsh
+: 1680559270:0;bootctl status
+: 1680722536:0;journalctl --since "20 min ago"
+: 1680722732:0;systemctl ststus cronie
+: 1680722774:0;systemctl mask cronie
+: 1680729079:0;echo LUKS_UUID
+: 1680729105:0;echo LUKS_UUID=
+: 1680729233:0;LUKS_UUID=$(blkid -s UUID -o value "${BLOCK_DEVICE}2")
+: 1680729235:0;echo $LUKS_UUID
+: 1680759378:0;checkupdates && yay -Qua
+: 1680759391:0;yay -Qua
+: 1680759417:0;checkupdates & yay -Qua
+: 1680924769:0;trietoolclear
+: 1681243263:0;cat /sys/module/snd_hda_intel/parameters/power_save*
+: 1681252744:0;cryptsetup luksUUID
+: 1681281166:0;config push -u
+: 1681281280:0;logs
+: 1681281627:0;openports
+: 1681281709:0;du
+: 1681666972:0;tutanota-desktop
+: 1681667090:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer --ozone-platform=wayland
+: 1681668832:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --ozone-platform=wayland â€ƒ³force-device-scale-factor=1
+: 1681668852:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --ozone-platform=wayland â€ƒ³force-device-scale-factor=2
+: 1681669953:0;restartplasma
+: 1681669964:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage
+: 1681699151:0;iostat
+: 1681699271:0;perf
+: 1681699510:0;sudo pacman -S sysstat
+: 1681699523:0;sudo iostat 1
+: 1681699616:0;sudo pacman -R sysstat
+: 1681848916:0;yay -Syu kwin-effects-yet-another-magic-lamp
+: 1682035934:0;cryptsetup luksDump /dev/nvme0n1p1  | grep "Version\|KDF"
+: 1682035979:0;cryptsetup luksDump /dev/nvme0n1p2  | grep "Version\|KDF"
+: 1682096068:0;sudo pacman -S kio-admin
+: 1682294082:0;which updater.sh
+: 1682294093:0;find updater.sh
+: 1682623642:0;mount | grep BTRFS
+: 1682625427:0;cat /proc/mounts
+: 1682626023:0;btrfs defrag
+: 1682626086:0;btrfs filesystem defragment /home
+: 1682626268:0;btrfs filesystem defragment -rvf /home
+: 1682626288:0;btrfs filesystem defragment -rvf /
+: 1682626300:0;sudo btrfs filesystem defragment -rvf /
+: 1682626529:0;sudo btrfs filesystem defragment -rvf -czstd /
+: 1682626629:0;sudo btrfs filesystem defragment -rvf -czstd /home
+: 1682629621:0;systemctl stop fstrim.timer
+: 1682638429:0;btrfs fi df
+: 1682638850:0;dmesg | grep crc32c
+: 1682638854:0;sudo dmesg | grep crc32c
+: 1682642087:0;btrfs fi df /
+: 1682642473:0;btrfs fi df /home
+: 1682643540:0;awk '/on \/ type btrfs/{print $1}'
+: 1682643606:0;MP="$(mktemp -d)"\
+mount | awk '/on \/ type btrfs/{print $1}' | sudo xargs -I{} mount {} "$MP" &&
+: 1682643613:0;MP="$(mktemp -d)"\
+mount | awk '/on \/ type btrfs/{print $1}' | sudo xargs -I{} mount {} "$MP"
+: 1682643684:0;MP="$(mktemp -d)"\
+mount | awk '/on \/ type btrfs/{print $1}' | sudo xargs -I{} mount {} "$MP" && \\
+sudo btrfs subvolume set-default 5 "$MP"; \\
+sudo umount "$MP"
+: 1682643699:0;grep -E '^[^#].+/\s+btrfs' /etc/fstab | \\
+grep -oE 'subvol=[^,]+' | \\
+cut -d= -f2 | \\
+grep -qE '^/?@$' && \\
+echo 'OK' || \\
+echo 'Not OK'
+: 1682643816:0;sudo btrfs subvolume list @
+: 1682643825:0;sudo btrfs subvolume list @home
+: 1682643832:0;sudo btrfs subvolume list /home
+: 1682646408:0;notify-send -u critical -i timeshift 'Detected!' 'Booted into Timeshift Snapshot, please restore the snapshot.'
+: 1682647294:0;sudo systemctl cat grub-btrfsd
+: 1682647874:0;sudo pacman -Syu inotify-tools
+: 1682647888:0;sudo systemctl enable --now grub-btrfsd
+: 1682647897:0;sudo systemctl status grub-btrfsd
+: 1682648965:0;grub-btrfs
+: 1682653294:0;umount /boot
+: 1682655425:0;sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch-Grub
+: 1682655436:0;sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch-Grub2
+: 1682655817:0;grub-mkimage -p /boot/grub -O x86_64-efi -c grub-pre.cfg -o /tmp/grubx64.efi luks2 part_gpt cryptodisk gcry_rijndael argon2 gcry_sha256 btrfs
+: 1682655829:0;sudo grub-mkimage -p /boot/grub -O x86_64-efi -c grub-pre.cfg -o /tmp/grubx64.efi luks2 part_gpt cryptodisk gcry_rijndael argon2 gcry_sha256 btrfs
+: 1682656138:0;install -v /tmp/grubx64.efi /boot/efi/EFI/Arch-Grub2/
+: 1682656345:0;grub-mkimage -p /boot/grub -O x86_64-efi -c /boot/grub/grub-pre.cfg -o /tmp/grubx64.efi luks2 part_gpt cryptodisk gcry_rijndael argon2 gcry_sha256 btrfs
+: 1682656352:0;sudo install -v /tmp/grubx64.efi /boot/efi/EFI/Arch-Grub2/
+: 1682656883:0;umount /boot/efi
+: 1682656887:0;sudo umount /boot/efi
+: 1682661137:0;dmesg
+: 1682661140:0;sudo dmesg
+: 1682710948:0;find /boot/vmli*
+: 1682711001:0;pacman -Q linux
+: 1682722055:0;yay -S grub-btrfs-git
+: 1682722751:0;sudo makepkg -i
+: 1682723918:0;./41_snapshots-btrfs
+: 1682724029:0;sh 41_snapshots-btrfs
+: 1682724225:0;sudo 41_snapshots-btrfs
+: 1682724245:0;sudo ./41_snapshots-btrfs
+: 1682725035:0;sudo pacman -R os-prober
+: 1682725598:0;mount | grep btrfs
+: 1682727001:0;swapon
+: 1682727907:0;kernel-install
+: 1682727911:0;kernel-install ?
+: 1682727921:0;kernel-install --help
+: 1682728219:0;pacman
+: 1682729492:0;uname -r
+: 1683043634:0;sudo pacman -R cronie
+: 1683043652:0;sudo pacman -Rns cronie
+: 1683043707:0;sudo pacman -Rdd cronie
+: 1683043738:0;sudo pacman -Syu cronie
+: 1683043840:0;sudo pacman -S cronie
+: 1683141515:0;sudo systemctl mask power-profiles-daemon.service
+: 1683222517:0;paccache -rk1
+: 1683234124:0;yay -S auto-cpufreq
+: 1683264844:0;sudo systemctl enable --now thermald
+: 1683300656:0;sudo systemctl status thermald
+: 1683418054:0;grub-script-check
+: 1683418077:0;grub-script-check --usage
+: 1683418118:0;grub-script-check --help
+: 1683418139:0;grub-script-check -V
+: 1683502773:0;pacman -R thermald
+: 1683502776:0;sudo pacman -R thermald
+: 1683502832:0;sudo systemctl stop --now thermald
+: 1683502851:0;sudo systemctl disable --now thermald
+: 1683559885:0;sudo pacman -Qoq /usr/lib/python3.10/site-packages/
+: 1683592326:0;ping jetbox.com
+: 1683741934:0;grub-script-check /boot/grub/grub.cfg
+: 1683756600:0;kate -h
+: 1683756622:0;kwrite -h
+: 1683756644:0;kwrite --help-all
+: 1683844016:0;glxgears
+: 1683844689:0;kbuildsycoca5
+: 1684085837:0;grep -iE 'installed|upgraded' /var/log/pacman.log
+: 1684186134:0;xhost
+: 1684292511:0;systemctl enable fstrim.timer
+: 1684341856:0;yay --help --batchinstall
+: 1684341864:0;yay --help -batchinstall
+: 1684359387:0;sudo ufw enable
+: 1684359683:0;systemctl status iptables
+: 1684359854:0;sudo ufw status
+: 1684359898:0;sudo ufw logging off
+: 1684359900:0;ufw status
+: 1684360179:0;systemctl status ufw
+: 1684360337:0;ufw allow from 192.168.1.0/24
+: 1684360340:0;sudo ufw allow from 192.168.1.0/24
+: 1684360442:0;sudo ufw show raw
+: 1684365164:0;ipview
+: 1684365270:0;wifi
+: 1684603371:0;ip
+: 1684603386:0;ip -a
+: 1684603420:0;ip address
+: 1684612157:0;pacman -Syu linux-zen-lts
+: 1684612160:0;sudo pacman -Syu linux-zen-lts
+: 1684625389:0;pacclean
+: 1684688030:0;pacman -Syu "pacman>=6.0.2-7"
+: 1684688146:0;sudo pacman -Syu "pacman>=6.0.2-7"
+: 1684690710:0;systemctl status fprintd.service
+: 1684784772:0;systemctl unmask geoclue
+: 1684785393:0;systemctl mask geoclue
+: 1684967361:0;crontab
+: 1684967389:0;crontab -l
+: 1684967445:0;which crontab
+: 1685379088:0;41_snapshots-btrfs
+: 1685479394:0;systemctl --version
+: 1685479457:0;sudo ufw app list
+: 1685556590:0;pacman -Syu unrar
+: 1685576573:0;duf
+: 1685590878:0;pacman -Syu thunderbird
+: 1685590930:0;sudo pacman -Syu thunderbird
+: 1685652403:0;systemctl status fstrim.timer
+: 1685652441:0;systemctl status geoclue
+: 1685652535:0;grep -q timeshift /proc/cmdline
+: 1685988043:0;time zsh --interactive -c exit
+: 1686118595:0;auto-cpufreq --stats
+: 1686118719:0;auto-cpufreq
+: 1686118730:0;auto-cpufreq --version
+: 1686204293:0;sudo pacman -Rs $(pacman -Qqdt)
+: 1686250199:0;lspci -vv | grep 'ASPM.*abled;'
+: 1686324134:0;KDbugSettings
+: 1686422515:0;sudo journalctl --rotate --vacuum-size=50M
+: 1686422564:0;sudo journalctl --rotate
+: 1686429477:0;systemctl disable grub-btrfsd
+: 1686507285:0;sudo pacman -Syu grub-btrfs
+: 1686508289:0;systemctl enable grub-btrfsd
+: 1686677593:0;grep "snapshots-btrfs" "boot/grub/grub.cfg"
+: 1686677701:0;if grep "snapshots-btrfs" "/boot/grub/grub.cfg"; then\
+    	  if  /etc/grub.d/41_snapshots-btrfs; then\
+		        log "Grub submenu recreated" "${GREEN}"\
+          else\
+		      err "[Error during grub submenu creation (grub-btrfs error)" "${RED}"\
+          fi
+: 1686677786:0;if grep "snapshots-btrfs" "/boot/grub/grub.cfg"; then\
+    	  if  /etc/grub.d/41_snapshots-btrfs; then\
+		        log "Grub submenu recreated" "${GREEN}"\
+          else\
+		      err "[Error during grub submenu creation (grub-btrfs error)"\
+          fi
+: 1686677837:0;if grep "snapshots-btrfs" "/boot/grub/grub.cfg"; then\
+    	   /etc/grub.d/41_snapshots-btrfs;\
+          else\
+		      err "[Error during grub submenu creation (grub-btrfs error)"\
+          fi
+: 1686677875:0;if grep "snapshots-btrf" "/boot/grub/grub.cfg"; then\
+    	   /etc/grub.d/41_snapshots-btrfs;\
+          else\
+		      err "[Error during grub submenu creation (grub-btrfs error)"\
+          fi
+: 1686677903:0;if grep "snapshots-btrf" "/boot/grub/grub.cfg"; then\
+    	   /etc/grub.d/41_snapshots-btrfs\
+          else\
+		      err "[Error during grub submenu creation (grub-btrfs error)"\
+          fi
+: 1686680338:0;sudo systemctl edit --full grub-btrfsd
+: 1686685897:0;systemctl disable pamac-daemon
+: 1686686770:0;ps -A | grep grub-btrfsd
+: 1686686774:0;ps -A | grep pamac
+: 1686687972:0;sudo systemctl restart grub-btrfsd
+: 1686688846:0;systemctl stop grub-btrfsd
+: 1686688859:0;systemctl start grub-btrfsd
+: 1686691817:0;if grep "snapshots-btrfs" "{grub_directory}/grub.cfg"; then\
+    	  /etc/grub.d/41_snapshots-btrfs
+: 1686691836:0;if grep "snapshots-btrfs" "{grub_directory}/grub.cfg"; then\
+    	  /etc/grub.d/41_snapshots-btrfs;
+: 1686691880:0;if grep "snapshots-btrfs" "/boot/grub/grub.cfg"; then\
+    	  /etc/grub.d/41_snapshots-btrfs;
+: 1686691914:0;if grep "snapshots-btrfs" "/boot/grub/grub.cfg"; then\
+    	  /etc/grub.d/41_snapshots-btrfs
+: 1686691940:0;grep "snapshots-btrfs" "/boot/grub/grub.cfg"
+: 1686692081:0;if grep -P "snapshots-btrfs" "/boot/grub/grub.cfg"; then\
+    	  /etc/grub.d/41_snapshots-btrfs
+: 1686692118:0;if [ grep - "snapshots-btrfs" "/boot/grub/grub.cfg" ]; then\
+    	  /etc/grub.d/41_snapshots-btrfs
+: 1686692156:0;if [ grep "snapshots-btrfs" "/boot/grub/grub.cfg" ]; then\
+    	  /etc/grub.d/41_snapshots-btrfs
+: 1686692242:0;if grep --quiet "snapshots-btrfs" "/boot/grub/grub.cfg"; then\
+    	  /etc/grub.d/41_snapshots-btrfs
+: 1686692266:0;if grep --quiet snapshots-btrfs /boot/grub/grub.cfg; then\
+    	  /etc/grub.d/41_snapshots-btrfs
+: 1686692283:0;if grep snapshots-btrfs /boot/grub/grub.cfg; then\
+    	  /etc/grub.d/41_snapshots-btrfs
+: 1686692460:0;if grep -lq "snapshots-btrfs" "/boot/grub/grub.cfg"; then\
+    	  /etc/grub.d/41_snapshots-btrfs
+: 1686692478:0;if grep -lq "snapshots-btrfs" /boot/grub/grub.cfg; then\
+    	  /etc/grub.d/41_snapshots-btrfs
+: 1686692509:0;if grep "snapshots-btrfs" /boot/grub/grub.cfg; then\
+    	  /etc/grub.d/41_snapshots-btrfs
+: 1686692557:0;if grep "snapshots-btrfs" /boot/grub/grub.cfg; then\
+    if	  /etc/grub.d/41_snapshots-btrfs
+: 1686692580:0;if grep "snapshs-btrf" "/boot/grub/grub.cfg"; then\
+    	   /etc/grub.d/41_snapshots-btrfs\
+          else\
+		      err "[Error during grub submenu creation (grub-btrfs error)"\
+          fi
+: 1686692615:0;if grep "snapshs-btrf" "/boot/grub/grub.cfg"; then\
+    	 sudo  /etc/grub.d/41_snapshots-btrfs\
+          else\
+		      err "[Error during grub submenu creation (grub-btrfs error)"\
+          fi
+: 1686692672:0;if grep "snapshots-btrfs" "/boot/grub/grub.cfg"; then\
+    	 /etc/grub.d/41_snapshots-btrfs\
+          else\
+		      err "[Error during grub submenu creation (grub-btrfs error)"\
+          fi
+: 1686692695:0;if grep "snapshots-btrfs" "/boot/grub/grub.cfg"; then\
+    	 sudo  /etc/grub.d/41_snapshots-btrfs\
+          else\
+		      err "[Error during grub submenu creation (grub-btrfs error)"\
+          fi
+: 1686696195:0;echo $grub_directory
+: 1686697352:0;if grep "snapshots-btrfs" "/boot/grub/grub.cfg"; then\
+    	 /etc/grub.d/41_snapshots-btrfs\
+          else\
+		      err "[Error during grub submenu creation (grub-btrfs error)"\
+          ficlear
+: 1686722367:0;yay -Y --combinedupgrade --save
+: 1686762112:0;grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch-Grub
+: 1686770219:0;echo off
+: 1686774403:0;sudo /etc/grub.d/41_custom
+: 1686844889:0;sudo /etc/grub.d/41_snapshots-btrfs
+: 1686875180:0;pacman -Syu
+: 1686875186:0;sudo pacman -Syu
+: 1686876537:0;grub-mkconfig -o /boot/grub/grub.cfg
+: 1686876653:0;sudo /etc/grub.d/41_snapshots-btrfs > /dev/null
+: 1686880623:0;sudo /etc/grub.d/41_snapshots-btrfs --version
+: 1686890262:0;timeshift --check --scripted
+: 1686890291:0;sudo timeshift --check --scripted
+: 1686932878:0;git status
+: 1686942769:0;mkinitcpio -P
+: 1686942822:0;pacman -Syu linux-lts
+: 1686968148:0;makepkg -i
+: 1687068163:0;find / -xtype l -print
+: 1687068173:0;sudo find / -xtype l -print
+: 1687070567:0;/usr/bin/sh -c '/usr/bin/pacman -Qtd || /usr/bin/echo "==> no orphans found."'
+: 1687070602:0;/usr/bin/sh -c '/usr/bin/pacman -Qqtd || /usr/bin/echo "==> no orphans found."'
+: 1687099620:0;yay --help
+: 1687100626:0;yay -Yc
+: 1687101261:0;sudo journalctl --vacuum-size=100M
+: 1687102248:0;find "$HOME"/.cache/yay -maxdepth 1 -type d | awk '{ print "-c " $1 }' | tail -n +2
+: 1687103508:0;yay_running_on_behalf=$(id -nu 1000)\
+yay_cache_dir="/home/$yay_running_on_behalf/.cache/yay/"\
+\
+pkg_cache_dir="$(find $yay_cache_dir -mindepth 1 -maxdepth 1 -type d | xargs -r printf "-c %s ")"
+: 1687103559:0;echo $pkg_cache_dir
+: 1687103661:0;yaycache="$(find "$HOME"/.cache/yay -maxdepth 1 -type d | awk '{ print "-c " $1 }' | tail -n +2)"
+: 1687103672:0;echo $yaycache
+: 1687104586:0;pacman -Qm
+: 1687104831:0;pacman -Qqm
+: 1687104899:0;pacman -Qm | cat >> aurpkgs.txt
+: 1687104964:0;pacman -Qm | cat > aurpkgs.txt
+: 1687105246:0;pacman -Qm | cat > aurpkgs.txt & cat ~/aurpkgs.txt
+: 1687105263:0;pacman -Qm | cat > aurpkgs.txt && cat ~/aurpkgs.txt
+: 1687105468:0;aurpkgs
+: 1687106712:0;pacman -Qi
+: 1687106753:0;pacman -Qq
+: 1687107827:0;config add ~/.local/bin/xx-clean_package_cache.hook
+: 1687107882:0;orphls
+: 1687109316:0;/usr/bin/bash -c "/usr/bin/pacman -Qtd || /usr/bin/echo '==> no orphans found'"
+: 1687109961:0;id -nu 1000
+: 1687110286:0;config add ~/.local/bin/snapshot-detect
+: 1687111844:0;notify-send -u critical -i timeshift 'Detected!' 'Booted into Timeshift Snapshot, please run "timeshift-launcher" to restore the snapshot.'
+: 1687112084:0;notify-send -u critical -i timeshift 'Snapshot Detected!' 'Booted into Timeshift Snapshot, please run "timeshift-launcher" to restore the snapshot.'
+: 1687112312:0;config add ~/.local/bin/snapshot-detect.desktop-etc-xdg-autostart
+: 1687112653:0;notify-send -u critical -i timeshift 'Snapshot Detected!' 'Booted into Timeshift Snapshot, please run "\ntimeshift-launcher" to restore the snapshot.'
+: 1687112704:0;notify-send -u critical -i timeshift 'Snapshot Detected!' 'Booted into Timeshift Snapshot, please run "\n/usr/bin/timeshift-launcher" to restore the snapshot.'
+: 1687112727:0;notify-send --help
+: 1687113310:0;notify-send -u critical -i timeshift --appname Timeshift 'Snapshot Detected!' 'Booted into Timeshift Snapshot, please run "\n/usr/bin/timeshift-launcher" to restore the snapshot.'
+: 1687113329:0;notify-send -u critical -i timeshift --app-name Timeshift 'Snapshot Detected!' 'Booted into Timeshift Snapshot, please run "\n/usr/bin/timeshift-launcher" to restore the snapshot.'
+: 1687113416:0;notify-send -u critical -i timeshift --app-name Timeshift 'Snapshot Detected!' 'Booted into Timeshift Snapshot, please run "timeshift-launcher" to restore the snapshot.'
+: 1687151045:0;pacreport --unowned-files
+: 1687151054:0;sudo pacreport --unowned-files
+: 1687151346:0;tar -cjf pacman_database.tar.bz2 /var/lib/pacman/local
+: 1687156268:0;tar --help
+: 1687157082:0;sudo pacman -Qii | awk '/^MODIFIED/ {print $2}'
+: 1687157812:0;systemctl enable --now pakbak.path
+: 1687158646:0;git clone https://aur.archlinux.org/pakbak-git.git
+: 1687158654:0;cd pakbak-git
+: 1687159959:0;git clone https://github.com/bkmo/pakbak-git.git
+: 1687160034:0;git clone https://github.com/bkmo/pakbak
+: 1687206280:0;systemctl status pakbak.service
+: 1687206316:0;systemctl status pakbak.path
+: 1687208099:0;git clone https://github.com/bkmo/pakbak-bkmo
+: 1687208105:0;cd pakbak-bkmo
+: 1687208322:0;systemctl restart pakbak.path
+: 1687208338:0;systemctl start pakbak.service
+: 1687212831:0;systemctl restart sddm
+: 1687214652:0;rsync
+: 1687214876:0;mkdir -p /BootBackup
+: 1687214899:0;mkdir -p /BootBackup1
+: 1687214914:0;sudo mkdir -p /BootBackup
+: 1687216641:0;cp --help
+: 1687219451:0;sudo mkdir -p /bootbkup
+: 1687219486:0;sudo rsync -azq --delete /boot /bootbkup
+: 1687219901:0;sudo rsync -azq --delete boot /bootbkup
+: 1687221476:0;rsync --help
+: 1687222212:0;sudo rsync -rq --delete /boot/ /bootbkup/
+: 1687222287:0;sudo rsync -rq --delete /boot/ /bootbkup
+: 1687222452:0;sudo pacman -Syu linux-lts
+: 1687225008:0;git clone https://github.com/bkmo/pacman-boot-backup-hook-bkmo
+: 1687226100:0;ps -A
+: 1687226245:0;ps -A | grep sddm
+: 1687227634:0;ps aux | grep sddm
+: 1687228011:0;echo $XDG_SESSION_TYPE
+: 1687228244:0;systemctl status sddm
+: 1687228692:0;pacnewroot
+: 1687229542:0;echo "Modules dir: /lib/modules/$(uname -r) for kernel version $(uname -r)"
+: 1687230026:0;pacman -Qii | awk '/^MODIFIED/ {print $2}'
+: 1687230049:0;pacman -Qn
+: 1687230070:0;pacman -Qqi
+: 1687230683:0;git clone https://github.com/bkmo/grub-btrfs-bkmo
+: 1687230753:0;makepkg -si && pacdiff
+: 1687230890:0;systemctl restart grub-btrfsd
+: 1687230903:0;systemctl status grub-btrfsd
+: 1687231470:0;git clone https://github.com/bkmo/timeshift-autosnap-bkmo
+: 1687231538:0;makepkg -si && sudo pacdiff
+: 1687234355:0;git clone https://github.com/cfbao/google-drive-trash-cleaner.git
+: 1687234647:0;python cleaner.py
+: 1687243059:0;gitu
+: 1687281668:0;sudo pacman -Syu shotcut
+: 1687296879:0;rclone
+: 1687297217:0;rclone mount
+: 1687297782:0;rclone mount remote:/ /home/bkmo/rclone
+: 1687297903:0;rclone ls
+: 1687297930:0;rclone mount IceDrive:/ /home/bkmo/rclone
+: 1687298013:0;rclone mount --vfs-cache-mode full IceDrive:/ /home/bkmo/rclone
+: 1687298035:0;rclone mount --vfs-cache-mode --allow-non-empty full IceDrive:/ /home/bkmo/rclone
+: 1687298090:0;sudo rclone mount --vfs-cache-mode full --allow-non-empty IceDrive:/ /home/bkmo/rclone
+: 1687298108:0;rclone mount --vfs-cache-mode full --allow-non-empty IceDrive:/ /home/bkmo/rclone
+: 1687298184:0;rclone mount --vfs-cache-mode full --allow-non-empty IceDrive:/ /home/bkmo/IceDrive
+: 1687298323:0;rclone ls -l IceDrive:/
+: 1687298369:0;rclone ls -d IceDrive:/
+: 1687298389:0;rclone ls -ld IceDrive:/
+: 1687298453:0;rclone ls IceDrive:/
+: 1687298464:0;ls --help
+: 1687298559:0;rclone ls IceDrive:/Backup
+: 1687298889:0;rclone sync --dry-run /home/Documents/ Icedrive:/Rclone/Documents
+: 1687298906:0;rclone sync --dry-run /home/Documents/ IceDrive:/Rclone/Documents
+: 1687298941:0;rclone sync --dry-run /home/bkmo/Documents/ IceDrive:/Rclone/Documents
+: 1687299075:0;rclone sync --dry-run /home/bkmo/PDF/ IceDrive:/Rclone/PDF
+: 1687299087:0;rclone sync /home/bkmo/PDF/ IceDrive:/Rclone/PDF
+: 1687299781:0;/usr/bin/rclone sync /home/bkmo/PDF IceDrive:/Rclone/PDF \
+    --log-file /opt/rclone_upload.log \
+    --verbose
+: 1687299949:0;/usr/bin/rclone sync /home/bkmo/PDF IceDrive:/Rclone/PDF \
+
+: 1687304680:0;systemctl status rclone_syn
+: 1687305254:0;systemctl restat rclone_sync.timer
+: 1687305287:0;systemctl enable --now rclone_sync.timer
+: 1687307873:0;pidof -x rclone
+: 1687307938:0;pidof -x rclone -o %PPID
+: 1687307978:0;basename
+: 1687308012:0;pidof -x $(basename $0)
+: 1687308033:0;basename --help
+: 1687308124:0;basename $0
+: 1687308159:0;basename -o
+: 1687308381:0;pidof -x basename $0
+: 1687308384:0;pidof -x basename /bash
+: 1687308631:0;if pidof -o %PPID -x "rclone_sync_dirs"; then\
+	echo "rclone running"
+: 1687309015:0;if pidof -o %PPID -x rclone_sync_dirs; then\
+	echo "rclone running"
+: 1687309120:0;./rclone_sync_dirs
+: 1687311416:0;rclone_sync.sh
+: 1687311609:0;sudo rclone_sync.sh
+: 1687314559:0;rclone_sync1
+: 1687314712:0;echo $STARTED | tee -a $LOGFILE &&
+: 1687315395:0;sudo rclone config file
+: 1687315638:0;./rclone_sync1
+: 1687317936:0;rclone_sync_dirs
+: 1687318174:0;/usr/bin/rclone sync  /home/bkmo/Music IceDrive:/Rclone/Music --log-file=/var/log/rclone/rclone_sync.log --log-level NOTICE
+: 1687322384:0;/boot sync /home/bkmo/Music IceDrive:/Rclone/Boot --log-file=/home/bkmo/rclone_sync.log --log-level NOTICE
+: 1687322447:0;/usr/bin/rclone sync /boot IceDrive:/Rclone/Boot --log-file=/home/bkmo/rclone_sync.log --log-level NOTICE
+: 1687322968:0;/usr/bin/rclone sync /home/bkmo/Music IceDrive:/Rclone/Music --log-file=/home/bkmo/rclone_sync.log --log-level NOTICE
+: 1687324125:0;/usr/bin/rclone sync /home/bkmo/Music IceDrive:/Rclone/Music --log-file=/home/bkmo/rclone_sync.log --log-level NOTICE --fast-list --tpslimit 10 --buffer-size 64 --transfers 100 --checkers 10 --auto-confirm
+: 1687326347:0;systemctl restart rclone_sync.timer
+: 1687332709:0;mkdir -p /home/bkmo/Archives/rclone
+: 1687332914:0;b=`stat -c %s /home/bkmo/Archives/rclone/rclone_sync.log`
+: 1687332916:0;echo $b
+: 1687332935:0;log_move
+: 1687363415:0;find . -name '*.bak' -xtype f
+: 1687363471:0;ind . -name '*.bak' -execdir trash {} +
+: 1687363494:0;find . -name '*.ini' -execdir trash {} +
+: 1687363565:0;find . -name '*.ini' -xtype f --delete
+: 1687363589:0;find . -name '*.ini' -xtype f
+: 1687363618:0;find . -name '*.db' -xtype f
+: 1687364044:0;find . -name '*.jpg' -xtype f
+: 1687364064:0;find . -name '*.jpg' -xtype f -delete
+: 1687365764:0;sudo mv -f /var/log/rclone/rclone_sync.log /var/log/rclone/rclone-$(date +%F-%T).log\
+
+: 1687367066:0;ps -A | grep rclone
+: 1687367575:0;sudo ls -1t | tail -n +3 | xargs -delete
+: 1687367642:0;sudo ls -1t | tail -n +3 | xargs rm
+: 1687367703:0;ls -1t | tail -n +4 | sudo xargs rm
+: 1687367871:0;find . -name '*.ini' -xtype f -delete
+: 1687367879:0;find . -name '*.db' -xtype f -delete
+: 1687367907:0;sudo ls -1t | sudo tail -n +4 | sudo xargs rm -f
+: 1687368426:0;sudo ./rclone_sync1
+: 1687371125:0;/usr/bin/rclone sync  /home/bkmo/Documents IceDrive:/Rclone/Documents --log-file=$LOGFILE --log-level $LOGLEVEL --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm
+: 1687371679:0;/usr/bin/rclone copy /home/bkmo/Documents IceDrive:/Rclone/Documents --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm
+: 1687371975:0;/usr/bin/rclone copy /home/bkmo/Documents IceDrive:/Rclone/Documents --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm --delete-after
+: 1687372109:0;/usr/bin/rclone sync /home/bkmo/Documents IceDrive:/Rclone/Documents --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm --delete-after
+: 1687372230:0;/usr/bin/rclone sync /home/bkmo/Documents IceDrive:/Rclone/Documents --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm --delete-before
+: 1687372467:0;/usr/bin/rclone sync /boot IceDrive:/Rclone/Boot --fast-list --tpslimit 10
+: 1687373100:0;/usr/bin/rclone sync /home/bkmo/Documents IceDrive:/Rclone/Documents --fast-list --tpslimit 10
+: 1687376714:0;/usr/bin/rclone copy rclone copy --max-age 14h /home/bkmo/Documents IceDrive:/Rclone/Documents --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm
+: 1687376762:0;/usr/bin/rclone copy rclone copy --max-age 14h --no-traverse /home/bkmo/Documents IceDrive:/Rclone/Documents --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm
+: 1687376838:0;/usr/bin/rclone copy rclone copy  /home/bkmo/Documents IceDrive:/Rclone/Documents --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm --max-age 14h --no-traverse
+: 1687376884:0;/usr/bin/rclone copy --max-age 14h --no-traverse /home/bkmo/Documents IceDrive:/Rclone/Documents --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm
+: 1687377469:0;/usr/bin/rclone sync /home/bkmo/Documents IceDrive:/Rclone/Documents --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm
+: 1687378001:0;/usr/bin/rclone sync /home/bkmo/Documents IceDrive:/Rclone/Documents --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm
+: 1687378270:0;/usr/bin/rclone dedup /home/bkmo/Documents IceDrive:/Rclone/Documents --dry-run -P
+: 1687378283:0;/usr/bin/rclone dedupe /home/bkmo/Documents IceDrive:/Rclone/Documents --dry-run -P
+: 1687378416:0;/usr/bin/rclone dedupe IceDrive:/Rclone/Documents --dry-run -P
+: 1687378451:0;/usr/bin/rclone dedupe --by-hash IceDrive:/Rclone/Documents --dry-run -P
+: 1687379255:0;ping google.com
+: 1687379760:0;ping google.com -W.5
+: 1687379872:0;/bin/sh -c 'while ! ping -c1 1.1.1.1; do sleep 1; done'
+: 1687379934:0;/bin/sh -c 'while ! ping -c1 -W.5 1.1.1.1; do sleep 1; done'
+: 1687381022:0;yay -Syu sddm-git
+: 1687382072:0;paccache -qruk1
+: 1687382077:0;paccache -ruk1
+: 1687382807:0;which insync
+: 1687382890:0;/usr/bin/insync --include-dot-files
+: 1687382906:0;insync --help
+: 1687383906:0;yay -Scc
+: 1687383964:0;yay -Sc
+: 1687384032:0;yay -Sc --noconfirm
+: 1687384142:0;sudo pacman -Syu unrar
+: 1687385160:0;yay -Sc --aur --noconfirm
+: 1687385579:0;paccache -rk0 -c ~/.cache/yay/*/
+: 1687385692:0;rm -r ~/.cache/yay
+: 1687385863:0;rm -r ~/.cache/yay/
+: 1687386212:0;rm -r ~/.cache/yay/*
+: 1687386234:0;rm -rf ~/.cache/yay/*
+: 1687386329:0;/rm -rf ~/.cache/yay/*
+: 1687386630:0;\rm -rf ~/.cache/yay/*
+: 1687386812:0;\ls
+: 1687386950:0;/bin/rm
+: 1687386965:0;/bin/rm -rf ~/.cache/yay/*
+: 1687390433:0;yay -Sc --aur
+: 1687394030:0;rclone config file
+: 1687394060:0;rclone config
+: 1687394193:0;rclone ls Mega:/
+: 1687394287:0;/usr/bin/rclone sync /home/bkmo/Documents Mega:/Thinpad/Documents --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8
+: 1687394316:0;/usr/bin/rclone sync /home/bkmo/Documents Mega:/Thinkpad/Documents --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8
+: 1687398168:0;yay -Syu dolphin-megasync-bin
+: 1687401569:0;/usr/bin/rclone sync /home/bkmo/Documents IceDrive:/Rclone/Documents --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8
+: 1687401747:0;/usr/bin/rclone sync /home/bkmo/Documents IceDrive:/Rclone/Documents --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm --ignore-existing
+: 1687401858:0;/usr/bin/rclone copy /home/bkmo/Documents IceDrive:/Rclone/Documents --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm --ignore-existing
+: 1687402238:0;/usr/bin/rclone copy /home/bkmo/Documents IceDrive:/Rclone/Documents --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm --ignore-existing --progress
+: 1687402264:0;/usr/bin/rclone copy /home/bkmo/Documents IceDrive:/Rclone/Documents --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm --ignore-existing --progress --update
+: 1687402695:0;rclone backend features wdav: | grep Precision
+: 1687402870:0;/usr/bin/rclone copy /home/bkmo/Documents IceDrive:/Rclone/Documents --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm  --progress --update
+: 1687403782:0;killall rclone
+: 1687403789:0;sudo killall rclone
+: 1687403806:0;/usr/bin/rclone copy /boot IceDrive:/Rclone/Boot --log-file=$LOGFILE --log-level $LOGLEVEL --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm -u --ignore-size --ignore-checksum
+: 1687403837:0;/usr/bin/rclone copy /boot IceDrive:/Rclone/Boot --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm -u --ignore-size --ignore-checksum
+: 1687403992:0;/usr/bin/rclone copy /boot IceDrive:/Rclone/Boot --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm -u --ignore-size --ignore-checksum --no-gzip-encoding
+: 1687404082:0;/usr/bin/rclone copy /boot IceDrive:/Rclone/Boot --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm -u --ignore-size -P
+: 1687404155:0;/usr/bin/rclone copy /boot IceDrive:/Rclone/Boot --tpslimit 10  -u --ignore-size -P
+: 1687404862:0;/usr/bin/rclone copy /boot IceDrive:/Rclone/Boot --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm -u --ignore-checksum -P
+: 1687404904:0;/usr/bin/rclone copy /boot IceDrive:/Rclone/Boot --fast-list --tpslimit 10 --ignore-checksum -P
+: 1687404930:0;/usr/bin/rclone copy /boot IceDrive:/Rclone/Boot --ignore-checksum -P
+: 1687405067:0;/usr/bin/rclone copy /boot IceDrive:/Rclone/Boot --ignore-size --ignore-checksum -P
+: 1687405484:0;/usr/bin/rclone sync /boot IceDrive:/Rclone/Boot -P
+: 1687452780:0;ping 163.123.183.33
+: 1687452821:0;ping 38.17.53.45
+: 1687452859:0;ping 172.106.164.87
+: 1687452905:0;ping 181.215.242.4
+: 1687465326:0;sudo killall insync
+: 1687466277:0;sudo /usr/bin/rclone copy /home/bkmo/Downloads IceDrive:/Rclone/Downloads --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm --ignore-existing -u
+: 1687466315:0;/usr/bin/rclone copy /home/bkmo/Downloads IceDrive:/Rclone/Downloads --fast-list --tpslimit 10 --buffer-size 64M --transfers 10 --checkers 8 --auto-confirm --ignore-existing -u
+: 1687480918:0;sudo ufw status verbose
+: 1687500017:0;sudo mv -f /var/log/rclone/rclone_sync.log /var/log/rclone/$(date -r +%F-%T).log
+: 1687500130:0;sudo mv -f /var/log/rclone/rclone_sync.log /var/log/rclone/$(date -r +"%F-%T").log
+: 1687669688:0;pacman -Syu sddm
+: 1687669691:0;sudo pacman -Syu sddm
+: 1687670808:0;pacnew
+: 1687720610:0;mv -f /home/bkmo/rclone_sync.log /home/bkmo/rclone-$(date -r +%F-%T).log
+: 1687720696:0;mv -f /home/bkmo/rclone_sync.log /home/bkmo/$(date -r /home/bkmo/rclone_sync.log +%F-%T).log
+: 1687741245:0;checkupdates
+: 1687741260:0;checkupdates --help
+: 1687741503:0;rclone IceDrive features wdav: | grep Precision
+: 1687741543:0;rclone features IceDrive: | grep Precision
+: 1687741561:0;rclone --help
+: 1687741617:0;rclone backend features IceDrive: | grep Precision
+: 1687741911:0;rclone mount Mega:/ /home/bkmo/Mega
+: 1687743658:0;systemctl --user enable --now rclone@Mega
+: 1687743780:0;systemctl ststus rcloneMega
+: 1687743785:0;systemctl status rcloneMega
+: 1687743848:0;mkdir -p /home/bkmo/Mega
+: 1687743923:0;systemctl --user enable --now rcloneMega
+: 1687743942:0;systemctl --user status rcloneMega
+: 1687745516:0;/usr/bin/rclone copy /home/bkmo/PKGbuilds Mega:/Rclone/PKGbuilds --mega-hard-delete
+: 1687745819:0;systemctl --user restart rcloneMega
+: 1687746877:0;systemctl --user daemon-reload
+: 1687746945:0;rclone mount Mega:/ /home/bkmo/Mega --vfs-cache-mode full
+: 1687746990:0;systemctl --user start rcloneMega
+: 1687747828:0;systemctl --user stop rcloneMega
+: 1687747843:0;systemctl --user disable rcloneMega
+: 1687763834:0;kwriteconfig5 --file ~/.config/ffmpegthumbsrc --group General --key filmstrip false
+: 1687796637:0;systemctl status gufw
+: 1687812801:0;sudo pacdiff
+: 1687898865:0;cd /var/log/rclone
+: 1687898902:0;ls -r1 /var/log/rclone
+: 1687898959:0;ls -r1 /var/log/rclone/
+: 1687899000:0;mkdir -p /var/log/rclone/
+: 1687899014:0;mkdir -p /var/log/rclone
+: 1687899678:0;LOGDIR="/var/log/rclone/"
+: 1687899687:0;echo $LOGDIR
+: 1687902961:0;sudo rclone_sync_dirs_test
+: 1687908896:0;pacdiff
+: 1687909670:0;kompare
+: 1687909875:0;DIFFPROG=kompare pacdiff --sudo
+: 1687928998:0;whatsapp-for-linux-1.6.3-x86_64.AppImage
+: 1687929007:0;./whatsapp-for-linux-1.6.3-x86_64.AppImage
+: 1687986215:0;checkrebuild -v
+: 1687991672:0;hostname
+: 1687991976:0;cat /etc/hostname
+: 1687992072:0;ufetch-arch
+: 1687993402:0;pfetch-rs
+: 1687993403:0;pfetch
+: 1688191268:0;systemctl status rclone_sync.timer
+: 1688313994:0;systemctl list-dependencies --reverse pamac-daemon.service
+: 1688314039:0;systemctl ststus pamac-daemon.service
+: 1688314045:0;systemctl status pamac-daemon.service
+: 1688314084:0;systemctl stop pamac-daemon.service
+: 1688314094:0;systemctl mask pamac-daemon.service
+: 1688314837:0;makepkg
+: 1688315232:0;makepkg -s
+: 1688315482:0;sudo pacman -U pamac-aur-11.0.1-2-x86_64.pkg.tar.zst
+: 1688422605:0;journalctl --since "60 min ago"
+: 1688426233:0;yay -Rns dolphin-megasync
+: 1688426255:0;yay
+: 1688533011:0;pacman -Syyu
+: 1688534082:0;stat /dev/dri/*
+: 1688578764:0;dfcp
+: 1688610397:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --ozone-platform=wayland
+: 1688610434:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --ozone-platform=wayland GDK_SCALE=1.5 GDK_DPI_SCALE=1
+: 1688610462:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --ozone-platform=wayland GDK_SCALE=1.5
+: 1688610660:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --ozone-platform=wayland --enable-features=UseOzonePlatform
+: 1688782117:0;systemctl status sddm-plymouth.service
+: 1688793111:0;upower -d
+: 1688818001:0;systemctl status sddm.service
+: 1688820297:0;journalctl -rb -1
+: 1688821426:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage --ozone-platform=wayland --enable-features=UseOzonePlatform GDK_DPI_SCALE=0.5 GDK_SCALE=2
+: 1688821462:0;/home/bkmo/Applications/tutanota-desktop-linux.AppImage GDK_DPI_SCALE=0.5 GDK_SCALE=2
+: 1688821930:0;systemctl unmask pamac-daemon.service
+: 1689020499:0;unrar QWEFVBGW10AIO.U8
+: 1689020518:0;unrar e QWEFVBGW10AIO.U8
+: 1689108671:0;pacman -Syu power-profiles-daemon
+: 1689108674:0;sudo pacman -Syu power-profiles-daemon
+: 1689109098:0;sudo systemctl unmask power-profiles-daemon
+: 1689109101:0;sudo systemctl enable --now power-profiles-daemon
+: 1689109114:0;sudo systemctl status power-profiles-daemon
+: 1689198379:0;intel_gpu_top
+: 1689198382:0;sudo intel_gpu_top
+: 1689199344:0;systemctl status iwd
+: 1689199592:0;sudo pacman -Rns lvm2
+: 1689364257:0;find /etc/systemd
+: 1689364779:0;grep -r "display-manager" /etc/systemd/
+: 1689364906:0;systemctl list-dependencies --after
+: 1689364987:0;systemctl list-dependencies --before
+: 1689365026:0;systemctl list-dependencies --before display-manager.target
+: 1689365040:0;systemctl list-dependencies --after display-manager.target
+: 1689365108:0;systemctl list-dependencies --after system76-power.service
+: 1689365223:0;find /usr/lib/systemd/system/ -name "display-manager.service"
+: 1689365260:0;find /usr/lib/systemd/system/ -name "systemd-vconsole-setup.service"
+: 1689365356:0;systemctl list-dependencies --before systemd-vconsole-setup.service
+: 1689365466:0;systemctl list-dependencies --after systemd-vconsole-setup.service
+: 1689365616:0;systemctl --state=not-found --all
+: 1689530839:0;systemctl status rclone_sync
+: 1689530917:0;systemctl stop rclone_sync
+: 1689530944:0;systemctl start rclone_sync
+: 1689546379:0;sudo pacman -Syu podman
+: 1689546414:0;sudo pacman -Syu distrobox
+: 1689546705:0;sudo pacman -Rns distrobox
+: 1689546714:0;sudo pacman -Rns podman
+: 1689547606:0;sudo pacman -Syu virt-manager
+: 1689547633:0;sudo pacman -Syu qemu
+: 1689547671:0;sudo pacman -Syu gnome-boxes
+: 1689547855:0;sudo pacman -Syu virtualbox
+: 1689547884:0;sudo pacman -Syu vbox
+: 1689616015:0;df -h /boot
+: 1689630951:0;cryptsetup luksDump /dev/nvme0n1p2
+: 1689631871:0;sudo dd if=/dev/urandom of=/root/lukskey1 bs=1024 count=4
+: 1689631906:0;sudo chmod 0400 /root/lukskey1
+: 1689631989:0;sudo cryptsetup luksAddKey /dev/nvme0n1p5 /root/lukskey1
+: 1689635785:0;sudo nano /etc/crypttab
+: 1689794015:0;sudo systemctl restart dnscrypt-proxy
+: 1689801332:0;systemctl --failed\
+
+: 1689801450:0;sudo echo "bkmo ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/sudoer_bkmo
+: 1689801500:0;echo "bkmo ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/sudoer_bkmo
+: 1689802435:0;/usr/bin/pacman -Qqe | cat > /home/bkmo/Pacman-bkups/allpkgs.txt
+: 1689802494:0;/usr/bin/pacman -Qqen | cat > /home/bkmo/Pacman-bkups/allpkgs.txt
+: 1689802558:0;/usr/bin/pacman -Qqem | cat > /home/bkmo/Pacman-bkups/allpkgs.txt
+: 1689802677:0;cleaning-automation
+: 1689873412:0;sudo cryptsetup convert --type luks2  /dev/nvme0n1p5
+: 1689873515:0;sudo cryptsetup luksConvertKey --key-slot 0  --pbkdf argon2 /dev/nvme0n1p5
+: 1689873605:0;sudo cryptsetup luksConvertKey --key-slot 1  --pbkdf pbkdf2 /dev/nvme0n1p5
+: 1689873647:0;sudo cryptsetup luksConvertKey --key-slot 0  --pbkdf pbkdf2 /dev/nvme0n1p5
+: 1689873766:0;sudo cryptsetup luksConvertKey --key-slot 0  --pbkdf argon2i /dev/nvme0n1p5
+: 1689873781:0;sudo cryptsetup luksDump /dev/nvme0n1p5  | grep "Version\|KDF"
+: 1689873804:0;sudo cryptsetup luksConvertKey --key-slot 1  --pbkdf argon2i /dev/nvme0n1p5
+: 1689873835:0;sudo cryptsetup luksDump /dev/nvme0n1p5
+: 1689877111:0;22h2u11
+: 1689878174:0;efibootmgr -v
+: 1689878280:0;sudo efibootmgr -b 0002 -B
+: 1689880302:0;systemctl restart dnscrypt-proxy
+: 1689962064:0;tune2fs -m 0 /dev/sda1
+: 1689962076:0;sudo tune2fs -m 0 /dev/sda1
+: 1689979376:0;sudo cleaning-automation
+: 1689980383:0;fwupdmgr
+: 1689980394:0;fwupdmgr --help
+: 1689980456:0;fwupdmgr get-updates
+: 1690127203:0;systemctl enable --now systemd-boot-update.service
+: 1690132294:0;sudo efibootmgr -c -d /dev/nvme0n1 -p 2 -L "Windows 10" -l '\EFI\Microsoft\Boot\bootmgfw.efi'
+: 1690132356:0;sudo efibootmgr -c -d /dev/nvme0n1 -p 2 -L "Arch-Grub" -l '\EFI\arch\grubx64.efi'
+: 1690132540:0;sudo efibootmgr -c -d /dev/nvme0n1 -p 1 -L "Arch-Grub" -l '\EFI\Arch-Grub\grubx64.efi'
+: 1690132574:0;sudo efibootmgr -c -d /dev/nvme0n1 -p 1 -L "Windows 10" -l '\EFI\Microsoft\Boot\bootmgfw.efi'
+: 1690132650:0;sudo efibootmgr -b 0004 -B
+: 1690132670:0;sudo efibootmgr -b 0003 -B
+: 1690137746:0;lsblk -dno
+: 1690137751:0;sudo lsblk -dno
+: 1690137764:0;/lsblk
+: 1690137772:0;/ lsblk
+: 1690137775:0;sudo / lsblk
+: 1690141528:0;sudo mkinitcpio -p linux
+: 1690145818:0;systemd-analyze
+: 1690145882:0;systemd-analyze calendar 0/8:00:00
+: 1690149640:0;sudo pacman -Syu gparted
+: 1690151633:0;sudo blkid
+: 1690151786:0;cfdisk
+: 1690151790:0;sudo cfdisk
+: 1690151994:0;sudo blkid -p
+: 1690152019:0;sudo blkid -p /dev/nvme0n1p5
+: 1690153428:0;umount /efi
+: 1690157397:0;sudo tar cvzf /home/boot.tgz /boot
+: 1690157509:0;sudo umount /boot
+: 1690157965:0;sudo umount /dev/nvme0n1p1
+: 1690157969:0;sudo umount /efi
+: 1690158594:0;sudo fdisk -l
+: 1690158892:0;sudo fdisk /dev/nvme0n1p1
+: 1690159054:0;sudo fdisk /dev/nvme0n1
+: 1690159162:0;parted -l
+: 1690159165:0;sudo parted -l
+: 1690159233:0;sudo parted 1
+: 1690159255:0;sudo parted nvme0n1p1
+: 1690159269:0;sudo parted nvme0n1
+: 1690159361:0;sudo parted nvme0n1 set 1 esp on
+: 1690159383:0;sudo parted /dev/nvme0n1 set 1 esp on
+: 1690159785:0;sudo tar -xvzf home.tgz -C /boot
+: 1690159811:0;sudo tar -xvzf boot.tgz -C /boot
+: 1690159904:0;cd /boot
+: 1690159916:0;ls -l
+: 1690159921:0;cd boot
+: 1690160280:0;sudo cp archboot.efi /boot/EFI/Archboot
+: 1690160908:0;sudo efibootmgr -b 6 -B
+: 1690160934:0;sudo efibootmgr -b 3 -B
+: 1690160963:0;sudo grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch-Grub
+: 1690161274:0;sudo efibootmgr --create --disk /dev/nvme0n1p1 --part 1 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot" --unicode
+: 1690161390:0;sudo efibootmgr --create --disk /dev/nvme0n1p1 --part 1 --loader /EFI/Archboot/archboot.efi --label "ArchBoot" --unicode
+: 1690171381:0;systemctl status systemd-boot-update.service
+: 1690172328:0;sudo cp archboot.efi /boot/EFI/Linux
+: 1690172492:0;sudo efibootmgr -b 2 -B
+: 1690172519:0;sudo efibootmgr --create --disk /dev/nvme0n1p1 --part 1 --loader /EFI/Linux/archboot.efi --label "ArchBoot" --unicode
+: 1690212095:0;mount /dev/nvme0n1p3 /mnt
+: 1690212139:0;btrfs subvolume create /mnt/@Archives
+: 1690212144:0;sudo btrfs subvolume create /mnt/@Archives
+: 1690212216:0;sudo btrfs subvolume create /mnt/@Pdf
+: 1690212484:0;mount -o compress=zstd,subvol=@Pdf,noatime /dev/nvme0n1p3 /home/Pdf1
+: 1690212491:0;sudo mount -o compress=zstd,subvol=@Pdf,noatime /dev/nvme0n1p3 /home/Pdf1
+: 1690212691:0;sudo mount -o compress=zstd,subvol=@Pdf,noatime /dev/nvme0n1p2 /home/Pdf1
+: 1690213093:0;umount /home/bkmo/Pdf1
+: 1690222055:0;sudo chmod 644 /etc/crypttab
+: 1690222241:0;sudo chown root:root /etc/crypttab
+: 1690222365:0;dmsetup table
+: 1690226651:0;dmsetup table --showkeys
+: 1690227000:0;sudo dmsetup table --showkeys
+: 1690227541:0;sudo cryptsetup luksDump /dev/nvme0n1p2
+: 1690227573:0;sudo cryptsetup luksDump /dev/nvme0n1p3  | grep "Version\|KDF"
+: 1690228086:0;cryptsetup --allow-discards --persistent refresh cryptroot
+: 1690228091:0;sudo cryptsetup --allow-discards --persistent refresh cryptroot
+: 1690228107:0;sudo cryptsetup luksDump /dev/nvme0n1p2  | grep "Version\|KDF"
+: 1690228659:0;sudo fstrim /
+: 1690228980:0;systemctl disable fstrim.timer
+: 1690734700:0;
+: 1690229791:0;sudo cryptsetup convert --type luks2  /dev/nvme0n1p3
+: 1690229903:0;sudo cryptsetup --allow-discards --persistent refresh /dev/nvme0n1p3
+: 1690230014:0;sudo mount /dev/nvme0n1p3 /mnt
+: 1690230248:0;btrfs subvolume create /mnt/@Torrents
+: 1690230254:0;sudo btrfs subvolume create /mnt/@Torrents
+: 1690230264:0;sudo btrfs subvolume create /mnt/@PDF
+: 1690230303:0;sudo cryptsetup --allow-discards --persistent refresh /dev/mapper/storage
+: 1690230329:0;sudo cryptsetup --perf-no_read_workqueue --perf-no_write_workqueue --persistent refresh storage
+: 1690230403:0;sudo cryptsetup luksConvertKey --key-slot 1  --pbkdf argon2i /dev/nvme0n1p3
+: 1690230411:0;sudo cryptsetup luksConvertKey --key-slot 0  --pbkdf argon2i /dev/nvme0n1p3
+: 1690230499:0;sudo cryptsetup --allow-discards --persistent refresh storage
+: 1690230539:0;sudo cryptsetup --perf-no_read_workqueue --perf-no_write_workqueue --allow-discards --persistent refresh storage
+: 1690231134:0;sudo cryptsetup --perf-no_read_workqueue --perf-no_write_workqueue --allow-discards --persistent refresh cryptroot
+: 1690231144:0;sudo cryptsetup luksDump /dev/nvme0n1p2  | grep Flags
+: 1690231155:0;sudo cryptsetup luksDump /dev/nvme0n1p3  | grep Flags
+: 1690231883:0;sudo dmsetup table
+: 1690232020:0;sudo mount /dev/mapper/storage /mnt
+: 1690232037:0;sudo btrfs subvolume create /mnt/@Music
+: 1690232047:0;sudo btrfs subvolume create /mnt/@Videos
+: 1690232058:0;sudo btrfs subvolume create /mnt/@Pictures
+: 1690232069:0;sudo btrfs subvolume create /mnt/@Documents
+: 1690232092:0;sudo btrfs subvolume create /mnt/@Downloads
+: 1690232679:0;sudo fstrim /dev/mapper/storage
+: 1690232699:0;sudo fstrim /home/bkmo/Torrents
+: 1690232710:0;sudo fstrim /home/bkmo/PDF
+: 1690232727:0;sudo fstrim /home/bkmo/Downloads
+: 1690232739:0;sudo fstrim /home
+: 1690236865:0;sudo mount -a
+: 1690248629:0;sudo udevadm control --reload-rules
+: 1690299277:0;qdbus org.kde.KWin /ColorCorrect GetAll org.kde.kwin.ColorCorrect
+: 1690300924:0;efibootmgr
+: 1690302738:0;pacman -Rns update-grub
+: 1690302742:0;sudo pacman -Rns update-grub
+: 1690302769:0;update-grub
+: 1690302944:0;pacman -R --dbonly arch-grub2-theme
+: 1690302947:0;sudo pacman -R --dbonly arch-grub2-theme
+: 1690303046:0;sudo pacman -Rns kora-icon-theme
+: 1690312582:0;systemctl restart btrfsmaintenance
+: 1690312882:0;systemctl enable --now btrfs-trim.timer
+: 1690314468:0;btrfsmaintenance-refresh
+: 1690314490:0;systemctl start btrfsmaintenance-refresh
+: 1690314537:0;systemctl restart btrfsmaintenance-refresh
+: 1690319468:0;/lib/ld-linux-x86-64.so.2 --help | grep supported
+: 1690320338:0;sudo pacman -Rns linux-zen
+: 1690323066:0;sudo tar -xvzf /home/bkmo/etc.tgz -C /etc
+: 1690323341:0;sudo tar -cjvf etc.tar.bz2 /etc
+: 1690323682:0;tar -I zstd -cvpf etc.tar.zst /etc
+: 1690323695:0;sudo tar -I zstd -cvpf etc.tar.zst /etc
+: 1690325722:0;lsblk --help
+: 1690325755:0;lsblk -D
+: 1690500587:0;sudo cryptsetup luksDump /dev/nvme0n1p2  | grep "Flags\
+\
+\
+
+: 1690500676:0;sudo cryptsetup luksDump /dev/nvme0n1p2  | grep "Flags
+: 1690500686:0;sudo cryptsetup luksDump /dev/nvme0n1p2  | grep "Flags"
+: 1690500696:0;sudo cryptsetup luksDump /dev/nvme0n1p3  | grep "Flags"
+: 1690500704:0;fstrim /
+: 1690500716:0;sudo fstrim /var/cache/pacman/pkg
+: 1690509041:0;sudo mount -o compress=zstd,subvol=@Pdf,noatime /home/Pdf1
+: 1690509121:0;sudo mount -o compress=zstd,subvol=@Pdf,noatime /dev/mapper/storage /home/Pdf1
+: 1690509158:0;sudo mount -o compress=zstd,subvol=@Pdf,noatime /dev/mapper/storage /home/bkmo/Pdf1
+: 1690509204:0;sudo mount -o compress=zstd,subvol=@PDF,noatime /dev/mapper/storage /home/bkmo/Pdf1
+: 1690509349:0;sudo umount /home/bkmo/Pdf1
+: 1690511411:0;systemctl status btrfs-trim.timer
+: 1690511704:0;arkenfox-updater
+: 1690511772:0;arkenfox-cleaner
+: 1690514282:0;sudo btrfs subvolume list /dev/mapper/storage
+: 1690514380:0;btrfs subvolume create /mnt/btrfs/@archives
+: 1690514383:0;sudo btrfs subvolume create /mnt/btrfs/@archives
+: 1690515881:0;lsattr -d /home/bkmo/Torrents/download
+: 1690518331:0;btrfs inspect-internal rootid /
+: 1690518611:0;btrfs -h
+: 1690519908:0;btrfs subvolume create /mnt/btrfs/@snapshots
+: 1690519911:0;sudo btrfs subvolume create /mnt/btrfs/@snapshots
+: 1690520148:0;sudo mkdir /.snapshots/torrents
+: 1690520397:0;sudo btrfs subvolume snapshot /home/bkmo/Torrents /.snapshots/torrents/torrents1-7-27-23-10:58
+: 1690521287:0;cat /.snapshots/torrents/torrents1-7-27-23-10:58
+: 1690521319:0;sudo btrfs subvolume delete /.snapshots/torrents/torrents1-7-27-23-10:58
+: 1690521500:0;sudo btrfs subvolume snapshot /home/bkmo/Torrents /.snapshots/torrents/torrents1-7-27-23-11:16
+: 1690521521:0;cat /.snapshots/torrents/torrents1-7-27-23-11:16/text.txt
+: 1690521548:0;umount /mnt/btrfs
+: 1690521733:0;sudo mount -o compress=zstd,subvol=@snapshots/torrents/torrents1-7-27-23-11:16,noatime /dev/mapper/storage /mnt/btrfs
+: 1690522108:0;sudo mkdir /mnt/snapshots
+: 1690522177:0;sudo mkdir /.snapshots/videos
+: 1690522188:0;sudo mkdir /.snapshots/PDF
+: 1690522200:0;sudo mkdir /.snapshots/documents
+: 1690522213:0;sudo mkdir /.snapshots/pictures
+: 1690522224:0;sudo mkdir /.snapshots/archives
+: 1690522247:0;sudo mkdir /.snapshots/downloads
+: 1690522390:0;sudo btrfs subvolume snapshot /home/bkmo/Videos /.snapshots/videos/videos_1-7-27-23-11:32
+: 1690522592:0;mount -o compress=zstd,subvol=@snapshots/videos/videos_1-7-27-23-11:32,noatime /dev/mapper/storage /mnt/snapshots/videos
+: 1690522596:0;sudo mount -o compress=zstd,subvol=@snapshots/videos/videos_1-7-27-23-11:32,noatime /dev/mapper/storage /mnt/snapshots/videos
+: 1690522651:0;sudo umount /mnt/snapshots/videos
+: 1690522664:0;cd..
+: 1690523029:0;sudo btrfs subvolume snapshot /home/bkmo/PDF  /.snapshots/PDF/PDF_1-7-27-23-11:42
+: 1690523094:0;sudo btrfs subvolume snapshot /home/bkmo/Documents  /.snapshots/documents/documents_1-7-27-23-11:42
+: 1690523373:0;sudo btrfs subvolume list /home/bkmo/PDF
+: 1690523482:0;sudo btrfs subvolume list /home/bkmo/videos
+: 1690525387:0;date
+: 1690525634:0;sudo btrfs subvolume delete /.snapshots/videos/videos_
+: 1690526333:0;cd Archives
+: 1690526335:0;ls
+: 1690526379:0;sudo cp snapshots-daily.service /etc/systemd/system
+: 1690526391:0;sudo cp snapshots-daily.timer /etc/systemd/system
+: 1690526427:0;systemctl enable --now snapshots-daily.timer
+: 1690526496:0;systemctl status snapshots-daily.service
+: 1690526527:0;sudo snapshots
+: 1690526667:0;systemctl start snapshots-daily.service
+: 1690556789:0;ls -r1 "/.snapshots/videos/" | tail -n +$((2+1))
+: 1690556805:0;ls -r1 "/.snapshots/videos" | tail -n +$((2+1))
+: 1690557325:0;btrfs subvolume show / | grep -oP 'Creation time:\s*\K\d.*$'
+: 1690557328:0;sudo btrfs subvolume show / | grep -oP 'Creation time:\s*\K\d.*$'
+: 1690557374:0;sudo btrfs subvolume show /.snapshots/videos | grep -oP 'Creation time:\s*\K\d.*$'
+: 1690557384:0;sudo btrfs subvolume show /.snapshots/videos/ | grep -oP 'Creation time:\s*\K\d.*$'
+: 1690557414:0;sudo btrfs subvolume list /.snapshots/videos/ | grep -oP 'Creation time:\s*\K\d.*$'
+: 1690557496:0;/usr/bin/find /.snapshots/videos/ -mindepth 1 -maxdepth 1 -name "auto-sn-*" -exec /usr/sbin/btrfs subvolume show {} \; | /usr/bin/grep "__snapshot|Creation"
+: 1690557542:0;/usr/bin/find /.snapshots/videos/ -mindepth 1 -maxdepth 1 -name "videos_*" -exec /usr/sbin/btrfs subvolume show {} \; | /usr/bin/grep "__snapshot|Creation"
+: 1690557548:0;sudo /usr/bin/find /.snapshots/videos/ -mindepth 1 -maxdepth 1 -name "videos_*" -exec /usr/sbin/btrfs subvolume show {} \; | /usr/bin/grep "__snapshot|Creation"
+: 1690557573:0;sudo /usr/bin/find /.snapshots/videos -mindepth 1 -maxdepth 1 -name "videos_*" -exec /usr/sbin/btrfs subvolume show {} \; | /usr/bin/grep "__snapshot|Creation"
+: 1690557634:0;btrfs subvolume show /.snapshots/videos
+: 1690557668:0;btrfs subvolume show /PDF
+: 1690557685:0;btrfs subvolume show /home/bkmo/PDF
+: 1690557691:0;sudo btrfs subvolume show /home/bkmo/PDF
+: 1690557755:0;sudo /usr/bin/find /home/bkmo/Videos -mindepth 1 -maxdepth 1 -name "videos_*" -exec /usr/sbin/btrfs subvolume show {} \; | /usr/bin/grep "__snapshot|Creation"
+: 1690557872:0;sudo /usr/bin/find /home/bkmo/Videos -mindepth 1 -maxdepth 1 -name "videos_*" -exec /usr/sbin/btrfs subvolume show {} \; | /usr/bin/grep "videos_|Creation"
+: 1690558009:0;btrfs subvolume show /home/bkmo/Videos | grep -oP 'Creation time:\s*\K\d.*$'
+: 1690558013:0;sudo btrfs subvolume show /home/bkmo/Videos | grep -oP 'Creation time:\s*\K\d.*$'
+: 1690558396:0;yay -Syu btrfs-snapshot
+: 1690558453:0;btrfs-snapshot
+: 1690558756:0;btrfs-snapshot -c videos
+: 1690558839:0;/.snapshots/videos/videos_1-7-27-23-11:32
+: 1690558846:0;cd
+: 1690558887:0;systemctl disable snapshots-daily.timer
+: 1690558952:0;sudo btrfs subvolume delete /.snapshots/torrents/torrents1-7-27-23-11:16
+: 1690559019:0;sudo btrfs subvolume delete /.snapshots/videos/videos_1-7-27-23-11:32
+: 1690559055:0;sudo btrfs subvolume delete /.snapshots/videos/videos_2023-07-28T00:24:38
+: 1690559084:0;sudo btrfs subvolume delete /.snapshots/videos/videos_2023-07-28T00:42:07
+: 1690559108:0;sudo btrfs subvolume delete /.snapshots/videos/videos_2023-07-28T00:44:31
+: 1690559218:0;sudo btrfs subvolume delete /.snapshots/PDF/PDF_1-7-27-23-11:42
+: 1690559240:0;sudo btrfs subvolume delete /.snapshots/PDF/PDF_2023-07-28T00:44:31
+: 1690559258:0;sudo btrfs subvolume delete /.snapshots/PDF/PDF_2023-07-28T00:42:07
+: 1690559443:0;sudo btrfs subvolume delete /.snapshots/torrents/torrents_2023-07-28T00:42:07
+: 1690559484:0;sudo btrfs subvolume delete /.snapshots/torrents/torrents_2023-07-28T00:44:31
+: 1690559533:0;sudo btrfs subvolume delete /.snapshots/documents/documents_1-7-27-23-11:42
+: 1690559561:0;sudo btrfs subvolume delete /.snapshots/documents/documents_2023-07-28T00:42:07
+: 1690559591:0;sudo btrfs subvolume delete /.snapshots/documents/documents_2023-07-28T00:44:31
+: 1690560179:0;sudo btrfs-snapshot -C
+: 1690560468:0;systemctl enable --now btrfs-snapshot.timer
+: 1690561459:0;btrfs subvolume show /home/bkmo/Videos
+: 1690561465:0;sudo btrfs subvolume show /home/bkmo/Videos
+: 1690562999:0;sudo mount -o compress=zstd,subvol=@snapshots,noatime /dev/mapper/storage /.snapshots
+: 1690567492:0;btrfs-snapshot --help
+: 1690567925:0;sudo btrfs-snapshot -c videos > out 2>error
+: 1690568146:0;sudo chmod a+rx /.snapshots
+: 1690568232:0;sudo chown :users /.snapshots
+: 1690568239:0;sudo btrfs-snapshot -c videos > /.snapshots/btrfs-snapshot.log
+: 1690568289:0;sudo btrfs-snapshot -c PDF > /.snapshots/btrfs-snapshot.log
+: 1690568309:0;sudo btrfs-snapshot -c pdf > /.snapshots/btrfs-snapshot.log
+: 1690568363:0;sudo btrfs-snapshot -c documents >> /.snapshots/btrfs-snapshot.log
+: 1690569097:0;sudo chown root:users /.snapshots
+: 1690569723:0;systemctl status btrfs-snapshot.service
+: 1690573427:0;sudo mkdir /var/log/btrfs-snapshots
+: 1690574107:0;sudo btrfs-snapshots
+: 1690574592:0;sudo mkdir /.snapshots/root
+: 1690574597:0;sudo mkdir /.snapshots/home
+: 1690575137:0;btrfs subvolume create /@snapshots-root
+: 1690575140:0;sudo btrfs subvolume create /@snapshots-root
+: 1690575156:0;btrfs subvolume list /
+: 1690575221:0;sudo btrfs subvolume delete /@snapshots-root
+: 1690575297:0;sudo btrfs subvolume create /mnt/btrfs/@snapshots-root
+: 1690575338:0;sudo mkdir /.snapshots-root
+: 1690575405:0;sudo mount -o compress=zstd,subvol=@snapshots-root,noatime /dev/mapper/cryptroot /.snapshots-root
+: 1690575766:0;sudo umount /.snapshots-root
+: 1690579224:0;systemctl status btrfs-snapshot.timer
+: 1690588718:0;date -I
+: 1690588728:0;date -Ihours
+: 1690588750:0;date -Iminutes
+: 1690594052:0;mount -a
+: 1690594827:0;systemctl status cronie
+: 1690611475:0;date -Iseconds
+: 1690677277:0;sudo btrfs subvolume create /mnt/btrfs/@torrent-part
+: 1690677739:0;systemctl daemon-reload
+: 1690677751:0;sudo btrfs subvolume list /home/bkmo/Videos
+: 1690677941:0;btrfs-compsiz
+: 1690678204:0;sudo btrfs filesystem defragment -vf /home/bkmo/Torrents/partial
+: 1690678222:0;sudo btrfs filesystem defragment -vfr /home/bkmo/Torrents/partial
+: 1690678277:0;sudo btrfs filesystem defragment -vfr -czstd  /home/bkmo/Torrents/partial
+: 1690679999:0;sudo btrfs filesystem defragment -vfr -czstd  /home/bkmo/Pictures
+: 1690680115:0;sudo btrfs filesystem defragment -vfr -czstd  /home/bkmo/Documents
+: 1690680127:0;sudo btrfs filesystem defragment -vfr -czstd  /home/bkmo/Archives
+: 1690680155:0;sudo btrfs filesystem defragment -vfr -czstd  /home/bkmo/PDF
+: 1690680188:0;sudo btrfs filesystem defragment -vfr -czstd  /home/bkmo/Downloads
+: 1690680217:0;sudo btrfs filesystem defragment -vfr -czstd  /home/bkmo/Videos
+: 1690680224:0;sudo btrfs filesystem defragment -vfr -czstd  /home/bkmo/Torrents
+: 1690680266:0;sudo btrfs filesystem defragment -vfr -czstd  /.snapshots-root
+: 1690680283:0;sudo btrfs filesystem defragment -vfr -czstd  /.snapshots
+: 1690680354:0;sudo btrfs filesystem defragment -vfr -czstd  /var/cache/pacman/pkg
+: 1690680371:0;sudo btrfs filesystem defragment -vfr -czstd  /var/log
+: 1690681890:0;sudo btrfs balance /home
+: 1690681911:0;cd ..
+: 1690683017:0;sudo pacman -Syu duperemove
+: 1690683091:0;sudo duperemove -dr /home
+: 1690683179:0;sudo duperemove -dr /
+: 1690683272:0;sudo duperemove -dr /Documents
+: 1690683284:0;sudo duperemove -dr /home/bkmo/Documents
+: 1690683292:0;sudo duperemove -dr /home/bkmo/Downloads
+: 1690683302:0;sudo duperemove -dr /home/bkmo/Pictures
+: 1690683333:0;sudo duperemove -dr /home/bkmo/Archives
+: 1690683359:0;sudo duperemove -dr /home/bkmo/Torrents
+: 1690683368:0;sudo duperemove -dr /home/bkmo/Videos
+: 1690683379:0;sudo duperemove -dr /home/bkmo/PDF
+: 1690683397:0;sudo duperemove -dr /.snapshots
+: 1690683403:0;sudo duperemove -dr /.snapshots-root
+: 1690683822:0;sudo btrfs filesystem defragment -vfr -czstd  /home
+: 1690684299:0;sudo btrfs balance start /home
+: 1690686182:0;sudo mount -o -remount rw,autodefrag,compress-force=zstd,subvol=@PDF,noatime /dev/mapper/storage /home/bkmo/PDF
+: 1690686213:0;sudo mount -o -remount,rw,autodefrag,compress-force=zstd,subvol=@PDF,noatime /dev/mapper/storage /home/bkmo/PDF
+: 1690686683:0;findmnt btrfs
+: 1690687009:0;lsattr -d /home/bkmo/Torrents
+: 1690688045:0;cat /proc/cmndline
+: 1690688055:0;cat /proc/cmdline
+: 1690689514:0;snapshot-detect
+: 1690691469:0;btrfs subvolume get-default /
+: 1690691472:0;sudo btrfs subvolume get-default /
+: 1690691484:0;sudo btrfs subvolume list /
+: 1690691652:0;btrfs subvolume get-default /mnt/btrfs
+: 1690691656:0;sudo btrfs subvolume get-default /mnt/btrfs
+: 1690731679:0;sudo btrfs-snapshot --help
+: 1690732643:0;sudo btrfs-snapshot -c home
+: 1690734312:0;sudo btrfs fi df /
+: 1690734345:0;sudo btrfs fi show /
+: 1690734408:0;sudo btrfs fi usage /
+: 1690738857:0;sudo btrfs subvolume create /mnt/btrfs/@var
+: 1690739030:0;sudo mount -o rw,autodefrag,compress-force=zstd,subvol=@var,noatime /dev/mapper/cryptroot /home/bkmo/var
+: 1690739322:0;sudo mount -o rw,autodefrag,compress-force=zstd,subvol=@var,noatime /dev/mapper/cryptroot /var
+: 1690739478:0;sudo umount /var/cache/pacman/pkg
+: 1690739639:0;sudo umount /var
+: 1690740140:0;sudo btrfs subvolume delete /@pkg
+: 1690740152:0;sudo btrfs subvolume delete /mnt/btrfs/@pkg
+: 1690746416:0;systemctl disable timeshift-snapshots-update-grub
+: 1690746422:0;systemctl status timeshift-snapshots-update-grub
+: 1690746511:0;sudo pacman -Rns wpa-supplicant
+: 1690746563:0;sudo pacman -Rns wpa_supplicant
+: 1690785050:0;echo $XDG_CURRENT_DESKTOP
+: 1690785105:0;echo ${QT_QPA_PLATFORMTHEME}
+: 1690785118:0;echo $QT_QPA_PLATFORMTHEME
+: 1690785238:0;pkexec btrfs-assistant --xdg-runtime="${XDG_RUNTIME_DIR}" --platformtheme="${QT_QPA_PLATFORMTHEME}" --platform="${QT_QPA_PLATFORM}" --display="${WAYLAND_DISPLAY}"
+: 1690785261:0;kdebug
+: 1690785332:0;pkexec btrfs-assistant \\
+      --xdg-desktop="$XDG_CURRENT_DESKTOP"\
+
+: 1690785427:0;pkexec btrfs-assistant --xdg-desktop="$XDG_CURRENT_DESKTOP"\
+
+: 1690814818:0;sudo pacman -Syyu
+: 1690842477:0;sudo pacman -Syu nvme-cli
+: 1690842511:0;nvme id-ctrl
+: 1690842531:0;nvme id-ctrl /dev/nvme0n1
+: 1690842547:0;nvme id-ctrl -H /dev/nvme0n1
+: 1690842684:0;sudo nvme list
+: 1690842972:0;sudo nvme micron
+: 1690843170:0;fwupdmgr get-devices
+: 1690843455:0;sudo nvme id-ctrl -H /dev/nvme0n1
+: 1690845074:0;sudo pacman -Rns nvme-cli
+: 1690854813:0;mirrors
+: 1690901489:0;chattr -R -C /home/bkmo/Torrents/partial
+: 1690901559:0;chattr -R +C /home/bkmo/Torrents/partial
+: 1690901660:0;lsattr -d /home/bkmo/Torrents/partial
+: 1690901742:0;rm -R /home/bkmo/Torrents/partial
+: 1690901825:0;sudo mv /home/bkmo/Torrents/partial /home/bkmo/Torrents/.partial
+: 1690901855:0;sudo rm -R /home/bkmo/Torrents/partial
+: 1690902432:0;sudo umount /home/bkmo/Torrents
+: 1690902476:0;umount -h
+: 1690902518:0;sudo umount -f /home/bkmo/Torrents
+: 1690902671:0;cat /etc/fstab
+: 1690902764:0;mount -o compress=zstd,subvol=@torrent-part,noatime /dev/mapper/storage /mnt/btrfs
+: 1690902769:0;sudo mount -o compress=zstd,subvol=@torrent-part,noatime /dev/mapper/storage /mnt/btrfs
+: 1690903024:0;mv /home/bkmo/Torrents/partial /home/bkmo/Torrents/.partial
+: 1690903506:0;lsof | grep Torrents
+: 1690908742:0;sudo umount -f /home/bkmo/Torrents/.partial
+: 1690908827:0;chattr -R +C /home/bkmo/Torrents/.partial
+: 1690908833:0;sudo chattr -R +C /home/bkmo/Torrents/.partial
+: 1690908838:0;lsattr -d /home/bkmo/Torrents/.partial
+: 1690909246:0;sudo mount -o compress=zstd,subvol=@PDF,noatime /dev/mapper/storage /mnt/btrfs
+: 1690909404:0;sudo btrfs subvolume delete /mnt/btrfs/@tottents-partial
+: 1690909418:0;sudo btrfs subvolume delete /mnt/btrfs/@torrents-partial
+: 1690909479:0;sudo btrfs subvolume delete /mnt/btrfs/@torrent-part
+: 1690916045:0;sudo btrfs subvolume create /mnt/btrfs/@var-cache
+: 1690916051:0;sudo btrfs subvolume create /mnt/btrfs/@var-tmp
+: 1690916069:0;sudo btrfs subvolume create /mnt/btrfs/@var-log
+: 1690916737:0;sudo btrfs subvolume create /mnt/btrfs/@pkg
+: 1690917775:0;sudo rm -R /var/cache/pacman/pkg/*
+: 1690919552:0;sudo btrfs-snapshot -c root
+: 1690921264:0;sudo mkdir /.snapshots-storage
+: 1690921421:0;sudo cp -R /mnt/.snapshots/ /mnt/.snapshots-storage/
+: 1690921440:0;sudo cp -R /.snapshots/ /.snapshots-storage/
+: 1690921520:0;mv --help
+: 1690921615:0;sudo mv /.snapshots/ /.snapshots-storage
+: 1690922664:0;sudo umount /.snapshots-storage
+: 1690922757:0;sudo btrfs subvolume create /mnt/btrfs/@snapshots-storage
+: 1690922828:0;sudo mkdir /.snapshots-storage/documents
+: 1690922854:0;sudo mkdir /.snapshots-storage/archives
+: 1690922859:0;music
+: 1690922867:0;sudo mkdir /.snapshots-storage/pdf
+: 1690922874:0;sudo mkdir /.snapshots-storage/music
+: 1690922881:0;sudo mkdir /.snapshots-storage/videos
+: 1690922894:0;sudo mkdir /.snapshots-storage/pictures
+: 1690922905:0;sudo mkdir /.snapshots-storage/torrents
+: 1690922925:0;sudo mkdir /.snapshots-storage/downloads
+: 1690923033:0;sudo btrfs subvolume delete /mnt/btrfs/@snapshots-storage
+: 1690923093:0;systemctl start btrfs-snapshot.service
+: 1690923223:0;sudo umount /.snapshots
+: 1690923255:0;sudo rm -r /.snapshots
+: 1690923306:0;sudo grub-mkconfig -o /boot/grub/grub.cfg
+: 1690924790:0;btrfs sub snap -r /home/bkmo/Archives  /btrfs/.snaphots-storage/archives-old
+: 1690924801:0;btrfs sub snap -r /home/bkmo/Archives  /.snaphots-storage/archives-old
+: 1690925871:0;btrfs sub snap -r /mnt/btrfs/@snapshots-storage/archives/2023-08-01T14:51-06:00   /mnt/btrfs/@archives
+: 1690925876:0;sudo btrfs sub snap -r /mnt/btrfs/@snapshots-storage/archives/2023-08-01T14:51-06:00   /mnt/btrfs/@archives
+: 1690926421:0;ls -l /mnt/btrfs/@snapshots-root/root/
+: 1690927509:0;btrfs property set -ts /mnt/btrfs/@archives ro false
+: 1690928054:0;sudo mv /mnt/btrfs/@archives /mnt/btrfs/@archives_sav
+: 1690928074:0;sudo btrfs sub snap /mnt/btrfs/@snapshots-storage/archives/2023-08-01T14:51-06:00   /mnt/btrfs/@archives
+: 1690928204:0;btrfs subvolume list /mnt/btrfs
+: 1690928276:0;sudo btrfs subvolume delete /mnt/btrfs/@archives_sav/@archives
+: 1690928279:0;sudo btrfs subvolume delete /mnt/btrfs/@archives_sav
+: 1690928287:0;sudo btrfs subvolume list /mnt/btrfs
+: 1690929096:0;sudo btrfs-snapshot -c archives
+: 1690930652:0;cp archlinux-2023.08.01-x86_64.iso /boot/archiso
+: 1690930656:0;sudo cp archlinux-2023.08.01-x86_64.iso /boot/archiso
+: 1690930691:0;sudo rm /boot/archiso/archiso.iso
+: 1690930705:0;sudo cp archlinux-2023.08.01-x86_64.iso /boot/archiso/archiso.iso
+: 1690930952:0;sudo cp initramfs-linux.img /boot/archiso
+: 1690930987:0;sudo cp vmlinuz-linux /boot/archiso
+: 1690939524:0;notify-send -u critical -i btrfs-assistant-launcher --app-name Btrfs-Snapshot 'Btrfs-Snapshot Detected!' 'Booted into Btrfs-Snapshot Snapshot, please do a manual snapshot restore or run "timeshift-launcher" to restore a timeshift snapshot.'
+: 1690939669:0;notify-send -u critical -i btrfs-assistant-launcher --app-name Btrfs-Snapshot 'Btrfs-Snapshot Detected!' 'Booted into Btrfs-Snapshot, please do a manual snapshot restore, or run "timeshift-launcher" to restore a timeshift snapshot.'
+: 1690939801:0;notify-send -u critical -i btrfs-assistant-launcher --app-name Btrfs-Snapshot 'Btrfs-Snapshot Detected!' 'Booted into a Btrfs-Snapshot. Please do a manual snapshot restore, or run "timeshift-launcher" to restore a timeshift snapshot.'
+: 1690940909:0;sudo cp Manual-Restore-Snapshhot.txt /mnt/Manual-Restore-Snapshhot.txt
+: 1690941505:0;cat /mnt/Manual-Restore-Snapshhot.txt
+: 1690941596:0;notify-send -u critical -i btrfs-assistant-launcher --app-name Btrfs-Snapshot 'Btrfs-Snapshot Detected!' 'Booted into a Btrfs-Snapshot. Please do a manual snapshot restore. "cat /mnt/Manual-Restore-Snapshhot.txt"'
+: 1690941731:0;notify-send -u critical -i btrfs-assistant-launcher --app-name Btrfs-Snapshot 'Btrfs-Snapshot Detected!' 'Booted into a Btrfs-Snapshot. Please do a manual snapshot restore. "cat /mnt/restore-snapshot.txt"'
+: 1690941850:0;cat /mnt/restore-snapshot.txt
+: 1690941939:0;sudo mv /mnt/restore-snapshot.txt /restore-snapshot.txt
+: 1690942014:0;notify-send -u critical -i btrfs-assistant-launcher --app-name Btrfs-Snapshot 'Btrfs-Snapshot Detected!' 'Booted into a Btrfs-Snapshot. Please do a manual snapshot restore. "cat /restore-snapshot.txt"'
+: 1690942367:0;cat /restore-snapshot.txt
+: 1690943383:0;ls -l /mnt/btrfs/@snapshots-storage/@documents
+: 1690943413:0;ls -l /mnt/btrfs/@documents
+: 1690943478:0;ls -l /mnt/btrfs/@Documents
+: 1690943537:0;ls -l /mnt/btrfs/@snapshots-storage/documents
+: 1690943995:0;cat /restore-storage-subvols.txt
+: 1690944087:0;sudo cp restore-storage-snaps.txt /restore-storage-snaps.txt
+: 1690944102:0;cat /restore-storage-snaps.txt
+: 1690944931:0;ls -l /mnt/btrfs/@snapshots-storage/archives
+: 1690944977:0;ls -l /mnt/btrfs/@snapshots-storage/archives | grep 2023
+: 1690946244:0;restore-storage-sub-test documents 2023-08-01T16:31-06:00
+: 1690946288:0;sudo restore-storage-sub-test documents 2023-08-01T16:31-06:00
+: 1690946892:0;ls -l /mnt/btrfs/@snapshots-storage/torrents
+: 1690948173:0;sudo restore-storage-sub-test torrents
+: 1690948928:0;sudo restore-storage-sub-test videos 2023-08-01T14:51-06:00
+: 1690949057:0;sudo restore-storage-sub-test
+: 1690949104:0;sudo btrfs-snapshot -c videos
+: 1690949780:0;ls -l /mnt/btrfs/@snapshots-storage/archives | cut -d -f 8 -s
+: 1690949825:0;ls -l /mnt/btrfs/@snapshots-storage/archives | cut -f 8 -s
+: 1690949843:0;ls -l /mnt/btrfs/@snapshots-storage/videos | cut -f 8 -s
+: 1690949852:0;ls -l /mnt/btrfs/@snapshots-storage/videos | cut -f 8
+: 1690950014:0;ls /mnt/btrfs/@snapshots-storage/videos | tr '\n' '\n'
+: 1690950150:0;sudo restore-storage-sub-test documents
+: 1690950184:0;sudo restore-storage-sub-test documents 2023-08-01T14:51-06:00\
+
+: 1690951665:0;btrfs sub snap /mnt/btrfs/@archives /mnt/btrfs/@Archives
+: 1690951672:0;sudo btrfs sub snap /mnt/btrfs/@archives /mnt/btrfs/@Archives
+: 1690951850:0;sudo umount /home/bkmo/Archives
+: 1690951960:0;findmnt -nt btrfs
+: 1690952516:0;sudo restore-storage-sub videos 2023-08-01T22:05-06:00
+: 1690953091:0;sudo restore-storage-sub PDF
+: 1690953247:0;sudo btrfs sub snap /mnt/btrfs/@PDF /mnt/btrfs/@pdf
+: 1690953329:0;sudo systemctl daemon-reload
+: 1690953488:0;sudo umount /home/bkmo/PDF
+: 1690953593:0;sudo btrfs-snapshot -c pdf
+: 1690954073:0;sudo restore-storage-sub
+: 1690954105:0;sudo restore-storage-sub pictures
+: 1690954130:0;sudo btrfs-snapshot -c torrents
+: 1690954136:0;sudo restore-storage-sub torrents
+: 1690957978:0;sudo rclone_sync_dirs
+: 1690958246:0;which arkenfox-cleaner
+: 1690959145:0;select-list
+: 1690959682:0;sudo restore-storage-sub-test videos
+: 1690961838:0;sudo btrfs subvolume delete /mnt/btrfs/@videos_sav
+: 1690961870:0;sudo btrfs subvolume delete /mnt/btrfs/@Videos_sav
+: 1690962291:0;mv /mnt/btrfs/@pdf /mnt/btrfs/@Pdf
+: 1690962295:0;sudo mv /mnt/btrfs/@pdf /mnt/btrfs/@Pdf
+: 1690962347:0;sudo mount /dev/mapper/storage /mnt/btrfs\
+
+: 1690962963:0;sudo restore-storage-sub pdf
+: 1690963279:0;del-storage-sav
+: 1690963293:0;del-storage-sav pdf
+: 1690963342:0;sudo restore-storage-sub videos
+: 1690963368:0;sudo del-storage-sav videos
+: 1690963513:0;sudo del-storage-sav pdf
+: 1690963684:0;btrfs-del
+: 1690963997:0;sudo mkdir -p /mnt/btrfs
+: 1690964004:0;sudo mkdir /mnt/btrfs
+: 1690964139:0;btrfs-restore
+: 1690964187:0;btrfs-restore torrents
+: 1690964451:0;sudo btrfs-del
+: 1690964457:0;btrfs-del torrents
+: 1690964470:0;sudo btrfs-del torrents
+: 1690964849:0;sudo umount /mnt/btrfs
+: 1690965102:0;mountpoint -q
+: 1690965117:0;mountpoint -q /mnt/btrfs
+: 1690965129:0;mountpoint  /mnt/btrfs
+: 1690965142:0;mountpoint --help
+: 1690965646:0;! mountpoint -q "/mnt/btrfs" || umount "/mnt/btrfs"
+: 1690965651:0;sudo ! mountpoint -q "/mnt/btrfs" || umount "/mnt/btrfs"
+: 1690965668:0;sudo ! mountpoint -q "/mnt/btrfs" || sudo umount "/mnt/btrfs"
+: 1690965799:0;! mountpoint -q "/mnt/btrfs" || sudo umount "/mnt/btrfs"
+: 1690965810:0;sudo btrfs-restore torrents
+: 1690997947:0;sudo btrfs-snap videos
+: 1690998807:0;sudo btrfs subvolume delete /mnt/btrfs/@
+: 1690998816:0;sudo btrfs subvolume delete /mnt/btrfs/@_sav
+: 1690999843:0;sudo chown -R sddm /var/lib/sddm/.config
+: 1691009892:0;sudo btrfs-snap-sav torrents
+: 1691012222:0;sudo btrfs-snapshot -s /home/bkmo/$cap -d /.snapshots-storage/$1/manual/ -n 10\
+
+: 1691012805:0;btrfs-snapshot -s /home/bkmo/Torrents -d /.snapshots-storage/torrents/manual/ -n 10\
+
+: 1691012836:0;btrfs-snapshot -s /home/bkmo/Torrents -d /.snapshots-storage/torrents/ -n 10\
+
+: 1691012872:0;mount -av
+: 1691012932:0;sudo mount /dev/mapper/storage /mnt/btrfs
+: 1691017751:0;sudo btrfs-snap home
+: 1691018012:0;sudo btrfs-snap root
+: 1691021240:0;notify-send -u critical -i btrfs-assistant-launcher --app-name Btrfs-Snapshot 'Btrfs-Snapshot Detected!' 'Booted into a Btrfs-Snapshot. Please do a manual snapshot restore. "btrfs-snap @"'
+: 1691022072:0;notify-send -u critical -i btrfs-assistant-launcher --app-name Btrfs-Snapshot 'Btrfs-Snapshot Detected!' 'Booted into a Btrfs-Snapshot. Please do a manual snapshot restore "btrfs-snap @", or use Timeshift "timeshift-launcher".'
+: 1691022216:0;notify-send -u critical -i timeshift --app-name Timeshift 'Snapshot Detected!' 'Booted into a Timeshift Snapshot. Please run "timeshift-launcher" to restore the snapshot, or do a manual snapshot restore "btrfs-snap @".'
+: 1691022284:0;notify-send -u critical -i timeshift --app-name Timeshift 'Timeshift Snapshot Detected!' 'Booted into a Timeshift Snapshot. Please run "timeshift-launcher" to restore the snapshot, or do a manual snapshot restore "btrfs-snap @".'
+: 1691029984:0;sudo btrfs-snap torrents
+: 1691037254:0;sudo btrfs subvolume delete /mnt/btrfs/@Videos_sav/@Videos
+: 1691037298:0;sudo btrfs subvolume delete /mnt/btrfs/@Videos_sav/"4K Video Downloader"
+: 1691037319:0;sudo btrfs subvolume delete "/mnt/btrfs/@Videos_sav/4K Video Downloader"
+: 1691038079:0;ls /mnt/btrfs/ | grep *_sav
+: 1691038132:0;ls /mnt/btrfs/ | grep @*_sav
+: 1691038160:0;ls -l /mnt/btrfs/ | grep @*_sav
+: 1691038182:0;ls -l /mnt/btrfs/
+: 1691038193:0;ls /mnt/btrfs/
+: 1691038219:0;ls /mnt/btrfs/ | tr '\n' '\n'
+: 1691038394:0;ls /mnt/btrfs/*_sav | tr '\n' '\n'
+: 1691038405:0;ls -d /mnt/btrfs/*_sav | tr '\n' '\n'
+: 1691038670:0;ls /mnt/btrfs/ | ls | grep ^*_sav
+: 1691038719:0;ls /mnt/btrfs/ | grep ^@.*
+: 1691038740:0;ls -l /mnt/btrfs/ | grep ^@.*
+: 1691038777:0;ls -l /mnt/btrfs/ | grep ^@*
+: 1691038946:0;ls /mnt/btrfs/*_sav
+: 1691038965:0;ls -d /mnt/btrfs/*_sav
+: 1691039041:0;find /mnt/btrfs -maxdepth 1 -type f -name '*_sav'
+: 1691039051:0;find /mnt/btrfs/ -maxdepth 1 -type f -name '*_sav'
+: 1691039085:0;find /mnt/btrfs/ -maxdepth 1 -type e -name '*_sav'
+: 1691039098:0;find -h
+: 1691039246:0;find --help -regextype
+: 1691039277:0;find -regextype help
+: 1691039389:0;find /mnt/btrfs/ -maxdepth 1 -type d -name '*_sav'
+: 1691039549:0;find /mnt/btrfs/ -maxdepth 1 -type d -name '*_sav' -exec basename {} \;
+: 1691044252:0;sudo btrfs sub snapshot /mnt/btrfs1/@home /mnt/btrfs1/@home_sav
+: 1691044257:0;sudo btrfs sub snapshot /mnt/btrfs1/@ /mnt/btrfs1/@_sav
+: 1691045337:0;umount -help
+: 1691050113:0;sudo btrfs-snap @home
+: 1691051462:0;mv -f /mnt/btrfs/@Torrents /mnt/btrfs/@Torrents_sav
+: 1691051840:0;sudo rm -rf /mnt/btrfs/@Torrents_sav
+: 1691051846:0;sudo mv -f /mnt/btrfs/@Torrents /mnt/btrfs/@Torrents_sav
+: 1691051919:0;sudo mv -f /mnt/btrfs/@Torrents_sav /mnt/btrfs/@Torrents
+: 1691078888:0;which pacman
+: 1691098089:0;pacdiff --sudo
+: 1691099670:0;sudo btrfs-snap -
+: 1691101102:0;btrfs-snap -h
+: 1691101131:0;sudo btrfs-snap -h
+: 1691101136:0;sudo btrfs-snap --help
+: 1691101344:0;btrfs-snap @
+: 1691104157:0;sudo mount /dev/mapper/cryptroot /mnt/btrfs
+: 1691104795:0;ls /mnt/btrfs1/timeshift-btrfs/snapshots
+: 1691104978:0;ls -l /mnt/btrfs1/timeshift-btrfs/snapshots
+: 1691104986:0;ls -ls /mnt/btrfs1/timeshift-btrfs/snapshots
+: 1691105044:0;ls -R /mnt/btrfs1/timeshift-btrfs/snapshots
+: 1691105175:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2 -type d -name '*_sav' -exec basename {} \;\
+
+: 1691105567:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2  -exec basename {} \;\
+
+: 1691105620:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2 -type d
+: 1691106249:0;ls -lt /.snapshots-root/home
+: 1691106339:0;ls -t /.snapshots-root/ | tr '\n' '\n'
+: 1691106349:0;ls -t /.snapshots-root/root | tr '\n' '\n'
+: 1691106391:0;ls -t /.snapshots-root/home | tr '\n' '\n'
+: 1691106479:0;ls -tu /.snapshots-root/home | tr '\n' '\n'
+: 1691106536:0;ls -lt /.snapshots-root/home | tr '\n' '\n'
+: 1691106548:0;ls -lc /.snapshots-root/home | tr '\n' '\n'
+: 1691106568:0;ls  /.snapshots-root/home | tr '\n' '\n'
+: 1691106644:0;ls -r /snapshots-root/home | tr '\n' '\n'
+: 1691106680:0;ls -lr /snapshots-root/home | tr '\n' '\n'
+: 1691106701:0;ls -lr /.snapshots-root/home | tr '\n' '\n'
+: 1691106706:0;ls -r /.snapshots-root/home | tr '\n' '\n'
+: 1691106835:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2 -type d  -exec basename {} \;\
+
+: 1691106854:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2 -type d  -exec basename {} \; | tac -rs '\0'\
+
+: 1691106888:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2 -type d  -exec basename {} \; | tac -r\
+
+: 1691106925:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2 -type d  -exec basename {} \; | tac -rs
+: 1691106934:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2 -type d  -exec basename {} \; | tac -r
+: 1691111563:0;ls -r --color=auto /.snapshots-storage/Videos | tr '\n' '\n'
+: 1691111575:0;ls -r --color=auto /.snapshots-storage/@Videos | tr '\n' '\n'
+: 1691111603:0;ls -r --color=auto /.snapshots-storage/videos | tr '\n' '\n'
+: 1691111617:0;ls -r --color=auto /.snapshots-storage/videos
+: 1691111630:0;ls -r  /.snapshots-storage/videos
+: 1691111672:0;ls -r  /.snapshots-storage/videos | tr '\n' '\n'
+: 1691112675:0;btrfs-snap --help
+: 1691112991:0;sudo btrfs-snap @
+: 1691114118:0;echo $PS3
+: 1691116109:0;dialog
+: 1691118245:0;menu
+: 1691120329:0;sudo btrfs-snap-tst
+: 1691131237:0;sudo btrfs sub snap /mnt/btrfs/@snapshots-storage/torrents/2023-08-04T00:00-06:00  /mnt/btrfs/@$uc\
+
+: 1691131266:0;sudo btrfs sub snap /mnt/btrfs/@snapshots-storage/torrents/2023-08-04T00:00-06:00  /mnt/btrfs/@Torrents\
+
+: 1691131311:0;sudo mount -av
+: 1691179858:0;sudo dd if=/dev/zero of=/swapfile bs=1M count=17408
+: 1691187420:0;cat https://pastebin.com/raw/mviRgaUg
+: 1691187440:0;wget https://pastebin.com/raw/mviRgaUg
+: 1691187564:0;chmod +x /home/bkmo/mviRgaUg
+: 1691187596:0;ls /home/bkmo/mviRgaUg
+: 1691187603:0;ls -l /home/bkmo/mviRgaUg
+: 1691187641:0;/home/bkmo/mviRgaUg
+: 1691187947:0;./home/bkmo/achroot
+: 1691187968:0;bash /home/bkmo/achroot
+: 1691187995:0;sudo bash /home/bkmo/achroot
+: 1691188295:0;wget https://pastebin.com/raw/mviRgaUg /
+: 1691188322:0;wget https://pastebin.com/raw/mviRgaUg /arcr.sh
+: 1691188358:0;sudo wget https://pastebin.com/raw/mviRgaUg /arcr.sh
+: 1691188471:0;sudo wget -o /archr.sh https://pastebin.com/raw/mviRgaUg
+: 1691188616:0;sudo wget https://pastebin.com/raw/mviRgaUg -o /achroot.sh
+: 1691188769:0;sudo wget -o "/archr1.sh"  "https://pastebin.com/raw/mviRgaUg"
+: 1691188980:0;sudo wget https://pastebin.com/raw/mviRgaUg --output-document=/achroot
+: 1691189172:0;sudo wget https://pastebin.com/raw/mviRgaUg -O=/achroot1
+: 1691189240:0;sudo wget https://pastebin.com/raw/mviRgaUg -O /achroot1
+: 1691193112:0;sudo wget https://pastebin.com/raw/mviRgaUg -O archroot.sh
+: 1691193240:0;pacman -S dos2unix
+: 1691193247:0;sudo pacman -S dos2unix
+: 1691193286:0;cd bkmo
+: 1691193291:0;dos2unix archroot.sh
+: 1691193765:0;wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1P6lVtTZT_qWbJBSlUUQbIhgXR9BU1op9' -O archroot1.sh
+: 1691193838:0;wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1P6lVtTZT_qWbJBSlUUQbIhgXR9BU1op9' -o=archroot1.sh
+: 1691193857:0;wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1P6lVtTZT_qWbJBSlUUQbIhgXR9BU1op9' -o archroot1.sh
+: 1691194145:0;wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1P6lVtTZT_qWbJBSlUUQbIhgXR9BU1op9' -O archroot.sh
+: 1691194206:0;wget
+: 1691194214:0;wget --help
+: 1691194284:0;wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1P6lVtTZT_qWbJBSlUUQbIhgXR9BU1op9' -O=archroot.sh
+: 1691194371:0;wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1P6lVtTZT_qWbJBSlUUQbIhgXR9BU1op9' --output-document=archroot.sh
+: 1691195123:0;wget -O archroot.txt https://googledrive.com/host/1P6lVtTZT_qWbJBSlUUQbIhgXR9BU1op9
+: 1691195134:0;wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1P6lVtTZT_qWbJBSlUUQbIhgXR9BU1op9' -O archroot.txt
+: 1691195168:0;wget 'https://docs.google.com/uc?export=download&id=1P6lVtTZT_qWbJBSlUUQbIhgXR9BU1op9' -O archroot.txt
+: 1691195361:0;https://drive.google.com/file/d/1P6lVtTZT_qWbJBSlUUQbIhgXR9BU1op9/view?usp=drive_link
+: 1691195463:0;wget https://docs.google.com/document/d/1P6lVtTZT_qWbJBSlUUQbIhgXR9BU1op/export?format=txt
+: 1691195528:0;wget 'https://docs.google.com/uc?format=txt&export=download&id=1P6lVtTZT_qWbJBSlUUQbIhgXR9BU1op9' -O archroot.txt
+: 1691195582:0;dos2unix archroot.txt
+: 1691195724:0;sudo pacman -S gdown
+: 1691197514:0;git config pull.rebase false
+: 1691197519:0;git push
+: 1691197534:0;git pull
+: 1691197621:0;git commit -a -m "2 changes"
+: 1691197628:0;git push origin
+: 1691197809:0;wget https://raw.githubusercontent.com/bkmo/dotfiles/master/archroot.sh
+: 1691198046:0;wget https://bit.ly/3rUh3u1
+: 1691198165:0;sudo wget https://bit.ly/3rUh3u1 -O archroot.sh
+: 1691199329:0;sudo pacman -S archiso
+: 1691199457:0;cp -r /usr/share/archiso/configs/releng/ archlive
+: 1691199918:0;mkarchiso -v -w /tmp/archiso-tmp -o /path/to/out_dir/home/bkmo/archlive/
+: 1691199955:0;mkarchiso -v -w /tmp/archiso-tmp -o /home/bkmo/@torrents /home/bkmo/archlive/
+: 1691199960:0;sudo mkarchiso -v -w /tmp/archiso-tmp -o /home/bkmo/@torrents /home/bkmo/archlive/
+: 1691201802:0;cp -r /usr/share/archiso/configs/releng/ /archlive
+: 1691201805:0;sudo cp -r /usr/share/archiso/configs/releng/ /archlive
+: 1691203307:0;sudo cp -r archlinux-2023.08.04-x86_64.iso /boot/archiso/archiso.iso
+: 1691204599:0;makepkg -si
+: 1691205182:0;sudo cp -r airootfs.sfs /boot/archiso/x86_64/airootfs.sfs
+: 1691205260:0;blkid
+: 1691205280:0;blkid /dev/nvme0n1p1
+: 1691205292:0;lsblk /dev/nvme0n1p1
+: 1691205313:0;lsblk -l
+: 1691206282:0;pacman -Rns systemd-boot-archiso
+: 1691206285:0;sudo pacman -Rns systemd-boot-archiso
+: 1691206321:0;sudo pacman -Rns archiso-systemd-boot
+: 1691206347:0;sudo mkarchiso -v -w /tmp/archiso-tmp -o /home/bkmo/Archives/Archiso /archlive/
+: 1691206656:0;sudo cp -r archlinux-2023.08.01-x86_64.iso /boot/archiso/archiso.iso
+: 1691208874:0;setfont lat2-16 -m 8859-2
+: 1691208948:0;setfont lat2-16
+: 1691209329:0;sudo pacman -S terminus-font
+: 1691209387:0;showconsolefont
+: 1691210630:0;sudo mkarchiso -v -w /tmp/archiso-tmp -o /home/bkmo/Archives/Archiso /home/blmo/archlive/
+: 1691212128:0;setfont ter-132n
+: 1691212193:0;sudo setfont ter-124n
+: 1691212215:0;sudo setfont ter-132n
+: 1691212244:0;sudo setfont ter-128n
+: 1691212258:0;btrfs-snap
+: 1691212419:0;sudo mkarchiso -v -w /tmp/archiso-tmp -o /home/bkmo/Archives/Archiso /home/bkmo/archlive/
+: 1691215066:0;sudo pacma -Rns dialog
+: 1691215073:0;sudo pacman -Rns dialog
+: 1691216108:0;which arch-chroot
+: 1691217664:0;sudo timeshift --list
+: 1691221506:0;files=$(find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2 -type d  -exec basename {} \; | tac -r | tr '\n' '\n')\
+
+: 1691221763:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -mindepth 1-maxdepth 2 -type d  -exec basename {} \; | tac -r | tr '\n' '\n'
+: 1691221774:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -mindepth 1 -maxdepth 2 -type d  -exec basename {} \; | tac -r | tr '\n' '\n'
+: 1691221787:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -mindepth 1 -maxdepth 1 -type d  -exec basename {} \; | tac -r | tr '\n' '\n'
+: 1691221800:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2 -type d  {} \; | tac -r | tr '\n' '\n'
+: 1691221804:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2 -type d  -exec basename {} \; | tac -r | tr '\n' '\n'
+: 1691221848:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2 -type d  -exec basename {} \;
+: 1691221986:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2 -type d -name @  -exec basename {} \; | tac -r | tr '\n' '\n'
+: 1691222067:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2 -type d -name @  -exec basename {} ; | tac -r | tr '\n' '\n'
+: 1691222078:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2 -type d -name @ | tac -r | tr '\n' '\n'
+: 1691222126:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2 -type d -name @ | tac -r | tr '\n' '\n''\n'
+: 1691222257:0;tr --help
+: 1691223592:0;echo $files
+: 1691223732:0;sudo btrfs-snap-sav
+: 1691225926:0;sudo /usr/local/bin/btrfs-snap
+: 1691226254:0;sudo /home/bkmo/.local/bin/btrfs-snap-color-sav
+: 1691257540:0;files=$(find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2 -type d -name @ -printf "%P\n")\
+
+: 1691257755:0;find /mnt/btrfs1/.snapshots-storage/torrents/ -maxdepth 2 -type d  -printf "%P\n"
+: 1691257791:0;find /.snapshots-storage/torrents/ -maxdepth 2 -type d  -printf "%P\n"
+: 1691257831:0;find /.snapshots-storage/torrents/ -maxdepth 1 -type d  -printf "%P\n"
+: 1691257861:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2 -type d -name @ -printf "%P\n"
+: 1691257927:0;find
+: 1691257934:0;find --help
+: 1691259118:0;ls -r /.snapshots-root/home | -printf "%P\n"
+: 1691259132:0;ls -r /.snapshots-root/home | awk -printf "%P\n"
+: 1691259177:0;ls -r /.snapshots-root/home |  awk -F/ '{print $NF}'
+: 1691260639:0;find /mnt/btrfs1/timeshift-btrfs/snapshots -maxdepth 2 -type d -name @ -printf "%P\n" | sort -r
+: 1691264742:0;5
+: 1691265494:0;sudo /home/bkmo/.local/bin/btrfs-snap
+: 1691266607:0;which btrfs-snap
+: 1691271914:0;tput colors
+: 1691272159:0;echo tput bold help me
+: 1691274318:0;echo $clr
+: 1691274349:0;echo red
+: 1691274413:0;red=1234
+: 1691274448:0;clr=$(tput sgr0)\
+purple=$(tput setaf 125)\
+blue=$(tput setaf 456; tput bold)\
+red=$(tput setaf 196; tput bold)
+: 1691274452:0;echo " $red invalid option$clr $blue "$REPLY"$clr "
+: 1691274465:0;echo $red
+: 1691275990:0;sudo /home/bkmo/.local/bin/btrfs-snap-sav -h
+: 1691275996:0;sudo /home/bkmo/.local/bin/btrfs-snap-sav @home
+: 1691277751:0;sudo /home/bkmo/.local/bin/btrfs-snap-sav @
+: 1691277771:0;sudo /home/bkmo/.local/bin/btrfs-snap-sav
+: 1691283729:0;konsole -h 'sudo btrfs-snap'
+: 1691283745:0;konsole --h 'sudo btrfs-snap'
+: 1691283789:0;konsole -e 'sudo btrfs-snap'
+: 1691284230:0;echo $SHELL
+: 1691284415:0;sudo --help
+: 1691285563:0;sudo btrfs-snap
+: 1691302174:0;chown :sambashares /var/lib/samba/usershares
+: 1691302261:0;chown :sambashare /var/lib/samba/usershares
+: 1691302265:0;sudo chown :sambashare /var/lib/samba/usershares
+: 1691302476:0;sudo usermod -G bkmo sambashare
+: 1691302484:0;usermod -G bkmo sambashare
+: 1691302518:0;usermod -G sambashare bkmo
+: 1691302520:0;sudo usermod -G sambashare bkmo
+: 1691303198:0;sudo mkdir -p /samba/public
+: 1691303226:0;sudo touch /samba/public/public1
+: 1691303245:0;sudo chown -R nobody:nobody /samba
+: 1691303317:0;pacman -S samba smbclient
+: 1691303373:0;sudo useradd smbuser
+: 1691303428:0;sudo smbpasswd -a smbuser
+: 1691303733:0;sudo chmod -R 700 /var/lib/samba
+: 1691303737:0;systemctl start smb
+: 1691303754:0;systemctl start nmb
+: 1691303822:0;sudo chmod -R 755 /var/lib/samba
+: 1691304080:0;sudo chmod -R  g+rwx  /var/lib/samba
+: 1691304175:0;journalctl -p 3 -xb\
+
+: 1691304520:0;systemctl restart nmb
+: 1691304540:0;systemctl status smb
+: 1691304620:0;systemctl restart smb
+: 1691305328:0;sudo EDITOR=nano visudo
+: 1691306155:0;groups bkmo
+: 1691306686:0;su
+: 1691307483:0;sudo systemctl status nmb
+: 1691307700:0;sudo chmod -R 0755 /var/lib/samba
+: 1691307750:0;sudo systemctl status smb
+: 1691307796:0;sudo chmod -R 700 /var/lib/samba/private/msg.sock
+: 1691308373:0;sudo mkdir /samba
+: 1691308375:0;sudo mkdir /samba/myfiles
+: 1691308451:0;sudo groupadd -r sambauser
+: 1691308498:0;sudo chown root:sambauser /samba/myfiles
+: 1691308522:0;sudo chmod -R 770 /samba/myfiles
+: 1691308676:0;sudo smbpasswd -a bkmo
+: 1691308756:0;sudo gpasswd sambauser -a bkmo
+: 1691308850:0;groups
+: 1691309029:0;sudo pacman -Rns samba smbclient
+: 1691309117:0;sudo pacman -S samba smbclient
+: 1691309473:0;sudo pacman -S kdenetwork-filesharing
+: 1691309579:0;sudo mkdir /var/lib/samba/usershares
+: 1691309596:0;sudo groupadd -r sambashare
+: 1691309624:0;sudo chown root:sambashare /var/lib/samba/usershares
+: 1691309642:0;chmod 1770 /var/lib/samba/usershares
+: 1691309646:0;sudo chmod 1770 /var/lib/samba/usershares
+: 1691309707:0;sudo gpasswd sambashare -a bkmo
+: 1691346410:0;sudo testparm
+: 1691346448:0;sudo systemctl restart smb.service
+: 1691346453:0;sudo systemctl restart nmb
+: 1691347816:0;yay -Y --batchinstall --save
+: 1691348061:0;yay -Y --answerclean y --save
+: 1691348096:0;yay -Y --answerdiff n --save
+: 1691348125:0;yay -Y --answeredit n --save
+: 1691348171:0;yay -Y --removemake --save
+: 1691348215:0;yay -Y --cleanafter --save
+: 1691348498:0;yay -Y --nocombinedupgrade --save
+: 1691348513:0;yay -Y --nodiffmenu --save
+: 1691349715:0;btrfs subvolume list / | awk '/snap/ && /root/' | wc -l
+: 1691349719:0;sudo btrfs subvolume list / | awk '/snap/ && /root/' | wc -l
+: 1691349750:0;sudo btrfs subvolume list / | awk '/snap/ && /@/' | wc -l
+: 1691349781:0;btrfs subvolume list / | awk '/snap/ && /root/ {print $1"="$2" "$NF}'
+: 1691349784:0;sudo btrfs subvolume list / | awk '/snap/ && /root/ {print $1"="$2" "$NF}'
+: 1691349826:0;sudo btrfs subvolume list / | awk '/snap/ && /@/ {print $1"="$2" "$NF}'
+: 1691349904:0;df -Th | grep btrfs | grep /$ | cut -d' ' -f 1
+: 1691349944:0;btrfs subvolume list / | awk '/level 5/ {print $NF}'| head -n1
+: 1691349947:0;sudo btrfs subvolume list / | awk '/level 5/ {print $NF}'| head -n1
+: 1691350024:0;btrfs --help
+: 1691356549:0;exit
+: 1691376322:0;journalctl -q -p 3 -xb\
+
+: 1691376802:0;qdbus org.kde.ksmserver /KSMServer saveCurrentSession
+: 1691377226:0;qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.saveCurrentSession\
+\
+
+: 1691377287:0;qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.sessionList
+: 1691389450:0;mount
+: 1691428457:0;aurup
+: 1691428686:0;yay -Y --answerclean a --save
+: 1691440907:0;updates
+: 1691440921:0;pacup
+: 1691446237:0;lsblk
+: 1691449456:0;yay -s plymouth-git
+: 1691449575:0;makepkg -sic
+: 1691450083:0;sudo update-grub
+: 1691452074:0;yay -S plymouth-theme-arch-logo
+: 1691453335:0;yay -Syu pamac-bin
+: 1691453427:0;yay -Syu pamac-aur
+: 1691453532:0;yay -Syu libpamac-aur
+: 1691454048:0;yay -Syu pamac-all
+: 1691454229:0;pacman -Rns snapd
+: 1691454231:0;sudo pacman -Rns snapd
+: 1691454241:0;sudo pacman -Rns flatpac
+: 1691454254:0;sudo pacman -Rns flatpak
+: 1691454273:0;orphrm
+: 1691454287:0;clear
+: 1691454598:0;sudo chmod 1777 /tmp
+: 1691454953:0;yay -S plymouth-theme-arch-logo-new
+: 1691455046:0;sudo mkinitcpio -P
+: 1691456873:0;mkdir /boot/archiso
+: 1691456919:0;sudo mkdir /boot/archiso/
+: 1691457007:0;cp -r archlinux-2023.08.04-x86_64_bkmo.iso /boot/archiso/archiso
+: 1691457010:0;sudo cp -r archlinux-2023.08.04-x86_64_bkmo.iso /boot/archiso/archiso
+: 1691457329:0;bootctl -p
+: 1691457522:0;sudo bootctl update
+: 1691457532:0;sudo  bootctl list --no-pager
+: 1691459748:0;echo $TERM
+: 1691460589:0;sudo btrfs-snap
+: 1691461694:0;mkdir -p /var/lib/iwd
+: 1691461750:0;mkdir -p /home/bkmo/archlive/airootfs/var/lib/iwd
+: 1691462045:0;sudo mkarchiso -v -w /tmp/archiso-tmp -o /home/bkmo/Archives/Archiso /home/bkmo/archlive/
+: 1691462789:0;sudo cp -r archlinux-2023.08.07-x86_64_bkmo.iso /boot/archiso/archiso.iso
+: 1691462816:0;sudo cp -r /home/bkmo/Archives/archlinux-2023.08.07-x86_64_bkmo.iso /boot/archiso/archiso.iso
+: 1691463042:0;sudo cp -r /home/bkmo/Archives/Archiso/archlinux-2023.08.07-x86_64.iso /boot/archiso/archiso.iso
+: 1691464688:0;sudo btrfs-snap
+: 1691464917:0;sudo btrfs-snap\ 
+: 1691464922:0;sudo btrfs-snap
+: 1691465541:0;4
+: 1691465547:0;sudo btrfs-snap
+: 1691475273:0;updates
+: 1691475505:0;mkdir --help
+: 1691475786:0;sudo mkdir /mnt/isos
+: 1691475935:0;sudo mkinitcpio -P
+: 1691476514:0;sudo mount -av
+: 1691476581:0;systemctl daemon-reload
+: 1691476587:0;sudo mount -av
+: 1691478200:0;sudo update-grub
+: 1691478573:0;orphrm
+: 1691478763:0;sudo update-grub
+: 1691479097:0;yay -R arch-logo
+: 1691479130:0;yay -R plymouth-theme-arch-logo
+: 1691479144:0;clear
+: 1691479397:0;yay -S plymouth-theme-arch-logo
+: 1691479501:0;yay -R plymouth-theme-arch-logo
+: 1691514074:0;orphrm
+: 1691514079:0;updates
+: 1691519506:0;sudo update-grub
+: 1691520317:0;git clone https://github.com/endeavouros-team/EndeavourOS-ISO.git
+: 1691532770:0;sudo pacman -Syu gnome-boxes
+: 1691533617:0;GTK_USE_PORTAL=1 gnome-boxes
+: 1691534301:0;sudo pacman -Syu gtk-desktop-portal-gnome
+: 1691534361:0;sudo pacman -Syu xdg-desktop-portal-gnome
+: 1691534458:0;sudo pacman -Syu xdg-desktop-portal-gtk
+: 1691534557:0;sudo pacman -R xdg-desktop-portal-gtk
+: 1691534580:0;sudo pacman -R xdg-desktop-portal-gnome
+: 1691534686:0;sudo pacman -Syu xdg-desktop-portal-gnome
+: 1691537676:0;sudo pacman -Rns gnome-boxes
+: 1691537686:0;orphrm
+: 1691537690:0;clear
+: 1691537750:0;sudo pacman -Syu virt-manager
+: 1691537978:0;sudo pacman -Syu qemu virt-viewer
+: 1691538046:0;sudo pacman -Syu vde2 bridge-utils
+: 1691538069:0;sudo pacman -Syu openbsd-netcat
+: 1691538175:0;sudo pacman -Syu ebtables iptables
+: 1691538197:0;sudo pacman -Syu ebtables
+: 1691538234:0;sudo pacman -Syu libguestfs
+: 1691538312:0;systemctl enable --now libvertd
+: 1691538340:0;systemctl enable --now libvertd.service
+: 1691538357:0;systemctl enable --now libvirtd.service
+: 1691538436:0;sudo usermod -a -G libvirt bkmo
+: 1691538459:0;systemctl restart libvirtd.service
+: 1691538471:0;systemctl status libvirtd.service
+: 1691538489:0;sudo pacman -Syu dnsmasq
+: 1691538502:0;systemctl restart libvirtd.service
+: 1691538508:0;systemctl status libvirtd.service
+: 1691541217:0;sudo pacman -Rns dnsmasq
+: 1691541236:0;sudo pacman -Rns libguestfs
+: 1691541261:0;sudo pacman -Rns openbsd-netcat
+: 1691541274:0;sudo pacman -Rns vde2 bridge-utils
+: 1691541302:0;sudo pacman -Rns virt-manager
+: 1691541324:0;sudo pacman -Rns qemu virt-viewer
+: 1691541336:0;sudo pacman -Rns qemu
+: 1691541350:0;sudo pacman -Rns virt-viewer
+: 1691541362:0;clear
+: 1691541368:0;sudo pacman -Rns qemu
+: 1691541385:0;sudo pacman -Rns vde2 bridge-utils
+: 1691541406:0;orphrm
+: 1691541438:0;sudo pacman -Rns libguestfs
+: 1691541448:0;sudo pacman -Rns qemu
+: 1691541500:0;sudo pacman -Rns qemu-desktop
+: 1691541508:0;sudo pacman -Rns vde2 bridge-utils
+: 1691541516:0;sudo pacman -Rns bridge-utils
+: 1691541523:0;clear
+: 1691541863:0;sudo pacman -Syu gnome-boxes
+: 1691542772:0;sudo pacman -Rns gnome-boxes
+: 1691542801:0;clear
+: 1691543140:0;sudo pacman -Syu gnome-boxes
+: 1691543180:0;GTK_USE_PORTAL=1 pamac
+: 1691543191:0;GTK_USE_PORTAL=1 pamac-manager
+: 1691571498:0;ls -l ~/work/*
+: 1691571504:0;ls -l ~/work/
+: 1691571509:0;ls -l ~/work
+: 1691571520:0;sudo ls -l ~/work
+: 1691601791:0;ping -c 3 10.0.2.15
+: 1691601810:0;ifconfig
+: 1691601836:0;ipconfig
+: 1691603605:0;sudo update-grub
+: 1691606118:0;ls -l /mnt
+: 1691606133:0;cd /mnt/btrfs
+: 1691606186:0;sudo btrfs subvolume create /mnt/btrfs/@boxes
+: 1691606390:0;systemctl daemon-reload
+: 1691606436:0;sudo mount -av
+: 1691606600:0;systemctl daemon-reload
+: 1691606608:0;sudo mount -av
+: 1691606672:0;ls -l /home/bkmo/.local/share/gnome-boxes
+: 1691606781:0;sudo mount -o compress=zstd,subvol=@boxes,noatime /dev/mapper/storage /home/bkmo/.local/share/gnome-boxes/images
+: 1691606829:0;sudo btrfs subvolume list /mnt/btrfs
+: 1691606888:0;sudo btrfs subvolume list /dev/mapper/storage
+: 1691606924:0;sudo mount -o compress=zstd,subvol=@boxes,noatime /dev/mapper/storage /home/bkmo/.local/share/gnome-boxes/images
+: 1691606938:0;sudo dmesg
+: 1691606956:0;sudo mount -o compress=zstd,subvol=@boxes,noatime /dev/mapper/storage /home/bkmo/.local/share/gnome-boxes/images
+: 1691606959:0;sudo dmesg
+: 1691607031:0;sudo mount -o compress=zstd,subvol=@boxes,noatime /dev/mapper/storage /home/bkmo/.local/share/gnome-boxes/images
+: 1691607186:0;updates
+: 1691607198:0;pacup
+: 1691607392:0;sudo mount -o compress=zstd,subvol=@boxes,noatime /dev/mapper/storage /home/bkmo/boxes
+: 1691607533:0;sudo mount -o compress=zstd,subvol=@boxes,noatime UUID=4c77092c-2e4c-4852-aba6-33c813b5c7bf  /home/bkmo/boxes
+: 1691607550:0;sudo btrfs subvolume list /dev/mapper/storage
+: 1691607589:0;sudo btrfs subvolume list /mnt/btrfs
+: 1691607625:0;sudo mount -o compress=zstd,subvol=@boxes,noatime /mnt/btrfs /home/bkmo/boxes
+: 1691607743:0;sudo mount -o compress=zstd,subvol=@boxes,noatime /home/bkmo/boxes /dev/mapper/storage
+: 1691607786:0;sudo mount -o compress=zstd,subvol=@boxes,noatime  /dev/mapper/storage /home/bkmo/boxes
+: 1691607818:0;sudo btrfs subvolume list /dev/mapper/storage
+: 1691607827:0;sudo btrfs subvolume list /mnt/btrfs
+: 1691608062:0;sudo mount -o compress=zstd,subvol=@boxes,noatime  /dev/mapper/storage /mnt/btrfs
+: 1691608085:0;sudo mount  /dev/mapper/storage /mnt/btrfs
+: 1691608121:0;sudo btrfs subvolume create /mnt/btrfs/@boxes
+: 1691608143:0;sudo mount -av
+: 1691608377:0;systemctl daemon-reload
+: 1691608386:0;sudo mount -av
+: 1691608864:0;dfcp
+: 1691609068:0;config push -u
+: 1691609093:0;config commit -a -m "test"
+: 1691609104:0;config commit -u
+: 1691609160:0;config push --set-upstream origin master
+: 1691609257:0;config add ~/.zshrc
+: 1691609333:0;config commit -u
+: 1691609574:0;git clone --bare -b master https://github.com/bkmo/.zsh-dotfiles.git
+: 1691609686:0;config add README.md
+: 1691609706:0;config add run
+: 1691609721:0;config commit -u
+: 1691611551:0;if command -v curl >/dev/null 2>&1; then\
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"\
+else\
+  sh -c "$(wget -O- https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"\
+fi
+: 1691612784:0;sudo btrfs subvolume list /mnt/btrfs
+: 1691617226:0;config
+: 1691617328:0;sudo chattr -R +C /home/bkmo/Torrents/.partial
+: 1691622779:0;sudo pacman -Syu usbredir
+: 1691622993:0;lsusb
+: 1691623128:0;$ LC_ALL=C ls -l /dev/bus/usb/002/004
+: 1691623144:0;LC_ALL=C ls -l /dev/bus/usb/002/004
+: 1691623184:0;sudo chgrp kvm /dev/bus/usb/002/004
+: 1691623187:0;LC_ALL=C ls -l /dev/bus/usb/002/004
+: 1691623360:0;sudo chgrp root /dev/bus/usb/002/004
+: 1691623362:0;LC_ALL=C ls -l /dev/bus/usb/002/004
+: 1691630953:0;config add ~/.local/bin/btrfs-snap-sav
+: 1691630963:0;config commit -u
+: 1691631057:0;config commit -a -m "add file"
+: 1691631077:0;config push -u
+: 1691631159:0;config add ~/.local/bin/*
+: 1691631172:0;config add ~/.local/bin/*.*

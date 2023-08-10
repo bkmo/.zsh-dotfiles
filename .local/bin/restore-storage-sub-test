@@ -1,0 +1,45 @@
+#!/bin/bash
+cap=$1
+cap="${cap^}"
+
+if [[ $# -eq 0 ]] ; then
+    echo "Execute the script with "directory name" argument"
+    echo "Example: sudo restore-storage-snaps torrents"
+  exit 0
+  fi
+
+#if [[ -z "$2" ]] ; then
+#    mount /dev/mapper/storage /mnt/btrfs
+#    ls /mnt/btrfs/@snapshots-storage/$1 | tr '\n' '\n'
+ #   echo "Copy the snapshot name from the list"
+ #   echo "Then execute Example: sudo restore-storage-snaps $1 2023-08-01T14:51-06:00"
+#  exit 0
+ # fi
+
+
+echo "Enter number"
+#read input
+#snap=$file
+#echo "You selected the file ${file[$input]}"
+#read -rsp $'Press any key to continue or CTRL-C to exit...\n' -n1 key
+#snap=${file[$input]
+
+echo umount /mnt/btrfs
+echo mkdir /mnt/btrfs
+echo sudo umount /home/bkmo/$cap
+echo mount /dev/mapper/storage /mnt/btrfs
+echo mv /mnt/btrfs/@$1 /mnt/btrfs/@$1_sav
+echo "Please select the file from the list"
+
+files=$(ls /mnt/btrfs/@snapshots-storage/$1 | tr '\n' '\n')
+i=1
+
+for j in $files
+do
+echo "$i.$j"
+file[i]=$j
+i=$(( i + 1 ))
+done
+read input
+echo sudo btrfs sub snap /mnt/btrfs/@snapshots-storage/$1/${file[$input]}
+echo  sudo mount -av

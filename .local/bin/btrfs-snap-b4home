@@ -1,0 +1,324 @@
+#!/bin/bash
+cap=$1
+cap="${cap^}"
+if [[ "$1" = "-h" ]] ; then
+    echo
+    echo "This script will Restore/Delete-Saved/Backup/List btrfs snapshots"
+    echo
+    echo " @ and @home restores are automatically selected with a command argument"
+    echo  "Example: 'sudo btrfs-snap @' or 'sudo btrfs-snap @home'"
+    echo
+  exit 0
+  fi
+
+if [[ "$1" = "@" ]]; then
+echo
+echo "root '@' restore selected automatically"
+echo
+echo "Restoring a root '@' snapshot creating an @_sav backup snapshot....."
+echo
+read -p "Are you sure? y/n " -n 1 -r
+echo    # (optional) move to a new line
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    exit 1
+fi
+
+! mountpoint -q "/mnt/btrfs1" || umount -q "/mnt/btrfs1"
+mkdir -p /mnt/btrfs
+mount /dev/mapper/cryptroot /mnt/btrfs
+echo
+echo "Please select a root '@' snapshot from the list"
+echo "or"
+echo "Press ctrl-c to exit"
+echo
+files=$(ls /mnt/btrfs/@snapshots-root/root | tr '\n' '\n')
+i=1
+
+for j in $files
+do
+echo "$i.$j"
+file[i]=$j
+i=$(( i + 1 ))
+done
+read input
+    mv /mnt/btrfs1/@ /mnt/btrfs1/@_sav
+    btrfs sub snap /mnt/btrfs1/@snapshots-root/$1/${file[$input]} /mnt/btrfs1/@
+mount -a
+echo
+echo root '@' snapshot restored, Please reboot now to complete restore or
+echo system will reboot in 30 seconds...
+sleep 30;systemctl reboot
+exit 0
+fi
+
+if [[ "$1" = "@home" ]]; then
+echo
+echo "@home restore selected automatically"
+echo
+echo "Restoring a $1 '@home' snapshot and creating an @home_sav backup snapshot....."
+
+echo
+read -p "Are you sure? y/n " -n 1 -r
+echo    # (optional) move to a new line
+
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    exit 1
+fi
+
+! mountpoint -q "/mnt/btrfs1" || umount -q "/mnt/btrfs1"
+mkdir -p /mnt/btrfs1
+mount /dev/mapper/cryptroot /mnt/btrfs1
+echo
+echo "Please select an '$1' snapshot from the list or"
+echo "Press ctrl-c to exit"
+echo
+files=$(ls /mnt/btrfs1/@snapshots-root/home | tr '\n' '\n')
+i=1
+
+for j in $files
+do
+echo "$i.$j"
+file[i]=$j
+i=$(( i + 1 ))
+done
+read input
+    mv /mnt/btrfs1/$1 /mnt/btrfs1/$1_sav
+    btrfs sub snap /mnt/btrfs1/@snapshots-storage/home/${file[$input]} /mnt/btrfs1/$1
+mount -a
+echo
+echo root '@' snapshot restored, Please reboot now to complete restore or
+echo system will reboot in 30 seconds...
+sleep 30;systemctl reboot
+exit 0
+fi
+
+PS3='Choose an option: '
+opts=("Create a snapshot" "Restore a snapshot" "Delete a '_sav' backup snapshot" "List snapshots (select)" "Quit")
+select fav in "${opts[@]}"; do
+    case $fav in
+
+    "Create a snapshot")
+      # echo "Creating an'@${cap}' snapshot ....."
+select subdir in archives documents downloads music pictures torrents videos home root
+do
+echo
+echo "Selected: $subdir"
+
+subdir=$subdir
+uc="${subdir^}"
+ if [[ "$subdir" = "home" ]]; then
+ echo
+#echo "home '@home' manual snapshot created..."
+ echo
+   btrfs-snapshot -s /home -d /.snapshots-root/home -n 20
+   echo
+   echo
+   exec bash "$0" "$@"
+fi
+
+if [[ "$subdir" = "root" ]]; then
+echo
+#echo "root '@' manual snapshot created..."
+echo
+   btrfs-snapshot -s / -d /.snapshots-root/root -n 20
+   echo
+   echo
+   exec bash "$0" "$@"
+fi
+
+btrfs-snapshot -s /home/bkmo/$uc -d /.snapshots-storage/$subdir/ -n 20
+echo "Manual snapshot '${uc}' has been created...."
+echo
+echo
+exec bash "$0" "$@"
+done
+         ;;
+
+ "Restore a snapshot")
+select subdir in archives documents downloads music pictures torrents videos
+do
+subdir=$subdir
+uc="${subdir^}"
+  echo
+ echo "Restore a '@${uc}' snapshot creating a '@${uc}_sav' backup snapshot."
+echo
+read -p "Are you sure you want to restore '@${uc}'? y/n " -n 1 -r
+echo    # (optional) move to a new line
+
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+   exec bash "$0" "$@"
+fi
+! mountpoint -q "/mnt/btrfs" || umount "/mnt/btrfs"
+mkdir -p /mnt/btrfs
+! mountpoint -q "/home/bkmo/$uc" || umount -q "/home/bkmo/$uc"
+mount /dev/mapper/storage /mnt/btrfs
+
+echo
+echo "Please select a '@${uc}' snapshot from the list"
+echo "or"
+echo "Press ctrl-c to exit"
+echo
+files=$(ls /mnt/btrfs/@snapshots-storage/$subdir | tr '\n' '\n')
+i=1
+
+for j in $files
+do
+echo "$i.$j"
+file[i]=$j
+i=$(( i + 1 ))
+done
+read input
+     mv /mnt/btrfs/@$uc /mnt/btrfs/@${uc}_sav
+     btrfs sub snap /mnt/btrfs/@snapshots-storage/$subdir/${file[$input]} /mnt/btrfs/@$uc
+mount -a
+echo
+echo
+exec bash "$0" "$@"
+done
+ ;;
+
+   "Delete a '_sav' backup snapshot")
+select subdir in archives documents downloads music pictures torrents videos home root
+do
+echo
+echo "Selected: $subdir"
+
+subdir=$subdir
+uc="${subdir^}"
+
+
+! mountpoint -q "/mnt/btrfs" || umount -q "/mnt/btrfs"
+mkdir -p /mnt/btrfs
+mount /dev/mapper/storage /mnt/btrfs
+mkdir -p /mnt/btrfs1
+mount /dev/mapper/cryptroot /mnt/btrfs1
+
+if [ "$subdir" = "home" ] && [ -d "/mnt/btrfs1/@home_sav" ];then btrfs sub delete /mnt/btrfs1/@home_sav
+echo
+echo "Snapshot ''@home_sav' has been deleted...."
+echo
+exec bash "$0" "$@"
+fi
+
+if [ "$subdir" = "root" ] && [ -d "/mnt/btrfs1/@_sav" ];then btrfs sub delete /mnt/btrfs1/@_sav
+echo
+echo "Snapshot ''@_sav' has been deleted...."
+echo
+exec bash "$0" "$@"
+fi
+
+if [ ! "$subdir" = "root" ] && [ ! "$subdir" = "home" ] && [ ! -d "/mnt/btrfs/@${uc}_sav" ];then
+echo
+echo "Snapshot '@${uc}_sav' does not exist, nothing to do...."
+echo
+echo
+sleep 3
+exec bash "$0" "$@"
+fi
+
+if  [ -d "/mnt/btrfs/@${uc}_sav" ];then btrfs sub delete /mnt/btrfs/@${uc}_sav
+echo
+echo "Snapshot ''${uc}_sav' has been deleted...."
+echo
+exec bash "$0" "$@"
+fi
+
+if [ "$subdir" = "root" ] && [ ! -d "/mnt/btrfs1/@_sav" ];then
+echo
+echo "Snapshot '@_sav' does not exist, nothing to do...."
+echo
+echo
+sleep 3
+exec bash "$0" "$@"
+fi
+
+if [ "$subdir" = "home" ] && [ ! -d "/mnt/btrfs1/@home_sav" ];then
+echo
+echo "Snapshot '@home_sav' does not exist, nothing to do...."
+echo
+echo
+sleep 3
+exec bash "$0" "$@"
+fi
+
+done
+
+    ;;
+
+  "List snapshots (select)")
+
+   # "List '@${cap}' snapshots")
+
+ select subdir in archives documents downloads music pictures torrents videos home root saved Quit
+do
+    echo "Selected: $subdir"
+
+ if [[ "$subdir" = "saved" ]]; then
+ ! mountpoint -q "/mnt/btrfs" || umount -q "/mnt/btrfs"
+ ! mountpoint -q "/mnt/btrfs1" || umount -q "/mnt/btrfs1"
+mkdir -p /mnt/btrfs
+mount /dev/mapper/storage /mnt/btrfs
+mkdir -p /mnt/btrfs1
+mount /dev/mapper/cryptroot /mnt/btrfs1
+ echo
+ find /mnt/btrfs/ -maxdepth 1 -type d -name '*_sav' -exec basename {} \;
+ find /mnt/btrfs1/ -maxdepth 1 -type d -name '*_sav' -exec basename {} \;
+ echo
+ echo "Press any key to continue..."
+ echo
+ read -s -n 1
+ echo
+ echo
+ exec bash "$0" "$@"
+ fi
+
+ if [[ "$subdir" = "Quit" ]]; then
+ echo
+ echo "Return to main menu....."
+ echo
+ exec bash "$0" "$@"
+ fi
+
+
+ if [[ "$subdir" = "root" ]]; then
+ echo
+ ls /.snapshots-root/root | tr '\n' '\n'
+ echo
+ echo "Press any key to continue..."
+read -s -n 1
+echo
+echo
+ exec bash "$0" "$@"
+ fi
+
+ if [[ "$subdir" = "home" ]]; then
+ echo
+  ls /.snapshots-root/home | tr '\n' '\n'
+echo
+ echo "Press any key to continue..."
+read -s -n 1
+echo
+echo
+ exec bash "$0" "$@"
+ fi
+ echo
+  ls /.snapshots-storage/$subdir | tr '\n' '\n'
+echo
+echo "Press any key to continue..."
+read -s -n 1
+echo
+echo
+ exec bash "$0" "$@"
+ done
+          ;;
+	"Quit")
+	    echo "Now exiting...."
+	    exit
+	    ;;
+        *) echo "invalid option $REPLY";;
+    esac
+
+done
